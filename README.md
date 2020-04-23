@@ -1,0 +1,2 @@
+# cryptoAlgo
+This program allows you to encrypt messages and keys using the RSA and AES algorithms. The RSA algorithm is used to encrypt the AES keys, which is then transmitted to the receiver.
