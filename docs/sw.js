@@ -4,10 +4,8 @@ self.addEventListener('activate', function(e) {
     e.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
-        if (key !== 'CryptoAlgo') {
           console.log('[ServiceWorker] Removing old cache', key);
           return caches.delete(key);
-        }
       }));
     })
 );
@@ -35,7 +33,8 @@ self.addEventListener('install', function(e) {
        'images/pic01.webp',
        'images/pic02.webp',
        'images/pic03.webp',
-       'images/icon.png'
+       'images/icon.png',
+       'Documentation/CryptoAlgo%20Documentation%20V0.5.pdf'
      ]);
    })
  );
