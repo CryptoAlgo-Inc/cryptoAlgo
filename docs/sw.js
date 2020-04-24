@@ -1,5 +1,17 @@
 importScripts('cache-polyfill.js');
 
+self.addEventListener('activate', function(e) {
+    e.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(keyList.map((key) => {
+        if (key !== CACHE_NAME) {
+          console.log('[ServiceWorker] Removing old cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+);
+
 self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('CryptoAlgo').then(function(cache) {
