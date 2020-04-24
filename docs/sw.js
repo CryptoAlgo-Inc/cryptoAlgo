@@ -1,3 +1,5 @@
+importScripts('cache-polyfill.js');
+
 self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('airhorner').then(function(cache) {
@@ -26,8 +28,8 @@ self.addEventListener('install', function(e) {
        'images/banner.webm',
        'images/bg.jpg',
        'images/pic01.webp',
-       'images/pic02.webp',
-       'images/pic03.webp',
+       'images/pic02.png',
+       'images/pic03.png',
        'images/icon.png'
      ]);
    })
