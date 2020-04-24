@@ -1,0 +1,17 @@
+{
+  "name": "CryptoAlgo",
+  "short_name": "CryptoAlgo",
+  "description": "Encrypt and decrypt data with AES and RSA",
+  "icons": [
+      {
+        "src": "images/icon.png",
+        "type": "image/png",
+        "sizes": "516x510"
+      }
+  ],
+  "start_url": "index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#323232",
+  "theme_color": "#333333"
+}

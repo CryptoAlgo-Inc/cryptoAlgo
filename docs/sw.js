@@ -29,7 +29,8 @@ self.addEventListener('install', function(e) {
        'images/bg.jpg',
        'images/pic01.webp',
        'images/pic02.webp',
-       'images/pic03.webp'
+       'images/pic03.webp',
+       'images/icon.png'
      ]);
    })
  );
