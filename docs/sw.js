@@ -30,8 +30,7 @@ self.addEventListener('install', function(e) {
        'images/pic01.webp',
        'images/pic02.webp',
        'images/pic03.webp',
-       'images/icon.png',
-       'https://github.com/cryptoAlgorithm/cryptoAlgo/raw/master/Documentation/CryptoAlgo%20Documentation%20V0.5.pdf'
+       'images/icon.png'
      ]);
    })
  );

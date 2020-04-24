@@ -2009,7 +2009,7 @@
 			input[type="button"].special:active,
 			button.special:active,
 			.button.special:active {
-				background-color: #439aea;
+				background-color: #3D3D3D;
 			}
 
 /* Form */
@@ -3190,7 +3190,7 @@
 					.wrapper.style3 input[type="button"].special:hover,
 					.wrapper.style3 button.special:hover,
 					.wrapper.style3 .button.special:hover {
-						background-color: #71b2f0;
+						background-color: #3D3D3D;
 					}
 
 					.wrapper.style3 input[type="submit"].special:active,
@@ -3198,7 +3198,7 @@
 					.wrapper.style3 input[type="button"].special:active,
 					.wrapper.style3 button.special:active,
 					.wrapper.style3 .button.special:active {
-						background-color: #439aea;
+						background-color: #3D3D3D;
 					}
 
 			.wrapper.style3 label {
