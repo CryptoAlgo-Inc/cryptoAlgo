@@ -2,11 +2,10 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Taviraj:300,400,700,300i,400i,700i");
 
-/*
-	Transitive by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
+/* Remove reCaptcha badge */
+.grecaptcha-badge{
+	visibility: collapse !important;  
+}
 
 /* Reset */
 
