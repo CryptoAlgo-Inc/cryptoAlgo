@@ -11,7 +11,8 @@ Process is reversed to decrypt message.
 
 ## Download the latest stable version here!
 
-[Downloads](https://app.box.com/s/mxm4sc3bqm1rh8nob2ruvr2e9b88hy2e)
+[Download](https://app.box.com/s/mxm4sc3bqm1rh8nob2ruvr2e9b88hy2e)
+
 Downloads are kindly hosted by box.com (this message is not required by box)
 
 ### For beta versions, please email me at (cryptoalgro@gmail.com)
