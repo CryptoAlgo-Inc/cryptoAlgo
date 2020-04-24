@@ -66,6 +66,14 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+                <script>
+                if('serviceWorker' in navigator) {
+                        navigator.serviceWorker
+                                .register('sw.js')
+                                .then(function() { console.log("Service Worker Registered"); });
+                }
+                </script>
+
 
 	</body>
 </html>
