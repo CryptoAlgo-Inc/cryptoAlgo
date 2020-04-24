@@ -2,7 +2,12 @@ importScripts('cache-polyfill.js');
 
 self.addEventListener('activate', function(e) {
     e.waitUntil(
-    caches.keys().then((keyList) => {
+      caches.keys().then((keyList) => {
+          caches.keys().then(function(cacheNames) {
+                cacheNames.forEach(function(cacheName) {
+          caches.delete(cacheName);
+          });
+      });
       return Promise.all(keyList.map((key) => {
           console.log('[ServiceWorker] Removing old cache', key);
           return caches.delete(key);
