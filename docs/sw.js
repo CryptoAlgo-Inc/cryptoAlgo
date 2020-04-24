@@ -4,7 +4,7 @@ self.addEventListener('activate', function(e) {
     e.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
-        if (key !== CryptoAlgo) {
+        if (key !== 'CryptoAlgo') {
           console.log('[ServiceWorker] Removing old cache', key);
           return caches.delete(key);
         }
