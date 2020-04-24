@@ -11,6 +11,7 @@ self.addEventListener('activate', function(e) {
       }));
     })
 );
+});
 
 self.addEventListener('install', function(e) {
  e.waitUntil(
