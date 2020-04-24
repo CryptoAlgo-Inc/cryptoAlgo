@@ -19,8 +19,8 @@ self.addEventListener('install', function(e) {
        'assets/js/main.js',
        'assets/js/skel.min.js',
        'assets/js/util.js',
-       'assets/fonts'
-       'assets/fonts/FontAwesome.otf'
+       'assets/fonts',
+       'assets/fonts/FontAwesome.otf',
        'assets/fonts/fontawesome-webfont.eot',
        'assets/fonts/fontawesome-webfont.svg',
        'assets/fonts/fontawesome-webfont.ttf',
