@@ -3076,7 +3076,7 @@
 		.wrapper.style3 {
 			background-color: #000;
 			color: #bfbfbf;
-			background-image: url(../../images/bg.jpg);
+			background-image: url(../../images/bg.webp);
 			background-size: cover;
 			background-attachment: fixed;
 			background-position: center;
@@ -3711,7 +3711,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/banner.webp");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -3868,7 +3868,7 @@
 /* Footer */
 
 	#footer {
-		padding: 6rem 0 4rem 0 ;
+		padding: 1rem 0 0rem 0 ;
 		background: #121212;
 	}
 
@@ -3883,7 +3883,7 @@
 		@media screen and (max-width: 736px) {
 
 			#footer {
-				padding: 3rem 0 1rem 0 ;
+				padding: 1rem 0 0rem 0 ;
 			}
 
 		}

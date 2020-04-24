@@ -4,7 +4,7 @@ self.addEventListener('activate', function(e) {
     e.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
-        if (key !== CACHE_NAME) {
+        if (key !== CryptoAlgo) {
           console.log('[ServiceWorker] Removing old cache', key);
           return caches.delete(key);
         }
@@ -36,14 +36,11 @@ self.addEventListener('install', function(e) {
        'assets/fonts/fontawesome-webfont.ttf',
        'assets/fonts/fontawesome-webfont.woff',
        'assets/fonts/fontawesome-webfont.woff2',
-       'images/banner.jpg',
-       'images/banner.mp4',
-       'images/banner.ogv',
-       'images/banner.webm',
-       'images/bg.jpg',
+       'images/banner.webp',
+       'images/bg.webp',
        'images/pic01.webp',
-       'images/pic02.png',
-       'images/pic03.png',
+       'images/pic02.webp',
+       'images/pic03.webp',
        'images/icon.png'
      ]);
    })
