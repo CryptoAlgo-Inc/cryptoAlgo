@@ -1,56 +1,88 @@
-importScripts('cache-polyfill.js');
+​//​ Becasue when we're online, we first fetch a request and then cache​
+​//​ its response, cacheName is not really used in this service worker.​
+​//​ Changing the cacheName will cause other (previous) caches to be deleted​
+​//​ (check activate event handler).​
+​const​ ​cacheName​ ​=​ ​'​v3​'​
 
-const CACHE_NAME = 'CryptoAlgo V2';
+​//​ utlity ​
+​const​ ​trace​ ​=​ (​x​, ​y​) ​=>​ {
+  ​console​.​log​(x);
+  ​return​ y;
+}
 
-self.addEventListener("activate", function(event) {
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (CACHE_NAME !== cacheName &&  cacheName.startsWith("gih-cache")) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
+​const​ ​urlsToCache​ ​=​ ​new​ ​Set​([
+  ​'​/​'​,
+  ​self​.​location​.​href​
+].​map​(​u​ ​=>​ ​new​ ​URL​(u, ​self​.​location​.​href​).​href​))
+
+
+​self​.​addEventListener​(​'​install​'​, ​event​ ​=>​ {
+  ​console​.​log​(​'​% install​'​, urlsToCache)
+  ​caches​.​open​(cacheName).​then​(​cache​ ​=>​
+    ​cache​.​addAll​(​Array​.​from​(urlsToCache))
+  )
+  ​event​.​waitUntil​(​self​.​skipWaiting​());
 });
 
-self.addEventListener('install', function(e) {
- e.waitUntil(
-   caches.open('CryptoAlgo').then(function(cache) {
-     return cache.addAll([
-       'icon_Lid_icon.ico',
-       'generic.html',
-       'downloads.html',
-       'contact.html',
-       'index.html',
-       'assets/css/main.css',
-       'assets/js/jquery.min.js',
-       'assets/js/jquery.scrollex.min.js',
-       'assets/js/jquery.scrolly.min.js',
-       'assets/js/main.js',
-       'assets/js/skel.min.js',
-       'assets/js/util.js',
-       'assets/js/lazysizes.min.js',
-       'images/banner.webp',
-       'images/bg.webp',
-       'images/pic01.webp',
-       'images/pic02.webp',
-       'images/pic03.webp',
-       'images/icon.png',
-       'Documentation/CryptoAlgo%20Documentation%20V0.5.pdf'
-     ]);
-   })
- );
+​self​.​addEventListener​(​'​activate​'​, ​event​ ​=>​ {
+  ​console​.​log​(​'​% activate​'​)
+
+  ​//​ delete "old" cacheName s​
+  ​event​.​waitUntil​(
+    ​self​.​clients​.​claim​().​then​(​_​ ​=>​
+      ​caches​.​keys​().​then​(​keys​ ​=>​ 
+        ​Promise​.​all​(
+          ​keys​.​filter​(​key​ ​=>​ cacheName ​!=​ key).​map​(​key​ ​=>​
+            ​trace​(​`​# deleting ​${​key​}​`​, ​caches​.​delete​(key))
+          )
+        )
+      )
+    )
+  );
 });
 
-self.addEventListener('fetch', function(event) {
- console.log(event.request.url);
+​const​ ​cacheAResponse​ ​=​ (​cache​, ​request​, ​response​, ​log​) ​=>​ {
+  ​console​.​log​(log, ​request​.​url​);
+  ​cache​.​put​(request, ​response​.​clone​());
+  ​return​ response;
+}
 
- event.respondWith(
-   caches.match(event.request).then(function(response) {
-     return response || fetch(event.request);
-   })
- );
+​const​ ​cacheARequest​ ​=​ ​request​ ​=>​ ​trace​(​`​+ caching ​${​request​.​url​}​`​, 
+  ​caches​.​open​(cacheName).​then​(​cache​ ​=>​
+    ​fetch​(​request​.​clone​()).​then​(​response​ ​=>​ 
+      ​cacheAResponse​(cache, request, response, ​'​* cached ​'​)
+    )
+  )
+);
+
+​const​ ​tryServingFromCache​ ​=​ ​request​ ​=>​
+  ​caches​.​open​(cacheName).​then​(​cache​ ​=>​
+    ​cache​.​match​(request).​then​(​resp​ ​=>​ {
+      ​if​(​!!​resp) {
+        ​console​.​log​(​'​> from cache​'​, ​request​.​url​)
+        ​return​ resp;
+      } ​else​ {
+        ​console​.​log​(​'​! not in cache​'​, ​request​.​url​)
+        ​return​ ​fetch​(request).​then​(​response​ ​=>​ 
+          ​cacheAResponse​(cache, request, response, ​'​$ cached ​'​)
+        )
+      }
+    })
+  );
+
+
+​self​.​addEventListener​(​'​fetch​'​, ​event​ ​=>​ {
+  ​if​(​event​.​request​.​method​ ​!=​ ​'​GET​'​) {
+    ​event​.​respondWith​(​fetch​(​event​.​request​))
+  } ​else​ {
+    ​const​ ​url​ ​=​ ​new​ ​URL​(​event​.​request​.​url​, ​self​.​location​.​href​);
+    ​if​([​'​.png​'​, ​'​.jpg​'​].​some​(​x​ ​=>​ ​url​.​pathname​.​endsWith​(x))) {
+      ​event​.​respondWith​(​tryServingFromCache​(​event​.​request​));
+    } ​else​ {
+      ​event​.​respondWith​(​navigator​.​onLine​
+        ​?​ ​cacheARequest​(​event​.​request​)
+        ​:​ ​tryServingFromCache​(​event​.​request​)
+      )
+    }
+  }
 });
