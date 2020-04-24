@@ -15,4 +15,4 @@ Process is reversed to decrypt message.
 
 Downloads are kindly hosted by box.com (this message is not required by box)
 
-### For beta versions, please email me at (cryptoalgro@gmail.com)
+### For feedback, please email me at (cryptoalgro@gmail.com)
