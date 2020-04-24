@@ -6,7 +6,7 @@
       {
         "src": "images/icon.png",
         "type": "image/png",
-        "sizes": "516x510"
+        "sizes": "516x516"
       }
   ],
   "start_url": "index.html",
