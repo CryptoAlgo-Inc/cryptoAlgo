@@ -2952,7 +2952,7 @@
 				.wrapper.style2 input[type="button"].special,
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
-					background-color: #5AA6ED;
+					background-color: #212121;
 					color: #ffffff !important;
 				}
 
@@ -2990,8 +2990,8 @@
 				.wrapper.style2 input[type="email"]:focus,
 				.wrapper.style2 select:focus,
 				.wrapper.style2 textarea:focus {
-					border-color: #5AA6ED;
-					box-shadow: 0 0 0 1px #5AA6ED;
+					border-color: #525252;
+					box-shadow: 0 0 0 1px #525252;
 				}
 
 			.wrapper.style2 .select-wrapper:before {
