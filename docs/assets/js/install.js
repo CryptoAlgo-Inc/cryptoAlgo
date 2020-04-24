@@ -1,5 +1,4 @@
 // Add code to save event & show the install button.
-deferredInstallPrompt = evt;
 installButton.removeAttribute('hidden');
 
 // Add code show install prompt & hide the install button.
