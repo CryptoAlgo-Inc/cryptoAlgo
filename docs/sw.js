@@ -1,19 +1,19 @@
 importScripts('cache-polyfill.js');
 
-self.addEventListener('activate', function(e) {
-    e.waitUntil(
-      caches.keys().then((keyList) => {
-          caches.keys().then(function(cacheNames) {
-                cacheNames.forEach(function(cacheName) {
-          caches.delete(cacheName);
-          });
-      });
-      return Promise.all(keyList.map((key) => {
-          console.log('[ServiceWorker] Removing old cache', key);
-          return caches.delete(key);
-      }));
+const CACHE_NAME = 'CryptoAlgo V2';
+
+self.addEventListener("activate", function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (CACHE_NAME !== cacheName &&  cacheName.startsWith("gih-cache")) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
     })
-);
+  );
 });
 
 self.addEventListener('install', function(e) {
