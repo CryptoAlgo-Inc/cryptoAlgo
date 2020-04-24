@@ -6,7 +6,6 @@ self.addEventListener('install', function(e) {
        'downloads.html',
        'contact.html',
        'index.html',
-       'assets/css/',
        'assets/css/main.css',
        'assets/js/jquery.min.js',
        'assets/js/jquery.scrollex.min.js',
