@@ -2,6 +2,7 @@ self.addEventListener('install', function(e) {
  e.waitUntil(
    caches.open('airhorner').then(function(cache) {
      return cache.addAll([
+       'icon_Lid_icon.ico',
        'generic.html',
        'downloads.html',
        'contact.html',
