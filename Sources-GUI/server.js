@@ -26,6 +26,13 @@ else {
         const queryObject = url.parse(req.url,true).query;
         if(queryObject['filename']) {
             console.log(queryObject['filename']);
+            success();
+        }
+        else if(queryObject['action']) {
+            console.log('I am here');
+            console.log(queryObject['mode']);
+
+            success();
         }
         else if(queryObject['mode']) {
             console.log('I am here');

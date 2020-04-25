@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-                <link rel="manifest" href="manifest.json" />
+                <link rel="manifest" href="/manifest.json" />
                 <link rel="apple-touch-icon" href="images/apple-icon.png">
                 <meta name="theme-color" content="#313131"/>
                 <html lang="en">
@@ -40,7 +40,7 @@ function close_window() {
 					<li><a href="index.html">Home</a></li>
                                         <li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li>
 					<li><a href="generic.html">Decryption/Encryption of text</a></li>
-					<li><a href="downloads.html">Decryption/Encryption of header</a></li>
+					<li><a href="headAlgo.html">Decryption/Encryption of header</a></li>
                                         <li><a href="file.html">Decryption/Encryption of files</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                         <li><a href="javascript:close_window();">Close App</a></li>
@@ -70,6 +70,23 @@ function close_window() {
 
 		<!-- One -->
 			<section id="one" class="wrapper style3">
+				<div class="inner">
+
+					<header class="align-center">
+						<h2>Key in filename</h2>
+						<div class="inner">
+						        <form>
+                                                                <label for="fname">Filename of file to be encrypted/decrypted:</label><br>
+                                                                <input type="text" id="fname" name="filename"><br>
+                                                        </form>
+				        	</div>
+					</header>
+
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style3">
 				<div class="inner">
 					<h2 style="text-align:center"> Versions </h2>
 					<div id="flexgrid">
@@ -108,22 +125,6 @@ function close_window() {
 				</div>
 			</section>
 
-		<!-- Two -->
-			<section id="two" class="wrapper style3">
-				<div class="inner">
-
-					<header class="align-center">
-						<h2>Key in filename</h2>
-						<div class="inner">
-						        <form>
-                                                                <label for="fname">Filename of file to be encrypted/decrypted:</label><br>
-                                                                <input type="text" id="fname" name="filename"><br>
-                                                        </form>
-				        	</div>
-					</header>
-
-				</div>
-			</section>
 
 				<!-- Footer -->
 			<footer id="footer" class="wrapper">
