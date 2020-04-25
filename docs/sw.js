@@ -1,5 +1,5 @@
-const version = "0.6.18";
-const cacheName = `airhorner-${version}`;
+const version = '0.6.18';
+const cacheName = `CryptoAlgo-${version}`;
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
