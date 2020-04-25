@@ -28,11 +28,14 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home (You are here)</a></li>
+					<li><a href="index.html">Home</a></li>
+                                        <li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li>
 					<li><a href="generic.html">Decryption/Encryption of text</a></li>
 					<li><a href="downloads.html">Decryption/Encryption of header</a></li>
-					<li><a href="file.html">Decryption/Encryption of files</a></li>
+                                        <li><a href="file.html">Decryption/Encryption of files</a></li>
                                         <li><a href="contact.html">Contact</a></li>
+					<li>Beta/Alpha Version:</li>
+					<li>V1.8 Alpha 20</li>
 				</ul>
 			</nav>
 
@@ -46,14 +49,13 @@
 			<section id="banner" data-video="images/banner">
 				<div class="inner">
 					<h1>CryptoAlgo</h1>
-					<p>A command-line based tool written in Node.js<br />
-					that allows you to encrypt and decrypt data with AES and RSA.</p>
-					<a href="#one" class="button special scrolly">Learn More</a><br />
+					<p>Experimental [Alpha] Node.js-based<br />
+					encryptor/decryptor app web-based GUI.</p>
+					<a href="#one" class="button special scrolly">Start</a><br />
 					<div class="inner">
 						<p>      </p>
 				        	<ul class="actions">
 					        	<li><a href="generic.html" class="button alt"> Read the docs </a></li>
-							<li><a href="downloads.html" class="button alt">Download Now!</a></li>
 					        </ul>
 					</div>
 				</div>
@@ -64,16 +66,18 @@
 				<div class="inner">
 					<div>
 						<div class="box">
-							<div class="image fit">
-								<img data-src="images/pic01.webp" class="lazyload" alt="" />
-							</div>
 							<div class="content">
 								<header class="align-center">
-									<h2>Privacy</h2>
-									<p>"Privacy is one of the biggest problems in this new electronic age." - Andy Grove</p>
+									<h2>What do you wish to do?</h2>
+									<p>Please select one of the options below.</p>
 								</header>
 								<hr />
-								<p> Have you ever wondered if somebody could be reading your emails or text messages? Fret not, for CryptoAlgo comes to the rescue! Worry no more, for CryptoAlgo allows you to encrypt your messages with secure AES-256 encryption and RSA encryption. What's more, all of these is wrapped in an easy-to-use, interactive command line app that has a vast array of customizability options.</p>
+								<select id="actions">
+                                                                        <option value="1">Generate Keyfiles</option>
+                                                                        <option value="2">Encrypt/Decrypt text</option>
+                                                                        <option value="3">Encrypt/Decrypt header</option>
+                                                                        <option value="4">Encrypt/Decrypt files</option>
+                                                                </select>
 							</div>
 						</div>
 					</div>
