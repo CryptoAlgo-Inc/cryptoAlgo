@@ -12,10 +12,20 @@ if(page == '/') {
 }
 else {
     try {
+        const queryObject = url.parse(req.url,true).query;
+        const filename = queryObject['filename'];
+        if(filename) {
+            console.log(filename);
+        }
+        const keygenMode = queryObject['mode'];
+        if(keygenMode) {
+            console.log(keygenMode);
+        }
         const requested = fs.readFileSync('.' + page);
         res.writeHead(200);
         res.write(requested);
     } catch(e) {
+        console.log(e);
         res.writeHead(404);
         const errorPg = fs.readFileSync('./error404.html');
         res.write(errorPg);

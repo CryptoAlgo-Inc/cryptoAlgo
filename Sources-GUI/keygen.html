@@ -5,10 +5,10 @@
                 <link rel="apple-touch-icon" href="images/apple-icon.png">
                 <meta name="theme-color" content="#313131"/>
                 <html lang="en">
-		<link rel="icon" href="icon_Lid_icon.ico" type="image/x-icon" />
-		<title>CryptoAlgo | Text</title>
-                <meta name="description" content="Data encryption with AES and RSA - Docs">
-                <meta name="keywords" content="AES, RSA, Node.js, data encryption, safety, info, docs">
+		<link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
+		<title>CryptoAlgo | Files</title>
+                <meta name="description" content="Data encryption with AES and RSA - Downloads">
+                <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, download now, free">
                 <meta name="author" content="CryptoAlgro">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,10 +17,10 @@
                 <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body class="subpage">
+	<body>
 
 		<!-- Header -->
-			<header id="header">
+			<header id="header" class="alt">
 				<div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
 				<a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a>
 			</header>
@@ -39,44 +39,71 @@
 				</ul>
 			</nav>
 
-		<!-- One -->
-			<section id="one" class="wrapper style2">
+		<!-- Banner -->
+		<!--
+                        Note to self:
+			To use a video as the background, set data-video to the name of your video without
+			its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+			formats to work correctly.
+		-->
+			<section id="banner" data-video="images/banner">
 				<div class="inner">
-					<div class="box">
-						<div class="image fit">
-							<img src="images/pic01.webp" alt="" />
-						</div>
-						<div class="content">
-							<header class="align-center">
-								<h2>CryptoAlgo Documentation</h2>
-                                                                <div class="inner">
-						                        <p>      </p>
-				                   	                <ul class="actions">
-					          		                <li><a href="documentation/CryptoAlgo%20Documentation%20V0.5.pdf" class="button alt" style="text-align:center">Download Documentation</a></li>
-					                                </ul>
-				        	                </div>
-								<p>Want to learn more about the inner workings of CryptoAlgo? You're at the right place!</p>
+					<h1>CryptoAlgo</h1>
+					<p>AES/RSA keyfiles generation</p>
+					<a href="#one" class="button special scrolly">Choose options</a>
+                                        <p>      </p>
+				        <ul class="actions">
+					        <li><a href="index.html" class="button alt" style="text-align:center">Home</a></li>
+		                        </ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style3">
+				<div class="inner">
+					<h2 style="text-align:center"> Options </h2>
+					<div id="flexgrid">
+						<div>
+							<header>
+								<h3>Generate RSA Keypair</h3>
 							</header>
-							<hr />
-							<p>This is a summarised version of the docs. To view the full version<a href="https://github.com/cryptoAlgorithm/cryptoAlgo/raw/master/Documentation/CryptoAlgo%20Documentation%20V0.5.pdf">, download the documentation.</a></p>
-							<p>This program uses RSA to encrypt the AES key files (Key and IV) with the receiver’s public key. Before the AES key files are encrypted, they are used to encrypt your data with AES256. The encrypted data can be sent with the encrypted key files to the other party and can be decrypted with the RSA private key of the receiver. These decrypted keys can then be used to decrypt the encrypted data with CryptoAlgo.</p>
+							<p>This function would produce public.pem and private.pem in the directory of the program.</p>
+						        <p>      </p>
+				                   	<ul class="actions">
+					          		<li><a href="keygen.html?mode=rsa" class="button alt" style="text-align:center">Generate RSA Keypair</a></li>
+					                </ul>
 						</div>
+						<div>
+							<header>
+								<h3>Unsure?</h3>
+							</header>
+							<p>If you are unsure, just generate both. You can delete them if not needed.</p>
+						</div>
+                                                <div>
+							<header>
+								<h3>Generate AES Keyfiles</h3>
+							</header>
+							<p>This function would produce key.txt and iv.txt in the directory of the program.</p>
+						        <p>      </p>
+				                   	<ul class="actions">
+					          		<li><a href="keygen.html?mode=aes" class="button alt" style="text-align:center">Generate AES keyfiles</a></li>
+					                </ul>
+						</div>
+						
 					</div>
 				</div>
 			</section>
 
-		<!-- Four -->
-			<section id="four" class="wrapper style3">
+		<!-- Two -->
+			<section id="two" class="wrapper style3">
 				<div class="inner">
-
 					<header class="align-center">
-						<h2>CyrptoAlgo Source Code</h2>
-						<p> Still not convinced? Go ahead and download the Node.js source code and review, audit or tweak them to your liking.</p>
+						<h2>Need help? Found a bug?</h2>
 						<div class="inner">
 						        <p>      </p>
 				                   	<ul class="actions">
-					          		<li><a href="https://github.com/cryptoAlgorithm/cryptoAlgo" class="button alt" style="text-align:center">Download Source Code</a></li>
-                                                                <li><a href="index.html" class="button alt" style="text-align:center">Homepage</a></li>
+					          		<li><a href="documentation/Documentation.pdf" class="button alt" style="text-align:center">Download CrytoAlgo Documentation</a></li>
+                                                                <li><a href="mailto:cryptoalgro@gmail.com" class="button alt" style="text-align:center">Contact developer</a></li>
 					                </ul>
 				        	</div>
 					</header>
@@ -84,15 +111,15 @@
 				</div>
 			</section>
 
-		<!-- Footer -->
+				<!-- Footer -->
 			<footer id="footer" class="wrapper">
 				<div class="inner">
 					<div class="copyright">
-						&copy; This project is maintained by @CryptoAlgorithm on GitHub.</a>.
+						&copy; This project is maintained by @CryptoAlgorithm on GitHub.
 					</div>
 				</div>
 			</footer>
-
+		
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -112,7 +139,7 @@
                 <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
                 <script>
                 grecaptcha.ready(function() {
-                        grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'documentation'})
+                        grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'downloads'})
                 });
                 </script>
 

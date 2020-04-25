@@ -49,14 +49,21 @@
 			<section id="banner" data-video="images/banner">
 				<div class="inner">
 					<h1>CryptoAlgo</h1>
-					<p>Official Download Page</p>
-					<a href="#one" class="button special scrolly">Versions</a>
+					<p>File Encryptor/Decryptor</p>
+					<a href="#one" class="button special scrolly">Select files</a>
                                         <p>      </p>
 				        <ul class="actions">
 					        <li><a href="index.html" class="button alt" style="text-align:center">Homepage</a></li>
 		                        </ul>
 				</div>
 			</section>
+
+<script>
+var data = $('#filename').serializeArray().reduce(function(obj, item) {
+    obj[item.name] = item.value;
+    window.location = "file.html" + obj;
+}, {});
+</script>
 
 		<!-- One -->
 			<section id="one" class="wrapper style3">
@@ -103,13 +110,12 @@
 				<div class="inner">
 
 					<header class="align-center">
-						<h2>Other Downloads</h2>
+						<h2>Key in filename</h2>
 						<div class="inner">
-						        <p>      </p>
-				                   	<ul class="actions">
-					          		<li><a href="documentation/CryptoAlgo%20Documentation%20V0.5.pdf" class="button alt" style="text-align:center">Download CrytoAlgo Documentation</a></li>
-                                                                <li><a href="https://github.com/cryptoAlgorithm/cryptoAlgo/tree/master/Source" class="button alt" style="text-align:center">Download CrytoAlgo Source Code</a></li>
-					                </ul>
+						        <form>
+                                                                <label for="filename">Filename of file to be encrypted/decrypted:</label><br>
+                                                                <input type="text" id="filename" name="fname"><br>
+                                                        </form>
 				        	</div>
 					</header>
 

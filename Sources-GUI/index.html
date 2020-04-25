@@ -5,7 +5,7 @@
                 <meta name="theme-color" content="#313131"/>
                 <link rel="manifest" href="manifest.json" />
                 <html lang="en">
-		<link rel="icon" href="icon_Lid_icon.ico" type="image/x-icon" />
+		<link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
 		<title>CryptoAlgo | Home</title>
                 <meta name="description" content="Data encryption with AES and RSA">
                 <meta name="keywords" content="cryptography, cryptoAlgo, AES, RSA, data encryption, safety">
@@ -55,7 +55,7 @@
 					<div class="inner">
 						<p>      </p>
 				        	<ul class="actions">
-					        	<li><a href="generic.html" class="button alt"> Read the docs </a></li>
+					        	<li><a href="contact.html" class="button alt"> Feedback </a></li>
 					        </ul>
 					</div>
 				</div>
@@ -72,12 +72,22 @@
 									<p>Please select one of the options below.</p>
 								</header>
 								<hr />
-								<select id="actions">
-                                                                        <option value="1">Generate Keyfiles</option>
-                                                                        <option value="2">Encrypt/Decrypt text</option>
-                                                                        <option value="3">Encrypt/Decrypt header</option>
-                                                                        <option value="4">Encrypt/Decrypt files</option>
+<script>
+function WinOpen() {
+  var url=document.redirect.selection.value
+  document.location.href=url
+
+}
+</script>
+                                                                <form name="redirect">
+								<select id="selection">
+                                                                        <option value="keygen.html">Generate Keyfiles</option>
+                                                                        <option value="generic.html">Encrypt/Decrypt text</option>
+                                                                        <option value="downloads.html">Encrypt/Decrypt header</option>
+                                                                        <option value="file.html">Encrypt/Decrypt files</option>
                                                                 </select>
+                                                                <input type=button value="Go!" onClick="WinOpen();">
+                                                                </form>
 							</div>
 						</div>
 					</div>

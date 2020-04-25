@@ -2870,7 +2870,7 @@
 		}
 
 			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
-				color: #000;
+				color: #FFFFFF;
 			}
 
 			.wrapper.style2 a {
@@ -2907,7 +2907,7 @@
 			.wrapper.style2 input[type="button"],
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
-				background-color: #000;
+				background-color: #272727;
 				color: #f2f2f2 !important;
 			}
 
@@ -2979,8 +2979,8 @@
 			.wrapper.style2 input[type="email"],
 			.wrapper.style2 select,
 			.wrapper.style2 textarea {
-				background: #FFFFFF;
-				border-color: rgba(0, 0, 0, 0.15);
+				background: rgba(0, 0, 0, 0.3607843137254902);
+				border-color: rgba(255, 255, 255, 0.48);
 			}
 
 				.wrapper.style2 input[type="text"]:focus,
