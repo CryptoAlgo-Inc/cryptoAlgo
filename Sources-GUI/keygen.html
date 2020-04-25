@@ -17,6 +17,18 @@
                 <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+<script>
+function close_window() {
+  if (confirm("Close Window?")) {
+    close();
+  }
+}
+
+function showWait() {
+  alert("Please wait, generation of RSA keypair takes a while.");
+}
+
+</script>
 	<body>
 
 		<!-- Header -->
@@ -34,6 +46,7 @@
 					<li><a href="downloads.html">Decryption/Encryption of header</a></li>
                                         <li><a href="file.html">Decryption/Encryption of files</a></li>
                                         <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="javascript:close_window();">Close App</a></li>
 					<li>Beta/Alpha Version:</li>
 					<li>V1.8 Alpha 20</li>
 				</ul>
@@ -67,23 +80,23 @@
 							<header>
 								<h3>Generate RSA Keypair</h3>
 							</header>
-							<p>This function would produce public.pem and private.pem in the directory of the program.</p>
+							<p>Generates public.pem and private.pem in the directory of the program.</p>
 						        <p>      </p>
 				                   	<ul class="actions">
-					          		<li><a href="keygen.html?mode=rsa" class="button alt" style="text-align:center">Generate RSA Keypair</a></li>
+					          		<li><a href="keygen.html?mode=rsa" onclick="showWait()" class="button alt" style="text-align:center">Generate RSA Keypair</a></li>
 					                </ul>
 						</div>
 						<div>
 							<header>
 								<h3>Unsure?</h3>
 							</header>
-							<p>If you are unsure, just generate both. You can delete them if not needed.</p>
+							<p>If you are unsure, generate both. You can delete any one of them later if not needed. RSA keypair generation takes a peroid of time before the files are completely generated.</p>
 						</div>
                                                 <div>
 							<header>
 								<h3>Generate AES Keyfiles</h3>
 							</header>
-							<p>This function would produce key.txt and iv.txt in the directory of the program.</p>
+							<p>Generates key.txt and iv.txt in the directory of the program.</p>
 						        <p>      </p>
 				                   	<ul class="actions">
 					          		<li><a href="keygen.html?mode=aes" class="button alt" style="text-align:center">Generate AES keyfiles</a></li>
