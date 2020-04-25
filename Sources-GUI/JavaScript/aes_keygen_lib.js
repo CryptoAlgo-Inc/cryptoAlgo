@@ -17,8 +17,5 @@ auto: function() {
     console.log('█             Generation of AES keyfiles complete                █');
     console.log('█              Thank you for using this program!                 █');
     console.log('██████████████████████████████████████████████████████████████████');
-    setTimeout(function() {
-        process.exit();
-    }, 2500);
 }
 };

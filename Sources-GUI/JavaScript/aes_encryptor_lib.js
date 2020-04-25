@@ -13,7 +13,7 @@ function encrypt(text, key, iv) {
 }
 
 module.exports = {
-auto: function() {
+auto: function(text) {
     const readline = require('readline').createInterface({
         input: process.stdin,
         output: process.stdout
@@ -23,24 +23,14 @@ auto: function() {
     const iv_in = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
     const key = Buffer.from(key_in, 'hex');
     const iv = Buffer.from(iv_in, 'hex');
-    console.log('██████████████████████████████████████████████████████████████████');
-    readline.question('█          Please key in the message to be encrypted             █\n', msg => {
-        console.log('Key: ', key);
-        console.log('IV :', iv);
-        console.log('█                        Encrypting...                           █');
-        try {
-            console.log('Encrypted text: ', encrypt(msg, key, iv));
-        } catch(e) {
-            console.log(e);
-            console.log('Error while encrypting message. Ensure that the AES keyfiles are valid and the encrypted message is not corrupted.');
-        }
-        console.log('█             Thank you for using the encryptor!                 █');
-        console.log('█         This windows will auto-close in 10 seconds.            █');
-        console.log('██████████████████████████████████████████████████████████████████');
-        readline.close();
-        setTimeout(function() {
-            process.exit();
-        }, 10000);
-    });
+    console.log('Key: ', key);
+    console.log('IV :', iv);
+    console.log('█                        Encrypting...                           █');
+    try {
+        console.log('Encrypted text: ', encrypt(text, key, iv));
+    } catch(e) {
+        console.log(e);
+        console.log('Error while encrypting message. Ensure that the AES keyfiles are valid and the encrypted message is not corrupted.');
+    }
 }
 }
