@@ -1,12 +1,31 @@
-@charset "UTF-8";
-@import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Taviraj:300,400,700,300i,400i,700i");
+<!DOCTYPE HTML>
+<html>
+	<head>
+                <link rel="manifest" href="manifest.json" />
+                <link rel="apple-touch-icon" href="images/apple-icon.png">
+                <meta name="theme-color" content="#313131"/>
+                <html lang="en">
+		<link rel="icon" href="error.ico" type="image/x-icon" />
+		<title>CryptoAlgo | Error 404</title>
+                <meta name="description" content="Data encryption with AES and RSA - 404 Error">
+                <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, contact, developer">
+                <meta name="author" content="CryptoAlgro">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+        
+                <style>
+                @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Taviraj:300,400,700,300i,400i,700i&display=swap");
 
-/*
-	Transitive by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
+/* Remove reCaptcha badge */
+.grecaptcha-badge{
+	visibility: collapse !important;  
+}
 
 /* Reset */
 
@@ -1568,7 +1587,7 @@
 	}
 
 	body {
-		background: #fff;
+		background: #121212;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1629,7 +1648,7 @@
 		}
 
 	body {
-		background-color: #fff;
+		background-color: #121212;
 		color: #444;
 	}
 
@@ -1638,6 +1657,7 @@
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
+                font-display: swap;
 	}
 
 	a {
@@ -1727,6 +1747,7 @@
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
+                font-display: swap;
 	}
 
 	pre {
@@ -1734,6 +1755,7 @@
 		font-family: "Courier New", monospace;
 		font-size: 0.9rem;
 		margin: 0 0 2rem 0;
+                font-display: swap;
 	}
 
 		pre code {
@@ -1770,7 +1792,7 @@
 	}
 
 	a {
-		color: #5AA6ED;
+		color: #5F5F5F;
 	}
 
 	strong, b {
@@ -1778,7 +1800,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #555;
+		color: #CECECE;
 	}
 
 	blockquote {
@@ -1786,7 +1808,7 @@
 	}
 
 	code {
-		background: rgba(144, 144, 144, 0.075);
+		background: #5F5F5F;
 		border-color: rgba(144, 144, 144, 0.25);
 	}
 
@@ -1798,7 +1820,7 @@
 
 	.box {
 		margin-bottom: 2rem;
-		background: #FFF;
+		background: #121212;
 	}
 
 		.box .content {
@@ -1933,7 +1955,7 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color: #f2f2f2;
+		background-color: #9F9F9F;
 		color: #000 !important;
 	}
 
@@ -1942,7 +1964,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: white;
+			background-color: grey;
 		}
 
 		input[type="submit"]:active,
@@ -1950,7 +1972,7 @@
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: #e5e5e5;
+			background-color: #9F9F9F;
 		}
 
 		input[type="submit"].alt,
@@ -1960,7 +1982,7 @@
 		.button.alt {
 			background-color: transparent;
 			box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
-			color: #555 !important;
+			color: #FFFFFF !important;
 		}
 
 			input[type="submit"].alt:hover,
@@ -1968,7 +1990,7 @@
 			input[type="button"].alt:hover,
 			button.alt:hover,
 			.button.alt:hover {
-				background-color: rgba(144, 144, 144, 0.075);
+				background-color: rgba(144, 144, 144, 0.2);
 			}
 
 			input[type="submit"].alt:active,
@@ -1992,7 +2014,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #5AA6ED;
+			background-color: #2B2B2B;
 			color: #ffffff !important;
 		}
 
@@ -2001,7 +2023,7 @@
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #71b2f0;
+				background-color: #3D3D3D;
 			}
 
 			input[type="submit"].special:active,
@@ -2009,7 +2031,7 @@
 			input[type="button"].special:active,
 			button.special:active,
 			.button.special:active {
-				background-color: #439aea;
+				background-color: #3D3D3D;
 			}
 
 /* Form */
@@ -2088,7 +2110,6 @@
 		.select-wrapper:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -2152,7 +2173,6 @@
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -2287,7 +2307,6 @@
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -2867,7 +2886,7 @@
 			}
 
 		.wrapper.style2 {
-			background-color: #f2f2f2;
+			background-color: #212121;
 			color: #a6a6a6;
 		}
 
@@ -2884,7 +2903,7 @@
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #000;
+				color: #fff;
 			}
 
 			.wrapper.style2 blockquote {
@@ -2920,7 +2939,7 @@
 				.wrapper.style2 .button.alt {
 					background-color: transparent;
 					box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15);
-					color: #000 !important;
+					color: #ffffff !important;
 				}
 
 					.wrapper.style2 input[type="submit"].alt:hover,
@@ -2952,7 +2971,7 @@
 				.wrapper.style2 input[type="button"].special,
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
-					background-color: #5AA6ED;
+					background-color: #212121;
 					color: #ffffff !important;
 				}
 
@@ -2990,8 +3009,8 @@
 				.wrapper.style2 input[type="email"]:focus,
 				.wrapper.style2 select:focus,
 				.wrapper.style2 textarea:focus {
-					border-color: #5AA6ED;
-					box-shadow: 0 0 0 1px #5AA6ED;
+					border-color: #525252;
+					box-shadow: 0 0 0 1px #525252;
 				}
 
 			.wrapper.style2 .select-wrapper:before {
@@ -3011,15 +3030,15 @@
 
 			.wrapper.style2 input[type="checkbox"]:checked + label:before,
 			.wrapper.style2 input[type="radio"]:checked + label:before {
-				background-color: #5AA6ED;
-				border-color: #5AA6ED;
+				background-color: #525252;
+				border-color: #525252;
 				color: #ffffff;
 			}
 
 			.wrapper.style2 input[type="checkbox"]:focus + label:before,
 			.wrapper.style2 input[type="radio"]:focus + label:before {
-				border-color: #5AA6ED;
-				box-shadow: 0 0 0 1px #5AA6ED;
+				border-color: #525252;
+				box-shadow: 0 0 0 1px #525252;
 			}
 
 			.wrapper.style2 ::-webkit-input-placeholder {
@@ -3077,7 +3096,7 @@
 		.wrapper.style3 {
 			background-color: #000;
 			color: #bfbfbf;
-			background-image: url(../../images/bg.jpg);
+			background-image: url(../../images/bg.webp);
 			background-size: cover;
 			background-attachment: fixed;
 			background-position: center;
@@ -3089,7 +3108,7 @@
 			}
 
 			.wrapper.style3 a {
-				color: #5AA6ED;
+				color: #b2b2b2;
 			}
 
 			.wrapper.style3 strong, .wrapper.style3 b {
@@ -3181,7 +3200,7 @@
 				.wrapper.style3 input[type="button"].special,
 				.wrapper.style3 button.special,
 				.wrapper.style3 .button.special {
-					background-color: #5AA6ED;
+					background-color: #2B2B2B;
 					color: #ffffff !important;
 				}
 
@@ -3190,7 +3209,7 @@
 					.wrapper.style3 input[type="button"].special:hover,
 					.wrapper.style3 button.special:hover,
 					.wrapper.style3 .button.special:hover {
-						background-color: #71b2f0;
+						background-color: #3D3D3D;
 					}
 
 					.wrapper.style3 input[type="submit"].special:active,
@@ -3198,7 +3217,7 @@
 					.wrapper.style3 input[type="button"].special:active,
 					.wrapper.style3 button.special:active,
 					.wrapper.style3 .button.special:active {
-						background-color: #439aea;
+						background-color: #3D3D3D;
 					}
 
 			.wrapper.style3 label {
@@ -3219,8 +3238,8 @@
 				.wrapper.style3 input[type="email"]:focus,
 				.wrapper.style3 select:focus,
 				.wrapper.style3 textarea:focus {
-					border-color: #5AA6ED;
-					box-shadow: 0 0 0 1px #5AA6ED;
+					border-color: #525252;
+					box-shadow: 0 0 0 1px #525252;
 				}
 
 			.wrapper.style3 .select-wrapper:before {
@@ -3240,7 +3259,7 @@
 
 			.wrapper.style3 input[type="checkbox"]:checked + label:before,
 			.wrapper.style3 input[type="radio"]:checked + label:before {
-				background-color: #5AA6ED;
+				background-color: #525252;
 				border-color: #5AA6ED;
 				color: #ffffff;
 			}
@@ -3470,10 +3489,9 @@
 			}
 
 				#header > a[href="#menu"]:before {
-					content: "";
+					content: "☰";
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
-					font-family: FontAwesome;
 					font-style: normal;
 					font-weight: normal;
 					text-transform: none !important;
@@ -3651,10 +3669,9 @@
 		}
 
 			#menu .close:before {
-				content: "";
+				content: "✕";
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -3712,7 +3729,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/banner.webp");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -3869,8 +3886,8 @@
 /* Footer */
 
 	#footer {
-		padding: 6rem 0 4rem 0 ;
-		background: #f2f2f2;
+		padding: 1rem 0 0rem 0 ;
+		background: #121212;
 	}
 
 		#footer .copyright {
@@ -3884,7 +3901,7 @@
 		@media screen and (max-width: 736px) {
 
 			#footer {
-				padding: 3rem 0 1rem 0 ;
+				padding: 1rem 0 0rem 0 ;
 			}
 
 		}
@@ -3984,7 +4001,7 @@
 				justify-content: center;
 				font-size: 3.5rem;
 				background: #fff;
-				color: #5AA6ED;
+				color: #525252;
 				width: 8rem;
 				height: 8rem;
 				border-radius: 100%;
@@ -4227,3 +4244,64 @@
 			}
 
 		}
+                </style>
+
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="/index.html">Crypto<span>Algo</span></a></div>
+			</header>
+
+		<!-- One -->
+			<section id="banner" data-video="images/banner">
+				<div class="inner">
+					<header class="align-center">
+						<h1>This was not the page you were looking for.</h1>
+                                                <h2>Error 404 - Not found</h2>
+                                                <p>Feel free to contact me at <a href="mailto:cryptoalgro@gmail.com">cryptoalgro@gmail.com</a> to report this error.</p>
+						<div class="inner">
+						        <p>      </p>
+				                   	<ul class="actions">
+					          		<li><a href="mailto:cryptoalgro@gmail.com" class="button alt" style="text-align:center">Contact Me</a></li>
+                                                                <li><a href="/index.html" class="button alt" style="text-align:center">Homepage</a></li>
+					                </ul>
+				        	</div>
+					</header>
+
+				</div>
+			</section>
+
+				<!-- Footer -->
+			<footer id="footer" class="wrapper">
+				<div class="inner">
+					<div class="copyright">
+						&copy; This project is maintained by @CryptoAlgorithm on GitHub.
+					</div>
+				</div>
+			</footer>
+		
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+                <script>
+                if('serviceWorker' in navigator) {
+                        navigator.serviceWorker
+                                .register('sw.js')
+                                .then(function() { console.log("Service Worker Registered"); });
+                }
+                </script>
+
+                </script>
+                <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
+                <script>
+                grecaptcha.ready(function() {
+                        grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'contact'})
+                });
+                </script>
+        </body>
+</html>
