@@ -1636,6 +1636,7 @@
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
+                font-display: swap;
 	}
 
 	a {
@@ -1725,6 +1726,7 @@
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
+                font-display: swap;
 	}
 
 	pre {
@@ -1732,6 +1734,7 @@
 		font-family: "Courier New", monospace;
 		font-size: 0.9rem;
 		margin: 0 0 2rem 0;
+                font-display: swap;
 	}
 
 		pre code {

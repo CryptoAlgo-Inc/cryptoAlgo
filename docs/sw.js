@@ -22,6 +22,7 @@ self.addEventListener('install', e => {
        'images/pic02.webp',
        'images/pic03.webp',
        'images/icon.png',
+       'documentation/CryptoAlgo%20Documentation%20V0.5.pdf'
       ])
           .then(() => self.skipWaiting());
     })
