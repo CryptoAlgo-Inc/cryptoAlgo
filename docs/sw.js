@@ -1,4 +1,4 @@
-const version = '0.6.18';
+const version = '1';
 const cacheName = `CryptoAlgo-${version}`;
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -23,7 +23,7 @@ self.addEventListener('install', e => {
        'images/pic02.webp',
        'images/pic03.webp',
        'images/icon.png',
-       'Documentation/CryptoAlgo%20Documentation%20V0.5.pdf'
+       'Documentation/CryptoAlgo Documentation V0.5.pdf'
       ])
           .then(() => self.skipWaiting());
     })
