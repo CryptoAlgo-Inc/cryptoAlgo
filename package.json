@@ -1,0 +1,10 @@
+{
+	"name": "CryptoAlgo GUI",
+	"version": "1.8 Alpha 20-GUI",
+	"main": "Sources-GUI/serverProduction.js",
+	"bin": "Sources-GUI/serverProduction.js",
+	"author": "CryptoAlgo",
+    "pkg": {
+	    "assets": ["./**/**"]
+    }
+}
