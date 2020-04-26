@@ -141,4 +141,4 @@ server.listen(8080);
 console.log('Listening on port 8080');
 console.log('Opening embedded Chrome in Application mode...');
 var cp = require("child_process");
-cp.exec('start chrome.exe --app="http://localhost:8080"');
+cp.exec('start chrome.exe --start maximized --app="http://localhost:8080"');
