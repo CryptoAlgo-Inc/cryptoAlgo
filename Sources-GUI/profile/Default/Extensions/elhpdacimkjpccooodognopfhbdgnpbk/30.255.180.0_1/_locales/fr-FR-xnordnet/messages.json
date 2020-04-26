@@ -1,0 +1,14 @@
+{
+    "ExtensionName": {
+        "message": "Security Toolbar",
+        "description": ""
+    },
+    "ExtensionDescription": {
+        "message": "Votre protection sur Internet avec l'extension de Nordnet",
+        "description": ""
+    },
+    "ToolbarButtonText": {
+        "message": "Security Toolbar",
+        "description": ""
+    }
+}

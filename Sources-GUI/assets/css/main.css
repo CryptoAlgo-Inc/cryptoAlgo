@@ -2971,7 +2971,7 @@
 					}
 
 			.wrapper.style2 label {
-				color: #000;
+				color: #FFF;
 			}
 
 			.wrapper.style2 input[type="text"],
@@ -3358,7 +3358,7 @@
 /* Header */
 
 	body.subpage {
-		padding-top: 3.125em;
+		padding-top: 0em;
 	}
 
 	@-moz-keyframes reveal-header {
@@ -3537,7 +3537,7 @@
 	@media screen and (max-width: 980px) {
 
 		body.subpage {
-			padding-top: 44px;
+			padding-top: 0px;
 		}
 
 		#header {

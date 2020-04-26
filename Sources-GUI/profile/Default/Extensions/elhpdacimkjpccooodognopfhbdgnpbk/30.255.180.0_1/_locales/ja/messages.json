@@ -1,0 +1,14 @@
+{
+   "ExtensionDescription": {
+      "description": "",
+      "message": "インターネットを安全に使用するためのカスペルスキーの拡張機能"
+   },
+   "ExtensionName": {
+      "description": "",
+      "message": "カスペルスキー プラグイン"
+   },
+   "ToolbarButtonText": {
+      "description": "",
+      "message": "カスペルスキー プラグイン"
+   }
+}

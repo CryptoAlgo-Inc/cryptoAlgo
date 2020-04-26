@@ -13,12 +13,19 @@ function encrypt(toEncrypt, relativeOrAbsolutePathToPublicKey) {
 
 module.exports = {
 auto: function() {
-    const iv = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
-    const key = fs.readFileSync(path.resolve('key.txt'), 'utf8');
+    try {
+        const iv = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
+        const key = fs.readFileSync(path.resolve('key.txt'), 'utf8');
+    } catch(e) {
+        console.log('Could not open AES keyfiles.')
+        return true;
+    }
     // Autoencrypt the data
     console.log('██████████████████████████████████████████████████████████████████');
     console.log('█ Welcome to the RSA encrypter written partially by Vincent Kwok █');
     console.log('█                         Encrypting...                          █');
+    const iv = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
+    const key = fs.readFileSync(path.resolve('key.txt'), 'utf8');
     const enc_key = encrypt(key, 'public.pem');
     const enc_iv = encrypt(iv, 'public.pem');
     console.log('█                           Writing...                           █');
@@ -27,8 +34,5 @@ auto: function() {
     console.log('█                            Done!                               █');
     console.log('█               Thank you for using the encryptor                █');
     console.log('██████████████████████████████████████████████████████████████████\x1b[0m');
-    setTimeout(function() {
-        process.exit();
-    }, 2500);
 }
 };

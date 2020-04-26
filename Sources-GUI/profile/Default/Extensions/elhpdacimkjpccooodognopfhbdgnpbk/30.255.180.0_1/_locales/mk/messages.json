@@ -1,0 +1,14 @@
+{
+    "ExtensionName": {
+        "message": "Kaspersky Protection",
+        "description": ""
+    },
+    "ExtensionDescription": {
+        "message": "Ваша заштита на интернет со додаток од Kaspersky Lab",
+        "description": ""
+    },
+    "ToolbarButtonText": {
+        "message": "Kaspersky Protection",
+        "description": ""
+    }
+}

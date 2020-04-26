@@ -14,11 +14,13 @@ function encrypt(text, key, iv) {
 
 module.exports = {
 auto: function(text) {
-    const readline = require('readline').createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
+    try {
+        const key_in = fs.readFileSync(path.resolve('key.txt'), 'utf8');
+        const iv_in = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
+    } catch(e) {
+        console.log('Errors were encountered.');
+        return true;
+    }
     const key_in = fs.readFileSync(path.resolve('key.txt'), 'utf8');
     const iv_in = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
     const key = Buffer.from(key_in, 'hex');
@@ -27,7 +29,7 @@ auto: function(text) {
     console.log('IV :', iv);
     console.log('█                        Encrypting...                           █');
     try {
-        console.log('Encrypted text: ', encrypt(text, key, iv));
+        return encrypt(text, key, iv);
     } catch(e) {
         console.log(e);
         console.log('Error while encrypting message. Ensure that the AES keyfiles are valid and the encrypted message is not corrupted.');

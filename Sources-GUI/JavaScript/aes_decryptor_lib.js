@@ -15,14 +15,21 @@ function decrypt(text, key_in, iv_in) {
 
 module.exports = {
 auto: function(text) {
-    const key_in = fs.readFileSync(path.resolve('key.txt'), 'utf8');
-    const iv_in = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
-    const key = Buffer.from(key_in, 'hex');
-    const iv = Buffer.from(iv_in, 'hex');
+    try {
+        const key_in = fs.readFileSync(path.resolve('key.txt'), 'utf8');
+        const iv_in = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
+        const key = Buffer.from(key_in, 'hex');
+        const iv = Buffer.from(iv_in, 'hex');
+    } catch(e) {
+        console.log('Errors were encountered.');
+        return true;
+    }
     try {
         return decrypt(text, key, iv);
     } catch(e) {
         console.log('Error while decrypting message. Ensure that the AES keyfiles are valid and the encrypted message is not corrupted.');
+        return true;
     }
+    return false;
 }
 }

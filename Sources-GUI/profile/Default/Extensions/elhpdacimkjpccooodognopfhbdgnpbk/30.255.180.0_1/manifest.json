@@ -1,0 +1,37 @@
+{
+   "background": {
+      "page": "/background/main.html",
+      "persistent": true
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "images/button/inactive_19.png",
+         "38": "images/button/inactive_38.png"
+      },
+      "default_popup": "/popup/offline_popup.html",
+      "default_title": "__MSG_ToolbarButtonText__"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "/common/shims.js", "/common/defaults.js", "/common/tracing.js", "/common/unique_id.js", "/content/content_plugin.js", "/content/snapshot_resources.js", "/content/websocket_proxy_dispatcher.js", "/content/websocket_proxy.js", "/content/api_injection.js", "/content/xmlhttprequest_proxy_dispatcher.js", "/content/xmlhttprequest_proxy.js", "/content/product_info.js", "/content/script_injection.js", "/snapshot/script.main.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self'; connect-src 'self' https://*.scr.kaspersky-labs.com wss://*.scr.kaspersky-labs.com http://*.scr.kaspersky-labs.com ws://*.scr.kaspersky-labs.com; object-src 'self'",
+   "default_locale": "en",
+   "description": "__MSG_ExtensionDescription__",
+   "icons": {
+      "128": "images/icon_128.png",
+      "16": "images/icon_16.png",
+      "32": "images/icon_32.png",
+      "48": "images/icon_48.png",
+      "64": "images/icon_64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApTqUyl0UmdK5sSXnut1pK180FCBDA6s0eiy3uR2jet95LqvwWUQYfcuWpsxXGnaodrpWEnaizlwJIhX+pDCV7kevHi53EnweYOa6946lde/qWA6zv6n5SqVwmB2uM/dR/Pdz4dMsbfMr3wp7pflFC+iYu/fGwLgGZsHuqumrIz0Vfa3cE11IyXTiKr+YqcF04BJhbAZPpn1HlFjNQJSySEgrpmFH/7vyEcfg/ehIIz/JsBEenARvRA2OfhTRz5e7cGiKoHuZuWmseCZo5XKrUAr3GZsB/a4k5gImoQNtORRSoCT40SVmbT289rbdkyR4suKY3H0b1PRCILCQhU8wOQIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_ExtensionName__",
+   "permissions": [ "nativeMessaging", "management", "cookies", "contextMenus", "webRequest", "webRequestBlocking", "\u003Call_urls>", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "30.255.180.0",
+   "web_accessible_resources": [ "snapshot_resources/*", "background/ext_remover.html" ]
+}

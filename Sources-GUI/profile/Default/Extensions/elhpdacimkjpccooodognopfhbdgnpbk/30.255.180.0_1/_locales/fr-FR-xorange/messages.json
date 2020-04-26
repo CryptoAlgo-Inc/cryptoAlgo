@@ -1,0 +1,14 @@
+{
+    "ExtensionName": {
+        "message": "Security Toolbar",
+        "description": ""
+    },
+    "ExtensionDescription": {
+        "message": "Votre protection sur Internet avec l'extension d'Orange",
+        "description": ""
+    },
+    "ToolbarButtonText": {
+        "message": "Security Toolbar",
+        "description": ""
+    }
+}
