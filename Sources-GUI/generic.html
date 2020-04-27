@@ -17,34 +17,8 @@
                 <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
-<script>
-function close_window() {
-  if (confirm("Close Window?")) {
-    close();
-  }
-}
 
-function httpGetAsync(url, callback)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
-}
-
-function updateSpace() {
-    var ps = document.getElementsByClassName("space");
-    for(var i = 0, len = ps.length; i < len; i++) {
-        ps[i].innerHTML = "Hello World!";
-    }
-}
-
-setTimeout(updateSpace, 1000);
-</script>
-    <body class="subpage">
+    <body class="subpage" ondragstart="return false;" ondrop="return false;">
 
         <!-- Header -->
             <header id="header">
@@ -61,7 +35,7 @@ setTimeout(updateSpace, 1000);
                     <li><a href="headAlgo.html">Decryption/Encryption of header</a></li>
                                         <li><a href="file.html">Decryption/Encryption of files</a></li>
                                         <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="javascript:close_window();">Close App</a></li>
+                                        <li><a href="info.html">Build Infomation</a></li>
                     <li>Beta/Alpha Version:</li>
                     <li>V1.8 Alpha 20</li>
                 </ul>

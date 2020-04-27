@@ -142,6 +142,3 @@ if (document.addEventListener) {
     window.event.returnValue = false;
   });
 }
-
-// Remove the 'ghost image' problem
-document.setAttribute('draggable', false);
