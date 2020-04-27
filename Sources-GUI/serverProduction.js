@@ -147,7 +147,7 @@ try {
 }
 
 console.log('Listening on port', port);
-console.log('Opening embedded Chrome in Application mode...');
+console.log('Opening embedded Blink engine in Application mode...');
 var cp = require("child_process");
 cp.exec('start cryptoalgo.exe --force-dark-mode --start maximized --app="http://localhost:' + port + '"');
 
