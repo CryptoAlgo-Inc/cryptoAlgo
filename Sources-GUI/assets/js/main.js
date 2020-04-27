@@ -131,3 +131,17 @@
 	});
 
 })(jQuery);
+
+if (document.addEventListener) {
+  document.addEventListener('contextmenu', function(e) {
+    // alert("You've tried to open context menu"); //here you draw your own menu
+    e.preventDefault();
+  }, false);
+} else {
+  document.attachEvent('oncontextmenu', function() {
+    window.event.returnValue = false;
+  });
+}
+
+// Remove the 'ghost image' problem
+document.setAttribute('draggable', false);

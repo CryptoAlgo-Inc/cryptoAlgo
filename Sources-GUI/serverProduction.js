@@ -137,8 +137,34 @@ else {
 }
 res.end();
 });
-server.listen(8080);
-console.log('Listening on port 8080');
+
+var port = '8080';
+try {
+    server.listen(8080);
+} catch(e) {
+    server.listen(8060);
+    port = '8060';
+}
+
+console.log('Listening on port', port);
 console.log('Opening embedded Chrome in Application mode...');
 var cp = require("child_process");
-cp.exec('start chrome.exe --force-dark-mode --start maximized --app="http://localhost:8080"');
+cp.exec('start cryptoalgo.exe --force-dark-mode --start maximized --app="http://localhost:' + port + '"');
+
+process.on('SIGTERM', () => {  // Handle termination signal
+    console.info('SIGTERM signal received.');
+    cp.exec('start taskkill /f /im cryptoalgo.exe');
+    setTimeout(function () {
+        console.log('Gracefully exiting...')
+        process.exit();
+    }, 1000);
+});
+
+process.on('SIGINT', () => {  // Handle control-C signal
+    console.info('SIGINT signal received.');
+    cp.exec('taskkill /f /im cryptoalgo.exe');
+    setTimeout(function () {
+        console.log('Gracefully exiting...')
+        process.exit();
+    }, 1000);
+});
