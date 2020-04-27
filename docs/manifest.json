@@ -4,29 +4,14 @@
   "description": "Encrypt and decrypt data with AES and RSA",
   "icons": [
       {
-        "src": "images/256x256.png",
+        "src": "images/icon.png",
         "type": "image/png",
-        "sizes": "256x256"
+        "sizes": "512x512"
       },
       {
-        "src": "images/48x48.png",
+        "src": "images/apple-icon.png",
         "type": "image/png",
-        "sizes": "48x48"
-	  },
-      {
-        "src": "images/32x32.png",
-        "type": "image/png",
-        "sizes": "32x32"
-	  },
-      {
-        "src": "images/24x24.png",
-        "type": "image/png",
-        "sizes": "24x24"
-	  },
-      {
-        "src": "images/16x16.png",
-        "type": "image/png",
-        "sizes": "16x16"
+        "sizes": "180x180"
 	  },
       {
         "src": "favicon.ico",
