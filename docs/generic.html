@@ -17,7 +17,17 @@
                 <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body class="subpage">
+
+	<script src="assets/js/main.js"></script>
+<script>
+    function removeTag() {
+        window.setTimeout(function() {
+            $('body').removeClass('is-loading');
+        }, 100);
+    }
+</script>
+
+	<body class="subpage" onload="removeTag()">
 
 		<!-- Header -->
 			<header id="header">

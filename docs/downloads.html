@@ -17,6 +17,17 @@
                 <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+
+	<script src="assets/js/main.js"></script>
+
+	<script>
+    function removeTag() {
+        window.setTimeout(function() {
+            $('body').removeClass('is-loading');
+        }, 100);
+    }
+</script>
+
 	<body>
 
 		<!-- Header -->
@@ -130,7 +141,6 @@
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
                 <script>
                 if('serviceWorker' in navigator) {
                         navigator.serviceWorker
