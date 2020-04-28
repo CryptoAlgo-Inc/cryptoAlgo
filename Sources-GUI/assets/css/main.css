@@ -6,16 +6,12 @@
 	visibility: collapse !important;  
 }
 
-
-/* Remove selection color */
-::selection {
-    color: none;
-    background: none;
-}
-/* For Mozilla Firefox */
-::-moz-selection {
-    color: none;
-    background: none;
+/* Disable selection */
+h1, h2, h3, input, textrea {
+ -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* Reset */
@@ -2226,7 +2222,7 @@
 	input[type="email"],
 	select,
 	textarea {
-		background: #FFFFFF;
+		background: rgba(144, 144, 144, 0.075);
 		border-color: rgba(144, 144, 144, 0.25);
 	}
 
@@ -2658,7 +2654,7 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 6rem 0 4rem 0 ;
+		padding: 1rem 0 1rem 0 ;
 		position: relative;
 		margin: 0;
 	}
@@ -2882,7 +2878,7 @@
 		}
 
 			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
-				color: #FFFFFF;
+				color: #000;
 			}
 
 			.wrapper.style2 a {
@@ -2919,7 +2915,7 @@
 			.wrapper.style2 input[type="button"],
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
-				background-color: #272727;
+				background-color: #000;
 				color: #f2f2f2 !important;
 			}
 
@@ -2983,7 +2979,7 @@
 					}
 
 			.wrapper.style2 label {
-				color: #FFF;
+				color: #000;
 			}
 
 			.wrapper.style2 input[type="text"],
@@ -2991,8 +2987,8 @@
 			.wrapper.style2 input[type="email"],
 			.wrapper.style2 select,
 			.wrapper.style2 textarea {
-				background: rgba(0, 0, 0, 0.3607843137254902);
-				border-color: rgba(255, 255, 255, 0.48);
+				background: rgb(115, 176, 187);
+				border-color: rgba(0, 0, 0, 0.15);
 			}
 
 				.wrapper.style2 input[type="text"]:focus,
@@ -3370,7 +3366,7 @@
 /* Header */
 
 	body.subpage {
-		padding-top: 0em;
+		padding-top: 3.125em;
 	}
 
 	@-moz-keyframes reveal-header {
@@ -3549,7 +3545,7 @@
 	@media screen and (max-width: 980px) {
 
 		body.subpage {
-			padding-top: 0px;
+			padding-top: 44px;
 		}
 
 		#header {
@@ -3702,6 +3698,23 @@
 
 		}
 
+video#bgvid { 
+    position: fixed;
+    top: 42%;
+    left: 50%;
+    min-width: 80%;
+    min-height: 80%;
+    width: 130%;
+    height: 130%;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover; 
+}
+
 /* Banner */
 
 	#banner {
@@ -3720,7 +3733,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.webp");
+		/*background-image: url("../../images/banner.webp");*/
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -3877,7 +3890,6 @@
 /* Footer */
 
 	#footer {
-		padding: 1rem 0 0rem 0 ;
 		background: #121212;
 	}
 

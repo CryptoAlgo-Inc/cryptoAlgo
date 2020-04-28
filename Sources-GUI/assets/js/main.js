@@ -85,16 +85,11 @@
                     var video = $banner.data('video');
 
                     if (video)
-                        $window.on('load.banner', function() {
+                        $window.on('load.one', function() {
 
                             // Disable banner load event (so it doesn't fire again).
                                 $window.off('load.banner');
 
-                            // Append video if supported.
-                                if (!skel.vars.mobile
-                                &&	!skel.breakpoint('large').active
-                                &&	skel.vars.IEVersion > 9)
-                                    $banner.append('<video autoplay loop><source src="' + video + '.mp4" type="video/mp4" /><source src="' + video + '.webm" type="video/webm" /></video>');
 
                         });
 

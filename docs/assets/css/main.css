@@ -2979,7 +2979,7 @@
 			.wrapper.style2 input[type="email"],
 			.wrapper.style2 select,
 			.wrapper.style2 textarea {
-				background: rgba(0, 0, 0, 0.075);
+				background: rgb(115, 176, 187);
 				border-color: rgba(0, 0, 0, 0.15);
 			}
 
