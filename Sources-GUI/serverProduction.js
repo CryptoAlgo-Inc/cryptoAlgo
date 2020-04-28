@@ -17,9 +17,13 @@ console.log(page);
 function renderOutput(input, firstFiller) {
     res.writeHead(200);
     res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /></head>');
-    res.write('<body class="subpage"><!-- Header --><header id="header" class="alt"><div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div><a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a></header>');
-    res.write('<nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li><li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li><li><a href="generic.html">Decryption/Encryption of text</a></li><li><a href="headAlgo.html">Decryption/Encryption of header</a></li><li><a href="file.html">Decryption/Encryption of files</a></li>');
-    res.write('<li><a href="contact.html">Contact</a></li><li>Beta/Alpha Version:</li><li>V1.8 Alpha 20</li></ul></nav><section id="banner" data-video="images/banner"><div class="inner"><h1>Success</h1><p>' + firstFiller + ' text: ' + input + '</p><a href="index.html" class="button alt">Home</a></div></section></body></html>');
+    res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}</script>");
+    res.write('<style>p { -webkit-user-select: auto;    -moz-user-select: auto;    -ms-user-select: auto;    user-select: auto;}</style>');
+    res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1>Success</h1><p>' + firstFiller + ' text: ' + input + '</p><a href="index.html" class="button alt">Home</a></div></section>');
+    res.write('<!-- Header --><header id="header" class="alt"><div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div><a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a></header>');
+    res.write('<nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li><li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li><li><a href="generic.html">Decryption/Encryption of text</a></li><li><a href="headAlgo.html">');
+    res.write('<li><a href="contact.html">Contact</a></li><li>Beta/Alpha Version:</li><li>V1.8 Alpha 20</li></ul>');
+    res.write('Decryption/Encryption of header</a></li><li><a href="file.html">Decryption/Encryption of files</a></li></body></html>');
     res.write('<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>');
 }
 
@@ -114,7 +118,7 @@ else {
         else if(queryObject['encIn']) {
             console.log(queryObject['encIn']);
             encrypted = queryObject['encIn']
-            if(aes_decryptor.auto(encrypted)) {
+            if(aes_decryptor.auto(encrypted) == true) {
                 res.writeHead(500);
                 const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
                 res.write(errorPg); 
@@ -148,11 +152,12 @@ try {
 
 console.log('Listening on port', port);
 console.log('Opening embedded Blink engine in Application mode...');
-var cp = require("child_process");
-browser = path.join(__dirname, 'cryptoalgo.exe');
-console.log(browser);
-cp.exec('start C:\snapshot\Sources-GUI\cryptoalgo.exe --force-dark-mode --start maximized --disable-gpu --app="http://localhost:' + port + '"', function callback(error, stdout, stderr){
-    console.log('Window has been closed.');
-    //console.log('Exiting...');
-    //process.exit();
+var child = require('child_process').execFile;
+var executablePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+var parameters = ["--app=http://localhost:8080"];
+
+child(executablePath, parameters, function(err, data) {
+    console.log('Window has been closed');
+    console.log('Exiting...');
+    process.exit();
 });

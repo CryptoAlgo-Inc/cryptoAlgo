@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="assets/css/main.css"/>
+    </head>
+    <script>
+        function removeTag() {
+            window.setTimeout(function() {
+                $('body').removeClass('subpage is-loading');
+            }, 100);
+        }
+    </script>
+    <style>
+        p {
+            -webkit-user-select: auto;
+            -moz-user-select: auto;
+            -ms-user-select: auto;
+            user-select: auto;
+        }
+    </style>
+    <body class="subpage" onload="removeTag()">
+            <section id="banner" data-video="images/banner">
+                <div class="inner">
+                    <h1>Success</h1>
+                    <p>Decrypted text: Test</p>
+                    <a href="index.html" class="button alt">Home</a>
+                </div>
+            </section>
+        <!-- Header -->
+        <header id="header" class="alt">
+            <div class="logo">
+                <a href="index.html">
+                    Crypto<span>Algo</span>
+                </a>
+            </div>
+            <a href="#menu" class="toggle" alt="Open the menu">
+                <span>Menu</span>
+            </a>
+        </header>
+        <nav id="menu">
+            <ul class="links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="keygen.html">Generation of AES/RSA keyfiles</a>
+                </li>
+                <li>
+                    <a href="generic.html">Decryption/Encryption of text</a>
+                </li>
+                <li>
+                    <a href="headAlgo.html">Decryption/Encryption of header</a>
+                </li>
+                <li>
+                    <a href="file.html">Decryption/Encryption of files</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li>Beta/Alpha Version:</li>
+                <li>V1.8 Alpha 20</li>
+            </ul>
+    </body>
+</html>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
