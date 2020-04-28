@@ -11,3 +11,13 @@ You must make sure that they, too, receive or can get the source code.
 And you must show them these terms so they know their rights. 
 
 For more infomation, read the GPL V3 License above.
+
+Other credits: 
+#  Page banner background (Abstract spinning circles with 'C' icon)
+#  Thanks to www.atom.com for their webpage source code and vector files
+#  Abstract 'C' icon (Banner and favicon)
+#  Downloaded from "https://www.pinterest.com/pin/374361787761260813/"
+#  Download link:
+#  "https://i.pinimg.com/originals/20/c2/78/20c278877a32ce588854aa96f8207840.png"
+#  And stackexchange.com for their valuable help
+#  To all those who have helped me along the way: Thank you so much!
