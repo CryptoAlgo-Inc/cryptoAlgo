@@ -86,3 +86,28 @@ Some features may not be available.
 [0428/133910.936:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\chrome_watcher.dll: The specified module could not be found. (0x7E)
 [0428/133911.096:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
 Some features may not be available.
+[0428/163920.661:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\chrome_watcher.dll: The specified module could not be found. (0x7E)
+[0428/163920.813:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
+Some features may not be available.
+[0428/163944.071:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\chrome_watcher.dll: The specified module could not be found. (0x7E)
+[0428/163944.213:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
+Some features may not be available.
+[0428/163944.215:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\resources.pak
+Some features may not be available.
+[0428/163945.540:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
+Some features may not be available.
+[0428/163945.541:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\resources.pak
+Some features may not be available.
+[0428/164031.562:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\chrome_watcher.dll: The specified module could not be found. (0x7E)
+[0428/164031.713:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
+Some features may not be available.
+[0428/164031.715:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\resources.pak
+Some features may not be available.
+[0428/164032.027:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
+Some features may not be available.
+[0428/164032.028:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\resources.pak
+Some features may not be available.
+[0428/164041.137:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
+Some features may not be available.
+[0428/164041.138:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\resources.pak
+Some features may not be available.
