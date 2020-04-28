@@ -16,7 +16,7 @@ console.log(page);
 
 function renderOutput(input, firstFiller) {
     res.writeHead(200);
-    res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /></head>');
+    res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /><title>CryptoAlgo | ' + firstFiller + ' Text Output</title></head>');
     res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}</script>");
     res.write('<style>p { -webkit-user-select: auto;    -moz-user-select: auto;    -ms-user-select: auto;    user-select: auto;}</style>');
     res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1>Success</h1><p>' + firstFiller + ' text: ' + input + '</p><a href="index.html" class="button alt">Home</a></div></section>');

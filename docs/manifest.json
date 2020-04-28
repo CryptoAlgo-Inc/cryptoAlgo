@@ -4,6 +4,11 @@
   "description": "Encrypt and decrypt data with AES and RSA",
   "icons": [
       {
+        "src": "images/512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
         "src": "images/200x200.png",
         "type": "image/png",
         "sizes": "200x200"
