@@ -9,10 +9,8 @@ This program allows you to encrypt messages and keys using the RSA and AES algor
 
 Process is reversed to decrypt message.
 
-## Download the latest stable version here!
-
-[Download](https://app.box.com/s/mxm4sc3bqm1rh8nob2ruvr2e9b88hy2e)
-
-Downloads are kindly hosted by box.com (this message is not required by box)
+## Download the latest stable version from GitHub releases!
 
 ### To feedback, please email me at (cryptoalgro@gmail.com)
+
+Command to compile: pkg serverProduction.js --targets node13-win-x64 --config package.json
