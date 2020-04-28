@@ -4,10 +4,34 @@
   "description": "Encrypt and decrypt data with AES and RSA",
   "icons": [
       {
-        "src": "images/icon.png",
+        "src": "images/200x200.png",
         "type": "image/png",
-        "sizes": "512x512"
-      }
+        "sizes": "200x200"
+      },
+      {
+        "src": "images/48x48.png",
+        "type": "image/png",
+        "sizes": "48x48"
+	  },
+      {
+        "src": "images/32x32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+	  },
+      {
+        "src": "images/24x24.png",
+        "type": "image/png",
+        "sizes": "24x24"
+	  },
+      {
+        "src": "images/16x16.png",
+        "type": "image/png",
+        "sizes": "16x16"
+	  },
+      {
+        "src": "favicon.ico",
+        "type": "icon"
+	  }
   ],
   "start_url": "index.html",
   "scope": "/",
