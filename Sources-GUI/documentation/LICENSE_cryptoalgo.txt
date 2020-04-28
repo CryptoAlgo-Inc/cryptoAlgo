@@ -1,4 +1,5 @@
-                  CryptoAlgo License V0.5
+                       CryptoAlgo License
+                    Version 1, 29 April 2020
 
 CryptoAlgo is licensed under the GPL V3 License, which allows you to 
 redistribute the CryptoAlgo software in any way, but not modify it. 
@@ -9,6 +10,12 @@ you distribute copies of such a program, whether gratis or for a fee,
 you must pass on to the recipients the same freedoms that you received.
 You must make sure that they, too, receive or can get the source code.  
 And you must show them these terms so they know their rights. 
+
+######################################################################
+# I would like to emphasize should you take any part of my website,  #
+# you would have to credit the author of this program and would have #
+#          to include the relevant licenses in your media.           #
+######################################################################
 
 For more infomation, read the GPL V3 License above.
 
