@@ -148,14 +148,11 @@ try {
 
 console.log('Listening on port', port);
 console.log('Opening embedded Blink engine in Application mode...');
+var cp = require("child_process");
 browser = path.join(__dirname, 'cryptoalgo.exe');
 console.log(browser);
-var child = require('child_process').execFile;
-var executablePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-var parameters = ["--app=http://localhost:8080"];
-
-child(executablePath, parameters, function(err, data) {
-    console.log('Window has been closed');
-    console.log('Exiting...');
-    process.exit();
+cp.exec('start C:\snapshot\Sources-GUI\cryptoalgo.exe --force-dark-mode --start maximized --disable-gpu --app="http://localhost:' + port + '"', function callback(error, stdout, stderr){
+    console.log('Window has been closed.');
+    //console.log('Exiting...');
+    //process.exit();
 });
