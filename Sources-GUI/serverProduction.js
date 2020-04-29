@@ -20,9 +20,10 @@ if((requestsServed % 10) == 0) {
 function renderOutput(input, firstFiller) {
     res.writeHead(200);
     res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /><title>CryptoAlgo | ' + firstFiller + ' Text Output</title></head>');
-    res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}</script>");
-    res.write('<style>p { -webkit-user-select: auto;    -moz-user-select: auto;    -ms-user-select: auto;    user-select: auto;}</style>');
-    res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1>Success</h1><p>' + firstFiller + ' text: ' + input + '</p><a href="index.html" class="button alt">Home</a></div></section>');
+    res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}var text = '" + input + "';");
+    res.write("function copyText(){navigator.clipboard.writeText(text).then(function() { console.log('Async: Copying to clipboard was successful!');document.getElementById('copyButton').innerHTML=\"Done!\"}, function(err) {console.error('Async: Could not copy text: ', err);});}</script>");
+    res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1>Success</h1><p>' + firstFiller + ' text: ' + input + '</p><a href="index.html" class="button alt">Home</a><br /><br />');
+    res.write('<a id="copyButton" href="javascript:copyText();" class="button alt">Copy to clipboard</a></div></section>');
     res.write('<!-- Header --><header id="header" class="alt"><div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div><a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a></header>');
     res.write('<nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li><li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li><li><a href="generic.html">Decryption/Encryption of text</a></li><li><a href="headAlgo.html">');
     res.write('Decryption/Encryption of header</a></li><li><a href="file.html">Decryption/Encryption of files</a></li><li><a href="contact.html">Contact</a></li><li><a href="info.html">Build Infomation</a></li><li>Beta/Alpha Version:</li><li>V1.8 Alpha 20</li></ul></nav></body></html>');
@@ -45,7 +46,7 @@ if(page == '/') {
 else {
     try {
         const queryObject = url.parse(req.url,true).query;
-        if(queryObject['filename']) {
+        if(queryObject['fileName']) {
             console.log(queryObject['filename']);
             success();
         }

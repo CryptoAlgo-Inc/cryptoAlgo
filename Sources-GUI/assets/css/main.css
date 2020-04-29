@@ -7,7 +7,11 @@
 }
 
 /* Disable selection */
-a, p, h1, h2, h3, input, textrea {
+::selection {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+a, p, h1, h2, h3, input, small, textrea {
  -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;
@@ -2878,7 +2882,7 @@ a, p, h1, h2, h3, input, textrea {
 		}
 
 			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
-				color: #000;
+				color: #FFF;
 			}
 
 			.wrapper.style2 a {
@@ -2915,7 +2919,7 @@ a, p, h1, h2, h3, input, textrea {
 			.wrapper.style2 input[type="button"],
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
-				background-color: #000;
+				background-color: #28374d;
 				color: #f2f2f2 !important;
 			}
 
@@ -2987,8 +2991,8 @@ a, p, h1, h2, h3, input, textrea {
 			.wrapper.style2 input[type="email"],
 			.wrapper.style2 select,
 			.wrapper.style2 textarea {
-				background: rgb(115, 176, 187);
-				border-color: rgba(0, 0, 0, 0.15);
+				background: #454545;
+				border-color: rgba(255, 255, 255, 0.3);
 			}
 
 				.wrapper.style2 input[type="text"]:focus,
