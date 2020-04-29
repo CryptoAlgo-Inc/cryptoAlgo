@@ -11,13 +11,13 @@ you must pass on to the recipients the same freedoms that you received.
 You must make sure that they, too, receive or can get the source code.  
 And you must show them these terms so they know their rights. 
 
-######################################################################
-# I would like to emphasize should you take any part of my website,  #
-# you would have to credit the author of this program and would have #
-#          to include the relevant licenses in your media.           #
-######################################################################
+#######################################################################
+#    I would like to emphasize that should you take any part of my    #
+# website or app, you would have to credit the author of this program #
+#       and to include the relevant licenses in your media.           #
+#######################################################################
 
-For more infomation, read the GPL V3 License above.
+For more infomation, read the GPL V3 License avaliable above.
 
 Other credits: 
 #  Page banner background (Abstract spinning circles with 'C' icon)
