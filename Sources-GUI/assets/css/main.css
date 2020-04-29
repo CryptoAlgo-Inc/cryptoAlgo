@@ -7,7 +7,7 @@
 }
 
 /* Disable selection */
-p, h1, h2, h3, input, textrea {
+a, p, h1, h2, h3, input, textrea {
  -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;
@@ -1779,7 +1779,7 @@ p, h1, h2, h3, input, textrea {
 	}
 
 	a {
-		color: #5F5F5F;
+		color: rgb(115, 176, 187);
 	}
 
 	strong, b {

@@ -3,7 +3,8 @@ const crypto = require('crypto');
 const algorithm = 'aes-256-cbc';
 
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
+const os = require('os');
 
 function encrypt(text, key, iv) {
     let cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(key), iv);
@@ -15,14 +16,14 @@ function encrypt(text, key, iv) {
 module.exports = {
 auto: function(text) {
     try {
-        const key_in = fs.readFileSync(path.resolve('key.txt'), 'utf8');
-        const iv_in = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
+        const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
+        const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
     } catch(e) {
         console.log('Errors were encountered.');
         return true;
     }
-    const key_in = fs.readFileSync(path.resolve('key.txt'), 'utf8');
-    const iv_in = fs.readFileSync(path.resolve('IV.txt'), 'utf8');
+    const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
+    const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
     const key = Buffer.from(key_in, 'hex');
     const iv = Buffer.from(iv_in, 'hex');
     console.log('Key: ', key);

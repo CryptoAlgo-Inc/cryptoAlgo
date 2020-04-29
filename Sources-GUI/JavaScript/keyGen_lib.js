@@ -1,5 +1,6 @@
 const { writeFileSync } = require('fs');
 const { generateKeyPairSync } = require('crypto');
+const os = require('os');
  
 function generateKeys(len) {
     const { privateKey, publicKey } = generateKeyPairSync('rsa', {
@@ -16,8 +17,8 @@ function generateKeys(len) {
         },
     })
     console.log('█                           Writing...                           █');
-    writeFileSync('private.pem', privateKey);
-    writeFileSync('public.pem', publicKey);
+    writeFileSync(os.homedir() + '\\Documents\\private.pem', privateKey);
+    writeFileSync(os.homedir() + '\\Documents\\public.pem', publicKey);
     console.log('█                 Done generating RSA key pair.                  █');
 }
 

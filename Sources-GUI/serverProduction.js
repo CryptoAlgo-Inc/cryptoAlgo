@@ -8,11 +8,14 @@ const rsa_keygen = require('./JavaScript/keyGen_lib');
 const rsa_decryptor = require('./JavaScript/decryptor_lib');
 const rsa_encryptor = require('./JavaScript/encryptor_lib');
 const path = require('path');
+var requestsServed = 0;
 
 var server = http.createServer(function(req, res) {
 var page = url.parse(req.url).pathname;
-global.newStuff = true;
-console.log(page);
+requestsServed += 1;
+if((requestsServed % 10) == 0) {
+    console.log('Requests Served:', requestsServed);
+}
 
 function renderOutput(input, firstFiller) {
     res.writeHead(200);
@@ -22,8 +25,9 @@ function renderOutput(input, firstFiller) {
     res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1>Success</h1><p>' + firstFiller + ' text: ' + input + '</p><a href="index.html" class="button alt">Home</a></div></section>');
     res.write('<!-- Header --><header id="header" class="alt"><div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div><a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a></header>');
     res.write('<nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li><li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li><li><a href="generic.html">Decryption/Encryption of text</a></li><li><a href="headAlgo.html">');
-    res.write('<li><a href="contact.html">Contact</a></li><li>Beta/Alpha Version:</li><li>V1.8 Alpha 20</li></ul>');
-    res.write('Decryption/Encryption of header</a></li><li><a href="file.html">Decryption/Encryption of files</a></li></body></html>');
+    res.write('Decryption/Encryption of header</a></li><li><a href="file.html">Decryption/Encryption of files</a></li><li><a href="contact.html">Contact</a></li><li><a href="info.html">Build Infomation</a></li><li>Beta/Alpha Version:</li><li>V1.8 Alpha 20</li></ul></nav></body></html>');
+    res.write('<!-- Footer --><footer id="footer" class="wrapper"><video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>');
+    res.write('<div class="inner"><div class="copyright"><p>&copy; This project is maintained by <a href="mailto:support@cryptoalgo.cf">@CryptoAlgo</a>.</p></div></div></footer>');
     res.write('<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>');
 }
 
@@ -32,8 +36,6 @@ function success() {
     res.writeHead(200);
     res.write(successpg);
 }
-
-global.plainText='apples';
 
 if(page == '/') {
     res.writeHead(200);
@@ -48,7 +50,6 @@ else {
             success();
         }
         else if(queryObject['action']) {
-            console.log('I am here');
             console.log(queryObject['action']);
             if(queryObject['action'] === 'enc') {
                 const err = rsa_encryptor.auto();
@@ -130,10 +131,9 @@ else {
         else {
             const requested = fs.readFileSync(path.join(__dirname, page));
             res.writeHead(200);
-            console.log(res.write(requested));
+            res.write(requested);
         }
     } catch(e) {
-        console.log(e);
         res.writeHead(404);
         const errorPg = fs.readFileSync(path.join(__dirname, 'error404.html'));
         res.write(errorPg);
@@ -158,6 +158,7 @@ var parameters = ["--app=http://localhost:8080"];
 
 child(executablePath, parameters, function(err, data) {
     console.log('Window has been closed');
+    console.log('Total pages served:', requestsServed);
     console.log('Exiting...');
     process.exit();
 });

@@ -1,4 +1,5 @@
 const { writeFileSync } = require('fs');
+const os = require('os');
 
 const crypto = require('crypto');
 const algorithm = 'aes-256-cbc';
@@ -12,8 +13,8 @@ auto: function() {
     console.log('Key: ', key);
     console.log('IV: ', iv);
     console.log('█                           Writing...                           █');
-    writeFileSync('key.txt', key.toString('hex'));
-    writeFileSync('IV.txt', iv.toString('hex'));
+    writeFileSync(os.homedir() + '\\Documents\\key.txt', key.toString('hex'));
+    writeFileSync(os.homedir() + '\\Documents\\iv.txt', iv.toString('hex'));
     console.log('█             Generation of AES keyfiles complete                █');
     console.log('█              Thank you for using this program!                 █');
     console.log('██████████████████████████████████████████████████████████████████');
