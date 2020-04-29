@@ -7,6 +7,8 @@ const aes_keygen = require('./JavaScript/aes_keygen_lib');
 const rsa_keygen = require('./JavaScript/keyGen_lib');
 const rsa_decryptor = require('./JavaScript/decryptor_lib');
 const rsa_encryptor = require('./JavaScript/encryptor_lib');
+const file_encryptor = require('./JavaScript/file_enc_lib');
+const file_decryptor = require('./JavaScript/file_dec_lib');
 const path = require('path');
 var requestsServed = 0;
 
@@ -47,8 +49,28 @@ else {
     try {
         const queryObject = url.parse(req.url,true).query;
         if(queryObject['fileName']) {
-            console.log(queryObject['filename']);
-            success();
+            console.log(queryObject['fileName']);
+            if(file_encryptor.auto(queryObject['fileName'])) {
+                console.log('Errors were encountered.');
+                res.writeHead(500);
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
+                res.write(errorPg);
+            }
+            else {
+                success();
+            }
+        }
+        else if(queryObject['fileName_dec']) {
+            console.log(queryObject['fileName_dec']);
+            if(file_decryptor.auto(queryObject['fileName_dec'])) {
+                console.log('Errors were encountered.');
+                res.writeHead(500);
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
+                res.write(errorPg);
+            }
+            else {
+                success();
+            }
         }
         else if(queryObject['action']) {
             console.log(queryObject['action']);

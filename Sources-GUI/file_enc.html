@@ -6,7 +6,7 @@
         <meta name="theme-color" content="#313131"/>
         <html lang="en">
         <link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
-        <title>CryptoAlgo | File Encryption</title>
+        <title>CryptoAlgo | Files</title>
         <meta name="description" content="Data encryption with AES and RSA - Downloads">
         <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, download now, free">
         <meta name="author" content="CryptoAlgro">
@@ -52,9 +52,10 @@
                 <div class="inner">
                     <h1>CryptoAlgo</h1>
                     <p>File Encryptor/Decryptor</p>
-                    <a href="#one" class="button special scrolly">Select Options</a>
+                    <a href="#one" class="button special scrolly">Select files</a>
                     <p>      </p>
                     <ul class="actions">
+                        <li><a href="file.html" class="button alt" style="text-align:center">Back</a></li>
                         <li><a href="index.html" class="button alt" style="text-align:center">Home</a></li>
                     </ul>
                 </div>
@@ -65,11 +66,13 @@
             <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
                 <div class="inner">
                     <header class="align-center">
-                        <h2><br />Select one of the options below</h2>
-                        <ul class="actions">
-                            <li><a href="file_enc.html" class="button alt" style="text-align:center">File Encryption</a></li>
-                            <li><a href="file_dec.html" class="button alt" style="text-align:center">File Decryption</a></li>
-                        </ul>
+                        <h2><br />Key in the absolute or relative path to the file</h2>
+                            <div class="inner">
+                                <form>
+                                    <input type="text" id="fileName" placeholder="C:\Users\Documents\myfile.txt" name="fileName"><br>
+                                    <small>Above shown is an absolute path. Relative paths are relative to the location of this program.</small><br><br>
+                                </form>
+                            </div>
                     </header>
 
                 </div>
