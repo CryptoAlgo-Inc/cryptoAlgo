@@ -41,6 +41,12 @@
 				</ul>
 			</nav>
 
+<style>
+#margins {
+  padding: 25px 50px 75px;
+}
+</style>
+
 		<!-- Banner -->
 		<!--
                         Note to self:
@@ -48,7 +54,7 @@
 			its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
 			formats to work correctly.
 		-->
-			<section id="banner" data-video="images/banner">
+			<section id="banner" data-video="images/banner" style="padding-left: calc(100vw - 100%);">
 				<div class="inner">
 					<h1>CryptoAlgo</h1>
 					<p>Node.js-based encryptor/decryptor<br />
@@ -64,14 +70,14 @@
 			</section>
 
 		<!-- One -->
-			<section id="one" class="wrapper style2">
+			<section id="one" class="wrapper style2" style="padding-left: calc(100vw - 100%);">
 				<div class="inner">
 					<div>
 						<div class="box">
 							<div class="content">
 								<header class="align-center">
 									<h2>What do you wish to do?</h2>
-                                    <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                                    <video playsinline="" style="padding-left: calc(100vw - 100%);" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 									<p>Please select one of the options below.</p>
 								</header>
                                 <script>
@@ -81,15 +87,18 @@
                                     }
                                 </script>
                                 <form name="redirect">
-								<select id="selection">
+								<select id="selection" data-placeholder="Select Action">
                                     <option value="keygen.html">Generate Keyfiles</option>
                                     <option value="generic.html">Encrypt/Decrypt text</option>
                                     <option value="headAlgo.html">Encrypt/Decrypt header</option>
                                     <option value="file.html">Encrypt/Decrypt files</option>
                                 </select>
-								<br />
+								<div id="margins">
+								    <p>    
+									<br />    </p>
+								</div>
 								<div style="text-align:center">
-                                    <input type=button value="Go!" onClick="WinOpen();">
+									<input type=button value="Go!" onClick="WinOpen();">
 								</div>
                                 </form>
 							</div>
@@ -99,7 +108,7 @@
 			</section>
 
 		<!-- Two -->
-			<section id="two" class="wrapper style3">
+			<section id="two" class="wrapper style3" style="padding-left: calc(100vw - 100%);">
 				<div class="inner">
 					<h2 style="text-align:center"> <br />3 Simple Steps </h2>
 					<div id="flexgrid">
@@ -127,7 +136,7 @@
 			</section>
 
 		<!-- Three -->
-			<section id="three" class="wrapper style2">
+			<section id="three" class="wrapper style2" style="padding-left: calc(100vw - 100%);">
 				<div class="inner">
 					<div class="grid-style">
 
@@ -141,7 +150,7 @@
 										<h2>Easy-to-use user interface</h2>
 										<p>Requires minimal technical knowledge</p>
 									</header>
-									<p>If you know how to browse the web, you sure can use this app!</p>
+									<p style="text-align:center">As easy as browsing the web!</p>
 								</div>
 							</div>
 						</div>
@@ -156,7 +165,7 @@
 										<h2>Small output files</h2>
 										<p>On a metered internet connection? No problem!</p>
 									</header>
-									<p>Efficient algorithm ensures small output sizes.</p>
+									<p style="text-align:center">An efficient algorithm ensures small output sizes.</p>
 								</div>
 							</div>
 						</div>
@@ -183,7 +192,7 @@
 			</section>
 
 				<!-- Footer -->
-			<footer id="footer" class="wrapper">
+			<footer id="footer" class="wrapper" style="padding-left: calc(100vw - 100%);">
 				<div class="inner">
 					<div class="copyright">
                         <p>This project is maintained by <a href="mailto:support@cryptoalgo.cf">@CryptoAlgo</a>.</p>
@@ -199,6 +208,9 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
             <script src="assets/js/lazysizes.min.js"></script>
+			<script type="text/javascript" src="assets/js/awselect.min.js"></script>
+
+			<link href="assets/css/awselect.css" rel="stylesheet" />
 
             <script>
             if('serviceWorker' in navigator) {

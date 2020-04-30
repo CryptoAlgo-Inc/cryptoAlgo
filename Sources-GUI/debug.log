@@ -141,3 +141,6 @@ Some features may not be available.
 Some features may not be available.
 [0430/111752.750:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
 Some features may not be available.
+[0430/182616.083:ERROR:main_dll_loader_win.cc(136)] Failed to load Chrome DLL from C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\chrome_watcher.dll: The specified module could not be found. (0x7E)
+[0430/182616.455:ERROR:resource_bundle.cc(924)] Failed to load C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Sources-GUI\81.0.4044.122\chrome_100_percent.pak
+Some features may not be available.
