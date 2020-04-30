@@ -33,11 +33,16 @@ module.exports = {
         // console.log('Key: ', key);
         // console.log('IV :', iv);
         try {
+        console.log(path.extname(fileName));
+            if (!(['.txt', '.js', '.py', '.html', '.xml', '.css', '.json', '.c', '.cpp', '.h', '.cs', '.java', '.rb', '.pl', '.php', '.sh'].indexOf(path.extname(fileName)) >= 0)) {
+               console.log('Please ensure that file is a binary file.');
+               return true;
+            }
             key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
             iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
             key = Buffer.from(key_in, 'hex');
             iv = Buffer.from(iv_in, 'hex');
-            const file_in = fs.readFileSync(path.resolve(fileName), 'utf8');
+            const file_in = fs.readFileSync(path.resolve(fileName));
             const file_enc = encrypt(file_in, key, iv);
             console.log('█                        Encrypting...                           █');
             fs.writeFileSync(path.resolve(fileName) + '_encrypted', file_enc);
