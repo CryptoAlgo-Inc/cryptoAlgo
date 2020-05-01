@@ -23,7 +23,7 @@ function renderOutput(input, firstFiller) {
     res.writeHead(200);
     res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /><title>CryptoAlgo | ' + firstFiller + ' Text Output</title></head>');
     res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}var text = '" + input + "';");
-    res.write("function copyText(){navigator.clipboard.writeText(text).then(function() { console.log('Async: Copying to clipboard was successful!');document.getElementById('copyButton').innerHTML=\"Done!\"}, function(err) {console.error('Async: Could not copy text: ', err);});}</script>");
+    res.write("function copyText(){navigator.clipboard.writeText(text).then(function() { console.log('Async: Copying to clipboard was successful!');$(\"#copyButton\").fadeOut(function() {$(this).text(\"Copied!\").fadeIn();});setTimeout(function(){ $(\"#copyButton\").fadeOut(function() {$(this).text(\"Copy to clipboard\").fadeIn();}) }, 2000);}, function(err) {console.error('Async: Could not copy text: ', err);});}</script>");
     res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1>Success</h1><p>' + firstFiller + ' text: ' + input + '</p><a href="index.html" class="button alt">Home</a><br /><br />');
     res.write('<a id="copyButton" href="javascript:copyText();" class="button alt">Copy to clipboard</a></div></section>');
     res.write('<!-- Header --><header id="header" class="alt"><div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div><a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a></header>');

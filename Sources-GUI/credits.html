@@ -1,31 +1,55 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-                <link rel="manifest" href="manifest.json" />
-                <link rel="apple-touch-icon" href="images/apple-icon.png">
-                <meta name="theme-color" content="#313131"/>
-                <html lang="en">
+        <link rel="manifest" href="manifest.json" />
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <meta name="theme-color" content="#313131"/>
+        <html lang="en">
         <link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
         <title>CryptoAlgo | Credits</title>
-                <meta name="description" content="Data encryption with AES and RSA - Copyright">
-                <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, contact, developer">
-                <meta name="author" content="CryptoAlgro">
+        <meta name="description" content="Data encryption with AES and RSA - Copyright">
+        <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, contact, developer">
+        <meta name="author" content="CryptoAlgro">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="apple-mobile-web-app-capable" content="yes">
-                <meta name="apple-mobile-web-app-status-bar-style" content="black">
-                <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
 
-    <script type="text/jscript">
-        function disableContextMenu()
-        {
-            window.frames["feedback"].document.oncontextmenu = function(){return false;};    
-        }
-    </script>
+<style>
+#topBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 20px; /* Place the button 20px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border-radius: 100px;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  font-size: 30px; /* Increase font size */
+}
 
-    <body onload="disableContextMenu();" oncontextmenu="return false" ondragstart="return false;" ondrop="return false;">
+#topBtn:hover {
+  background-color: #333; /* Add a dark-grey background on hover */
+}
+</style>
+
+<script>
+// When the user scrolls down 500px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    document.getElementById("topBtn").style.display = "block";
+  } else {
+    document.getElementById("topBtn").style.display = "none";
+  }
+}
+</script>
+
+    <body oncontextmenu="return false" ondragstart="return false;" ondrop="return false;">
 
         <!-- Header -->
             <header id="header" class="alt">
@@ -37,12 +61,12 @@
             <nav id="menu">
                 <ul class="links">
                     <li><a href="index.html">Home</a></li>
-                                        <li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li>
+                    <li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li>
                     <li><a href="generic.html">Decryption/Encryption of text</a></li>
                     <li><a href="headAlgo.html">Decryption/Encryption of header</a></li>
-                                        <li><a href="file.html">Decryption/Encryption of files</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="info.html">Build Infomation</a></li>
+                    <li><a href="file.html">Decryption/Encryption of files</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="info.html">Build Infomation</a></li>
                     <li>Beta/Alpha Version:</li>
                     <li>V1.8 Alpha 20</li>
                 </ul>
@@ -74,6 +98,7 @@
 
         <!-- One -->
             <section id="one" class="wrapper style3">
+            <button onclick="topFunction()" href="#banner" id="topBtn" class="button special scrolly" title="Go to Top">🡡</button>
                 <div class="inner">
                     <div class="box">
                         <div class="content">

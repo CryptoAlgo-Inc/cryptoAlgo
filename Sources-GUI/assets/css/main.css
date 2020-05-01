@@ -2090,7 +2090,6 @@ a, p, h1, h2, h3, input, small, body, textrea {
 		margin: 0 0 1rem 0;
 	}
 
-/*
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -2160,7 +2159,6 @@ a, p, h1, h2, h3, input, small, body, textrea {
 	textarea {
 		padding: 0.75rem 1rem;
 	}
-*/
 
 	input[type="checkbox"],
 	input[type="radio"] {
