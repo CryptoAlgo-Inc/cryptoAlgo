@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 
-	<body ondragstart="return false;" ondrop="return false;">
+	<body id="body" ondragstart="return false;" ondrop="return false;">
 
 		<!-- Header -->
 			<header id="header" class="alt" style="padding-left: calc(100vw - 100%);">
@@ -42,7 +42,6 @@
 			</nav>
 
 <style>
-
 #margins {
   padding: 25px 50px 75px;
 }
@@ -203,6 +202,13 @@
 		
 		<!-- Links -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script>
+			function init() {
+				$('#body').fadeOut(0);
+				$('#body').fadeIn("slow");
+            }
+            init();
+			</script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>

@@ -42,7 +42,7 @@ function success() {
 
 if(page == '/') {
     res.writeHead(200);
-    const indexHTML = fs.readFileSync(path.join(__dirname, 'index.html'));
+    const indexHTML = fs.readFileSync(path.join(__dirname, 'loading.html'));
     res.write(indexHTML);
 }
 else {

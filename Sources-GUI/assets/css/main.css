@@ -14,6 +14,22 @@ selection {
         src: url("../../fonts/Gilroy-Light.otf");
 }
 
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
 /* Disable selection */
 a, p, h1, h2, h3, input, small, body, textrea {
  -webkit-user-select: none;  
@@ -2154,6 +2170,9 @@ a, p, h1, h2, h3, input, small, body, textrea {
 	input[type="email"],
 	select {
 		height: 2.75rem;
+                width: 300px;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
 	}
 
 	textarea {
@@ -2263,6 +2282,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 		textarea:focus {
 			border-color: #5AA6ED;
 			box-shadow: 0 0 0 1px #5AA6ED;
+                        width: 100%;
 		}
 
 	.select-wrapper:before {
