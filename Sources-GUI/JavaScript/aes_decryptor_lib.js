@@ -30,7 +30,7 @@ auto: function(text) {
         const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
         const key = Buffer.from(key_in, 'hex');
         const iv = Buffer.from(iv_in, 'hex');
-        return decrypt(text, key, iv);
+        return decrypt(text, key, iv).slice(8, -8);
     } catch(e) {
         console.log(e);
         console.log('Error while decrypting message. Ensure that the AES keyfiles are valid and the encrypted message is not corrupted.');

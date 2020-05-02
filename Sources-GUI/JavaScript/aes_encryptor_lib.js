@@ -30,7 +30,7 @@ auto: function(text) {
     console.log('IV :', iv);
     console.log('█                        Encrypting...                           █');
     try {
-        return encrypt(text, key, iv);
+        return encrypt((crypto.randomBytes(4).toString('hex') + text + crypto.randomBytes(4).toString('hex')), key, iv);
     } catch(e) {
         console.log(e);
         console.log('Error while encrypting message. Ensure that the AES keyfiles are valid and the encrypted message is not corrupted.');
