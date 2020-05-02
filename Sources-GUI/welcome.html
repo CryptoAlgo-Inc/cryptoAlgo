@@ -5,7 +5,7 @@
         <link rel="manifest" href="/manifest.json" />
         <html lang="en">
         <link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
-        <title>CryptoAlgo | Loading...</title>
+        <title>Onboarding</title>
         <meta name="description" content="Data encryption with AES and RSA">
         <meta name="keywords" content="cryptography, cryptoAlgo, AES, RSA, data encryption, safety">
         <meta name="author" content="CryptoAlgro">
@@ -22,55 +22,28 @@
         <script>
             //Using setTimeout to execute a function after 4 seconds.
             setTimeout(function () {
-                   //Redirect ro page
-                   window.location.href='index.html';
+                   //Redirect to page
+                   // window.location.href='intro.html';
             }, 4000);
         </script>
         <script src="assets/js/jquery.min.js"></script>
+
+            <section id="banner" data-video="images/banner">
+                <div class="inner">
+                    <div id="one">
+                        <h1>Done!</h1>
+                        <p>Click on "Encrypt/decrypt text" in the homepage to start encrypting!<br />
+                        CryptoAlgo is yours to explore!<p>
+                        <a href="index.html" class="button alt">Finish</a>
+                    </div>
+                </div>
+            </section>
         <script>
             function init() {
                 $('#body').fadeOut(0);
-                $('#body').fadeIn("slow");
+                $('#body').fadeIn();
             }
             init();
         </script>
-
-        <style>
-        .bar {
-            border: 1px solid #222;
-            height: 6px;
-            width: 220px;
-            border-radius: 25px;
-            position: absolute;
-            top: 60%;
-            bottom: 0;
-            left: 0;
-            right: 0;
-    
-            margin: auto;
-        }
-        .in {
-            animation: fill 4s ease-out;
-            height: 100%;
-            border-radius: 25px;
-            background-color: white;
-        }
-
-        @keyframes fill {
-            0% {
-                width: 0%;
-            }
-            100% {
-                width: 100%;
-            }
-        }
-        </style>
-        <div>
-            <img src="icon.png" style="display:block; margin-left: auto; margin-right: auto; margin-top: 15%;">
-        </div>
-        <h1 style="font-size: 28px; font-weight: bold; color: white; text-align: center;">CryptoAlgo</h1>
-        <div class="bar">
-            <div class="in"></div>
-        </div>
     </body>
 </html>

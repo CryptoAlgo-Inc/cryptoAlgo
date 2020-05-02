@@ -19,6 +19,20 @@ if((requestsServed % 10) == 0) {
     console.log('Requests Served:', requestsServed);
 }
 
+// Get config file from storage
+try {
+    var config_raw = fs.readFileSync('./config/main.json');
+} catch(e) {
+    // Write the default values
+    var new_config = '{"onboarding": true, "defaultCycles": 1}';
+    try {
+        fs.mkdirSync('./config');
+    } catch(e){}
+    fs.writeFileSync('./config/main.json', new_config);
+}
+// Load config obj into memory
+var config = JSON.parse(fs.readFileSync('./config/main.json'));
+
 function renderOutput(input, firstFiller) {
     res.writeHead(200);
     res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /><title>CryptoAlgo | ' + firstFiller + ' Text Output</title></head>');
@@ -34,16 +48,35 @@ function renderOutput(input, firstFiller) {
     res.write('<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>');
 }
 
+function updateJSON() {
+    fs.writeFileSync('./config/main.json', JSON.stringify(config));
+    console.log('Successfully updated JSON file!');
+}
+
 function success() {
     const successpg = fs.readFileSync(path.join(__dirname, 'success.html'));
     res.writeHead(200);
     res.write(successpg);
 }
 
+function backToSettings() {
+    const successpg = fs.readFileSync(path.join(__dirname, 'settings.html'));
+    res.writeHead(200);
+    res.write(successpg);
+}
+
 if(page == '/') {
     res.writeHead(200);
-    const indexHTML = fs.readFileSync(path.join(__dirname, 'loading.html'));
-    res.write(indexHTML);
+    if(config.onboarding) {
+        const indexHTML = fs.readFileSync(path.join(__dirname, 'onboarding.html'));
+        res.write(indexHTML);
+        config.onboarding = false;
+        updateJSON();
+    }
+    else {
+        const indexHTML = fs.readFileSync(path.join(__dirname, 'index.html'));
+        res.write(indexHTML);
+    }
 }
 else {
     try {
@@ -59,6 +92,12 @@ else {
             else {
                 success();
             }
+        }
+        if(queryObject['reset']) {
+            const del = require('del');
+            del('./config/main.json');
+            backToSettings();
+            console.log('Deleted config file');
         }
         else if(queryObject['fileName_dec']) {
             console.log(queryObject['fileName_dec']);
@@ -85,7 +124,6 @@ else {
                 else {
                     success();        
                 }
-
             }
             else if(queryObject['action'] === 'dec') {
                 const err = rsa_decryptor.auto();
@@ -125,6 +163,19 @@ else {
                     const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
                     res.write(errorPg);
                 }
+            }
+        }
+        else if(queryObject['silentKeygen']) {
+            try {
+                rsa_keygen.auto();
+                aes_keygen.auto();
+                const welcome = fs.readFileSync(path.join(__dirname, 'welcome.html'));
+                res.write(welcome);
+            } catch(e) {
+                console.log(e);
+                res.writeHead(500);
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
+                res.write(errorPg);
             }
         }
         else if(queryObject['textIn']) {
