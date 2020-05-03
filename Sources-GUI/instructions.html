@@ -57,77 +57,74 @@
                 width: 100%;
             }
         }
-        #bottom {
-            position: fixed;
-            bottom: 100;
-            width: 100%;
-		}
         </style>
             <section id="banner" data-video="images/banner">
                 <div class="inner">
-                    <div id="hello">
-                        <h1 id="changeText" style="font-size: 50px; font-weight: bold;"></h1>
-                        <small id="nextText" style="color: AAA;">Scroll down to start</small>
+                    <div id="one">
+                        <h1>Welcome to CryptoAlgo!</h1>
+                        <p>Follow the instructions to learn how to use CryptoAlgo!<p>
+                        <a style="float: right" onclick="pg1()" class="button alt">Next ➜</a>
                     </div>
+                    <div id="two">
+                        <div id="instructions">
+                            <h1>First</h1>
+                            <p>Click the button below to generate both AES and RSA keys.<br />
+                            Note: this process might take a few minutes to complete depending on your hardware. <br />
+                            The keyfiles are stored in your Documents folder</p>
+                            <ul class="actions">
+                                <a onclick="genKeys()" class="button alt">Generate them!</a>
+                            </ul>
+                            <a style="float: right" onclick="skip()" class="button alt">Skip ➜</a>
+                        </div>
+                        <p>      </p>
+                        <div id="spinner">
+                            <div class="loader"></div>
+                            <h2>Loading...</h2>
+                            <p>Please do not close this window</p>
+                        </div>
+                    <div>
                 </div>
             </section>
-
-        <!-- Footer -->
-            <footer id="footer" class="wrapper" style="padding-left: calc(100vw - 100%);">
-                <div class="inner">
-                    <div class="copyright">
-                         <a onclick="start()" style="font-size: 25px; font-weight: bold;" class="button alt">Start ➜</a>
-                    </div>
-                </div>
-            </footer>
-
         <style>
-            #changeText {
-                opacity: 1;
-                transition: opacity 1.5s;
-            }
-            .hide {
-                opacity: 0 !important;
-            }
+        .loader {
+            border: 2px solid #dcdcdc; /* Light grey */
+            border-top: 2px solid #ca0000; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1.5s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         </style>
 
         <script>
-            var text = ["Hello", "Bonjour", "Zdravstvuyte", "Nǐn hǎo", "Salve", 
-            "Konnichiwa", "Halo", "Guten Tag", "שלום", "Olá", "Anyoung haseyo", "Asalaam alaikum", 
-            "Goddag", "Shikamoo", "Goedendag", "Yassas", "Hej, Tjena", "هتاف للترحيب"];
-            var counter = 0;
-            var elem = document.getElementById("changeText");
-            setInterval(change, 3500);
-
-            function change() {
-                elem.classList.add('hide');
-                setTimeout(function () {
-                    if(counter >= 1) {
-                        $('#nextText').fadeIn(750);
-                        $('#footer').fadeIn(750);
-                    }
-                    elem.innerHTML = text[counter];
-                    elem.classList.remove('hide');
-
-                    counter++;
-                    if (counter >= text.length) {
-                        counter = 0;
-                    }
-                }, 1500);
-            }
             function init() {
-                change();
                 $('#body').fadeOut(0);
                 $('#body').fadeIn();
-                $('#nextText').fadeOut(0);
-                $('#footer').fadeOut(0);
+                $('#two').fadeOut(0);
             }
             init();
-            function start() {
-                $('#body').fadeOut(function() {
-                    window.location.href='instructions.html';
+            function pg1() {
+                $('#one').fadeOut(700, function() {
+                    $('#two').fadeIn("slow");
+                    $('#spinner').fadeOut(0);
                 });
-			}
+            }
+            function genKeys() {
+                window.location.href='?silentKeygen=true';
+                $('#instructions').fadeOut("slow");
+                $('#spinner').fadeIn("slow");
+            }
+            function skip() {
+                $('#body').fadeOut(function() {
+                    window.location.href='welcome.html';
+                });
+            }
         </script>
     </body>
 </html>

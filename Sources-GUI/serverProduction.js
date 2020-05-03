@@ -11,6 +11,7 @@ const file_encryptor = require('./JavaScript/file_enc_lib');
 const file_decryptor = require('./JavaScript/file_dec_lib');
 const path = require('path');
 var requestsServed = 0;
+const defaultConfig = '{"onboarding": true, "defaultCycles": 1}';
 
 var server = http.createServer(function(req, res) {
 var page = url.parse(req.url).pathname;
@@ -24,7 +25,7 @@ try {
     var config_raw = fs.readFileSync('./config/main.json');
 } catch(e) {
     // Write the default values
-    var new_config = '{"onboarding": true, "defaultCycles": 1}';
+    var new_config = defaultConfig;
     try {
         fs.mkdirSync('./config');
     } catch(e){}
@@ -94,10 +95,13 @@ else {
             }
         }
         if(queryObject['reset']) {
-            const del = require('del');
-            del('./config/main.json');
-            backToSettings();
-            console.log('Deleted config file');
+            // Write the default values
+            var new_config = defaultConfig;
+            try {
+                fs.mkdirSync('./config');
+            } catch(e){}
+            fs.writeFileSync('./config/main.json', new_config);
+            success();
         }
         else if(queryObject['fileName_dec']) {
             console.log(queryObject['fileName_dec']);
