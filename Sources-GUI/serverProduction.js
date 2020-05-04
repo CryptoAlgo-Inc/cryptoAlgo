@@ -11,7 +11,7 @@ const file_encryptor = require('./JavaScript/file_enc_lib');
 const file_decryptor = require('./JavaScript/file_dec_lib');
 const path = require('path');
 var requestsServed = 0;
-const defaultConfig = '{"onboarding": true, "defaultCycles": 1}';
+const defaultConfig = '{"onboarding": true, "encryptionCycles": 1, "displayMode": "dark", "textHistory": ["", ""]}';
 
 var server = http.createServer(function(req, res) {
 var page = url.parse(req.url).pathname;
