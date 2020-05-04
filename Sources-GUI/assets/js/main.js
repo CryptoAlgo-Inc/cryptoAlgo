@@ -23,18 +23,6 @@
 				}, 100);
 			});
 
-           $(document).ready(function(){ 
-                $('select').awselect({
-                    vertical_padding: "0px",
-                    background: "#212121",
-                    placeholder_color: "#FFF",
-                    active_background: "#323232",
-                    option_color: "#FFF",
-                    placeholder_active_color: "#FFF",
-                    immersive: true
-                })
-           });
-
         // Prioritize "important" elements on medium.
             skel.on('+medium -medium', function() {
                 $.prioritize(

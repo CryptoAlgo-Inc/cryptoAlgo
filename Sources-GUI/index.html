@@ -20,6 +20,214 @@
 
     <body id="body" ondragstart="return false;" ondrop="return false;">
 
+    
+    <style>
+        @font-face {
+            font-family: "GilroyLight";
+            src: url("./assets/fonts/Gilroy-Light.otf");
+        }
+
+        * {
+            margin: auto;
+            box-sizing: border-box;
+        }
+        i {
+            opacity: 0;
+            font-size: 18px;
+            color: #fff;
+            will-change: transform;
+            -webkit-transform: scale(0.1);
+            transform: scale(0.1);
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+        h2 {
+            pointer-events: none;
+        }
+        body {
+            background-color: #e6e5e1;
+            width: 100vw;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .container .card {
+            position: relative;
+            width: 500px;
+            height: 200px;
+            background-color: #2e2e2e;
+            overflow: hidden;
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+        .container .card:before {
+            content: "";
+            z-index: 99;
+            position: absolute;
+            top: -10px;
+            left: 32px;
+            display: block;
+            width: 16px !important;
+            height: 16px !important;
+            border-radius: 16px !important;
+            background-color: #212121;
+        }
+        .container .card:after {
+            content: "";
+            z-index: 99;
+            position: absolute;
+            bottom: -10px;
+            left: 32px;
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            background-color: #212121;
+        }
+        .container .card ul {
+            z-index: 99;
+            position: absolute;
+            left: 22px;
+            top: 5px;
+            list-style-type: none;
+            text-transform: none !important;
+        }
+        .container .card ul li {
+            width: 2px;
+            height: 2px;
+            border-radius: 2px;
+            margin: 6px 0;
+            background-color: #e6e5e1;
+        }
+        .container .card h2 {
+            z-index: 99;
+            font-family: "GilroyLight";
+            position: absolute;
+            bottom: 0;
+            right: 110px;
+            font-size: 60px;
+            color: #fff;
+            font-weight: bold;
+            text-transform: none !important;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        .container .card .fa-arrow-right {
+            z-index: 100;
+            position: absolute;
+            right: 75px;
+            bottom: 25px;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .container .card p {
+            z-index: 99;
+            position: absolute;
+            top: 20px;
+            right: 70px;
+            color: #FFF;
+            opacity: 0.7;
+            font-size: 12px;
+            letter-spacing: 1px;
+            writing-mode: vertical-lr !important;
+            -webkit-transition: all 0.2s ease !important;
+            transition: all 0.2s ease !important;
+        }
+        .container .card .pic {
+            z-index: 100;
+            width: 400px;
+            height: 200px;
+            background-image: url("./images/keygen.jpg");
+            background-size: 100% 100%;
+            filter: grayscale(100%);
+        }
+        .container .card .social {
+            position: absolute !important;
+            left: 60px !important;
+            top: 0 !important;
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-pack: distribute !important;
+            justify-content: space-around !important;
+            -webkit-box-align: center !important;
+            -ms-flex-align: center !important;
+            align-items: center !important;
+            width: 180px !important;
+            height: 64px !important;
+            border-radius: 80px !important;
+        }
+        .container .card .social i:nth-of-type(1) {
+            -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+        }
+        .container .card .social i:nth-of-type(2) {
+            -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+        }
+        .container .card .social i:nth-of-type(3) {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+        }
+        .container .card .social i:nth-of-type(4) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
+        .container .card:hover i {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        .container .card button {
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            width: 30px !important;
+            height: 44px !important;
+            background-color: #da4d1d;
+            border: none;
+            border-radius: 30px !important;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+            mix-blend-mode: hard-light;
+        }
+        .container .card button i {
+            font-size: 3rem;
+        }
+        .container .card:hover button {
+            transform: scale(16.5);
+        }
+        .container .card:hover p {
+            color: #fff;
+        }
+        .container .card:hover .pic {
+            filter: grayscale(0);
+        }
+        .container .card2 .pic {
+            background-image: url("./images/pic01.jpg");
+        }
+        .container .card2 button {
+            background-color: #2b26c3;
+        }
+        .dr {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            width: 100px;
+        }
+        .outer {
+            color: #555;
+            border-radius: 7px;
+		}
+    </style>
+
         <!-- Header -->
             <header id="header" class="alt" style="padding-left: calc(100vw - 100%);">
                 <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
@@ -41,11 +249,11 @@
                 </ul>
             </nav>
 
-<style>
-#margins {
-  padding: 25px 50px 75px;
-}
-</style>
+        <style>
+            #margins {
+              padding: 25px 50px 75px;
+            }
+        </style>
 
         <!-- Banner -->
         <!--
@@ -54,11 +262,11 @@
             its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
             formats to work correctly.
         -->
-            <section id="banner" data-video="images/banner" style="padding-left: calc(100vw - 100%);">
+            <section id="banner" data-video="images/banner">
                 <div class="inner">
                     <h1>CryptoAlgo</h1>
-                    <p>Node.js-based encryptor/decryptor<br />
-                    with a webapp-based GUI.</p>
+                    <p>Node.js-based encryptor and<br />
+                    decryptor with a webapp GUI.</p>
                     <a href="#one" class="button special scrolly">Start</a><br />
                     <div class="inner">
                         <p>      </p>
@@ -70,46 +278,88 @@
             </section>
 
         <!-- One -->
-            <section id="one" class="wrapper style2" style="padding-left: calc(100vw - 100%);">
-                <div class="inner">
-                    <div>
-                        <div class="box">
-                            <div class="content">
-                                <header class="align-center">
-                                    <h2>What do you wish to do?</h2>
-                                    <video playsinline="" style="padding-left: calc(100vw - 100%);" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-                                    <p>Please select one of the options below.</p>
-                                </header>
-                                <script>
-                                    function WinOpen() {
-                                        var url=document.redirect.selection.value
-                                        document.location.href=url
-                                    }
-                                </script>
-                                <form name="redirect">
-                                <select id="selection" data-placeholder="Select Action">
-                                    <option value="keygen.html">🔑 Generate Keyfiles</option>
-                                    <option value="generic.html"> 𝐓 Encrypt/Decrypt text</option>
-                                    <option value="headAlgo.html">➜ Encrypt/Decrypt header</option>
-                                    <option value="file.html">📁 Encrypt/Decrypt files</option>
-                                    <option value="settings.html">⚙ Settings</option>
-                                </select>
-                                <div id="margins">
-                                    <p>    
-                                    <br />    </p>
-                                </div>
-                                <div style="text-align:center">
-                                    <input type=button value="Go!" onClick="WinOpen();">
-                                </div>
-                                </form>
-                            </div>
-                        </div>
+            <section id="one" class="wrapper style2">
+            <video playsinline="" style="padding-left: calc(100vw - 100%);" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <h2 style="text-align: center;">What would you like to do?</h2>
+        <div class="outer">
+            <div class="container" style="display: inline-block;">
+                <div class="card" style="display: inline-block;">
+                    <h2>KeyGen</h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic" onmouseover="removeBW()"></div>
+                    <ul> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <div class="social">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-github"></i>
                     </div>
+                    <button onclick="window.location.href = 'keygen.html';">
+                    </button>
                 </div>
+                <div class="card card2" style="display: inline-block;">
+                    <h2>TextCrypto</h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic" onmouseover="removeBW()"></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <div class="social">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-instagram"></i>
+                      <i class="fab fa-github"></i>
+                    </div>
+                    <button onclick="window.location.href = 'generic.html';">
+                    </button>
+                </div>
+                <div class="card card2" style="display: inline-block;">
+                    <h2>HeadAlgo</h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic" onmouseover="removeBW()" style="background-image: url('./images/headalgo.jpg')"></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <div class="social">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-instagram"></i>
+                      <i class="fab fa-github"></i>
+                    </div>
+                    <button style="background-color: #9c27b0;" onclick="window.location.href = 'headAlgo.html';">
+                    </button>
+                </div>
+                <div class="card card2" style="display: inline-block;">
+                    <h2>FileCrypto</h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic" onmouseover="removeBW()"></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <div class="social">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-twitter"></i>
+                      <i class="fab fa-instagram"></i>
+                      <i class="fab fa-github"></i>
+                    </div>
+                    <button style="background-color: #ff9800;" onclick="window.location.href = 'file.html';">
+                    </button>
+                </div>
+            </div>
+        </div>
             </section>
 
         <!-- Two -->
-            <section id="two" class="wrapper style3" style="padding-left: calc(100vw - 100%);">
+            <section id="two" class="wrapper style3">
                 <div class="inner">
                     <h2 style="text-align:center"> <br />3 Simple Steps </h2>
                     <div id="flexgrid">
@@ -137,10 +387,9 @@
             </section>
 
         <!-- Three -->
-            <section id="three" class="wrapper style2" style="padding-left: calc(100vw - 100%);">
+            <section id="three" class="wrapper style2">
                 <div class="inner">
                     <div class="grid-style">
-
                         <div>
                             <div class="box">
                                 <div class="image fit">
@@ -192,8 +441,13 @@
                 </div>
             </section>
 
+            <script>
+            function removeBW() {
+                console.log('Image was hovered')
+			}
+            </script>
                 <!-- Footer -->
-            <footer id="footer" class="wrapper" style="padding-left: calc(100vw - 100%);">
+            <footer id="footer" class="wrapper">
                 <div class="inner">
                     <div class="copyright">
                         <p>This project is maintained by <a href="mailto:support@cryptoalgo.cf">@CryptoAlgo</a>.</p>
@@ -216,9 +470,6 @@
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/lazysizes.min.js"></script>
-            <script type="text/javascript" src="assets/js/awselect.min.js"></script>
-
-            <link href="assets/css/awselect.css" rel="stylesheet" />
 
             <script>
             if('serviceWorker' in navigator) {
@@ -227,13 +478,6 @@
                     .then(function() { console.log("Service Worker Registered"); });
             }
 
-            </script>
-
-            <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
-            <script>
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'homepage'})
-                });
             </script>
     </body>
 </html>
