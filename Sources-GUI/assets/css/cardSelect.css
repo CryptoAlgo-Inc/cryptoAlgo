@@ -1,6 +1,6 @@
         @font-face {
             font-family: "GilroyLight";
-            src: url("./assets/fonts/Gilroy-Light.otf");
+            src: url("../fonts/Gilroy-Light.otf");
         }
 
         * {
@@ -92,7 +92,7 @@
             color: #fff;
             font-weight: bold;
             text-transform: none !important;
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
         }
         .container .card .fa-arrow-right {
             z-index: 100;
@@ -114,12 +114,16 @@
             writing-mode: vertical-lr !important;
             -webkit-transition: all 0.2s ease !important;
             transition: all 0.2s ease !important;
+            font-family: Courier New;
+        }
+        .container .card li ul {
+            font-color: #FFF;
         }
         .container .card .pic {
             z-index: 100;
             width: 400px;
             height: 200px;
-            background-image: url("../../images/keygen.jpg");
+            background-image: url("../../images/keygen.webp");
             background-size: 100% 100%;
             filter: grayscale(100%);
         }
@@ -187,7 +191,7 @@
             filter: grayscale(0);
         }
         .container .card2 .pic {
-            background-image: url("../../images/pic01.jpg");
+            background-image: url("../../images/crypto.webp");
         }
         .container .card2 button {
             background-color: #2b26c3;

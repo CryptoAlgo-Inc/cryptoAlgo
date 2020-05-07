@@ -7,11 +7,11 @@
 
 /* Google Material Design Font */
 @font-face {
-  font-family: 'Material Icons !important';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
+    font-family: 'Material Icons !important';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
     local('MaterialIcons-Regular'),
     url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
     url(../fonts/MaterialIcons-Regular.woff) format('woff'),
@@ -56,10 +56,6 @@ selection {
         src: url("../fonts/Gilroy-Light.otf");
 }
 
-::-webkit-input-placeholder {
-   text-align: center;
-}
-
 :-moz-placeholder { /* Firefox 18- */
    text-align: center;  
 }
@@ -83,23 +79,28 @@ a, p, h1, h2, h3, input, small, body, textrea {
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
+  background: #000;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #454545; 
+  background: #565656; 
   border-radius: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 1px grey; 
-  border-radius: 7px;
+    background: #222;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #545454;
+    background: #626262;
+}
+
+/* Overlap region */
+::-webkit-scrollbar-corner {
+    background: #111;
 }
 
 /* Reset */
@@ -3221,7 +3222,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 			.wrapper.style3 button,
 			.wrapper.style3 .button {
 				background-color: #f2f2f2;
-				color: #000 !important;
+				color: #000;
 			}
 
 				.wrapper.style3 input[type="submit"]:hover,
@@ -3803,7 +3804,6 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
     background-size: cover; 
 }
 

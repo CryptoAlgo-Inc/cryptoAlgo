@@ -22,7 +22,7 @@
     <body id="body" ondragstart="return false;" ondrop="return false;">
 
         <!-- Header -->
-            <header id="header" class="alt" style="padding-left: calc(100vw - 100%);">
+            <header id="header" class="alt">
                 <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
                 <a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a>
             </header>
@@ -39,12 +39,6 @@
                     <li><a href="info.html">Build Infomation</a></li>
                 </ul>
             </nav>
-
-        <style>
-            #margins {
-              padding: 25px 50px 75px;
-            }
-        </style>
 
         <!-- Banner -->
         <!--
@@ -70,7 +64,7 @@
 
         <!-- One -->
             <section id="one" class="wrapper style2">
-            <video playsinline="" style="padding-left: calc(100vw - 100%);" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+            <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
                 <h2 style="text-align: center;">What would you like to do?</h2>
         <div class="outer">
             <div class="container" style="display: inline-block;">
@@ -113,7 +107,7 @@
                     <h2>HeadAlgo<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Enc and Dec AES keyfiles</small></h2>
                     <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
-                    <div class="pic" onmouseover="removeBW()" style="background-image: url('./images/headalgo.jpg')"></div>
+                    <div class="pic" onmouseover="removeBW()" style="background-image: url('./images/headalgo.webp')"></div>
                     <ul>
  <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
 <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
@@ -146,8 +140,9 @@
                     </button>
                 </div>
             </div>
+            <h3 style="text-align: center;">Or <a href="settings.html">change CryptoAlgo settings</a></h3>
         </div>
-            </section>
+        </section>
 
         <!-- Two -->
             <section id="two" class="wrapper style3">
@@ -172,7 +167,6 @@
                             </header>
                             <p>Send the encrypted text produced in step 1 with the encrypted AES keyfiles to the other party.</p>
                         </div>
-                        
                     </div>
                 </div>
             </section>
@@ -261,14 +255,5 @@
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/lazysizes.min.js"></script>
-
-            <script>
-            if('serviceWorker' in navigator) {
-                navigator.serviceWorker
-                    .register('sw.js')
-                    .then(function() { console.log("Service Worker Registered"); });
-            }
-
-            </script>
     </body>
 </html>

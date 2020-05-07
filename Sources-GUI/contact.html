@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <link rel="manifest" href="manifest.json" />
+        <link rel="manifest" href="manifest.json" />-
         <link rel="apple-touch-icon" href="images/apple-icon.png">
         <meta name="theme-color" content="#313131"/>
         <html lang="en">
@@ -18,14 +18,7 @@
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
 
-    <script type="text/jscript">
-        function disableContextMenu()
-        {
-            window.frames["feedback"].document.oncontextmenu = function(){return false;};    
-        }
-    </script>
-
-    <body onload="disableContextMenu();" oncontextmenu="return false" ondragstart="return false;" ondrop="return false;">
+    <body oncontextmenu="return false" ondragstart="return false;" ondrop="return false;">
 
         <!-- Header -->
             <header id="header" class="alt">
@@ -86,21 +79,5 @@
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/lazysizes.min.js"></script>
-
-            <script>
-            if('serviceWorker' in navigator) {
-                navigator.serviceWorker
-                    .register('sw.js')
-                    .then(function() { console.log("Service Worker Registered"); });
-            }
-            </script>
-
-            </script>
-            <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
-            <script>
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'contact'})
-                });
-            </script>
     </body>
 </html>

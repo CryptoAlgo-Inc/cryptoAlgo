@@ -6,7 +6,7 @@
         <meta name="theme-color" content="#313131"/>
         <html lang="en">
         <link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
-        <title>CryptoAlgo | Action Success</title>
+        <title>CryptoAlgo | Settings</title>
         <meta name="description" content="Data encryption with AES and RSA - Contact Developer">
         <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, contact, developer">
         <meta name="author" content="CryptoAlgro">
@@ -15,11 +15,11 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/vertTabs.css">
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
 
-    <body ondragstart="return false;" ondrop="return false;">
+    <body id="body" ondragstart="return false;" ondrop="return false;" onload="document.body.className = ''">
 
         <!-- Header -->
             <header id="header" class="alt">
@@ -44,30 +44,47 @@
 
         <!-- One -->
             <section id="top" class="wrapper style3">
-            <br /><br />
                 <div class="inner">
-                    <div class="container" style="font-size: 15px">
-                        <h1 style="font-size: 45px; font-weight: bold;">CryptoAlgo Settings</h1>
+                    <br /><br /><br />
+                    <h2 style="text-transform: none;"> CryptoAlgo Settings </h2>
+                    <small style="color: red;">Warning: Experimental settings ahead!<br /><br /></small>
+                    <!-- Tab links -->
+                    <div class="tab">
+                        <button class="tablinks active" onclick="openCity(event, 'General')">General</button>
+                        <button class="tablinks" onclick="openCity(event, 'Others')">Others</button>
+                        <button class="tablinks" onclick="openCity(event, 'Flags')">Flags</button>
+                    </div>
 
-                        <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#general">General</a></li>
-                        <li><a data-toggle="tab" href="#menu1">Advanced</a></li>
-                        </ul>
+                    <div class="innercontent">
+                        <!-- Tab content -->
+                        <div id="General" class="tabcontent" style="display: block;">
+                            <hr>
+                                <h3>General Settings</h3>
+                            <hr>
+                                <h4>Security</h4>
+                                <a class="button alt">Set default RSA keypair length</a>
+                                <p><br />This does nothing</p>
+                            <hr>
+                        </div>
 
-                        <div class="tab-content">
-                        <div id="general" class="tab-pane fade in active">
-                            <p style="font-size: 25px; font-weight: bold;"><br />General Settings</p>
+                        <div id="Others" class="tabcontent" >
                             <hr>
-                            <p>Hi</p>
-                        </div>
-                        <div id="menu1" class="tab-pane fade">
-                            <p style="font-size: 25px; font-weight: bold;"><br />Advanced Settings</p>
+                                <h3>Other Settings</h3>
                             <hr>
-                            <a href="?reset=true" style="font-size: 20px;" class="button alt">Reset all settings</a>
+                                <h4>Initialisation</h4>
+                                <a class="button alt">Revert all settings</a>
+                                <p><br />Your keyfiles would not be erased.</p>
+                            <hr>
                         </div>
+
+                        <div id="Flags" class="tabcontent">
+                            <h3>Experimental Settings</h3>
+                            <small style="color: red;">Warning: These settings are experimental!<br />
+                            Please report any bugs to the developer.</small>
                         </div>
                     </div>
                 </div>
+                <br /><br />
             </section>
 
                 <!-- Footer -->
@@ -81,27 +98,23 @@
         
         <!-- Scripts -->
             <script src="assets/js/jquery.min.js"></script>
+            <script>
+            function init() {
+                $('#body').fadeOut(0);
+                $('#body').fadeIn("slow");
+                setTimeout(function () {
+                    // Remove is-loading class from body
+                    document.querySelector('body').classList.remove('is-loading');
+                }, 100);
+            }
+            init();
+            </script>
             <script src="assets/js/jquery.scrolly.min.js"></script>
             <script src="assets/js/jquery.scrollex.min.js"></script>
             <script src="assets/js/skel.min.js"></script>
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
-            <script src="assets/js/bootstrap.min.js"></script>
-                <script>
-                if('serviceWorker' in navigator) {
-                        navigator.serviceWorker
-                                .register('sw.js')
-                                .then(function() { console.log("Service Worker Registered"); });
-                }
-                </script>
-
-                </script>
-                <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
-                <script>
-                grecaptcha.ready(function() {
-                        grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'contact'})
-                });
-                </script>
+            <script src="assets/js/vertTabs.js"></script>
 
     </body>
 </html>

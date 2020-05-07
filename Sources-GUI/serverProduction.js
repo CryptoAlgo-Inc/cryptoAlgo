@@ -86,8 +86,8 @@ else {
             console.log(queryObject['fileName']);
             if(file_encryptor.auto(queryObject['fileName'])) {
                 console.log('Errors were encountered.');
-                res.writeHead(500);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
+                res.writeHead(400);
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
                 res.write(errorPg);
             }
             else {
@@ -107,8 +107,8 @@ else {
             console.log(queryObject['fileName_dec']);
             if(file_decryptor.auto(queryObject['fileName_dec'])) {
                 console.log('Errors were encountered.');
-                res.writeHead(500);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
+                res.writeHead(400);
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
                 res.write(errorPg);
             }
             else {
@@ -121,8 +121,8 @@ else {
                 const err = rsa_encryptor.auto();
                 if(err) {
                     console.log(err);
-                    res.writeHead(500);
-                    const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
+                    res.writeHead(400);
+                    const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
                     res.write(errorPg);
                 }
                 else {
@@ -133,8 +133,8 @@ else {
                 const err = rsa_decryptor.auto();
                 if(err) {
                     console.log(err);
-                    res.writeHead(500);
-                    const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
+                    res.writeHead(400);
+                    const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
                     res.write(errorPg);
                 }
                 else {
@@ -151,8 +151,8 @@ else {
                     success();
                 } catch(e) {
                     console.log(e);
-                    res.writeHead(500);
-                    const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
+                    res.writeHead(400);
+                    const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
                     res.write(errorPg);
                     res.end();
                 }
@@ -163,8 +163,8 @@ else {
                     success();
                 } catch(e) {
                     console.log(e);
-                    res.writeHead(500);
-                    const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
+                    res.writeHead(400);
+                    const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
                     res.write(errorPg);
                 }
             }
@@ -177,8 +177,8 @@ else {
                 res.write(welcome);
             } catch(e) {
                 console.log(e);
-                res.writeHead(500);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
+                res.writeHead(400);
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
                 res.write(errorPg);
             }
         }
@@ -186,8 +186,8 @@ else {
             console.log(queryObject['textIn']);
             plainText = queryObject['textIn'];
             if(aes_encryptor.auto(plainText) == true) {
-                res.writeHead(500);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
+                res.writeHead(400);
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
                 res.write(errorPg);
             }
             else {
@@ -198,8 +198,8 @@ else {
             console.log(queryObject['encIn']);
             encrypted = queryObject['encIn']
             if(aes_decryptor.auto(encrypted) == true) {
-                res.writeHead(500);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
+                res.writeHead(400);
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
                 res.write(errorPg); 
             }
             else {
