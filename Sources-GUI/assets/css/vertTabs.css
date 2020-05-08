@@ -21,7 +21,7 @@
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #313131 !important;
+  background-color: #292929 !important;
 }
 
 /* Create an active/current tablink class */
@@ -55,6 +55,7 @@
 
 .tablinks {
   text-transform: none;
+  font-family: verdana;
 }
 
 /* Go from zero to full opacity */

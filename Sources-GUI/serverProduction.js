@@ -115,6 +115,14 @@ else {
                 success();
             }
         }
+        else if(queryObject['keyPairLength']) {
+            console.log(queryObject['keyPairLength']);
+            if((parseInt(queryObject['keyPairLength']) >= 1000) && (parseInt(queryObject['keyPairLength']) <= 9999)) {
+                config.RSAkeyPairLen = parseInt(queryObject['keyPairLength']);
+                updateJSON();
+                success();
+			}
+		}
         else if(queryObject['action']) {
             console.log(queryObject['action']);
             if(queryObject['action'] === 'enc') {
@@ -159,7 +167,7 @@ else {
             }
             else if(queryObject['mode'] === 'rsa') {
                 try {
-                    rsa_keygen.auto();
+                    rsa_keygen.auto(config.RSAkeyPairLen);
                     success();
                 } catch(e) {
                     console.log(e);

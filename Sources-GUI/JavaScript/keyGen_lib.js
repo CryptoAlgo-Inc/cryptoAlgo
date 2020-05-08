@@ -23,11 +23,11 @@ function generateKeys(len) {
 }
 
 module.exports = {
-auto: function() {
+auto: function(modLength) {
     console.log('██████████████████████████████████████████████████████████████████');
     console.log('█          Key in the key pair modulus length (1-50000)          █\n██████████████████████████████████████████████████████████████████\n');
-    console.log('9999');
-    const length = 9999;
+    console.log(modLength);
+    const length = modLength;
     console.log('█                  Generating RSA keypair...                     █');
     generateKeys(length);
     console.log('█              Thank you for using this program!                 █');

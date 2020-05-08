@@ -17,9 +17,14 @@
         <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
         <link rel="stylesheet" href="assets/css/vertTabs.css">
         <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+        input:invalid {
+            border-color: red !important;
+        }
+        </style>
     </head>
 
-    <body id="body" ondragstart="return false;" ondrop="return false;" onload="document.body.className = ''">
+    <body id="body" class="subpage" ondragstart="return false;" ondrop="return false;" onload="document.body.className = ''">
 
         <!-- Header -->
             <header id="header" class="alt">
@@ -47,12 +52,12 @@
                 <div class="inner">
                     <br /><br /><br />
                     <h2 style="text-transform: none; font-size: 40px; font-weight: bold;"> CryptoAlgo Settings </h2>
-                    <small style="color: red;">Warning: Experimental settings ahead!<br /><br /></small>
                     <!-- Tab links -->
                     <div class="tab">
                         <button class="tablinks active" onclick="openCity(event, 'General')">General</button>
                         <button class="tablinks" onclick="openCity(event, 'Others')">Others</button>
                         <button class="tablinks" onclick="openCity(event, 'Flags')">Flags</button>
+                        <button class="tablinks" onclick="openCity(event, 'Suggestion')">+</button>
                     </div>
 
                     <div class="innercontent">
@@ -62,8 +67,20 @@
                                 <h3>General Settings</h3>
                             <hr>
                                 <h4>Security</h4>
-                                <a class="button alt">Set default RSA keypair length</a>
-                                <p><br />This does nothing</p>
+                                <div id="RSASettingText">
+                                    <a class="button alt" onclick="RSAlen()">Change default length of RSA keypair</a>
+                                    <p><br />This setting changes the length of the generated RSA keypair</p>
+                                </div>
+                                <div id="RSASettingInput">
+                                    <form>
+                                        <p>Please key in the desired length in bytes. Accepted values: 1000-9999. 
+                                        Press enter to submit.</p>
+                                        <div class="bytes">
+                                            <input type="text" pattern="[0-9]{4}" name="keyPairLength" size="4" placeholder="Default length of generated RSA keys"/ ><br />
+                                        </div>
+                                        <a onclick="RSAlen(false)" class="button alt">Back</a>
+                                    </form>
+                                </div>
                             <hr>
                         </div>
 
@@ -72,16 +89,25 @@
                                 <h3>Other Settings</h3>
                             <hr>
                                 <h4>Initialisation</h4>
-                                <a class="button alt">Revert all settings</a>
-                                <p><br />Your keyfiles would not be erased.</p>
+                                <a onclick="revertAll()" class="button alt">Revert all settings</a>
+                                <p><br />Your keyfiles and data would not be lost.</p>
                             <hr>
                         </div>
 
                         <div id="Flags" class="tabcontent">
                             <hr>
                                 <h3>Experimental Settings</h3>
-                                <small style="color: red;">Warning: These settings are experimental!<br />
+                                <small style="color: #f28b82;">WARNING: EXPERIMENTAL FEATURES AHEAD!<br />
                                 Please report any bugs to the developer.</small>
+                            <hr>
+                        </div>
+
+                        <div id="Suggestion" class="tabcontent">
+                            <hr>
+                                <h3>This space depends on you!</h3>
+                                <h3>What would you like to be placed here?</h3>
+                                <p style="font-size: 22px; font-weight: bold;">Tell me at <a href="mailto:support@cryptoalgo.cf">support@cryptoalgo.cf</a>!<br />
+                                Possible suggestions include additional useful features and better UI.</p>
                             <hr>
                         </div>
                     </div>
@@ -104,12 +130,33 @@
             function init() {
                 $('#body').fadeOut(0);
                 $('#body').fadeIn("slow");
+                $('#RSASettingInput').fadeOut(0);
                 setTimeout(function () {
                     // Remove is-loading class from body
                     document.querySelector('body').classList.remove('is-loading');
                 }, 100);
             }
             init();
+            function revertAll() {
+                if (confirm('Are you sure you want to reset all settings? Your keyfiles and data would not be lost. Please note that you would need to go through the onboarding experience again.')) {
+                    window.location.href='?reset=true';
+                    console.log('Erased prefrences');
+                } else {
+                    console.log('User declined.');
+                }
+			}
+            function RSAlen(inOrOut = true) {
+                if(inOrOut) {
+                    $('#RSASettingText').fadeOut(function() {
+                        $('#RSASettingInput').fadeIn();
+				    })
+                }
+                else {
+                    $('#RSASettingInput').fadeOut(function() {
+                        $('#RSASettingText').fadeIn();
+				    })
+				}
+			}
             </script>
             <script src="assets/js/jquery.scrolly.min.js"></script>
             <script src="assets/js/jquery.scrollex.min.js"></script>
