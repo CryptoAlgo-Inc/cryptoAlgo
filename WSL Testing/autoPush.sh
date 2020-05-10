@@ -1,5 +1,5 @@
 echo "Adding any new files to git"
-git add .
+git add -A
 if git commit; then
     echo "Success"
     echo "Pushing changes to GitHub"
