@@ -134,7 +134,7 @@ else {
                     res.write(errorPg);
                 }
                 else {
-                    success();        
+                    success();
                 }
             }
             else if(queryObject['action'] === 'dec') {
@@ -146,7 +146,7 @@ else {
                     res.write(errorPg);
                 }
                 else {
-                    success();        
+                    success();
                 }
             }
         }
@@ -208,7 +208,7 @@ else {
             if(aes_decryptor.auto(encrypted) == true) {
                 res.writeHead(400);
                 const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
-                res.write(errorPg); 
+                res.write(errorPg);
             }
             else {
                 renderOutput(aes_decryptor.auto(encrypted), "Decrypted");
