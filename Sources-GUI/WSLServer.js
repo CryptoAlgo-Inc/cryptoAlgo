@@ -228,23 +228,12 @@ else {
 res.end();
 });
 
-var port = '1234';
+var port = '8000';
 try {
-    server.listen(1234);
+    server.listen(8000);
 } catch(e) {
     server.listen(8060);
     port = '8060';
 }
 
 console.log('Listening on port', port);
-
-var child = require('child_process').execFile;
-var executablePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-var parameters = ["--app=http://localhost:1234"];
-
-child(executablePath, parameters, function(err, data) {
-    console.log('Window has been closed');
-    console.log('Total pages served:', requestsServed);
-    console.log('Exiting...');
-    process.exit();
-});
