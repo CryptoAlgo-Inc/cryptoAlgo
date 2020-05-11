@@ -134,7 +134,7 @@ else {
                     res.write(errorPg);
                 }
                 else {
-                    success();        
+                    success();
                 }
             }
             else if(queryObject['action'] === 'dec') {
@@ -146,7 +146,7 @@ else {
                     res.write(errorPg);
                 }
                 else {
-                    success();        
+                    success();
                 }
             }
         }
@@ -208,7 +208,7 @@ else {
             if(aes_decryptor.auto(encrypted) == true) {
                 res.writeHead(400);
                 const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
-                res.write(errorPg); 
+                res.write(errorPg);
             }
             else {
                 renderOutput(aes_decryptor.auto(encrypted), "Decrypted");
@@ -228,19 +228,19 @@ else {
 res.end();
 });
 
-var port = '8080';
+var port = '1234';
 try {
-    server.listen(8080);
+    server.listen(1234);
 } catch(e) {
     server.listen(8060);
     port = '8060';
 }
 
 console.log('Listening on port', port);
-console.log('Opening embedded Blink engine in Application mode...');
+
 var child = require('child_process').execFile;
 var executablePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-var parameters = ["--app=http://localhost:8080"];
+var parameters = ["--app=http://localhost:1234"];
 
 child(executablePath, parameters, function(err, data) {
     console.log('Window has been closed');
