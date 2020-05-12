@@ -86,11 +86,8 @@
 
                     if (video)
                         $window.on('load.one', function() {
-
                             // Disable banner load event (so it doesn't fire again).
                                 $window.off('load.banner');
-
-
                         });
 
                 // More button.

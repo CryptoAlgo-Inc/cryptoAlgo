@@ -1,18 +1,70 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Taviraj:300,400,700,300i,400i,700i&display=swap");
+
+/* This CSS is used in my GUI and website, so expect to see some unused classes. */
 
 /* Remove reCaptcha badge */
 .grecaptcha-badge{
 	visibility: collapse !important;  
 }
 
-/* Disable selection */
+#outputTxt {
+        word-break: break-all !important;
+}
 
-a, p, h1, h2, h3, input, small, textrea {
+selection {
+	transition-duration: 0.5s;
+}
+
+@font-face {
+        font-family: "GilroyLight";
+        src: url("../fonts/Gilroy-Light.otf");
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+/* Disable selection */
+a, p, h1, h2, h3, input, small, body, textrea {
  -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;
   user-select: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  background: #000;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #565656; 
+  border-radius: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #626262;
+}
+
+/* Overlap region */
+::-webkit-scrollbar-corner {
+    background: #111;
 }
 
 /* Reset */
@@ -1641,11 +1693,11 @@ a, p, h1, h2, h3, input, small, textrea {
 	}
 
 	body, input, select, textarea {
-		font-family: "Taviraj", serif;
+		font-family: GilroyLight;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
-                font-display: swap;
+        font-display: swap;
 	}
 
 	a {
@@ -1780,7 +1832,7 @@ a, p, h1, h2, h3, input, small, textrea {
 	}
 
 	a {
-		color: #5F5F5F;
+		color: #a0acff;
 	}
 
 	strong, b {
@@ -2125,6 +2177,9 @@ a, p, h1, h2, h3, input, small, textrea {
 	input[type="email"],
 	select {
 		height: 2.75rem;
+                width: 300px;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
 	}
 
 	textarea {
@@ -2234,6 +2289,7 @@ a, p, h1, h2, h3, input, small, textrea {
 		textarea:focus {
 			border-color: #5AA6ED;
 			box-shadow: 0 0 0 1px #5AA6ED;
+                        width: 100%;
 		}
 
 	.select-wrapper:before {
@@ -2655,7 +2711,7 @@ a, p, h1, h2, h3, input, small, textrea {
 /* Wrapper */
 
 	.wrapper {
-		padding: 6rem 0 4rem 0 ;
+		padding: 1rem 0 1rem 0 ;
 		position: relative;
 		margin: 0;
 	}
@@ -2879,7 +2935,7 @@ a, p, h1, h2, h3, input, small, textrea {
 		}
 
 			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
-				color: #000;
+				color: #FFF;
 			}
 
 			.wrapper.style2 a {
@@ -2916,7 +2972,7 @@ a, p, h1, h2, h3, input, small, textrea {
 			.wrapper.style2 input[type="button"],
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
-				background-color: #000;
+				background-color: #002760;
 				color: #f2f2f2 !important;
 			}
 
@@ -2988,8 +3044,8 @@ a, p, h1, h2, h3, input, small, textrea {
 			.wrapper.style2 input[type="email"],
 			.wrapper.style2 select,
 			.wrapper.style2 textarea {
-				background: rgb(115, 176, 187);
-				border-color: rgba(0, 0, 0, 0.15);
+				background: #454545;
+				border-color: rgba(255, 255, 255, 0.3);
 			}
 
 				.wrapper.style2 input[type="text"]:focus,
@@ -3130,7 +3186,7 @@ a, p, h1, h2, h3, input, small, textrea {
 			.wrapper.style3 button,
 			.wrapper.style3 .button {
 				background-color: #f2f2f2;
-				color: #000 !important;
+				color: #000;
 			}
 
 				.wrapper.style3 input[type="submit"]:hover,
@@ -3699,6 +3755,22 @@ a, p, h1, h2, h3, input, small, textrea {
 
 		}
 
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 80%;
+    min-height: 80%;
+    width: 130%;
+    height: 130%;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover; 
+}
+
 /* Banner */
 
 	#banner {
@@ -3717,7 +3789,7 @@ a, p, h1, h2, h3, input, small, textrea {
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.webp");
+		/*background-image: url("../../images/banner.webp");*/
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -3874,7 +3946,6 @@ a, p, h1, h2, h3, input, small, textrea {
 /* Footer */
 
 	#footer {
-		padding: 1rem 0 0rem 0 ;
 		background: #121212;
 	}
 
