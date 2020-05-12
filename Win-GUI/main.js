@@ -1,6 +1,7 @@
 var http = require('http');
 var url = require('url');
 const fs = require('fs');
+const os = require('os');
 const aes_decryptor = require('./JavaScript/aes_decryptor_lib');
 const aes_encryptor = require('./JavaScript/aes_encryptor_lib');
 const aes_keygen = require('./JavaScript/aes_keygen_lib');
@@ -22,17 +23,18 @@ if((requestsServed % 10) == 0) {
 
 // Get config file from storage
 try {
-    var config_raw = fs.readFileSync('./config/main.json');
+    var config_raw = fs.readFileSync(os.homedir() + '\\Documents\\CryptoAlgo\\config\\main.json');
 } catch(e) {
     // Write the default values
     var new_config = defaultConfig;
     try {
-        fs.mkdirSync('./config');
+        fs.mkdirSync(os.homedir() + '\\Documents\\CryptoAlgo');
+        fs.mkdirSync(os.homedir() + '\\Documents\\CryptoAlgo\\config');
     } catch(e){}
-    fs.writeFileSync('./config/main.json', new_config);
+    fs.writeFileSync((os.homedir() + '\\Documents\\CryptoAlgo\\config\\main.json'), new_config);
 }
 // Load config obj into memory
-var config = JSON.parse(fs.readFileSync('./config/main.json'));
+var config = JSON.parse(fs.readFileSync(os.homedir() + '\\Documents\\CryptoAlgo\\config\\main.json'));
 
 function renderOutput(input, firstFiller) {
     res.writeHead(200);
@@ -50,7 +52,7 @@ function renderOutput(input, firstFiller) {
 }
 
 function updateJSON() {
-    fs.writeFileSync('./config/main.json', JSON.stringify(config));
+    fs.writeFileSync(os.homedir() + '\\Documents\\CryptoAlgo\\config\\main.json', JSON.stringify(config));
     console.log('Successfully updated JSON file!');
 }
 
@@ -228,23 +230,33 @@ else {
 res.end();
 });
 
-var port = '1234';
-try {
-    server.listen(1234);
-} catch(e) {
-    server.listen(8060);
-    port = '8060';
-}
-
+var port = '34235';
+    server.on('error', function (e) {
+        console.log('There has been an error. ');
+        
+    });
+server.listen(34235);
 console.log('Listening on port', port);
 
 var child = require('child_process').execFile;
-var executablePath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-var parameters = ["--app=http://localhost:1234"];
+var executablePath = "C:\\Program Files (x86)\\CryptoAlgo\\cryptoalgo.exe";
+var parameters = ["--app=http://localhost:" + port];
 
-child(executablePath, parameters, function(err, data) {
-    console.log('Window has been closed');
-    console.log('Total pages served:', requestsServed);
-    console.log('Exiting...');
-    process.exit();
-});
+try {
+    child(executablePath, parameters, function(err, data) {
+        if(err) {
+            console.log('An error was encountered opening the Chrome Engine.');
+            console.log('Please report this error to the developer');
+            console.log(err);
+            process.exit();
+		}
+        else {
+            console.log('Window has been closed');
+            console.log('Total pages served:', requestsServed);
+            console.log('Exiting...');
+            process.exit();
+		}
+    });
+} catch(e) {
+    console.log('Could not start Chrome');
+}

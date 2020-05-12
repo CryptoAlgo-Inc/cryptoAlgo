@@ -1,19 +1,17 @@
 {
-			"name": "CryptoAlgo GUI",
-			"version": "1.9 Alpha 20-GUI",
-			"main": "serverProduction.js",
-			"bin": "serverProduction.js",
-			"author": "CryptoAlgo",
-			"pkg": {
-						"assets": [
-									"./**/**",
-									"./*",
-									"./Cryptoalgo.exe",
-									"./**/*"
-						]
-			},
-			"dependencies": {
-						"pkg": "^4.4.8",
-						"pm2": "^4.4.0"
-			}
+	"name": "CryptoAlgo-GUI",
+	"version": "2.8 Stable",
+	"main": "main.js",
+	"bin": "main.js",
+	"author": "CryptoAlgo Inc.",
+	"pkg": {
+		"assets": [
+			"./**/**",
+			"./*",
+			"./Cryptoalgo.exe",
+			"./**/*"
+		]
+	},
+	"dependencies": {
+	}
 }
