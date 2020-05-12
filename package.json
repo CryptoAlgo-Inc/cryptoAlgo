@@ -1,6 +1,6 @@
 {
-    "name": "CryptoAlgo GUI",
-    "version": "2.8 Stable",
+    "name": "CryptoAlgo-GUI",
+    "version": "v2.8.2",
     "main": "Win-GUI/serverProduction.js",
     "bin": "Win-GUI/serverProduction.js",
     "author": "CryptoAlgo",
@@ -15,7 +15,7 @@
     "dependencies": {
     },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 0"
+        "test": "echo Unfortunately, there are no tests yet. So, I'll take this as a pass. "
     },
     "repository": {
         "type": "git",
