@@ -13,5 +13,25 @@
         ]
     },
     "dependencies": {
-    }
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CryptoAlgo-Inc/cryptoAlgo.git"
+    },
+    "keywords": [
+        "CryptoAlgo",
+        "RSA",
+        "AES",
+        "encrypt",
+        "decrypt"
+    ],
+    "author": "CryptoAlgo Inc.",
+    "license": "GPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/CryptoAlgo-Inc/cryptoAlgo/issues"
+    },
+    "homepage": "https://www.cryptoalgo.cf"
 }
