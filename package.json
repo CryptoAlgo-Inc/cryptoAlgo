@@ -15,7 +15,7 @@
     "dependencies": {
     },
     "scripts": {
-        "test": "echo Unfortunately, there are no tests yet. So, I'll take this as a pass. "
+        "test": "echo \"Unfortunately, there are no tests yet. So, I'll take this as a pass.\""
     },
     "repository": {
         "type": "git",
