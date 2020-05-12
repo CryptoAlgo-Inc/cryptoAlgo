@@ -7,7 +7,7 @@ Please visit my website at <https://www.cryptoalgo.cf> or email me at <support@c
 
 ## Compile it yourself...
 
-``` bash
+```bash
 pkg .
 ```
 
