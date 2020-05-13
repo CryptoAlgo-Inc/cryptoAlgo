@@ -3,7 +3,7 @@
     "version": "v2.8.3",
     "main": "main.js",
     "bin": "main.js",
-    "author": "CryptoAlgo",
+    "author": "CryptoAlgo Inc.",
     "pkg": {
         "assets": [
             "./**/**",
@@ -13,6 +13,7 @@
         ]
     },
     "dependencies": {
+        "sudo-prompt": "^9.2.1"
     },
     "scripts": {
         "test": "echo \"Unfortunately, there are no tests yet. So, I'll take this as a pass.\""
@@ -28,7 +29,6 @@
         "encrypt",
         "decrypt"
     ],
-    "author": "CryptoAlgo Inc.",
     "license": "GPL-3.0-or-later",
     "bugs": {
         "url": "https://github.com/CryptoAlgo-Inc/cryptoAlgo/issues"

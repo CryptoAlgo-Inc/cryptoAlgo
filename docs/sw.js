@@ -1,4 +1,4 @@
-const cacheName = 'CryptoAlgo-V1.1';
+const cacheName = 'CryptoAlgo-V1.5';
 
 self.addEventListener('install', e => {
     e.waitUntil(

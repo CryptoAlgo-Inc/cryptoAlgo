@@ -18,15 +18,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 
-<script>
-    function removeTag() {
-        window.setTimeout(function() {
-            $('body').removeClass('is-loading');
-        }, 100);
-    }
-</script>
-
-	<body class="subpage" id="body" onload="removeTag()" ondragstart="return false;" ondrop="return false;">
+	<body class="subpage" id="body" onload="removeClass" ondragstart="return false;" ondrop="return false;">
 
 		<!-- Header -->
 			<header id="header">
@@ -60,15 +52,16 @@
                                 <div class="inner">
 						            <p>      </p>
 				                   	<ul class="actions">
-					          		    <li><a href="documentation/CryptoAlgo%20Documentation%20V0.5.pdf" class="button alt" style="text-align:center">Download Documentation</a></li>
+					          		    <li><a href="documentation/CryptoAlgo%20Documentation%20V0.8.pdf" class="button special scrolly" style="text-align:center">Download Documentation</a></li>
 					                </ul>
 				        	    </div>
-								<p>Want to learn more about the inner workings of CryptoAlgo? You're at the right place!</p>
+								<h2>Want to learn more about the inner workings of CryptoAlgo? You're at the right place!</h2>
 							</header>
 							<hr />
-							<p>This is a summarised version of the docs. To view the full version, <a href="https://github.com/cryptoAlgorithm/cryptoAlgo/raw/master/Documentation/CryptoAlgo%20Documentation%20V0.5.pdf">download the documentation.</a></p>
-							<p>This program uses RSA to encrypt the AES key files (Key and IV) with the receiver’s public key. Before the AES key files are encrypted, they are used to encrypt your data with AES256. The encrypted data can be sent with the encrypted key files to the other party and can be decrypted with the RSA private key of the receiver. These decrypted keys can then be used to decrypt the encrypted data with CryptoAlgo.</p>
-						</div>
+							<object width=100% height="720px" style="border-radius: 10px; overflow: hidden; background: #3d3d3d;" type="application/pdf" data="documentation/CryptoAlgo%20Documentation%20V0.8.pdf">
+                                <p>Error loading the PDF file. Please download it from the link above.</p>
+                            </object>
+ 						</div>
 					</div>
 				</div>
 			</section>
@@ -105,6 +98,10 @@
             function init() {
                 $('#body').fadeOut(0);
                 $('#body').fadeIn("slow");
+				setTimeout(function(){ 
+				    document.querySelector('body').classList.remove('is-loading');
+					console.log('Removed class');
+				}, 300);
             }
             init();
             </script>
@@ -119,8 +116,6 @@
                     .register('sw.js')
                     .then(function() { console.log("Service Worker Registered"); });
             }
-            </script>
-
             </script>
             <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
             <script>

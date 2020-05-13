@@ -1,75 +1,74 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
+	<head>
         <link rel="manifest" href="manifest.json" />
         <link rel="apple-touch-icon" href="images/apple-icon.png">
         <meta name="theme-color" content="#313131"/>
         <html lang="en">
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <title>CryptoAlgo | Downloads</title>
-        <meta name="description" content="Data encryption with AES and RSA - Downloads">
-        <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, download now, free">
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<title>CryptoAlgo | Contact</title>
+        <meta name="description" content="Data encryption with AES and RSA - Contact Developer">
+        <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, contact, developer">
         <meta name="author" content="CryptoAlgro">
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
-        <link rel="stylesheet" href="assets/css/main.css" />
-    </head>
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
 
-    <script>
+	<script>
     function removeTag() {
         window.setTimeout(function() {
             $('body').removeClass('is-loading');
         }, 100);
     }
-</script>
+    </script>
 
-    <body onload="removeTag()" ondragstart="return false;" ondrop="return false;">
+	<body onload="removeTag()" ondragstart="return false;" ondrop="return false;">
 
-        <!-- Header -->
-            <header id="header" class="alt">
-                <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
-                <a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a>
-            </header>
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
+				<a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a>
+			</header>
 
-        <!-- Nav -->
-            <nav id="menu">
-                <ul class="links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="generic.html">Documentation</a></li>
-                    <li><a href="downloads.html">Downloads (You are here)</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li>Latest Stable Version: V1.4 Stable</li>
-                    <li>Latest Beta/Alpha Version:</li>
-                    <li>V1.4 Beta 20</li>
-                </ul>
-            </nav>
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Documentation</a></li>
+					<li><a href="downloads.html">Downloads</a></li>
+                    <li><a href="contact.html">Contact (You are here)</a></li>
+					<li>Latest Stable Version: V1.4 Stable</li>
+					<li>Latest Beta/Alpha Version:</li>
+					<li>V1.4 Beta 20</li>
+				</ul>
+			</nav>
 
-        <!-- Banner -->
-        <!--
-                        Note to self:
-            To use a video as the background, set data-video to the name of your video without
-            its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
-            formats to work correctly.
-        -->
-            <section id="banner" data-video="images/banner">
-                <div class="inner">
-                    <h1>CryptoAlgo</h1>
-                    <p>Official Download Page</p>
-                    <a href="#one" class="button special scrolly">Versions</a>
-                    <p>      </p>
-                    <ul class="actions">
-                        <li><a href="index.html" class="button alt" style="text-align:center">Homepage</a></li>
-                    </ul>
-                </div>
-            </section>
+		<!-- One -->
+			<section id="banner" data-video="images/banner">
+				<div class="inner">
+					<header class="align-center">
+						<h1>CryptoAlgo Downloads</h1>
+                        <p>Official CryptoAlgo Downloads Page</p>
+						<div class="inner">
+						    <p>      </p>
+				            <ul class="actions">
+					            <li><a href="#one" class="button special scrolly" style="text-align:center">Versions</a></li>
+					        </ul>
+				        </div>
+					</header>
 
-        <!-- One -->
+				</div>
+			</section>
+
+			        <!-- One -->
             <section id="one" class="wrapper style3">
                 <div class="inner">
-                    <h2 style="text-align:center"> Versions </h2>
+                <br />
+                    <h2 style="text-align:center"> Versions <hr></h2>
                     <div id="flexgrid">
                         <div>
                             <header>
@@ -80,7 +79,33 @@
                             <ul class="actions">
                                 <li><a href="https://github.com/cryptoAlgorithm/cryptoAlgo/raw/master/Releases/CryptoAlgo%20V1.4%20Stable.exe" class="button alt" style="text-align:center">CLI Stable Version</a></li>
                             </ul>
+                            <h3 style="text-transform: none; color: #f28b82;; font-weight: bold;">Support for CLI versions has ended.<br />
+                            Unless there is a major security vulnerability, CLI versions would no longer be updated.</h3>
                         </div>
+                        <div>
+                            <header>
+                                <h3>Stable GUI Version</h3>
+                            </header>
+                            <p>CryptoAlgo V2.8 Stable</p>
+                            <p id="GUIText" style="font-weight: bold;">Please choose Install For All Users to allow proper installation <br />
+                            The MSIX installer is just for testing and is not fully operational</p>
+                            <p>      </p>
+                            <hr>
+                            <ul class="actions" id="openGUI-downloads">
+                                <li><a onclick="GUIdownloads()" class="button alt" style="text-align:center">Downloads</a></li>
+                            </ul>
+                            <div id="GUI-downloads" style="display: none;">
+                                <ul class="actions">
+                                    <li><a href="https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v2.8-stable/CryptoAlgo.Installer.exe" class="button alt" style="text-align:center">Download Installer (EXE)</a></li>
+                                </ul>
+                                <ul class="actions">
+                                    <li><a href="https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v2.8-stable/CryptoAlgo.Installer.msix" class="button alt" style="text-align:center">Download Installer (MSIX)</a></li>
+                                </ul>
+                                <ul class="actions">
+                                    <li><a href="https://github.com/CryptoAlgo-Inc/cryptoAlgo/archive/v2.8-stable.zip" class="button alt" style="text-align:center">Download Source Code</a></li>
+                                </ul>
+                            </div>
+                        </div> 
                         <div>
                             <header>
                                 <h3>CLI Beta/Alpha Version</h3>
@@ -90,22 +115,11 @@
                             <ul class="actions">
                                 <li><a href="https://github.com/cryptoAlgorithm/cryptoAlgo/raw/master/Releases/CryptoAlgo%20V1.4%20Beta%2020.exe" class="button alt" style="text-align:center">CLI Beta Version</a></li>
                             </ul>
+                            <h3 style="text-transform: none; color: #f28b82;; font-weight: bold;">Support for CLI versions has ended.<br />
+                            Unless there is a major security vulnerability, CLI versions would no longer be updated.</h3>
                         </div>
-                        <div>
-                            <header>
-                                <h3>Stable GUI Version</h3>
-                            </header>
-                            <p>CryptoAlgo V2.6 Stable</p>
-                                <p>      </p>
-                                <ul class="actions">
-                                    <li><a href="https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v2.6-stable/CryptoAlgo.V2.6.Stable.exe" class="button alt" style="text-align:center">Download Portable (EXE)</a></li>
-                                </ul>
-                                <!-- <ul class="actions">
-                                    <li><a href="https://github.com/cryptoAlgorithm/cryptoAlgo/releases/download/v1.9-alpha12-GUI/CryptoAlgo.V1.9.Alpha.12.Setup.exe" class="button alt" style="text-align:center">Download Installer (EXE)</a></li>
-                                </ul> -->
-                        </div>
-                        
                     </div>
+                    <hr>
                 </div>
             </section>
 
@@ -121,42 +135,62 @@
                                 <li><a href="documentation/CryptoAlgo%20Documentation%20V0.5.pdf" class="button alt" style="text-align:center">Download CrytoAlgo Documentation</a></li>
                                 <li><a href="https://github.com/cryptoAlgorithm/cryptoAlgo/tree/master/Source" class="button alt" style="text-align:center">Download CrytoAlgo Source Code</a></li>
                             </ul>
+                            <hr>
                         </div>
                     </header>
                 </div>
             </section>
 
-                <!-- Footer -->
-            <footer id="footer" class="wrapper">
-                <div class="inner">
-                    <div class="copyright">
-                        &copy; This project is maintained by @CryptoAlgorithm on GitHub.
-                    </div>
-                </div>
-            </footer>
-        
-        <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/main.js"></script>
-            <script src="assets/js/jquery.scrolly.min.js"></script>
-            <script src="assets/js/jquery.scrollex.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/util.js"></script>
-                <script>
-                if('serviceWorker' in navigator) {
-                        navigator.serviceWorker
-                                .register('sw.js')
-                                .then(function() { console.log("Service Worker Registered"); });
+				<!-- Footer -->
+			<footer id="footer" class="wrapper">
+                <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+				<div class="inner">
+					<div class="copyright">
+						&copy; This project is maintained by @CryptoAlgorithm on GitHub.
+					</div>
+				</div>
+			</footer>
+		
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script>
+            if('serviceWorker' in navigator) {
+                    navigator.serviceWorker
+                            .register('sw.js')
+                            .then(function() { console.log("Service Worker Registered"); });
+            }
+
+            function GUIdownloads(openOrClose=true) {
+                if(openOrClose) {
+                    $('#GUIText').fadeOut();
+                    $('#openGUI-downloads').fadeOut(function () {
+                        $('#GUI-downloads').fadeIn();
+                    })
                 }
-                </script>
+                else {
+                    $('#openGUI-downloads').fadeOut(function () {
+                        $('#GUI-downloads').fadeIn();
+                    })
+				}
+			}
 
-                </script>
-                <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
-                <script>
-                grecaptcha.ready(function() {
-                        grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'downloads'})
-                });
-                </script>
+            function init() {
+                $('#GUI-downloads').fadeOut(0);
+			}
+            init();
+            </script>
 
-    </body>
+            </script>
+            <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
+            <script>
+            grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'contact'})
+            });
+            </script>
+	</body>
 </html>

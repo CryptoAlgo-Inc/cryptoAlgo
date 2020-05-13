@@ -13,6 +13,7 @@
         ]
     },
     "dependencies": {
+        "sudo-prompt": "^9.2.1"
     },
     "scripts": {
         "test": "echo \"Unfortunately, there are no tests yet. So, I'll take this as a pass.\""
