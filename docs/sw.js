@@ -1,10 +1,10 @@
-const cacheName = 'CryptoAlgo-V1';
+const cacheName = 'CryptoAlgo-V1.1';
 
 self.addEventListener('install', e => {
     e.waitUntil(
         caches.open(cacheName).then(cache => {
             return cache.addAll([
-                'icon_Lid_icon.ico',
+                'favicon.ico',
                 'generic.html',
                 'downloads.html',
                 'contact.html',
