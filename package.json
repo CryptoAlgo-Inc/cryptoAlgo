@@ -1,8 +1,8 @@
 {
     "name": "CryptoAlgo-GUI",
     "version": "v2.8.2",
-    "main": "Win-GUI/serverProduction.js",
-    "bin": "Win-GUI/serverProduction.js",
+    "main": "Win-GUI/main.js",
+    "bin": "Win-GUI/main.js",
     "author": "CryptoAlgo",
     "pkg": {
         "assets": [
