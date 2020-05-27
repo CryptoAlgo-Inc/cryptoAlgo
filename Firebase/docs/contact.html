@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <link rel="manifest" href="manifest.json" />
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <meta name="theme-color" content="#313131"/>
+        <html lang="en">
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<title>CryptoAlgo | Contact</title>
+        <meta name="description" content="Data encryption with AES and RSA - Contact Developer">
+        <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, contact, developer">
+        <meta name="author" content="CryptoAlgro">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+
+	<script>
+    function removeTag() {
+        window.setTimeout(function() {
+            $('body').removeClass('is-loading');
+        }, 100);
+    }
+    </script>
+
+	<body onload="removeTag()" ondragstart="return false;" ondrop="return false;">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
+				<a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Documentation</a></li>
+					<li><a href="downloads.html">Downloads</a></li>
+                    <li><a href="contact.html">Contact (You are here)</a></li>
+					<li>Latest Stable Version: V1.4 Stable</li>
+					<li>Latest Beta/Alpha Version:</li>
+					<li>V1.4 Beta 20</li>
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section id="banner" data-video="images/banner">
+				<div class="inner">
+					<header class="align-center">
+						<h1>Comments? Suggestions? Doubts?</h1>
+                        <p>Feel free to contact me at <a href="mailto:support@cryptoalgo.cf">cryptoalgro@gmail.com</a> to clarify any doubts you may have. Whether you have a great idea for a new feature or a suggestion to improve security, I'm open to it.</p>
+						<div class="inner">
+						    <p>      </p>
+				            <ul class="actions">
+					            <li><a href="mailto:support@cryptoalgo.cf" class="button alt" style="text-align:center">Contact Me</a></li>
+					        </ul>
+				        </div>
+					</header>
+				</div>
+			</section>
+
+				<!-- Footer -->
+			<footer id="footer" class="wrapper">
+                <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+				<div class="inner">
+					<div class="copyright">
+						&copy; This project is maintained by @CryptoAlgorithm on GitHub.
+					</div>
+				</div>
+			</footer>
+		
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+            <script>
+                // Your web app's Firebase configuration
+                var firebaseConfig = {
+                    apiKey: "AIzaSyDu3GBqQg6o9Mp7Ay6KkTKRnqogZWmhU6c",
+                    authDomain: "cryptoalgogui.firebaseapp.com",
+                    databaseURL: "https://cryptoalgogui.firebaseio.com",
+                    projectId: "cryptoalgogui",
+                    storageBucket: "cryptoalgogui.appspot.com",
+                    messagingSenderId: "104602369567",
+                    appId: "1:104602369567:web:bcfdad88debbb2b8cddf2a",
+                    measurementId: "G-YT1W6G83B3"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                firebase.analytics();
+            </script>
+            <script>
+            if('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                    .register('sw.js')
+                    .then(function() { console.log("Service Worker Registered"); });
+            }
+            </script>
+
+            </script>
+            <script src="https://www.google.com/recaptcha/api.js?render=6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050"></script>
+            <script>
+            grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'contact'})
+            });
+            </script>
+
+	</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "hosting": [
+    {
+    "target": "main",
+    "public": "docs",
+    "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+    "target": "main2",
+    "public": "docs",
+    "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+    "target": "custom",
+    "public": "docs",
+    "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ]
+}

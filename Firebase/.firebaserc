@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "cryptoalgogui"
+  },
+  "targets": {
+    "cryptoalgogui": {
+      "hosting": {
+        "custom": [
+          "cryptoalgogui"
+        ],
+        "main": [
+          "crypta"
+        ],
+        "main2": [
+          "cryptalgo"
+        ]
+      }
+    }
+  }
+}
