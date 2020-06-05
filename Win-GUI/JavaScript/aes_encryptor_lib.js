@@ -20,6 +20,7 @@ auto: function(text) {
         const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
     } catch(e) {
         console.log('Errors were encountered.');
+        console.log('Exiting');
         return true;
     }
     const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');

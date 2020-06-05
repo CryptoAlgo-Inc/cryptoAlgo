@@ -12,7 +12,7 @@ const file_encryptor = require('./JavaScript/file_enc_lib');
 const file_decryptor = require('./JavaScript/file_dec_lib');
 const path = require('path');
 var requestsServed = 0;
-const defaultConfig = '{"onboarding": true, "encryptionCycles": 1, "displayMode": "dark", "textHistory": ["", ""]}';
+const defaultConfig = '{"onboarding": true, "encryptionCycles": 1, "displayMode": "dark", "textHistory": ["", ""], "RSAkeyPairLen": 8192}';
 
 var server = http.createServer(function(req, res) {
 var page = url.parse(req.url).pathname;
@@ -169,8 +169,13 @@ else {
             }
             else if(queryObject['mode'] === 'rsa') {
                 try {
-                    rsa_keygen.auto(config.RSAkeyPairLen);
-                    success();
+                    if(rsa_keygen.auto(config.RSAkeyPairLen)) {
+                        // An error was encountered.
+                        res.writeHead(400);
+                        const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
+                        res.write(errorPg);
+                    }
+                    else {success();}
                 } catch(e) {
                     console.log(e);
                     res.writeHead(400);
@@ -195,9 +200,11 @@ else {
         else if(queryObject['textIn']) {
             console.log(queryObject['textIn']);
             plainText = queryObject['textIn'];
+            console.log(aes_encryptor.auto(plainText));
             if(aes_encryptor.auto(plainText) == true) {
+                console.log("Got here!");
                 res.writeHead(400);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
                 res.write(errorPg);
             }
             else {
@@ -209,7 +216,7 @@ else {
             encrypted = queryObject['encIn']
             if(aes_decryptor.auto(encrypted) == true) {
                 res.writeHead(400);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
                 res.write(errorPg);
             }
             else {
@@ -223,7 +230,7 @@ else {
         }
     } catch(e) {
         res.writeHead(404);
-        const errorPg = fs.readFileSync(path.join(__dirname, 'error404.html'));
+        const errorPg = (path.join(__dirname, 'error404.html'));
         res.write(errorPg);
     }
 }
@@ -245,17 +252,37 @@ var parameters = ["--app=http://localhost:" + port];
 try {
     child(executablePath, parameters, function(err, data) {
         if(err) {
+            console.log('Try 0');
             console.log('An error was encountered opening the Chrome Engine.');
             console.log('Please report this error to the developer');
             console.log(err);
-            process.exit();
-		}
+            child("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", parameters, function(err, data) {
+                if(err) {
+                    console.log('Try 1');
+                    console.log(err);
+                    child("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", parameters, function(err, data) {
+                        if(err) {
+                            console.log('Try 2');
+                            console.log(err);
+                            process.exit();
+                        }
+                        else {
+                            process.exit();
+                        }
+                    });
+                }
+                else {
+                    console.log("I exit here!");
+                    process.exit();
+                }
+            });
+	}
         else {
             console.log('Window has been closed');
             console.log('Total pages served:', requestsServed);
             console.log('Exiting...');
             process.exit();
-		}
+	}
     });
 } catch(e) {
     console.log('Could not start Chrome');

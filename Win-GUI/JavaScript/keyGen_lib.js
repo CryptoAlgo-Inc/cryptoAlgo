@@ -17,8 +17,12 @@ function generateKeys(len) {
         },
     })
     console.log('█                           Writing...                           █');
-    writeFileSync(os.homedir() + '\\Documents\\private.pem', privateKey);
-    writeFileSync(os.homedir() + '\\Documents\\public.pem', publicKey);
+    try {
+        writeFileSync(os.homedir() + '\\Documents\\private.pem', privateKey);
+        writeFileSync(os.homedir() + '\\Documents\\public.pem', publicKey);
+    } catch(e) {
+        return 1;
+    }
     console.log('█                 Done generating RSA key pair.                  █');
 }
 
@@ -32,5 +36,6 @@ auto: function(modLength) {
     generateKeys(length);
     console.log('█              Thank you for using this program!                 █');
     console.log('██████████████████████████████████████████████████████████████████\x1b[0m');
+    return 0;
 }
 };
