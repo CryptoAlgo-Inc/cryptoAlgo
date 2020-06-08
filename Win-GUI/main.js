@@ -186,14 +186,14 @@ else {
         }
         else if(queryObject['silentKeygen']) {
             try {
-                rsa_keygen.auto();
+                rsa_keygen.auto(config.RSAkeyPairLen);
                 aes_keygen.auto();
                 const welcome = fs.readFileSync(path.join(__dirname, 'welcome.html'));
                 res.write(welcome);
             } catch(e) {
                 console.log(e);
                 res.writeHead(400);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
+                const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
                 res.write(errorPg);
             }
         }
