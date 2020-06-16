@@ -110,6 +110,29 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+            <script>
+                // Your web app's Firebase configuration
+                var firebaseConfig = {
+                    apiKey: "AIzaSyDu3GBqQg6o9Mp7Ay6KkTKRnqogZWmhU6c",
+                    authDomain: "cryptoalgogui.firebaseapp.com",
+                    databaseURL: "https://cryptoalgogui.firebaseio.com",
+                    projectId: "cryptoalgogui",
+                    storageBucket: "cryptoalgogui.appspot.com",
+                    messagingSenderId: "104602369567",
+                    appId: "1:104602369567:web:bcfdad88debbb2b8cddf2a",
+                    measurementId: "G-YT1W6G83B3"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                firebase.analytics();
+            </script>
             <script>
             if('serviceWorker' in navigator) {
                 navigator.serviceWorker

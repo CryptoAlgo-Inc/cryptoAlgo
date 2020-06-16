@@ -5,7 +5,7 @@
         <meta name="theme-color" content="#313131"/>
         <link rel="manifest" href="manifest.json" />
         <html lang="en">
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
         <title>CryptoAlgo | Home</title>
         <meta name="description" content="Data encryption with AES and RSA">
         <meta name="keywords" content="cryptography, cryptoAlgo, AES, RSA, data encryption, safety">
@@ -63,7 +63,7 @@
                         <p>      </p>
                             <ul class="actions">
                                 <li><a href="generic.html" class="button alt"> Read the docs </a></li>
-                            <li><a href="downloads.html" class="button alt">Download Now!</a></li>
+                                <li><a href="downloads.html" class="button alt">Download Now!</a></li>
                             </ul>
                     </div>
                 </div>
@@ -186,13 +186,36 @@
             </footer>
         
         <!-- Scripts -->
-            <script type="text/javascript" src="https://cryptoalgo.cf/assets/js/jquery.min.js"></script>
-            <script type="text/javascript" src="https://cryptoalgo.cf/assets/js/jquery.scrolly.min.js"></script>
-            <script type="text/javascript" src="https://cryptoalgo.cf/assets/js/jquery.scrollex.min.js"></script>
-            <script type="text/javascript" src="https://cryptoalgo.cf/assets/js/skel.min.js"></script>
-            <script type="text/javascript" src="https://cryptoalgo.cf/assets/js/util.js"></script>
-            <script type="text/javascript" src="https://cryptoalgo.cf/assets/js/main.js"></script>
-            <script type="text/javascript" src="https://cryptoalgo.cf/assets/js/lazysizes.min.js"></script>
+            <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+            <script type="text/javascript" src="assets/js/jquery.scrolly.min.js"></script>
+            <script type="text/javascript" src="assets/js/jquery.scrollex.min.js"></script>
+            <script type="text/javascript" src="assets/js/skel.min.js"></script>
+            <script type="text/javascript" src="assets/js/util.js"></script>
+            <script type="text/javascript" src="assets/js/main.js"></script>
+            <script type="text/javascript" src="assets/js/lazysizes.min.js"></script>
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+            <script>
+                // Your web app's Firebase configuration
+                var firebaseConfig = {
+                    apiKey: "AIzaSyDu3GBqQg6o9Mp7Ay6KkTKRnqogZWmhU6c",
+                    authDomain: "cryptoalgogui.firebaseapp.com",
+                    databaseURL: "https://cryptoalgogui.firebaseio.com",
+                    projectId: "cryptoalgogui",
+                    storageBucket: "cryptoalgogui.appspot.com",
+                    messagingSenderId: "104602369567",
+                    appId: "1:104602369567:web:bcfdad88debbb2b8cddf2a",
+                    measurementId: "G-YT1W6G83B3"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                firebase.analytics();
+            </script>
                 <script>
                 if('serviceWorker' in navigator) {
                     navigator.serviceWorker
