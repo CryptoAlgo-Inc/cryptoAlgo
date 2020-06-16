@@ -126,6 +126,7 @@
             background-image: url("../../images/keygen.webp");
             background-size: 100% 100%;
             filter: grayscale(100%);
+            border-radius: 7px;
         }
         .container .card .social {
             position: absolute !important;
@@ -206,3 +207,7 @@
             color: #555;
             border-radius: 7px;
 	}
+        .card {
+            border-radius: 7px;
+            overflow: hidden !important;
+        }

@@ -23,15 +23,15 @@
             <script src="assets/js/util.js" defer></script>
             <script src="assets/js/main.js" defer></script>
             <script src="assets/js/lazysizes.min.js" defer></script>
-            <script src="assets/js/alertBox.js" defer></script>
+            <!-- <script src="assets/js/alertBox.js" defer></script> -->
     </head>
 
     <body id="body" ondragstart="return false;" ondrop="return false;">
 
         <!-- Header -->
             <header id="header" class="alt">
-                <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
                 <a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a>
+                <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
             </header>
 
         <!-- Nav -->
@@ -52,13 +52,13 @@
                         Note to self:
             To use a video as the background, set data-video to the name of your video without
             its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
-            formats to work correctly.
-        -->
+            formats to work correctly. -->
+        
             <section id="banner" data-video="images/banner">
                 <div class="inner">
                     <h1>CryptoAlgo</h1>
-                    <p>Node.js-based encryptor and<br />
-                    decryptor with a webapp GUI.</p>
+                    <p>Easily encrypt or decrypt<br />
+                    text or files</p>
                     <a href="#one" class="button special scrolly">Start</a><br />
                     <div class="inner">
                         <p>      </p>
@@ -67,11 +67,10 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section> 
 
         <!-- One -->
             <section id="one" class="wrapper style2">
-            <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
                 <h2 style="text-align: center;">What would you like to do?</h2>
         <div class="outer">
             <div class="container" style="display: inline-block;">
@@ -79,7 +78,7 @@
                     <h2>KeyGen<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Generate keyfiles</small></h2>
                     <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
-                    <div class="pic" onmouseover="removeBW()"></div>
+                    <div class="pic"></div>
                     <ul> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
                     <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
                     </ul>
@@ -90,7 +89,7 @@
                     <h2>TextCrypto<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Encrypt and decrypt text</small></h2>
                     <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
-                    <div class="pic" onmouseover="removeBW()"></div>
+                    <div class="pic"></div>
                     <ul>
  <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
 <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
@@ -102,7 +101,7 @@
                     <h2>HeadAlgo<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Enc and Dec AES keyfiles</small></h2>
                     <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
-                    <div class="pic" onmouseover="removeBW()" style="background-image: url('./images/headalgo.webp')"></div>
+                    <div class="pic" style="background-image: url('./images/headalgo.webp')"></div>
                     <ul>
  <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
 <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
@@ -114,7 +113,7 @@
                     <h2>FileCrypto<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Encrypt and decrypt files</small></h2>
                     <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
-                    <div class="pic" onmouseover="removeBW()"></div>
+                    <div class="pic"></div>
                     <ul>
  <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
 <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
@@ -126,7 +125,7 @@
                     <h2>Settings<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Change settings</small></h2>
                     <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
-                    <div class="pic" onmouseover="removeBW()" style="background-image: url('./images/settings.jpg')">></div>
+                    <div class="pic" style="background-image: url('./images/settings.jpg')">></div>
                     <ul>
  <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
 <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
@@ -146,6 +145,7 @@
 
         <!-- Two -->
             <section id="two" class="wrapper style3">
+            <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
                 <div class="inner">
                     <h2 style="text-align:center"> <br />3 Simple Steps </h2>
                     <div id="flexgrid">
@@ -176,7 +176,7 @@
                 <div class="inner">
                     <div class="grid-style">
                         <div>
-                            <div class="box">
+                            <div class="box" style="border-radius: 7px;">
                                 <div class="image fit">
                                     <img data-src="images/pic02.webp" class="lazyload" alt="" />
                                 </div>
@@ -191,7 +191,7 @@
                         </div>
 
                         <div>
-                            <div class="box">
+                            <div class="box" style="border-radius: 7px;">
                                 <div class="image fit">
                                     <img data-src="images/pic03.webp" class="lazyload" alt="" />
                                 </div>

@@ -18,7 +18,15 @@
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
 
-    <body ondragstart="return false;" ondrop="return false;">
+<script>
+    function removeTag() {
+        window.setTimeout(function() {
+            $('body').removeClass('is-loading');
+        }, 1);
+    }
+</script>
+
+    <body id="body" onload="removeTag()" ondragstart="return false;" ondrop="return false;">
         <!-- Header -->
             <header id="header" class="alt">
                 <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
@@ -107,6 +115,12 @@
             <script src="assets/js/skel.min.js"></script>
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
-
+            <script>
+            function init() {
+                $('#body').fadeOut(0);
+                $('#body').fadeIn("slow");
+            }
+            init();
+            </script>
     </body>
 </html>
