@@ -1,0 +1,3 @@
+[0616/183421.977:ERROR:file_io.cc(134)] WriteFile: The pipe is being closed. (0xE8)
+[0616/183421.999:ERROR:file_io.cc(134)] WriteFile: The pipe is being closed. (0xE8)
+[0622/133618.608:ERROR:http_transport_win.cc(382)] HTTP status 403
