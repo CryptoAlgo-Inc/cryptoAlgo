@@ -5,6 +5,31 @@
 	visibility: collapse !important;  
 }
 
+.warning {
+        box-shadow: inset 0 0 0 2px #e81123 !important;
+}
+
+.textOutputDiv {
+        max-width: 95%;
+        max-height: 45%;
+        border: solid 2px #0063b1;
+        border-radius: 7px;
+        overflow-y: auto;
+        word-break: break-word;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        padding: 10px;
+        font-family: Courier New;
+        color: white !important;
+}
+
+.textOutput {
+        color: white !important;
+        margin-bottom: 0px !important;
+}
+
 /* Google Material Design Font */
 @font-face {
     font-family: 'Material Icons !important';
@@ -43,12 +68,12 @@
   font-feature-settings: 'liga';
 }
 
-#outputTxt {
-        word-break: break-all !important;
-}
-
 selection {
 	transition-duration: 0.5s;
+}
+
+.selectbg {
+        background-image: url(../../images/selectbg.jpg);
 }
 
 @font-face {
@@ -79,7 +104,8 @@ a, p, h1, h2, h3, input, small, body, textrea {
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
-  background: #000;
+  background: #ffffff00;
+  border-radius: 8px;
 }
  
 /* Handle */
@@ -90,7 +116,8 @@ a, p, h1, h2, h3, input, small, body, textrea {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #222;
+    background: #ffffff00;
+    border-radius: 8px;
 }
 
 /* Handle on hover */
@@ -3249,7 +3276,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 				.wrapper.style3 button.alt,
 				.wrapper.style3 .button.alt {
 					background-color: transparent;
-					box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+					box-shadow: inset 0 0 0 2px #0063b1;
 					color: #ffffff !important;
 				}
 

@@ -6,7 +6,7 @@
         <meta name="theme-color" content="#313131"/>
         <html lang="en">
         <link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
-        <title>CryptoAlgo | File Decryption</title>
+        <title>CryptoAlgo | File Encryption</title>
         <meta name="description" content="Data encryption with AES and RSA - Downloads">
         <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, download now, free">
         <meta name="author" content="CryptoAlgro">
@@ -41,33 +41,31 @@
                 </ul>
             </nav>
 
-        <!-- One -->
-            <section id="one" class="wrapper style3">
+        <!-- Banner -->
+        <!--
+                        Note to self:
+            To use a video as the background, set data-video to the name of your video without
+            its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+            formats to work correctly.
+        -->
+            <section id="banner" data-video="images/banner">
                 <div class="inner">
-                    <header class="align-center">
-                        <h2><br />Key in the absolute or relative path to the file to be decrypted</h2>
-                            <div class="inner">
-                                <form>
-                                    <input type="text" id="fileName" placeholder="C:\Users\Documents\myfile.txt_encrypted" name="fileName_dec"><br>
-                                    <small>Above shown is an absolute path. Relative paths are relative to the location of this program.</small><br><br>
-                                </form>
-                                <p>      </p>
-                                <h3> Thank you so much for supporting CryptoAlgo! Please report any <br />
-                                bugs if possible and give feedback on CryptoAlgo through the link below.</h3>
-                                <ul class="actions">
-                                    <li><a href="contact.html" class="button alt" style="text-align:center">Contact</a></li>
-                                    <li><a href="index.html" class="button alt" style="text-align:center">Home</a></li>
-                                </ul>
-                                <ul class="actions">
-                                    <li><a href="file.html" class="button alt" style="text-align:center">Back</a></li>
-                                </ul>
-                            </div>
-                    </header>
+                    <h1>CryptoAlgo</h1>
+                    <p>File Encryptor/Decryptor</p>
+                    <p>Select one of the options below</p>
+                    <ul class="actions">
+                        <li><a href="file_enc.html" class="button alt" style="text-align:center">File Encryption</a></li>
+                        <li><a href="file_dec.html" class="button alt" style="text-align:center">File Decryption</a></li>
+                    </ul>
+                    <ul class="actions">
+                        <li><a href="index.html" class="button alt" style="text-align:center">Home</a></li>
+                    </ul>
                 </div>
             </section>
 
-            <!-- Footer -->
+                <!-- Footer -->
             <footer id="footer" class="wrapper">
+            <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
                 <div class="inner">
                     <div class="copyright">
                         <p>This project is maintained by <a href="mailto:support@cryptoalgo.cf">@CryptoAlgo</a>.</p>
@@ -84,9 +82,9 @@
             <script src="assets/js/main.js"></script>
                 <script>
                 if('serviceWorker' in navigator) {
-                    navigator.serviceWorker
-                        .register('sw.js')
-                        .then(function() { console.log("Service Worker Registered"); });
+                        navigator.serviceWorker
+                                .register('sw.js')
+                                .then(function() { console.log("Service Worker Registered"); });
                 }
                 </script>
 

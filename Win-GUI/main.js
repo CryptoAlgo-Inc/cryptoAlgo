@@ -41,8 +41,8 @@ function renderOutput(input, firstFiller) {
     res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /><title>CryptoAlgo | ' + firstFiller + ' Text Output</title></head>');
     res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}var text = '" + input + "';");
     res.write("function copyText(){navigator.clipboard.writeText(text).then(function() { console.log('Async: Copying to clipboard was successful!');$(\"#copyButton\").fadeOut(function() {$(this).text(\"Copied!\").fadeIn();});setTimeout(function(){ $(\"#copyButton\").fadeOut(function() {$(this).text(\"Copy to clipboard\").fadeIn();}) }, 2000);}, function(err) {console.error('Async: Could not copy text: ', err);});}</script>");
-    res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1>Success</h1><p id="outputTxt">' + firstFiller + ' text: ' + input + '</p><a href="index.html" class="button alt">Home</a><br /><br />');
-    res.write('<a id="copyButton" href="javascript:copyText();" class="button alt">Copy to clipboard</a></div></section>');
+    res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1 style="margin-bottom: 0px;">Success</h1><p style="margin-bottom: 0px;">' + firstFiller + ' text: <br/> Click on the copy button or text box to copy</p><div class="textOutputDiv" onclick="copyText()"><p class="textOutput">' + input + '</p></div><a href="index.html" class="button alt">Home</a>');
+    res.write('<a id="copyButton" style="margin-left: 10px;" href="javascript:copyText();" class="button alt">Copy to clipboard</a></div></section>');
     res.write('<!-- Header --><header id="header" class="alt"><div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div><a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a></header>');
     res.write('<nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li><li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li><li><a href="generic.html">Decryption/Encryption of text</a></li><li><a href="headAlgo.html">');
     res.write('Decryption/Encryption of header</a></li><li><a href="file.html">Decryption/Encryption of files</a></li><li><a href="contact.html">Contact</a></li><li><a href="info.html">Build Infomation</a></li><li>Beta/Alpha Version:</li><li>V1.8 Alpha 20</li></ul></nav></body></html>');
@@ -84,19 +84,11 @@ if(page == '/') {
 else {
     try {
         const queryObject = url.parse(req.url,true).query;
-        if(queryObject['fileName']) {
-            console.log(queryObject['fileName']);
-            if(file_encryptor.auto(queryObject['fileName'])) {
-                console.log('Errors were encountered.');
-                res.writeHead(400);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
-                res.write(errorPg);
-            }
-            else {
-                success();
-            }
+        if(queryObject['encFile']) {
+            console.log(queryObject['encFile']);
+            file_encryptor.auto(queryObject['encFile']);
         }
-        if(queryObject['reset']) {
+        else if(queryObject['reset']) {
             // Write the default values
             var new_config = defaultConfig;
             try {
@@ -105,17 +97,9 @@ else {
             fs.writeFileSync('./config/main.json', new_config);
             success();
         }
-        else if(queryObject['fileName_dec']) {
-            console.log(queryObject['fileName_dec']);
-            if(file_decryptor.auto(queryObject['fileName_dec'])) {
-                console.log('Errors were encountered.');
-                res.writeHead(400);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
-                res.write(errorPg);
-            }
-            else {
-                success();
-            }
+        else if(queryObject['decFile']) {
+            console.log(queryObject['decFile']);
+            file_decryptor.auto(queryObject['decFile']);
         }
         else if(queryObject['keyPairLength']) {
             console.log(queryObject['keyPairLength']);
@@ -197,6 +181,7 @@ else {
                 res.write(errorPg);
             }
         }
+
         else if(queryObject['textIn']) {
             console.log(queryObject['textIn']);
             plainText = queryObject['textIn'];
@@ -229,8 +214,9 @@ else {
             res.write(requested);
         }
     } catch(e) {
+        console.log(e);
         res.writeHead(404);
-        const errorPg = (path.join(__dirname, 'error404.html'));
+        const errorPg = fs.readFileSync(path.join(__dirname, 'error404.html'));
         res.write(errorPg);
     }
 }
