@@ -87,6 +87,7 @@ else {
         if(queryObject['encFile']) {
             console.log(queryObject['encFile']);
             file_encryptor.auto(queryObject['encFile']);
+            success();
         }
         else if(queryObject['reset']) {
             // Write the default values
@@ -100,6 +101,7 @@ else {
         else if(queryObject['decFile']) {
             console.log(queryObject['decFile']);
             file_decryptor.auto(queryObject['decFile']);
+            success();
         }
         else if(queryObject['keyPairLength']) {
             console.log(queryObject['keyPairLength']);
