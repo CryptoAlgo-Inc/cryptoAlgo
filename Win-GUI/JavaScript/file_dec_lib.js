@@ -38,7 +38,7 @@ auto: function(fileName) {
             iv = Buffer.from(iv_in, 'hex');
             const file_in = fs.readFileSync(path.resolve(fileName), 'utf8');
             const file_dec = decrypt(file_in, key, iv);
-            fs.writeFileSync(path.resolve(fileName).slice(0, -10), file_dec);
+            fs.writeFileSync(path.resolve(fileName).slice(0, -11), file_dec);
             console.log('█                        Decrypting...                           █');
             console.log('█             Thank you for using the decryptor!                 █');
             console.log('█         This windows will auto-close in 3.0 seconds.           █');

@@ -41,7 +41,7 @@ function renderOutput(input, firstFiller) {
     res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /><title>CryptoAlgo | ' + firstFiller + ' Text Output</title></head>');
     res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}var text = '" + input + "';");
     res.write("function copyText(){navigator.clipboard.writeText(text).then(function() { console.log('Async: Copying to clipboard was successful!');$(\"#copyButton\").fadeOut(function() {$(this).text(\"Copied!\").fadeIn();});setTimeout(function(){ $(\"#copyButton\").fadeOut(function() {$(this).text(\"Copy to clipboard\").fadeIn();}) }, 2000);}, function(err) {console.error('Async: Could not copy text: ', err);});}</script>");
-    res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1 style="margin-bottom: 0px;">Success</h1><p style="margin-bottom: 0px;">' + firstFiller + ' text: <br/> Click on the copy button or text box to copy</p><div class="textOutputDiv" onclick="copyText()"><p class="textOutput">' + input + '</p></div><a href="index.html" class="button alt">Home</a>');
+    res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1 style="margin-bottom: 0px;">Success</h1><p style="margin-bottom: 0px;">' + firstFiller + ' text: </p><small style="color: #949494;"> Click on the copy button or text box to copy</small><div class="textOutputDiv" onclick="copyText()"><p class="textOutput">' + input + '</p></div><a href="index.html" class="button alt">Home</a>');
     res.write('<a id="copyButton" style="margin-left: 10px;" href="javascript:copyText();" class="button alt">Copy to clipboard</a></div></section>');
     res.write('<!-- Header --><header id="header" class="alt"><div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div><a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a></header>');
     res.write('<nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li><li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li><li><a href="generic.html">Decryption/Encryption of text</a></li><li><a href="headAlgo.html">');
@@ -85,9 +85,13 @@ else {
     try {
         const queryObject = url.parse(req.url,true).query;
         if(queryObject['encFile']) {
-            console.log(queryObject['encFile']);
-            file_encryptor.auto(queryObject['encFile']);
-            success();
+            if(file_encryptor.auto(queryObject['encFile'])) {
+                // File encryption error
+                console.log('File errors');
+            }
+            else {
+                success();
+			}
         }
         else if(queryObject['reset']) {
             // Write the default values
@@ -99,9 +103,13 @@ else {
             success();
         }
         else if(queryObject['decFile']) {
-            console.log(queryObject['decFile']);
-            file_decryptor.auto(queryObject['decFile']);
-            success();
+            if(file_decryptor.auto(queryObject['decFile'])) {
+                // File decryption error
+                console.log('File errors');
+            }
+            else {
+                success();
+			}
         }
         else if(queryObject['keyPairLength']) {
             console.log(queryObject['keyPairLength']);

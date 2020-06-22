@@ -45,7 +45,7 @@ module.exports = {
             const file_in = fs.readFileSync(path.resolve(fileName));
             const file_enc = encrypt(file_in, key, iv);
             console.log('█                        Encrypting...                           █');
-            fs.writeFileSync(path.resolve(fileName) + '_encrypted', file_enc);
+            fs.writeFileSync(path.resolve(fileName) + '.filecrypto', file_enc);
         } catch(e) {
             console.log(e);
             console.log('Error while encrypting message. Ensure that the AES keyfiles are valid and the file is present.\x1b[36m');
