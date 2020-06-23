@@ -3078,6 +3078,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 			.wrapper.style2 textarea {
 				background: #272727;
 				border-color: #0063B1;
+                                transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 			}
 
 				.wrapper.style2 input[type="text"]:focus,
