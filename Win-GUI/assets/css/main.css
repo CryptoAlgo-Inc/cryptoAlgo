@@ -25,47 +25,15 @@
         color: white !important;
 }
 
+/* Custom track */
+.textOutputDiv::-webkit-scrollbar-track {
+    background: #212121;
+    border-radius: 8px !important;
+}
+
 .textOutput {
         color: white !important;
         margin-bottom: 0px !important;
-}
-
-/* Google Material Design Font */
-@font-face {
-    font-family: 'Material Icons !important';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
-    src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
-    url(../fonts/MaterialIcons-Regular.woff) format('woff'),
-    url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
 }
 
 selection {
@@ -104,7 +72,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
-  background: black;
+  background: #000;
   border-radius: 8px;
 }
  
@@ -114,10 +82,10 @@ a, p, h1, h2, h3, input, small, body, textrea {
   border-radius: 8px;
 }
 
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: black;
-    border-radius: 8px;
+    background: #212121;
 }
 
 /* Handle on hover */
@@ -127,7 +95,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 
 /* Overlap region */
 ::-webkit-scrollbar-corner {
-    background: black;
+    background: #000;
 }
 
 /* Reset */
