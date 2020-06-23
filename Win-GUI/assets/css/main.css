@@ -9,6 +9,34 @@
         box-shadow: inset 0 0 0 2px #e81123 !important;
 }
 
+@font-face {
+  font-family: 'Material Icons Round';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Round.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons Round';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  margin-top: 10px;
+}
+
 .textOutputDiv {
         max-width: 95%;
         max-height: 45%;
@@ -23,6 +51,16 @@
         padding: 10px;
         font-family: Courier New;
         color: white !important;
+}
+
+.protectedQR {
+        filter: blur(8px);
+        transition: filter 0.5s ease;
+}
+
+.protectedQR:hover {
+        filter: blur(0px);
+        cursor: none;
 }
 
 /* Custom track */
@@ -2109,7 +2147,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 /* Form */
 
 	form {
-		margin: 0 0 2rem 0;
+		margin: 0;
 	}
 
 		form .field {

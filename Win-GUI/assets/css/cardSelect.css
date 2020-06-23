@@ -2,7 +2,6 @@
             font-family: "GilroyLight";
             src: url("../fonts/Gilroy-Light.otf");
         }
-
         * {
             margin: auto;
             box-sizing: border-box;
@@ -28,6 +27,7 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
+            animation-delay: 2s;
         }
         .container .card {
             position: relative;
@@ -155,7 +155,7 @@
             border-radius: 30px !important;
             cursor: pointer;
             outline: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s cubic-bezier(0.47, 0, 0.75, 0.72);
             mix-blend-mode: hard-light;
         }
         .container .card button i {

@@ -52,8 +52,8 @@
                                         <p>      </p>
                                         <form>
                                             <ul class="actions">
-                                                <li><a onclick="encrypt()" class="button alt" style="text-align:center">Encrypt</a></li>
-                                                <li><a onclick="decrypt()" class="button alt" style="text-align:center">Decrypt</a></li>
+                                                <li><a onclick="encrypt()" class="button alt" style="text-align:center"><i class="material-icons">enhanced_encryption</i></a></li>
+                                                <li><a onclick="decrypt()" class="button alt" style="text-align:center"><i class="material-icons">no_encryption</i></a></li>
                                             </ul>
                                         </form>
                                     </div>
@@ -74,7 +74,7 @@
                                         <p>      </p>
                                         <form>
                                             <input type="text" style="width: 100%;" name="encFile" placeholder="Please key in the text to be encrypted"/ >
-                                            <small>Above shown is an absolute path. Relative paths are relative to the location of this program.</small>
+                                            <small>Above shown is an absolute path. Relative paths are relative to the location of this program.<br/></small>
                                             <small>Binary files (.exe, .ico, .jpg, etc.) are currently not supported.</small>
                                         </form>
                                     </div>
@@ -104,11 +104,13 @@
 <script>
 function encrypt() {
     $('#one').fadeOut(function(){
+        $('#two').fadeIn("slow");
         $('#encrypt').fadeIn("slow");
     });
 }
 function decrypt() {
     $('#one').fadeOut(function(){
+        $('#two').fadeIn("slow");
         $('#decrypt').fadeIn("slow");
     });
 }
@@ -117,6 +119,7 @@ function init() {
     $('#decrypt').fadeOut(0);
     $('#body').fadeOut(0);
     $('#body').fadeIn("slow");
+    $('#two').fadeOut(0);
 }
 init();
 </script>

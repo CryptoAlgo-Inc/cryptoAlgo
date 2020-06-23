@@ -10,6 +10,7 @@ const rsa_decryptor = require('./JavaScript/decryptor_lib');
 const rsa_encryptor = require('./JavaScript/encryptor_lib');
 const file_encryptor = require('./JavaScript/file_enc_lib');
 const file_decryptor = require('./JavaScript/file_dec_lib');
+const QRcode = require('qrcode');
 const path = require('path');
 var requestsServed = 0;
 const defaultConfig = '{"onboarding": true, "encryptionCycles": 1, "displayMode": "dark", "textHistory": ["", ""], "RSAkeyPairLen": 8192}';
@@ -37,12 +38,19 @@ try {
 var config = JSON.parse(fs.readFileSync(os.homedir() + '\\Documents\\CryptoAlgo\\config\\main.json'));
 
 function renderOutput(input, firstFiller) {
+    QRcode.toFile('qrcode.png', input, {
+      color: {
+        dark: '#000',
+        light: '#FFF'
+      }
+    });
     res.writeHead(200);
     res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /><title>CryptoAlgo | ' + firstFiller + ' Text Output</title></head>');
     res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}var text = '" + input + "';");
-    res.write("function copyText(){navigator.clipboard.writeText(text).then(function() { console.log('Async: Copying to clipboard was successful!');$(\"#copyButton\").fadeOut(function() {$(this).text(\"Copied!\").fadeIn();});setTimeout(function(){ $(\"#copyButton\").fadeOut(function() {$(this).text(\"Copy to clipboard\").fadeIn();}) }, 2000);}, function(err) {console.error('Async: Could not copy text: ', err);});}</script>");
-    res.write('<body class="subpage" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1 style="margin-bottom: 0px;">Success</h1><p style="margin-bottom: 0px;">' + firstFiller + ' text: </p><small style="color: #949494;"> Click on the copy button or text box to copy</small><div class="textOutputDiv" onclick="copyText()"><p class="textOutput">' + input + '</p></div><a href="index.html" class="button alt">Home</a>');
-    res.write('<a id="copyButton" style="margin-left: 10px;" href="javascript:copyText();" class="button alt">Copy to clipboard</a></div></section>');
+    res.write("function copyText(){navigator.clipboard.writeText(text).then(function() { console.log('Async: Copying to clipboard was successful!');$(\"#copyButton\").fadeOut(function() {$(this).text(\"done\").fadeIn();});setTimeout(function(){ $(\"#copyButton\").fadeOut(function() {$(this).text(\"content_copy\").fadeIn();}) }, 2000);}, function(err) {console.error('Async: Could not copy text: ', err);});}</script>");
+    res.write('<body class="subpage" ondragstart="return false;" onload="removeTag()"><section id="banner" data-video="images/banner"><div class="inner"><h1 style="margin-bottom: 0px;">Success</h1><p style="margin-bottom: 0px;">' + firstFiller + ' text: </p><small style="color: #949494;"> Click on the copy button or text box to copy</small><div class="textOutputDiv" onclick="copyText()"><p class="textOutput">' + input + '</p></div><ul class="actions"><li><a href="index.html" class="button alt"><i class="material-icons">home</i></a></li>');
+    res.write('<li><a href="#one" class="button special scrolly"><i style="margin-top: 6px" class="material-icons">qr_code</i></a></li><li><a href="javascript:copyText();" class="button alt"><i id="copyButton" class="material-icons">content_copy</i></a></li></ul></div></section>');
+    res.write('<section id="one" class="wrapper style2" style="text-align: center"><img class="protectedQR" style="border: solid 2px #0063b1; border-radius: 7px" src="qrcode.png" alt="QR code" max-width=80%><p style="margin: 6px 0 0 0"> Scan this QR code for ' + firstFiller + ' text<br/>Hover on image to remove blur</p></section>');
     res.write('<!-- Header --><header id="header" class="alt"><div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div><a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a></header>');
     res.write('<nav id="menu"><ul class="links"><li><a href="index.html">Home</a></li><li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li><li><a href="generic.html">Decryption/Encryption of text</a></li><li><a href="headAlgo.html">');
     res.write('Decryption/Encryption of header</a></li><li><a href="file.html">Decryption/Encryption of files</a></li><li><a href="contact.html">Contact</a></li><li><a href="info.html">Build Infomation</a></li><li>Beta/Alpha Version:</li><li>V1.8 Alpha 20</li></ul></nav></body></html>');
@@ -227,6 +235,12 @@ else {
             else {
                 renderOutput(aes_decryptor.auto(encrypted), "Decrypted");
             }
+        }
+        else if(page == "/qrcode.png") {
+            console.log("Requested for QR code");
+            const QRcodeIMG = fs.readFileSync("qrcode.png");
+            res.writeHead(200);
+            res.write(QRcodeIMG);
         }
         else {
             const requested = fs.readFileSync(path.join(__dirname, page));
