@@ -20,11 +20,6 @@
         h2 {
             pointer-events: none;
         }
-        body {
-            background-color: #e6e5e1;
-            width: 100vw;
-            height: 100vh;
-        }
         .container {
             width: 100%;
             height: 100%;
@@ -53,7 +48,7 @@
             width: 16px !important;
             height: 16px !important;
             border-radius: 16px !important;
-            background-color: #212121;
+            background-color: #2e2e2e;
         }
         .container .pic:after {
             content: "";
@@ -65,7 +60,7 @@
             width: 16px;
             height: 16px;
             border-radius: 16px;
-            background-color: #212121;
+            background-color: #2e2e2e;
         }
         .container .card ul {
             z-index: 99;
