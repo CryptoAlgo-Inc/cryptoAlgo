@@ -73,8 +73,8 @@
             </section>
 
         <!-- Footer -->
-            <footer id="footer" class="wrapper" style="padding-left: calc(100vw - 100%);">
-                <div class="inner">
+            <footer id="one" class="wrapper style2">
+                <div class="inner" style="text-align: center;">
                     <div class="copyright">
                          <a onclick="start()" style="font-size: 25px; font-weight: bold;" class="button alt">Start ➜</a>
                     </div>
@@ -104,7 +104,7 @@
                 setTimeout(function () {
                     if(counter >= 1) {
                         $('#nextText').fadeIn(750);
-                        $('#footer').fadeIn(750);
+                        $('#one').fadeIn(750);
                     }
                     elem.innerHTML = text[counter];
                     elem.classList.remove('hide');
@@ -120,7 +120,7 @@
                 $('#body').fadeOut(0);
                 $('#body').fadeIn();
                 $('#nextText').fadeOut(0);
-                $('#footer').fadeOut(0);
+                $('#one').fadeOut(0);
             }
             init();
             function start() {

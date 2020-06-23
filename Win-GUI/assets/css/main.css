@@ -104,7 +104,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
-  background: #ffffff00;
+  background: black;
   border-radius: 8px;
 }
  
@@ -116,7 +116,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #ffffff00;
+    background: black;
     border-radius: 8px;
 }
 
@@ -127,7 +127,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 
 /* Overlap region */
 ::-webkit-scrollbar-corner {
-    background: #111;
+    background: black;
 }
 
 /* Reset */

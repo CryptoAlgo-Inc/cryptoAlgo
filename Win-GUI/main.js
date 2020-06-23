@@ -62,6 +62,12 @@ function success() {
     res.write(successpg);
 }
 
+function err500() {
+    const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
+    res.writeHead(500);
+    res.write(errorPg);
+}
+
 function backToSettings() {
     const successpg = fs.readFileSync(path.join(__dirname, 'settings.html'));
     res.writeHead(200);
@@ -88,6 +94,7 @@ else {
             if(file_encryptor.auto(queryObject['encFile'])) {
                 // File encryption error
                 console.log('File errors');
+                err500();
             }
             else {
                 success();
@@ -96,16 +103,20 @@ else {
         else if(queryObject['reset']) {
             // Write the default values
             var new_config = defaultConfig;
+            // Write the default values
+            var new_config = defaultConfig;
             try {
-                fs.mkdirSync('./config');
+                fs.mkdirSync(os.homedir() + '\\Documents\\CryptoAlgo');
+                fs.mkdirSync(os.homedir() + '\\Documents\\CryptoAlgo\\config');
             } catch(e){}
-            fs.writeFileSync('./config/main.json', new_config);
+            fs.writeFileSync((os.homedir() + '\\Documents\\CryptoAlgo\\config\\main.json'), new_config);
             success();
         }
         else if(queryObject['decFile']) {
             if(file_decryptor.auto(queryObject['decFile'])) {
                 // File decryption error
                 console.log('File errors');
+                err500();
             }
             else {
                 success();
@@ -186,9 +197,8 @@ else {
                 res.write(welcome);
             } catch(e) {
                 console.log(e);
-                res.writeHead(400);
-                const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
-                res.write(errorPg);
+                const welcome = fs.readFileSync(path.join(__dirname, 'welcome.html'));
+                res.write(welcome);
             }
         }
 
