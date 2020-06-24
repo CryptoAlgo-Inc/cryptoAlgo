@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sample FirebaseUI App</title>
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+        <script src="assets/js/jquery.min.js" defer></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
+
+        <style>
+            .firebaseAuth {
+                border: 2px solid #555;
+                border-radius: 7px;
+                width: 40%;
+                margin: auto;
+                padding-top: 5px;
+			}
+        </style>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDu3GBqQg6o9Mp7Ay6KkTKRnqogZWmhU6c",
+                authDomain: "cryptoalgogui.firebaseapp.com",
+                databaseURL: "https://cryptoalgogui.firebaseio.com",
+                projectId: "cryptoalgogui",
+                storageBucket: "cryptoalgogui.appspot.com",
+                messagingSenderId: "104602369567",
+                appId: "1:104602369567:web:bcfdad88debbb2b8cddf2a",
+                measurementId: "G-YT1W6G83B3"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            // Initialize the FirebaseUI Widget using Firebase.
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+            // FirebaseUI config.
+            var uiConfig = {
+                signInSuccessUrl: ' ',
+                signInOptions: [
+                    // Leave the lines as is for the providers you want to offer your users.
+                    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                    firebase.auth.EmailAuthProvider.PROVIDER_ID
+                ],
+                // tosUrl and privacyPolicyUrl accept either url string or a callback
+                // function.
+                // Terms of service url/callback.
+                tosUrl: '<your-tos-url>',
+                // Privacy policy url/callback.
+                privacyPolicyUrl: function() {
+                    window.location.assign('<your-privacy-policy-url>');
+                }
+            };
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    var user = firebase.auth().currentUser;
+                    //    user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                                     // this value to authenticate with your backend server, if
+                                     // you have one. Use User.getToken() instead.
+                    console.log('Name: ' + user.displayName);
+                    console.log('Email: ' + user.email);
+                    console.log('Profile Photo: ' + user.photoURL);
+                    console.log('Is email verified? ' + user.emailVerified);
+                    console.log('User UID: ' + user.uid);
+                    // Update page elements
+                    document.getElementById("usrName").innerHTML = "Hello, " + user.displayName;
+                    document.getElementById("usrProfilePic").src = user.photoURL;
+                    if (!user.emailVerified) {
+                        document.getElementById("usrEmail").innerHTML = user.email + "<br/> Email not verified";
+                    }
+                    else {
+                        document.getElementById("usrEmail").innerHTML = user.email;
+					}
+                    $('#loginArea').fadeOut(0);
+                    $('#profileSpace').fadeIn("slow");
+                } else {
+                    $('#profileSpace').fadeOut(0);
+                    $('#loginArea').fadeIn();
+                    // The start method will wait until the DOM is loaded.
+                    ui.start('#firebaseui-auth-container', uiConfig);
+                }
+            });
+        </script>
+        <script>
+            function signOutUser() {
+                if(confirm('Are you sure you want to sign out of CryptoAlgo?')) {
+                    firebase.auth().signOut().then(function() {
+                        console.log("User signed out");
+                        alert('You have been signed out. Thank you for using CryptoAlgo.');
+                    }, function(error) {
+                        console.error('Sign Out Error', error);
+                    });
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <section id="one" class="wrapper style2">
+            <div style="text-align: center">
+                <h2 id="headText">CryptoAlgo Sign In</h2>
+                <div id="profileSpace" style="display: none">
+                    <img id="usrProfilePic" style="border-radius: 100px" src="" alt="Profile Image" width="100px"></img>
+                    <h2 id="usrName" style="text-transform: none; font-weight: bold;">Name</h2>
+                    <p id="usrEmail">Email</p>
+                    <ul class="actions" style="margin: 10px 0 10px 0">
+                        <li><a onclick="signOutUser()" title="Sign Out" class="button alt"><i class="material-icons">login</i></a></li>
+                    </ul>
+                </div>
+                <div id="loginArea" style="display: none">
+                    <div class="firebaseAuth" id="firebaseui-auth-container"></div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -13,8 +13,7 @@
         ]
     },
     "dependencies": {
-        "qrcode": "^1.4.4",
-        "sudo-prompt": "^9.2.1"
+        "qrcode": "^1.4.4"
     },
     "scripts": {
         "test": "echo \"Unfortunately, there are no tests yet. So, I'll take this as a pass.\""
