@@ -1,0 +1,163 @@
+.auth {
+    border: 2px solid #555;
+    border-radius: 7px;
+    width: 40%;
+    margin: auto;
+    padding-top: 5px;
+    background-color: #1b1b1b;
+}
+.authInput {
+    margin: auto;
+}
+.submitBtn {
+    margin: 10px;
+}
+
+.authLabels {
+    color: white !important;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.firebaseui-idp-github {
+    border-radius: 7px;
+}
+.warningMsgBox {
+    background-color: #0063b1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.msgBox {
+    color: black !important;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.collapsible {
+    background-color: #212121 !important;
+    color: white;
+    cursor: pointer;
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 100%;
+    border-color: #555;
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    border-radius: 0px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: none !important;
+}
+
+.active, .collapsible:hover {
+    background-color: #2b2b2b !important;
+}
+
+.active {
+    border-width: 2px 0 2px 0;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accountMgmt {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(../../images/acctBgImg.jpg);
+    background-size: cover; /* or contain depending on what you want */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* I'm overwriting FireBaseUI's CSS code because I want it to match the rest of the page.*/
+.firebaseui-container {
+    background-color: #1b1b1b !important;
+    font-family: "GilroyLight";
+}
+
+.firebaseui-idp-text {
+    font-family: "GilroyLight" !important;
+    font-weight: bold;
+}
+
+.firebaseui-text {
+    color: white !important;
+    font-family: "GilroyLight" !important;
+}
+
+.firebaseui-idp-google>.firebaseui-idp-text {
+    color: white !important;
+}
+
+.firebaseui-idp-google {
+    background-color: #333 !important;
+    border-radius: 7px;
+}
+
+#usrProfilePic {
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+/* There seems to be a weird box at the top right corner, no idea what it is so hiding it. */
+#__lpform_password_numspan {
+    display: none;
+}
+
+/* Start of model box CSS */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* End of model box CSS */

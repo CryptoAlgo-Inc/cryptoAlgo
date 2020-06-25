@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CryptoAlgo | Login</title>
+        <title>CryptoAlgo</title>
         <link rel="stylesheet" href="assets/css/main.css" />
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
@@ -13,92 +13,10 @@
                 https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-storage.js"></script>
+
         <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
-
-        <style>
-            .auth {
-                border: 2px solid #555;
-                border-radius: 7px;
-                width: 40%;
-                margin: auto;
-                padding-top: 5px;
-                background-color: #1b1b1b;
-            }
-            .authInput {
-                margin: auto;
-            }
-            .submitBtn {
-                margin: 10px;
-            }
-            .firebaseui-idp-google {
-                background-color: #333 !important;
-                border-radius: 7px;
-            }
-            .authLabels {
-                color: white !important;
-                font-size: 20px;
-                margin-bottom: 5px;
-            }
-            .firebaseui-idp-google>.firebaseui-idp-text {
-                color: white !important;
-            }
-            .firebaseui-idp-github {
-                border-radius: 7px;
-            }
-            .warningMsgBox {
-                background-color: #0063b1;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-            .msgBox {
-                color: black !important;
-                font-weight: 900;
-                margin-bottom: 5px;
-            }
-
-            .collapsible {
-                background-color: #212121 !important;
-                color: white;
-                cursor: pointer;
-                padding-left: 18px;
-                padding-right: 18px;
-                width: 100%;
-                border-color: #555;
-                border-style: solid;
-                border-width: 2px 0 0 0;
-                border-radius: 0px;
-                text-align: left;
-                outline: none;
-                font-size: 15px;
-            }
-
-            .active, .collapsible:hover {
-                background-color: #666;
-            }
-
-            .active {
-                border-width: 2px 0 2px 0;
-			}
-
-            .collapsible:after {
-                content: '\002B';
-                color: white;
-                font-weight: bold;
-                float: right;
-                margin-left: 5px;
-            }
-
-            .active:after {
-                content: "\2212";
-            }
-
-            .content {
-                padding: 0 18px;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.2s ease-out;
-            }
-        </style>
+        <link type="text/css" rel="stylesheet" href="assets/css/authPage.css" />
 
         <script>
             // Your web app's Firebase configuration
@@ -135,227 +53,29 @@
                     window.location.assign('<your-privacy-policy-url>');
                 }
             };
-
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    $('#warningBox1').fadeOut(0);
-                    var user = firebase.auth().currentUser;
-                    //    user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                                     // this value to authenticate with your backend server, if
-                                     // you have one. Use User.getToken() instead.
-                    console.log('Name: ' + user.displayName);
-                    console.log('Email: ' + user.email);
-                    console.log('Profile Photo: ' + user.photoURL);
-                    console.log('Is email verified? ' + user.emailVerified);
-                    console.log('User UID: ' + user.uid);
-                    // Update page elements
-                    document.getElementById("headText").innerHTML = "Welcome to CryptoAlgo";
-                    if (user.displayName) { // Check if there's a display name
-                        document.getElementById("usrName").innerHTML = "Hello, " + user.displayName;
-                    }
-                    document.getElementById("usrProfilePic").src = user.photoURL;
-                    if (!user.emailVerified) {
-                        document.getElementById("usrEmail").innerHTML = user.email + "<br/> Email not verified";
-                        $('#verifyEmail').fadeIn();
-                    }
-                    else {
-                        document.getElementById("usrEmail").innerHTML = user.email + "<br/> Email verified";
-                    }
-                    $('#loginArea').fadeOut(0);
-                    $('#profileSpace').fadeIn("slow");
-                } else {
-                    // The user is not signed in
-                    $('#warningBox1').fadeOut(0);
-                    document.getElementById("headText").innerHTML = "CryptoAlgo Login";
-                    $('#profileSpace').fadeOut(0);
-                    $('#loginArea').fadeIn();
-                    // The start method will wait until the DOM is loaded.
-                    ui.start('#firebaseui-auth-container', uiConfig); // Render the login box
-                }
-            });
-
-            function emailAuthLogin() {
-                firebase.auth().signInWithEmailAndPassword(document.getElementById("username").value, document.getElementById("password").value).catch(function(error) {
-                    // Handle Errors here.
-                    pushWarning(error.message);
-                    console.error(error.message);
-                });
-            }
-
-            function pushWarning(warningText) {
-                document.getElementById("warnings").innerHTML = warningText;
-                $('#warningBox').fadeIn();
-                setTimeout(function() { 
-                    $('#warningBox').fadeOut();
-                }, 3000);
-                document.getElementById("warnings1").innerHTML = warningText;
-                $('#warningBox1').fadeIn();
-                setTimeout(function() {
-                    $('#warningBox1').fadeOut();
-                }, 3000);
-                document.getElementById("warnings2").innerHTML = warningText;
-                $('#warningBox2').fadeIn();
-                setTimeout(function() {
-                    $('#warningBox2').fadeOut();
-                }, 3000);
-            }
-
-            function openAccountCreate() {
-                $('#newAccountHint').fadeOut();
-                $('#emailLogin').fadeOut(function() {
-                    $('#newAccount').fadeIn();
-                    $('#backToLogin').fadeIn();
-                });
-            }
-
-            function verifyEmail() {
-                firebase.auth().currentUser.sendEmailVerification().then(function() {
-                    pushWarning("Verification email sent");
-                    $('#verifyEmail').fadeOut();
-                }).catch(function(error) {
-                    pushWarning(error);
-                });
-			}
-
-            var closeOrOpen = true; // True for open
-            function usrSettingsCloseOpen() {
-                if(closeOrOpen) {  // Open settings
-                    $('#profileSettings').fadeIn();
-                    $('#settingsBtn').fadeOut(function() {
-                        document.getElementById("settingsBtn").innerHTML = "close";
-                        $('#settingsBtn').fadeIn();
-                    });
-                    closeOrOpen = false;
-                }
-                else {
-                    $('#profileSettings').fadeOut();
-                    $('#settingsBtn').fadeOut(function() {
-                        document.getElementById("settingsBtn").innerHTML = "settings";
-                        $('#settingsBtn').fadeIn();
-                    });
-                    closeOrOpen = true;
-                }
-            }
-
-            function updateProfile() {
-                var newDisplayName = document.getElementById("displayName").value;
-                if(newDisplayName.length == 0) {
-                    pushWarning("The input is not filled in");
-                    return;
-                }
-                else if(newDisplayName.trim().length == 0) {
-                    pushWarning("The input does not have any text");
-                    return;
-				}
-                firebase.auth().currentUser.updateProfile({
-                    displayName: newDisplayName
-                }).then(function() {
-                    // Update successful.
-                    location.reload();
-                }).catch(function(error) {
-                    pushWarning("Failed to update profile");
-                    console.error("Failed to update profile:", error);
-                });     
-            }
-
-            function backToLogin() {
-                $('#newAccount').fadeOut();
-                $('#backToLogin').fadeOut(function() {
-                    $('#newAccountHint').fadeIn();
-                    $('#emailLogin').fadeIn();
-                });
-            }
-
-            function createNewAccount() {
-                if(!(document.getElementById("newPassword").value == document.getElementById("confirmPassword").value)) {
-                    pushWarning("The passwords do not match");
-                    return;
-                }
-                var passwdTemplate=  /^[A-Za-z]\w{7,64}$/;
-                if(document.getElementById("newPassword").value.match(passwdTemplate)) {
-                    firebase.auth().createUserWithEmailAndPassword(document.getElementById("newUsername").value, document.getElementById("newPassword").value).catch(function(error) {
-                        pushWarning(error.message);
-                    });
-                }
-                else {
-                    pushWarning("Please meet the following requirements: 7-64 characters, starting with a letter")
-                }
-            }
-
-            function signOutUser() {
-                if(confirm('Are you sure you want to sign out of CryptoAlgo?')) {
-                    firebase.auth().signOut().then(function() {
-                        console.log("User signed out");
-                        alert('You have been signed out. Thank you for using CryptoAlgo.');
-                    }, function(error) {
-                        console.error('Sign Out Error', error);
-                    });
-                }
-            }
-
-            function changeUserPassword() {
-                if(!(document.getElementById("changePwd").value == document.getElementById("confirmChangePwd").value)) {
-                    // The two passwords do not match
-                    pushWarning("The passwords do not match");
-                    return;
-				}
-                var passwdTemplate=  /^[A-Za-z]\w{7,64}$/;
-                if(document.getElementById("changePwd").value.match(passwdTemplate)) {
-                    $('#pwdChange').fadeOut();
-                    var userProvidedPassword = document.getElementById("oldPwd").value;
-                    var credential = firebase.auth.EmailAuthProvider.credential(
-                        firebase.auth().currentUser.email, 
-                        userProvidedPassword
-                    );
-                    firebase.auth().currentUser.reauthenticateWithCredential(credential).then(function() {
-                        firebase.auth().currentUser.updatePassword(document.getElementById("changePwd").value).then(function() {
-                            // Update successful.
-                            alert("Successfully changed password.");
-                            $('#pwdChange').fadeIn();
-                        }).catch(function(error) {
-                            pushWarning(error);
-                        });
-                    }).catch(function(error) {
-                        // An error happened.
-                    });
-                }
-                else {
-                    pushWarning("Please meet the following requirements: 7-64 characters, starting with a letter")
-                    $('#pwdChange').fadeIn();
-				}
-			}
-
-            function updateEmail() {
-                var userProvidedPassword = document.getElementById("emailChgPwd").value;
-                var credential = firebase.auth.EmailAuthProvider.credential(
-                    firebase.auth().currentUser.email, 
-                    userProvidedPassword
-                );
-                firebase.auth().currentUser.reauthenticateWithCredential(credential).then(function() {
-                    firebase.auth().currentUser.updateEmail(document.getElementById("changeEmail").value).then(function() {
-                        pushWarning("Updated email address. Please verify your new email.");
-                    }).catch(function(error) {
-                        pushWarning(error);
-                    });
-                }).catch(function(error) {
-                    pushWarning(error);
-                });
-			}
         </script>
+        <script src="assets/js/authHelper.js" defer></script>
     </head>
     <body>
-        <section id="one" class="wrapper style2">
+        <section id="one" class="wrapper style2 accountMgmt">
             <div style="text-align: center">
                 <h2 id="headText"> </h2>
 
                 <div id="profileSpace" style="display: none">
-                    <img id="usrProfilePic" onerror="this.src='images/pfpPlaceholder.png'" style="border-radius: 100px" src="" alt="Profile Image" width="100px"></img>
+                    <!-- User elements (Profile pic, name and email) -->
+                    <img id="usrProfilePic" onerror="this.src='images/pfpPlaceholder.png'" src="" alt="Profile Image" height="100px" width="100px"></img>
                     <h2 id="usrName" style="text-transform: none; font-weight: bold;">Hello, unknown user</h2>
                     <p id="usrEmail">Email</p>
 
-                    <!-- Warning box (Normally hidden) -->
-                    <div class="warningMsgBox auth" onclick="$('#warningBox').fadeOut()" id="warningBox" style="display: none;">
-                        <h2 id="warnings" class="msgBox" style="text-transform: none;"></h2>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p>Some text in the Modal..</p>
+                        </div>
+
                     </div>
 
                     <!-- Email verification (Only becomes visible if needed) -->
@@ -367,9 +87,12 @@
                         <li><a onclick="signOutUser()" title="Sign Out" class="button alt"><i class="material-icons">power_settings_new</i></a></li>
                         <li><a onclick="usrSettingsCloseOpen()" title="Profile Settings" class="button alt"><i class="material-icons" id="settingsBtn">settings</i></a></li>
                     </ul>
+
+                    <!-- User Settings -->
                     <div id="profileSettings" class="auth" style="display: none;">
+                        <h2 style="margin: 0px">Settings</h2>
+
                         <!-- Change name -->
-                        <h2>User Settings</h2>
                         <button class="collapsible"> Update Name </button>
                         <div class="content">
                             <label class="authLabels" for="displayName">New display name:</label>
@@ -377,6 +100,15 @@
 
                             <ul class="actions" style="margin: 10px 0 10px 0">
                                 <li><a onclick="updateProfile()" title="Save Settings" class="button alt"><i class="material-icons">done</i></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Update Profile Picture -->
+                        <button class="collapsible"> Update Profile Picture </button>
+                        <div class="content">
+                            <input accept="image/*" id="profilePicSelector" style="display: none" type="file">
+                            <ul class="actions" style="margin: 10px 0 10px 0">
+                                <li><a onclick="$('#profilePicSelector').click();" title="Upload picture" class="button alt"><i class="material-icons">upload</i></a></li>
                             </ul>
                         </div>
 
@@ -401,17 +133,24 @@
                             <label class="authLabels" for="emailChgPwd">Password: </label>
                             <input class="authInput" type="password" id="emailChgPwd" name="emailChgPwd">
                             <label class="authLabels" for="changeEmail">New email</label>
-                            <input class="authInput" type="email" id="changeEmail" name="changeEmail">
+                            <input class="authInput" type="email" id="changeEmail" placeholder="New email address" name="changeEmail">
 
                             <ul class="actions" style="margin: 10px 0 10px 0">
                                 <li><a onclick="updateEmail()" title="Save Settings" class="button alt"><i class="material-icons">done</i></a></li>
                             </ul>
                         </div>
-                    </div>
 
-                    <!-- Warning box (Normally hidden) -->
-                    <div class="warningMsgBox auth" onclick="$('#warningBox2').fadeOut()" id="warningBox2" style="display: none;">
-                        <h2 id="warnings2" class="msgBox" style="text-transform: none;"></h2>
+                        <!-- Delete Account -->
+                        <button class="collapsible">Account Deletion</button>
+                        <div class="content">
+                            <label class="authLabels" for="acctDeletePwd">Password: </label>
+                            <input class="authInput" type="password" id="acctDeletePwd" name="acctDeletePwd">
+                            <p style="color: red; margin: 10px 0 0 0">By clicking "Delete Account", I understand that my account will be permanently deleted. 
+                            THIS ACTION CANNOT BE UNDONE! Any data stored in our database will be deleted and CANNOT be recovered.</p>
+                            <ul class="actions" style="margin: 8px">
+                                <li><a style="box-shadow: inset 0 0 0 2px red" onclick="deleteUser()" title="DELETE ACCOUNT" class="button alt">DELETE ACCOUNT</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 

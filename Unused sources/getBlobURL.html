@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title> Get Blob URL Audit </title>
+    </head>
+    <body>
+        <input id="file" type="file">
+
+        <iframe src=""></iframe>
+        <p id="blobURL"></p>
+
+        <script>
+            function createbloburl(file, type) {
+                var blob = new Blob([file], {
+                    type: type || 'application/*'
+                });
+
+                file = window.URL.createObjectURL(blob);
+
+                return file;
+            }
+
+            document.getElementById('profilePicSelector').addEventListener('change', function(e) {
+                var file = e.currentTarget.files[0];
+                if (file) {
+                    file = createbloburl(file, file.type);
+                    document.getElementById('iframe').src = file;
+                    //console.log(file)
+                }
+            })
+        </script>
+    </body>
+</html>

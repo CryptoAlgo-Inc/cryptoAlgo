@@ -87,6 +87,10 @@ selection {
         src: url("../fonts/Gilroy-Light.otf");
 }
 
+button {
+        font-family: "GilroyLight";
+}
+
 :-moz-placeholder { /* Firefox 18- */
    text-align: center;  
 }
