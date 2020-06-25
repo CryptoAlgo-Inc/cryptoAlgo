@@ -58,7 +58,7 @@
     </head>
     <body>
         <section id="one" class="wrapper style2 accountMgmt">
-            <div style="text-align: center">
+            <div style="text-align: center" id="contentArea">
                 <h2 id="headText"> </h2>
 
                 <div id="profileSpace" style="display: none">
@@ -67,22 +67,12 @@
                     <h2 id="usrName" style="text-transform: none; font-weight: bold;">Hello, unknown user</h2>
                     <p id="usrEmail">Email</p>
 
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <p>Some text in the Modal..</p>
-                        </div>
-
-                    </div>
-
                     <!-- Email verification (Only becomes visible if needed) -->
                     <ul class="actions" id="verifyEmail" style="margin: 0 0 10px 0; display: none;">
                         <li><a onclick="verifyEmail()" title="Email Verification" class="button alt">Verify Email</a></li>
                     </ul>
 
+                    <!-- Action buttons -->
                     <ul class="actions" style="margin: 10px 0 10px 0">
                         <li><a onclick="signOutUser()" title="Sign Out" class="button alt"><i class="material-icons">power_settings_new</i></a></li>
                         <li><a onclick="usrSettingsCloseOpen()" title="Profile Settings" class="button alt"><i class="material-icons" id="settingsBtn">settings</i></a></li>
@@ -110,6 +100,9 @@
                             <ul class="actions" style="margin: 10px 0 10px 0">
                                 <li><a onclick="$('#profilePicSelector').click();" title="Upload picture" class="button alt"><i class="material-icons">upload</i></a></li>
                             </ul>
+                            <div class="progressBarOuter">
+                                <div class="progressBar"></div>
+                            </div>
                         </div>
 
                         <!-- Change Password Portion -->
@@ -201,6 +194,15 @@
                         <a onclick="backToLogin()" class="button alt submitBtn">Login</a>
                     </div>
 
+                </div>
+            </div>
+
+            <!-- The Modal (Warning box) -->
+            <div id="infoArea" class="modal">
+                <!-- Modal content -->
+                <div id="modal-content" class="modal-content">
+                    <span class="close" onclick="closeModal()"><i style="margin: 0px;" class="material-icons">close</i></span>
+                    <h2 class="modelText" id="infoText"></p>
                 </div>
             </div>
         </section>

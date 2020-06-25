@@ -53,16 +53,16 @@ function emailAuthLogin() {
 }
 
 function pushWarning(warningText) {
-    document.getElementById("warnings").innerHTML = warningText;
-    $('#warningBox').fadeIn();
-    setTimeout(function() { 
-        $('#warningBox').fadeOut();
-    }, 3000);
     document.getElementById("warnings1").innerHTML = warningText;
     $('#warningBox1').fadeIn();
-    setTimeout(function() {
+    setTimeout(function() { 
         $('#warningBox1').fadeOut();
     }, 3000);
+
+    document.getElementById("infoText").innerHTML = warningText;
+    $("#infoArea").fadeIn();
+    $("#contentArea").addClass("blurred");
+    $("body").addClass("modal-open");
 }
 
 function openAccountCreate() {
@@ -246,6 +246,8 @@ document.getElementById('profilePicSelector').addEventListener('change', functio
 
         var profilePicUploadRef = storageRef.child(firebase.auth().currentUser.uid + '/' + file.name);
 
+        elem.style.width = width + '%';
+
         profilePicUploadRef.put(file).then(function(snapshot) {
             pushWarning('Uploaded image');
             snapshot.ref.getDownloadURL().then(function(downloadURL) {
@@ -294,27 +296,13 @@ function deleteUser() {
 // Get the modal
 var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
+// When the user clicks on <span> (X), close the modal
+function closeModal() {
+    $('#infoArea').fadeOut();
+    $("#contentArea").removeClass("blurred");
+    $("body").removeClass("modal-open");
 }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
 // End of model box JavaScript
