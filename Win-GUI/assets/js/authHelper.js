@@ -30,10 +30,12 @@ firebase.auth().onAuthStateChanged(function(user) {
         else {
             document.getElementById("usrEmail").innerHTML = user.email + "<br/> Email verified";
         }
+        document.getElementById("password").style.width = "0px";
         $('#loginArea').fadeOut(0);
         $('#profileSpace').fadeIn("slow");
     } else {
         // The user is not signed in
+        document.getElementById("password").style.width = "90%";
         document.title = 'CryptoAlgo | Login'; // Change title
         $('#warningBox1').fadeOut(0);
         document.getElementById("headText").innerHTML = "CryptoAlgo Login";
@@ -53,16 +55,14 @@ function emailAuthLogin() {
 }
 
 function pushWarning(warningText) {
-    document.getElementById("warnings1").innerHTML = warningText;
-    $('#warningBox1').fadeIn();
-    setTimeout(function() { 
-        $('#warningBox1').fadeOut();
-    }, 3000);
-
     document.getElementById("infoText").innerHTML = warningText;
     $("#infoArea").fadeIn();
+    $("#contentArea").removeClass("unBlur");
     $("#contentArea").addClass("blurred");
     $("body").addClass("modal-open");
+    setTimeout(function() { 
+        closeModal();
+    }, 4500);
 }
 
 function openAccountCreate() {
@@ -178,7 +178,7 @@ function changeUserPassword() {
         firebase.auth().currentUser.reauthenticateWithCredential(credential).then(function() {
             firebase.auth().currentUser.updatePassword(document.getElementById("changePwd").value).then(function() {
                 // Update successful.
-                alert("Successfully changed password.");
+                pushWarning("Successfully changed password.");
                 $('#pwdChange').fadeIn();
             }).catch(function(error) {
                 pushWarning(error);
@@ -238,19 +238,47 @@ document.getElementById('profilePicSelector').addEventListener('change', functio
     }
 
     if (file) {
+        console.log(file.size);
+        if (file.size > 2000000) {
+            pushWarning('Image size too big. Please select a image that is <= 2MB.');
+            return;
+		}
         // Get a reference to the storage service, which is used to create references in your storage bucket
         var storage = firebase.storage();
 
         // Create a storage reference from the Firebase storage service
         var storageRef = storage.ref();
 
-        var profilePicUploadRef = storageRef.child(firebase.auth().currentUser.uid + '/' + file.name);
+        var uploadTask = storageRef.child('/' + firebase.auth().currentUser.uid + '/pfp.' + file.name.split('.').pop()).put(file);
 
-        elem.style.width = width + '%';
+        // elem.style.width = width + '%';
 
-        profilePicUploadRef.put(file).then(function(snapshot) {
-            pushWarning('Uploaded image');
-            snapshot.ref.getDownloadURL().then(function(downloadURL) {
+        uploadTask.on('state_changed', function(snapshot){
+            // Observe state change events such as progress, pause, and resume
+            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log('Upload is ' + progress + '% done');
+            document.getElementById('progressBar').style.width = progress + '%';
+
+            switch (snapshot.state) {
+                case firebase.storage.TaskState.PAUSED: // or 'paused'
+                    console.log('Upload is paused');
+                break;
+                case firebase.storage.TaskState.RUNNING: // or 'running'
+                    console.log('Upload is running');
+                break;
+            }
+        }, function(error) {
+            // Handle unsuccessful uploads
+            document.getElementById('progressBar').style.width = "0px";
+            pushWarning(error);
+        }, function() {
+            // Handle successful uploads on complete
+            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+            pushWarning("Uploaded profile picture");
+            document.getElementById('progressBar').style.width = "0px";
+
+            uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
                 console.log("File available at", downloadURL);
                 var fileDownloadURL = downloadURL;
                 firebase.auth().currentUser.updateProfile({
@@ -303,6 +331,7 @@ var span = document.getElementsByClassName("close")[0];
 function closeModal() {
     $('#infoArea').fadeOut();
     $("#contentArea").removeClass("blurred");
+    $("#contentArea").addClass("unBlur");
     $("body").removeClass("modal-open");
 }
 // End of model box JavaScript

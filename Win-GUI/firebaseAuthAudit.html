@@ -98,10 +98,14 @@
                         <div class="content">
                             <input accept="image/*" id="profilePicSelector" style="display: none" type="file">
                             <ul class="actions" style="margin: 10px 0 10px 0">
-                                <li><a onclick="$('#profilePicSelector').click();" title="Upload picture" class="button alt"><i class="material-icons">upload</i></a></li>
+                                <li><a onclick="$('#profilePicSelector').click();" title="Upload image" class="button alt"><i class="material-icons">upload</i></a></li>
                             </ul>
-                            <div class="progressBarOuter">
-                                <div class="progressBar"></div>
+                            <p style="margin: 5px;">Upload an image <br />
+                            (File size: <= 2MB)</p>
+
+                            <!-- Upload progress bar -->
+                            <div class="progressBarOuter" id="progressBarOuter">
+                                <div id="progressBar" class="progressBar"></div>
                             </div>
                         </div>
 
@@ -134,7 +138,7 @@
                         </div>
 
                         <!-- Delete Account -->
-                        <button class="collapsible">Account Deletion</button>
+                        <button class="collapsible bottomLast">Account Deletion</button>
                         <div class="content">
                             <label class="authLabels" for="acctDeletePwd">Password: </label>
                             <input class="authInput" type="password" id="acctDeletePwd" name="acctDeletePwd">
@@ -151,10 +155,6 @@
                     <div class="auth" id="firebaseui-auth-container"></div>
 
                     <h3 style="margin-bottom: 5px; margin-top: 15px;">Email Sign-in</h3>
-
-                    <div class="warningMsgBox auth" onclick="$('#warningBox1').fadeOut()" id="warningBox1">
-                        <h2 id="warnings1" class="msgBox" style="text-transform: none;"></h2>
-                    </div>
 
                     <div class="auth" id="emailLogin">
                         <div>
@@ -222,13 +222,13 @@
 
             for (i = 0; i < coll.length; i++) {
                 coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.maxHeight){
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                } 
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } 
                 });
             }
         </script>

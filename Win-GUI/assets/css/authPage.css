@@ -51,12 +51,14 @@
     text-transform: none !important;
 }
 
-.active, .collapsible:hover {
+.collapsible:hover {
     background-color: #2b2b2b !important;
 }
 
 .active {
     border-width: 2px 0 2px 0;
+    border-radius: 0px !important;
+    background-color: #444 !important;
 }
 
 .collapsible:after {
@@ -76,6 +78,10 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+.bottomLast {
+    border-radius: 0 0 7px 7px;
 }
 
 .accountMgmt {
@@ -167,24 +173,44 @@
 
 /* Blur backdrop when model is open */
 .blurred {
-    animation: blur 1s ease;
+    animation: blur 0.5s ease;
     filter: blur(3px);
+}
+
+.unBlur {
+    animation: removeBlur 0.5s ease;
+    filter: blur(0px);
 }
 
 /* Blur animation */
 @keyframes blur {
-  0% {
-    -webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter: blur(0px);
-  }
-  100% {
-    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-  }
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+    }
+    100% {
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+    }
+}
+
+@keyframes removeBlur {
+    0% {
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+    }
 }
 
 .modelText {
@@ -203,11 +229,15 @@ body {
 }
 
 .progressBarOuter {
-    width: 100%;
+    width: calc(100% + 36px);
     height: 4px;
+    margin-left: -18px;
+    margin-right: -18px;
 }
 
 .progressBar {
     height: 100%;
-
+    width: 0px;
+    background-color: #0063b1;
+    border-radius: 4px;
 }
