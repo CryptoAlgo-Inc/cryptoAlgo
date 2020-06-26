@@ -256,53 +256,24 @@ else {
 res.end();
 });
 
-var port = '34235';
-    server.on('error', function (e) {
-        console.log('There has been an error. ');
-        
-    });
+var { exec } = require('child_process');
+
+exec('"C:\\Program Files (x86)\\CryptoAlgo\\cryptoalgo.exe" --app=http://localhost:34235 --new-window', (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+});
+
+server.on('error', function (e) {
+    console.log('There has been an error. ');
+    setTimeout(process.exit, 2000);
+});
+
 server.listen(34235);
-console.log('Listening on port', port);
-
-var child = require('child_process').execFile;
-var executablePath = "C:\\Program Files (x86)\\CryptoAlgo\\cryptoalgo.exe";
-var parameters = ["--app=http://localhost:" + port];
-
-try {
-    child(executablePath, parameters, function(err, data) {
-        if(err) {
-            console.log('Try 0');
-            console.log('An error was encountered opening the Chrome Engine.');
-            console.log('Please report this error to the developer');
-            console.log(err);
-            child("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", parameters, function(err, data) {
-                if(err) {
-                    console.log('Try 1');
-                    console.log(err);
-                    child("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", parameters, function(err, data) {
-                        if(err) {
-                            console.log('Try 2');
-                            console.log(err);
-                            process.exit();
-                        }
-                        else {
-                            process.exit();
-                        }
-                    });
-                }
-                else {
-                    console.log("I exit here!");
-                    process.exit();
-                }
-            });
-	}
-        else {
-            console.log('Window has been closed');
-            console.log('Total pages served:', requestsServed);
-            console.log('Exiting...');
-            process.exit();
-	}
-    });
-} catch(e) {
-    console.log('Could not start Chrome');
-}
+console.log('Listening on port 34235');

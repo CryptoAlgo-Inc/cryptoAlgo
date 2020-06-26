@@ -3,7 +3,6 @@
     border-radius: 7px;
     width: 40%;
     margin: auto;
-    padding-top: 5px;
     background-color: #1b1b1b;
 }
 .authInput {
@@ -19,9 +18,6 @@
     margin-bottom: 5px;
 }
 
-.firebaseui-idp-github {
-    border-radius: 7px;
-}
 .warningMsgBox {
     background-color: #0063b1;
     margin-top: 10px;
@@ -32,6 +28,8 @@
     font-weight: 900;
     margin-bottom: 5px;
 }
+
+/* Start of tabbed menu */
 
 .collapsible {
     background-color: #212121 !important;
@@ -51,14 +49,17 @@
     text-transform: none !important;
 }
 
-.collapsible:hover {
+.collapsible:hover:not(.active) {
     background-color: #2b2b2b !important;
 }
 
 .active {
     border-width: 2px 0 2px 0;
-    border-radius: 0px !important;
     background-color: #444 !important;
+}
+
+.active.newAcct {
+    border-radius: 7px 7px 0 0 !important;
 }
 
 .collapsible:after {
@@ -84,6 +85,8 @@
     border-radius: 0 0 7px 7px;
 }
 
+/* End of tabbed menu */
+
 .accountMgmt {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(../../images/acctBgImg.jpg);
     background-size: cover; /* or contain depending on what you want */
@@ -97,12 +100,39 @@
 /* I'm overwriting FireBaseUI's CSS code because I want it to match the rest of the page.*/
 .firebaseui-container {
     background-color: #1b1b1b !important;
+    box-shadow: 0px 0px;
     font-family: "GilroyLight";
 }
 
-.firebaseui-idp-text {
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+    top: 5px !important;
+}
+
+.mdl-textfield--floating-label .mdl-textfield__label {
+    top: 31px !important;
+}
+
+.firebaseui-idp-text, .firebaseui-id-email {
     font-family: "GilroyLight" !important;
     font-weight: bold;
+}
+
+.firebaseui-id-email, .firebaseui-id-password {
+    border-width: 0 0 2px 0 !important;
+    border-color: #333 !important;
+    box-shadow: 0 0 0 0 black !important;
+    background-color: #2220 !important; /* Transparent = no background */
+    border-radius: 4px 4px 0 0 !important;
+    width: 100% !important;
+}
+
+.firebaseui-id-email:focus, .firebaseui-id-password:focus {
+    background-color: #2e2e2e !important;
+    border-width: 0px !important;
+}
+
+.firebaseui-label {
+    color: #aaa !important;
 }
 
 .firebaseui-text {
@@ -114,19 +144,34 @@
     color: white !important;
 }
 
-.firebaseui-idp-google {
-    background-color: #333 !important;
+.firebaseui-idp-google, .firebaseui-idp-phone, .firebaseui-idp-password, .firebaseui-idp-github, .firebaseui-idp-facebook {
     border-radius: 7px;
 }
+
+.firebaseui-idp-google {
+    background-color: #333 !important;
+}
+
+.firebaseui-idp-google:hover, .firebaseui-idp-phone:hover, .firebaseui-idp-password:hover, .firebaseui-idp-github:hover, .firebaseui-idp-facebook:hover {
+    filter: brightness(115%);
+}
+
+.firebaseui-text strong {
+    color: white !important;
+}
+
+.firebaseui-info-bar-message {
+    /* Make sure text wraps around */
+    word-break: break-word;
+}
+
+/*.firebaseui-id-email {
+    margin: 0px;
+}*/
 
 #usrProfilePic {
     border-radius: 100px;
     object-fit: cover;
-}
-
-/* There seems to be a weird box at the top right corner, no idea what it is so hiding it. */
-#__lpform_password_numspan {
-    display: none;
 }
 
 /* Start of model box CSS */

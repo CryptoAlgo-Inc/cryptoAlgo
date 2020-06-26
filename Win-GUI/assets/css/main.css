@@ -104,7 +104,7 @@ button {
 }
 
 /* Disable selection */
-a, p, h1, h2, h3, input, small, body, textrea {
+a, p, h1, h2, h3, input, small, body, textrea, img {
  -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;

@@ -19,6 +19,9 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (user.displayName) { // Check if there's a display name
             document.getElementById("usrName").innerHTML = "Hello, " + user.displayName;
         }
+        else if (!user.email) {
+            document.getElementById("usrName").innerHTML = "Please enter a email in settings";
+		}
         else {
             document.getElementById("usrName").innerHTML = "Hello, " + user.email;
 		}
@@ -30,29 +33,20 @@ firebase.auth().onAuthStateChanged(function(user) {
         else {
             document.getElementById("usrEmail").innerHTML = user.email + "<br/> Email verified";
         }
-        document.getElementById("password").style.width = "0px";
         $('#loginArea').fadeOut(0);
         $('#profileSpace').fadeIn("slow");
     } else {
         // The user is not signed in
-        document.getElementById("password").style.width = "90%";
         document.title = 'CryptoAlgo | Login'; // Change title
         $('#warningBox1').fadeOut(0);
         document.getElementById("headText").innerHTML = "CryptoAlgo Login";
         $('#profileSpace').fadeOut(0);
         $('#loginArea').fadeIn();
         // The start method will wait until the DOM is loaded.
+                    // FirebaseUI config.
         ui.start('#firebaseui-auth-container', uiConfig); // Render the login box
     }
 });
-
-function emailAuthLogin() {
-    firebase.auth().signInWithEmailAndPassword(document.getElementById("username").value, document.getElementById("password").value).catch(function(error) {
-        // Handle Errors here.
-        pushWarning(error.message);
-        console.error(error.message);
-    });
-}
 
 function pushWarning(warningText) {
     document.getElementById("infoText").innerHTML = warningText;
@@ -63,14 +57,6 @@ function pushWarning(warningText) {
     setTimeout(function() { 
         closeModal();
     }, 4500);
-}
-
-function openAccountCreate() {
-    $('#newAccountHint').fadeOut();
-    $('#emailLogin').fadeOut(function() {
-        $('#newAccount').fadeIn();
-        $('#backToLogin').fadeIn();
-    });
 }
 
 function verifyEmail() {
@@ -126,14 +112,6 @@ function updateProfile() {
     });     
 }
 
-function backToLogin() {
-    $('#newAccount').fadeOut();
-    $('#backToLogin').fadeOut(function() {
-        $('#newAccountHint').fadeIn();
-        $('#emailLogin').fadeIn();
-    });
-}
-
 function createNewAccount() {
     if(!(document.getElementById("newPassword").value == document.getElementById("confirmPassword").value)) {
         pushWarning("The passwords do not match");
@@ -154,15 +132,31 @@ function signOutUser() {
     if(confirm('Are you sure you want to sign out of CryptoAlgo?')) {
         firebase.auth().signOut().then(function() {
             console.log("User signed out");
-            alert('You have been signed out. Thank you for using CryptoAlgo.');
+            pushWarning('You have been signed out. Thank you for using CryptoAlgo.');
+            closeAllSettings();
         }, function(error) {
             console.error('Sign Out Error', error);
         });
     }
 }
 
+function changePwd() {
+    firebase.auth().currentUser.updatePassword(document.getElementById("changePwd").value).then(function() {
+        // Update successful.
+        pushWarning("Successfully changed password.");
+        $('#pwdChange').fadeIn();
+    }).catch(function(error) {
+        pushWarning(error);
+        $('#pwdChange').fadeIn();
+    });
+}
+
 function changeUserPassword() {
-    if(!(document.getElementById("changePwd").value == document.getElementById("confirmChangePwd").value)) {
+    if (firebase.auth().currentUser.email == null) {
+        pushWarning("Please enter a email address first before setting a password.");
+        return;
+	}
+    if (!(document.getElementById("changePwd").value == document.getElementById("confirmChangePwd").value)) {
         // The two passwords do not match
         pushWarning("The passwords do not match");
         return;
@@ -171,20 +165,18 @@ function changeUserPassword() {
     if(document.getElementById("changePwd").value.match(passwdTemplate)) {
         $('#pwdChange').fadeOut();
         var userProvidedPassword = document.getElementById("oldPwd").value;
+        if (document.getElementById("oldPwd").value.length <= 5) {
+            changePwd();
+            return;
+	    }
         var credential = firebase.auth.EmailAuthProvider.credential(
             firebase.auth().currentUser.email, 
             userProvidedPassword
         );
         firebase.auth().currentUser.reauthenticateWithCredential(credential).then(function() {
-            firebase.auth().currentUser.updatePassword(document.getElementById("changePwd").value).then(function() {
-                // Update successful.
-                pushWarning("Successfully changed password.");
-                $('#pwdChange').fadeIn();
-            }).catch(function(error) {
-                pushWarning(error);
-            });
+            changePwd();
         }).catch(function(error) {
-            // An error happened.
+            pushWarning(error);
         });
     }
     else {
@@ -193,18 +185,28 @@ function changeUserPassword() {
 	}
 }
 
+function changeEmail() {
+    firebase.auth().currentUser.updateEmail(document.getElementById("changeEmail").value).then(function() {
+        pushWarning("Updated email address. Please verify your new email.");
+    }).catch(function(error) {
+        pushWarning(error);
+    });
+}
+
 function updateEmail() {
+    if (firebase.auth().currentUser.email) {
+        var userEmail = firebase.auth().currentUser.email;
+	}
+    else {
+        changeEmail(); // If the user does not already have a email, directly change email
+	}
     var userProvidedPassword = document.getElementById("emailChgPwd").value;
     var credential = firebase.auth.EmailAuthProvider.credential(
-        firebase.auth().currentUser.email, 
+        userEmail,
         userProvidedPassword
     );
     firebase.auth().currentUser.reauthenticateWithCredential(credential).then(function() {
-        firebase.auth().currentUser.updateEmail(document.getElementById("changeEmail").value).then(function() {
-            pushWarning("Updated email address. Please verify your new email.");
-        }).catch(function(error) {
-            pushWarning(error);
-        });
+        changeEmail();
     }).catch(function(error) {
         pushWarning(error);
     });
@@ -307,9 +309,10 @@ function deleteUser() {
     );
 
     firebase.auth().currentUser.reauthenticateWithCredential(credential).then(function() {
-        if(confirm("Are you sure you want to delete your account? THIS ACTION CANNOT BE UNDONE!")){
+        if(prompt("Are you sure you want to delete your account? THIS ACTION CANNOT BE UNDONE! To continue, key in your email address.", "Your email address") == firebase.auth().currentUser.email){
             firebase.auth().currentUser.delete().then(function() {
-                alert("Your account has been deleted. You will be automatically logged out.");
+                pushWarning("Your account has been deleted. You will be automatically logged out.");
+                closeAllSettings();
             }).catch(function(error) {
                 pushWarning(error);
             });
@@ -335,3 +338,13 @@ function closeModal() {
     $("body").removeClass("modal-open");
 }
 // End of model box JavaScript
+
+function closeAllSettings() {
+    var coll = document.getElementsByClassName("collapsible");
+
+    for (var i = 0; i < coll.length; i++) {
+        coll[i].classList.remove("active");
+        coll[i].nextElementSibling.content.style.maxHeight = null;
+    }
+    $('#profileSettings').fadeOut(0);
+}

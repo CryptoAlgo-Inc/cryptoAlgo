@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>CryptoAlgo</title>
+        <!-- Core CSS -->
         <link rel="stylesheet" href="assets/css/main.css" />
+
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
 
@@ -17,6 +19,7 @@
 
         <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/authPage.css" />
+        <link type="text/css" rel="stylesheet" href="assets/css/materialProgressBar.css" />
 
         <script>
             // Your web app's Firebase configuration
@@ -36,27 +39,55 @@
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-            // FirebaseUI config.
-            var uiConfig = {
-                signInSuccessUrl: ' ',
+            const uiConfig = {
+                callbacks: {
+                    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                        // User successfully signed in.
+                        // Return type determines whether we continue the redirect automatically
+                        // or whether we leave that to developer to handle.
+                        return false;
+                    },
+                    uiShown: function () {
+                        document.getElementById('loader').style.display = 'none';
+                        document.getElementById('firebaseui-auth-container').style.display = 'block';
+                    }
+                },
+                credentialHelper: firebaseui.auth.CredentialHelper.NONE,  // Stop being redirected to accountchooser.com
                 signInOptions: [
                     // Leave the lines as is for the providers you want to offer your users.
-                    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                    firebase.auth.GithubAuthProvider.PROVIDER_ID
+                    {
+                        provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                        customParameters: {
+                            // Forces account selection even when one account
+                            // is available.
+                            prompt: 'select_account'
+                        }
+                    },
+                    firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                    {
+                        provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+                        recaptchaParameters: {
+                            type: 'image', // 'audio'
+                            size: 'normal', // 'invisible' or 'compact'
+                            badge: 'bottomleft' //' bottomright' or 'inline' applies to invisible.
+                        },
+                        defaultCountry: 'SG',
+                        defaultNationalNumber: '96543217' // Prefilled phone no
+				    }
                 ],
                 // tosUrl and privacyPolicyUrl accept either url string or a callback
                 // function.
                 // Terms of service url/callback.
-                tosUrl: '<your-tos-url>',
+                tosUrl: 'credits.html',
                 // Privacy policy url/callback.
-                privacyPolicyUrl: function() {
-                    window.location.assign('<your-privacy-policy-url>');
-                }
+                privacyPolicyUrl: '<your-privacy-policy-url>'
             };
         </script>
         <script src="assets/js/authHelper.js" defer></script>
     </head>
-    <body>
+    <body ondragstart="return false;">
         <section id="one" class="wrapper style2 accountMgmt">
             <div style="text-align: center" id="contentArea">
                 <h2 id="headText"> </h2>
@@ -152,48 +183,32 @@
                 </div>
 
                 <div id="loginArea" style="display: none">
-                    <div class="auth" id="firebaseui-auth-container"></div>
+                    <div class="auth" style="display: none" id="firebaseui-auth-container"></div>
 
-                    <h3 style="margin-bottom: 5px; margin-top: 15px;">Email Sign-in</h3>
-
-                    <div class="auth" id="emailLogin">
-                        <div>
-                            <label class="authLabels" for="username">Email:</label>
-                            <input class="authInput" type="text" id="username" name="username">
-                        </div>
-                        <div>
-                            <label class="authLabels" for="password">Password:</label>
-                            <input class="authInput" type="password" id="password" name="password">
-                        </div>
-                        <a onclick="emailAuthLogin()" class="button alt submitBtn"><i class="material-icons">login</i></a>
+                    <!-- The CSS code is in another file. This loader will be hidden by the firebase auth when loading completes -->
+                    <div class="progress" id="loader">
+                        <div class="indeterminate"></div>
                     </div>
+                    <p style="margin: 5px 0 0 0; color: white; font-weight: 900;"> Phone login is less secure than other methods and still in beta. </p>
 
-                    <div id="newAccountHint">
-                        <small> Or </small>
-                        <a onclick="openAccountCreate()" class="button alt submitBtn">Create Account</a>
-                    </div>
-
-                    <div class="auth" id="newAccount" style="display: none;">
-                        <div>
-                            <label class="authLabels" for="newUsername">Email:</label>
-                            <input class="authInput" type="text" id="newUsername" name="newUsername">
+                    <div class="auth" style="margin-top: 20px;">
+                    <button class="collapsible newAcct" style="border-width: 0px; border-radius: 7px;">Create Account</button>
+                        <div class="content" id="newAccount">
+                            <div>
+                                <label class="authLabels" for="newUsername">Email:</label>
+                                <input class="authInput" type="text" id="newUsername" name="newUsername">
+                            </div>
+                            <div>
+                                <label class="authLabels" for="newPassword">New Password:</label>
+                                <input class="authInput" type="password" placeholder="7-64 characters starting with a letter" id="newPassword" name="NewPassword">
+                            </div>
+                            <div>
+                                <label class="authLabels" for="confirmPassword">Confirm Password:</label>
+                                <input class="authInput" type="password" id="confirmPassword" name="confirmPassword">
+                            </div>
+                            <a onclick="createNewAccount()" class="button alt submitBtn" title="Create Account"><i class="material-icons">add_circle</i></a>
                         </div>
-                        <div>
-                            <label class="authLabels" for="newPassword">New Password:</label>
-                            <input class="authInput" type="password" placeholder="7-64 characters starting with a letter" id="newPassword" name="NewPassword">
-                        </div>
-                        <div>
-                            <label class="authLabels" for="confirmPassword">Confirm Password:</label>
-                            <input class="authInput" type="password" id="confirmPassword" name="confirmPassword">
-                        </div>
-                        <a onclick="createNewAccount()" class="button alt submitBtn"><i class="material-icons">login</i></a>
                     </div>
-
-                    <div id="backToLogin" style="display: none;">
-                        <small> Or </small>
-                        <a onclick="backToLogin()" class="button alt submitBtn">Login</a>
-                    </div>
-
                 </div>
             </div>
 
