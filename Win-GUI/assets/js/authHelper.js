@@ -1,5 +1,16 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+        if (user.isAnonymous) {
+            document.getElementById("headText").innerHTML = "Welcome to CryptoAlgo";
+            document.getElementById("usrName").innerHTML = "Hello, Anonymous User";
+            $('#loginArea').fadeOut(0);
+            $('#profileSpace').fadeIn("slow");
+            document.getElementById('outerSettingsBtn').style.display = 'none';
+            document.getElementById('usrEmail').style.display = 'none';
+            document.getElementById('signOutButton').style.paddingRight = '0px';
+            return;
+		}
+
         // The user is signed in
         document.title = 'CryptoAlgo | User Profile';
 
@@ -9,6 +20,10 @@ firebase.auth().onAuthStateChanged(function(user) {
                             // this value to authenticate with your backend server, if
                             // you have one. Use User.getToken() instead.
 
+        // This basically undos what the above if... block does if there's an Anonymous user.
+        document.getElementById('outerSettingsBtn').style.display = 'inline-block';
+        document.getElementById('usrEmail').style.display = 'block';
+        document.getElementById('signOutButton').style.paddingRight = '5px';
         console.log('Name: ' + user.displayName);
         console.log('Email: ' + user.email);
         console.log('Profile Photo: ' + user.photoURL);
@@ -343,8 +358,16 @@ function closeAllSettings() {
     var coll = document.getElementsByClassName("collapsible");
 
     for (var i = 0; i < coll.length; i++) {
-        coll[i].classList.remove("active");
-        coll[i].nextElementSibling.content.style.maxHeight = null;
+        try {
+            coll[i].classList.remove("active");
+            if (coll[i].nextElementSibling.style.maxHeight){
+                content.style.maxHeight = null;
+            }
+        } catch {
+            // Ignore error as that means the boxes were not open
+		}
     }
     $('#profileSettings').fadeOut(0);
+    document.getElementById("settingsBtn").innerHTML = "settings";
+    closeOrOpen = true;
 }

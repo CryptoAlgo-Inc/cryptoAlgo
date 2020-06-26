@@ -104,7 +104,8 @@
     font-family: "GilroyLight";
 }
 
-.mdl-textfield--floating-label.is-focused .mdl-textfield__label, .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
     top: 5px !important;
 }
 
@@ -144,7 +145,34 @@
     color: white !important;
 }
 
-.firebaseui-idp-google, .firebaseui-idp-phone, .firebaseui-idp-password, .firebaseui-idp-github, .firebaseui-idp-facebook {
+.firebaseui-idp-google, .firebaseui-idp-phone, .firebaseui-idp-password, .firebaseui-button, 
+.firebaseui-idp-github, .firebaseui-idp-facebook, .firebaseui-idp-anonymous, 
+.firebaseui-country-selector, .firebaseui-list-box-dialog {
+    border-radius: 7px;
+}
+
+/* For telephone country selection */
+.firebaseui-list-box-actions {
+    background-color: #333;
+}
+.firebaseui-list-box-dialog-button {
+    color: white !important;
+}
+.firebaseui-list-box-actions {
+    border-radius: 0px !important;
+    animation: all 1s ease;
+}
+.firebaseui-list-box-dialog {
+    padding-top: 0px;
+}
+.firebaseui-list-box-dialog::-webkit-scrollbar-track {
+    border-radius: 8px;
+}
+/* End of popup country selection */
+
+.firebaseui-dialog {
+    background-color: #333 !important;
+    color: white !important;
     border-radius: 7px;
 }
 
@@ -152,8 +180,13 @@
     background-color: #333 !important;
 }
 
-.firebaseui-idp-google:hover, .firebaseui-idp-phone:hover, .firebaseui-idp-password:hover, .firebaseui-idp-github:hover, .firebaseui-idp-facebook:hover {
+.firebaseui-idp-google:hover, .firebaseui-idp-phone:hover, .firebaseui-idp-password:hover, 
+.firebaseui-idp-github:hover, .firebaseui-idp-facebook:hover, .firebaseui-idp-anonymous:hover {
     filter: brightness(115%);
+}
+
+.firebaseui-id-resend-countdown {
+    color: #aaa;
 }
 
 .firebaseui-text strong {
@@ -164,10 +197,6 @@
     /* Make sure text wraps around */
     word-break: break-word;
 }
-
-/*.firebaseui-id-email {
-    margin: 0px;
-}*/
 
 #usrProfilePic {
     border-radius: 100px;

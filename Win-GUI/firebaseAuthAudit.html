@@ -70,12 +70,13 @@
                         provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
                         recaptchaParameters: {
                             type: 'image', // 'audio'
-                            size: 'normal', // 'invisible' or 'compact'
-                            badge: 'bottomleft' //' bottomright' or 'inline' applies to invisible.
+                            size: 'invisible', // 'invisible' or 'compact'
+                            badge: 'bottomright' //' bottomright' or 'inline' applies to invisible.
                         },
                         defaultCountry: 'SG',
                         defaultNationalNumber: '96543217' // Prefilled phone no
-				    }
+				    },
+                    firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID // Anonymous User
                 ],
                 // tosUrl and privacyPolicyUrl accept either url string or a callback
                 // function.
@@ -105,8 +106,8 @@
 
                     <!-- Action buttons -->
                     <ul class="actions" style="margin: 10px 0 10px 0">
-                        <li><a onclick="signOutUser()" title="Sign Out" class="button alt"><i class="material-icons">power_settings_new</i></a></li>
-                        <li><a onclick="usrSettingsCloseOpen()" title="Profile Settings" class="button alt"><i class="material-icons" id="settingsBtn">settings</i></a></li>
+                        <li id="signOutButton"><a onclick="signOutUser()" title="Sign Out" class="button alt"><i class="material-icons">power_settings_new</i></a></li>
+                        <li id="outerSettingsBtn"><a onclick="usrSettingsCloseOpen()" title="Profile Settings" class="button alt"><i class="material-icons" id="settingsBtn">settings</i></a></li>
                     </ul>
 
                     <!-- User Settings -->
