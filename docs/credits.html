@@ -18,38 +18,6 @@
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
 
-    <style>
-        #topBtn {
-            display: none; /* Hidden by default */
-            position: fixed; /* Fixed/sticky position */
-            bottom: 20px; /* Place the button at the bottom of the page */
-            right: 20px; /* Place the button 20px from the right */
-            z-index: 99; /* Make sure it does not overlap */
-            border-radius: 100px;
-            padding: 5px;
-            height: 50px;
-            width: 50px;
-            padding-top: 0px;
-            outline: 0px;
-        }
-
-        #topBtn:hover {
-            background-color: #333; /* Add a dark-grey background on hover */
-        }
-    </style>
-
-    <script>
-        // When the user scrolls down 500px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-            document.getElementById("topBtn").style.display = "block";
-            } else {
-            document.getElementById("topBtn").style.display = "none";
-            }
-        }
-    </script>
-
     <body oncontextmenu="return false" ondragstart="return false;" ondrop="return false;">
 
         <!-- Header -->
@@ -96,7 +64,6 @@
 
         <!-- One -->
             <section id="one" class="wrapper style3">
-            <button onclick="topFunction()" href="#banner" id="topBtn" class="button special scrolly" title="Scroll to Top"><i style="font-size: 37px; margin-top: 5px;" class="material-icons">arrow_upward</i></button>
                 <div class="inner">
                     <div class="box">
                         <div class="content">
