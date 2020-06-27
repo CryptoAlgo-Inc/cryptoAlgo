@@ -1,4 +1,4 @@
-const cacheName = 'C0000000000-1';
+const cacheName = 'C0000000000-2';
 
 self.addEventListener('install', e => {
     e.waitUntil(
