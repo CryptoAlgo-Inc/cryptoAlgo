@@ -58,7 +58,7 @@
                     },
                     uiShown: function () {
                         document.getElementById('loader').style.display = 'none';
-                        document.getElementById('firebaseui-auth-container').style.display = 'block';
+                        $('#firebaseui-auth-container').fadeIn();
                     }
                 },
                 credentialHelper: firebaseui.auth.CredentialHelper.NONE,  // Stop being redirected to accountchooser.com

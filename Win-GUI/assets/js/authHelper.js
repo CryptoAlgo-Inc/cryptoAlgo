@@ -3,7 +3,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (user.isAnonymous) {
             document.getElementById("headText").innerHTML = "Welcome to CryptoAlgo";
             document.getElementById("usrName").innerHTML = "Hello, Anonymous User";
-            $('#loginArea').fadeOut(0);
+            document.getElementById("loginArea").style.display = 'none';
             $('#profileSpace').fadeIn("slow");
             document.getElementById('outerSettingsBtn').style.display = 'none';
             document.getElementById('usrEmail').style.display = 'none';
@@ -29,6 +29,13 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log('Profile Photo: ' + user.photoURL);
         console.log('Is email verified? ' + user.emailVerified);
         console.log('User UID: ' + user.uid);
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+            // Send token to your backend via HTTPS
+            // ...
+            console.log(idToken);
+        }).catch(function(error) {
+            pushWarning(error);
+        });
         // Update page elements
         document.getElementById("headText").innerHTML = "Welcome to CryptoAlgo";
         if (user.displayName) { // Check if there's a display name
