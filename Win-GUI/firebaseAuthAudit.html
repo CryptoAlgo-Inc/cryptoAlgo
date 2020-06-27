@@ -13,9 +13,15 @@
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
                 https://firebase.google.com/docs/web/setup#available-libraries -->
+        <!-- Firebase UI Auth -->
         <script src="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.js"></script>
+        <!-- Firebase Auth -->
         <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+        <!-- Firebase Storage -->
         <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-storage.js"></script>
+        <!-- Standard Performance Monitoring library -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-performance.js"></script>
+
 
         <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/authPage.css" />
@@ -38,6 +44,9 @@
 
             // Initialize the FirebaseUI Widget using Firebase.
             var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+            // Init Firebase Performance
+            var perf = firebase.performance();
 
             const uiConfig = {
                 callbacks: {

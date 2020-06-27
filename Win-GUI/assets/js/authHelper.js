@@ -51,6 +51,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         $('#loginArea').fadeOut(0);
         $('#profileSpace').fadeIn("slow");
     } else {
+        perf.trace('Render Login Page').start();
         // The user is not signed in
         document.title = 'CryptoAlgo | Login'; // Change title
         $('#warningBox1').fadeOut(0);
@@ -60,10 +61,12 @@ firebase.auth().onAuthStateChanged(function(user) {
         // The start method will wait until the DOM is loaded.
                     // FirebaseUI config.
         ui.start('#firebaseui-auth-container', uiConfig); // Render the login box
+        perf.trace('Render Login Page').stop();
     }
 });
 
 function pushWarning(warningText) {
+    perf.trace('pushWarning').start();
     document.getElementById("infoText").innerHTML = warningText;
     $("#infoArea").fadeIn();
     $("#contentArea").removeClass("unBlur");
@@ -72,6 +75,7 @@ function pushWarning(warningText) {
     setTimeout(function() { 
         closeModal();
     }, 4500);
+    perf.trace('pushWarning').start();
 }
 
 function verifyEmail() {
@@ -104,6 +108,7 @@ function usrSettingsCloseOpen() {
 }
 
 function updateProfile() {
+    perf.trace('Change User Display Name').start();
     var newDisplayName = document.getElementById("displayName").value;
     if(newDisplayName.length == 0) {
         pushWarning("The input is not filled in");
@@ -120,27 +125,33 @@ function updateProfile() {
         $('#usrName').fadeOut(function() {
             document.getElementById("usrName").innerHTML = "Hello, " + newDisplayName;
             $('#usrName').fadeIn();
+            perf.trace('Change User Display Name').stop();
 		});
     }).catch(function(error) {
         pushWarning("Failed to update profile");
         console.error("Failed to update profile:", error);
+        perf.trace('Change User Display Name').stop();
     });     
 }
 
 function createNewAccount() {
+    perf.trace('Create New User').start();
     if(!(document.getElementById("newPassword").value == document.getElementById("confirmPassword").value)) {
         pushWarning("The passwords do not match");
+        perf.trace('Create New User').stop();
         return;
     }
     var passwdTemplate=  /^[A-Za-z]\w{7,64}$/;
     if(document.getElementById("newPassword").value.match(passwdTemplate)) {
         firebase.auth().createUserWithEmailAndPassword(document.getElementById("newUsername").value, document.getElementById("newPassword").value).catch(function(error) {
+            perf.trace('Create New User').stop();
             pushWarning(error.message);
         });
     }
     else {
         pushWarning("Please meet the following requirements: 7-64 characters, starting with a letter")
     }
+    perf.trace('Create New User').stop();
 }
 
 function signOutUser() {
@@ -361,7 +372,7 @@ function closeAllSettings() {
         try {
             coll[i].classList.remove("active");
             if (coll[i].nextElementSibling.style.maxHeight){
-                content.style.maxHeight = null;
+                coll[i].nextElementSibling.style.maxHeight = null;
             }
         } catch {
             // Ignore error as that means the boxes were not open
