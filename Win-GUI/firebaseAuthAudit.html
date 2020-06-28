@@ -71,16 +71,17 @@
                             // Forces account selection even when one account
                             // is available.
                             prompt: 'select_account'
-                        },
-                        clientId: '104602369567-vk25e755ebdgqpmkqpmb711mc1ctjqsq.apps.googleusercontent.com'
+                        }
                     },
                     firebase.auth.GithubAuthProvider.PROVIDER_ID,
                     {
                         provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                        // signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD,
                         requireDisplayName: false
                     },
-                    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                    'yahoo.com',
                     firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
                     {
                         provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
                         recaptchaParameters: {
@@ -171,6 +172,7 @@
 
                             <ul class="actions" style="margin: 10px 0 10px 0">
                                 <li><a onclick="changeUserPassword()" title="Save Settings" class="button alt"><i class="material-icons">done</i></a></li>
+                                <li><a onclick="pushWarning('If you do not have a password, simply leave the old password field black and key in a new password.')" class="button alt"><i class="material-icons">help</i></a></li>
                             </ul>
                         </div>
 

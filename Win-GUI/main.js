@@ -196,6 +196,11 @@ else {
                     res.write(errorPg);
                 }
             }
+            else {
+                const requested = fs.readFileSync(path.join(__dirname, page));
+                res.writeHead(200);
+                res.write(requested);
+            }
         }
         else if(queryObject['silentKeygen']) {
             try {

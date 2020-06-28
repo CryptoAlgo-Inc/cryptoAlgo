@@ -86,7 +86,7 @@ function pushWarning(warningText, autoclose=true) {
     if (autoclose) {
         setTimeout(function() { 
             closeModal();
-        }, 4500);
+        }, 5000);
     }
     warnings.stop();
 }

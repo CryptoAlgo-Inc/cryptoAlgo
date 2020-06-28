@@ -108,6 +108,22 @@
     font-family: "GilroyLight";
 }
 
+.firebaseui-busy-indicator {
+    margin-top: 10px !important;
+}
+.bufferbar.bar.bar2 {
+    filter: invert(1);
+}
+.progressbar.bar.bar1 {
+    background-color: #0063b1 !important;
+}
+.auxbar.bar.bar3 {
+    background-image: linear-gradient(#0063b1, #0063b1) !important;
+}
+.firebaseui-info-bar {
+    border-radius: 7px;
+}
+
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
     top: 5px !important;
@@ -159,13 +175,33 @@
 }
 
 .firebaseui-idp-google, .firebaseui-idp-phone, .firebaseui-idp-password, .firebaseui-button, 
-.firebaseui-idp-github, .firebaseui-idp-facebook, .firebaseui-idp-anonymous, 
-.firebaseui-country-selector, .firebaseui-list-box-dialog {
+.firebaseui-idp-github, .firebaseui-idp-facebook, .firebaseui-idp-anonymous, .firebaseui-idp-generic, 
+.firebaseui-country-selector, .firebaseui-list-box-dialog, .firebaseui-idp-twitter {
     border-radius: 7px;
 }
 
 .firebaseui-country-selector {
     padding-left: 2px;
+}
+
+.firebaseui-dialog {
+    background-color: #333 !important;
+    color: white !important;
+    border-radius: 7px;
+}
+
+.firebaseui-idp-google {
+    background-color: #333 !important;
+}
+
+.firebaseui-idp-google:hover, .firebaseui-idp-phone:hover, .firebaseui-idp-password:hover, 
+.firebaseui-idp-github:hover, .firebaseui-idp-facebook:hover, .firebaseui-idp-anonymous:hover,
+.firebaseui-idp-twitter:hover, .firebaseui-idp-generic:hover{
+    filter: brightness(115%);
+}
+
+.firebaseui-card-content ul {
+    color: white !important;
 }
 
 /* For telephone country selection */
@@ -186,21 +222,6 @@
     border-radius: 8px;
 }
 /* End of popup country selection */
-
-.firebaseui-dialog {
-    background-color: #333 !important;
-    color: white !important;
-    border-radius: 7px;
-}
-
-.firebaseui-idp-google {
-    background-color: #333 !important;
-}
-
-.firebaseui-idp-google:hover, .firebaseui-idp-phone:hover, .firebaseui-idp-password:hover, 
-.firebaseui-idp-github:hover, .firebaseui-idp-facebook:hover, .firebaseui-idp-anonymous:hover {
-    filter: brightness(115%);
-}
 
 .firebaseui-id-resend-countdown {
     color: #aaa;
@@ -319,6 +340,7 @@ body {
     margin-left: calc(100vw - 100%); /* Prevent jumping */
 }
 
+/* Some Material progressbar styles. Look in materialProgressBar.css for more */
 .progressBarOuter {
     width: calc(100% + 36px);
     height: 4px;
