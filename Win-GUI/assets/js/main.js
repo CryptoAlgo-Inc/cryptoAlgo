@@ -1,3 +1,14 @@
+$(window).keydown(function(event) {
+  if(event.ctrlKey && event.keyCode == 84) { 
+    console.log("Hey! Ctrl+T event captured!");
+    event.preventDefault(); 
+  }
+  if(event.ctrlKey && event.keyCode == 83) { 
+    console.log("Hey! Ctrl+S event captured!");
+    event.preventDefault(); 
+  }
+});
+
 (function($) {
 
     skel.breakpoints({

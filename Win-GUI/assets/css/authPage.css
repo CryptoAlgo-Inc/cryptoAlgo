@@ -191,7 +191,7 @@
 }
 
 .firebaseui-idp-google {
-    background-color: #333 !important;
+    background-color: #0d47a1 !important;
 }
 
 .firebaseui-idp-google:hover, .firebaseui-idp-phone:hover, .firebaseui-idp-password:hover, 
@@ -259,21 +259,36 @@
 /* Modal Content/Box */
 .modal-content {
     background-color: #333;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: auto; /* 10% from the top and centered */
+    margin-top: 10vh;
     padding: 20px;
     border: 2px solid #0063b1;
     width: 80%; /* Could be more or less, depending on screen size */
     border-radius: 7px;
     text-align: center;
     box-shadow: 3px 3px 15px #000;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.model-content::-webkit-scrollbar-track {
+    border-radius: 8px !important;
 }
 
 /* The Close Button */
 .close {
+    position: absolute;
     color: #aaa;
-    float: right;
+    left: calc(90% - 21px);
+    top: calc(10vh - 19px);
     font-size: 28px;
     font-weight: bold;
+}
+
+.closeIcon {
+    font-size: 40px;
+    background-color: black;
+    border-radius: 40px;
 }
 
 .close:hover,

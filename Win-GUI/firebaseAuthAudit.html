@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CryptoAlgo</title>
+        <title>Loading...</title>
         <!-- Core CSS -->
         <link rel="stylesheet" href="assets/css/main.css" />
 
@@ -97,7 +97,35 @@
                 // tosUrl and privacyPolicyUrl accept either url string or a callback
                 // function.
                 // Terms of service url/callback.
-                tosUrl: 'credits.html',
+                tosUrl: function() {
+                    pushWarning(`<h1>CryptoAlgo License</h1>
+        <h2>Version 1.5, 28 June 2020</h2>
+        <p>CryptoAlgo is licensed under the GPL V3 License, which allows you to redistribute the CryptoAlgo software in any way, but not modify it. You must give credit to the author of CryptoAlgo if you used any part of the source code in your own product/project. Any code that uses any part of the CryptoAlgo source code will be bound by this license. If 
+        you distribute copies of such a program, whether gratis or for a fee, 
+        you must pass on to the recipients the same freedoms that you received.
+        You must make sure that they, too, receive or can get the source code.  
+        And you must show them these terms so they know their rights. </p>
+
+
+        <h3>I WOULD LIKE TO EMPHASIZE THAT SHOULD YOU USE ANY PART OF MY WEBSITE OR APP IN ANY FORM,
+        YOU WOULD HAVE TO CREDIT THE AUTHOR OF THIS PROGRAM AND TO INCLUDE THE RELEVANT LICENSES IN YOUR MEDIA.</h3>
+
+        <p>
+        For more infomation, read the GPL V3 License avaliable above.<br />
+
+        Other credits: <br />
+        Page banner background (Abstract spinning circles with 'C' icon)<br />
+        Thanks to www.atom.com for their webpage source code and vector files<br />
+        Abstract 'C' icon (Banner and favicon)<br />
+        Downloaded from <br />https://www.pinterest.com/pin/374361787761260813/</a><br />
+        Download link:<br />
+        https://i.pinimg.com/originals/20/c2/78/20c278877a32ce588854aa96f8207840.png<br />
+        And stackexchange.com for their valuable help<br />
+        To all those who have helped me along the way: Thank you so much!<br /></p>
+        <h2> 
+        Special thanks to Wang Zerui for producing the spark that started this project. You can check out his project at
+        bit.ly/CryptoAlgo</a></h2>`, false); // False to disable autoclose
+                },
                 // Privacy policy url/callback.
                 privacyPolicyUrl: function() {
                     pushWarning('CryptoAlgo Privacy Policy<br />CryptoAlgo collects anonymous infomation about performance and app usage. This infomation is random and cannot be traced to any user. We do not collect any personal infomation and take the utmost effort to ensure the infomation is stored securely.', false);
@@ -227,8 +255,10 @@
             <div id="infoArea" class="modal">
                 <!-- Modal content -->
                 <div id="modal-content" class="modal-content">
-                    <span class="close" onclick="closeModal()"><i style="margin: 0px;" class="material-icons">close</i></span>
-                    <h2 class="modelText" id="infoText"></p>
+                    <span class="close" onclick="closeModal()"><i style="margin: 0px;" class="material-icons closeIcon">cancel</i></span>
+                    <div class="modelContentContainer">
+                        <h2 class="modelText" id="infoText"></p>
+                    </div>
                 </div>
             </div>
         </section>

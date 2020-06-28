@@ -1,5 +1,13 @@
 var perf = firebase.performance();
 
+$(window).keydown(function(event) {
+    if(event.ctrlKey && event.keyCode == 83) { 
+    
+        console.log("Ctrl+S event captured");
+        event.preventDefault();
+    }
+});
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         if (user.isAnonymous) {
@@ -14,7 +22,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 		}
 
         // The user is signed in
-        document.title = 'CryptoAlgo | User Profile';
 
         $('#warningBox1').fadeOut(0);
         var user = firebase.auth().currentUser;
@@ -42,12 +49,15 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById("headText").innerHTML = "Welcome to CryptoAlgo";
         if (user.displayName) { // Check if there's a display name
             document.getElementById("usrName").innerHTML = "Hello, " + user.displayName;
+            document.title = user.displayName + "'s Account | CryptoAlgo";
         }
         else if (!user.email) {
             document.getElementById("usrName").innerHTML = "Please enter a email in settings";
+            document.title = 'My Account | CryptoAlgo';
 		}
         else {
             document.getElementById("usrName").innerHTML = "Hello, " + user.email;
+            document.title = user.email + "'s Account | CryptoAlgo";
 		}
         document.getElementById("usrProfilePic").src = user.photoURL;
         if (!user.emailVerified) {
