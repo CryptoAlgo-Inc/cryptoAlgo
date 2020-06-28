@@ -133,6 +133,7 @@
                 // TODO: If a continue URL is available, display a button which on
                 // click redirects the user back to the app via continueUrl with
                 // additional state determined from that URL's parameters.
+                document.getElementById("messageText").innerHTML = "Email verified";
             }).catch(function(error) {
                 // Code is invalid or expired. Ask the user to verify their email address
                 // again.
@@ -145,6 +146,9 @@
         <!-- Material loading bar -->
         <div class="progress" id="loader">
             <div class="indeterminate"></div>
+        </div>
+        <div id="messageBox">
+            <p id="messageText"></p>
         </div>
     </body>
 </html>
