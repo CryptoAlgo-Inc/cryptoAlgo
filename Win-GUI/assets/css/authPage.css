@@ -5,6 +5,10 @@
     margin: auto;
     background-color: #1b1b1b;
 }
+.firebaseUI {
+    margin-top: -53px;
+    padding-top: 45px;
+}
 .authInput {
     margin: auto;
 }
@@ -118,7 +122,8 @@
     font-weight: bold;
 }
 
-.firebaseui-id-email, .firebaseui-id-password {
+.firebaseui-id-email, .firebaseui-id-password, .firebaseui-id-name,
+.firebaseui-id-new-password {
     border-width: 0 0 2px 0 !important;
     border-color: #333 !important;
     box-shadow: 0 0 0 0 black !important;
@@ -127,7 +132,15 @@
     width: 100% !important;
 }
 
-.firebaseui-id-email:focus, .firebaseui-id-password:focus {
+.firebaseui-input-toggle-blur, .firebaseui-id-password-toggle {
+    filter: invert(1);
+    opacity: 1 !important;
+    margin-top: 7px;
+    margin-right: 5px;
+}
+
+.firebaseui-id-email:focus, .firebaseui-id-password:focus,
+.firebaseui-id-name:focus, .firebaseui-id-new-password:focus {
     background-color: #2e2e2e !important;
     border-width: 0px !important;
 }
@@ -149,6 +162,10 @@
 .firebaseui-idp-github, .firebaseui-idp-facebook, .firebaseui-idp-anonymous, 
 .firebaseui-country-selector, .firebaseui-list-box-dialog {
     border-radius: 7px;
+}
+
+.firebaseui-country-selector {
+    padding-left: 2px;
 }
 
 /* For telephone country selection */
@@ -314,4 +331,12 @@ body {
     width: 0px;
     background-color: #0063b1;
     border-radius: 4px;
+}
+
+.iconImg {
+    width: 90px;
+    height: 90px;
+    background-color: #1b1b1b;
+    border-radius: 100px;
+    border: 2px solid #555;
 }

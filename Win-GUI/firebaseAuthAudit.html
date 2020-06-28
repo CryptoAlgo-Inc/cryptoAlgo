@@ -62,6 +62,7 @@
                     }
                 },
                 credentialHelper: firebaseui.auth.CredentialHelper.NONE,  // Stop being redirected to accountchooser.com
+                // When Google fixes Google YOLO, change the above to GOOGLE_YOLO
                 signInOptions: [
                     // Leave the lines as is for the providers you want to offer your users.
                     {
@@ -70,11 +71,16 @@
                             // Forces account selection even when one account
                             // is available.
                             prompt: 'select_account'
-                        }
+                        },
+                        clientId: '104602369567-vk25e755ebdgqpmkqpmb711mc1ctjqsq.apps.googleusercontent.com'
                     },
                     firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                    {
+                        provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                        requireDisplayName: false
+                    },
                     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
                     {
                         provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
                         recaptchaParameters: {
@@ -92,7 +98,10 @@
                 // Terms of service url/callback.
                 tosUrl: 'credits.html',
                 // Privacy policy url/callback.
-                privacyPolicyUrl: '<your-privacy-policy-url>'
+                privacyPolicyUrl: function() {
+                    pushWarning('CryptoAlgo Privacy Policy<br />CryptoAlgo collects anonymous infomation about performance and app usage. This infomation is random and cannot be traced to any user. We do not collect any personal infomation and take the utmost effort to ensure the infomation is stored securely.', false);
+                    // Do not close popup dialog
+				}
             };
         </script>
         <script src="assets/js/authHelper.js" defer></script>
@@ -193,7 +202,8 @@
                 </div>
 
                 <div id="loginArea" style="display: none">
-                    <div class="auth" style="display: none" id="firebaseui-auth-container"></div>
+                    <img src="images/icon.png" class="iconImg"></img>
+                    <div class="auth firebaseUI" style="display: none" id="firebaseui-auth-container"></div>
 
                     <!-- The CSS code is in another file. This loader will be hidden by the firebase auth when loading completes -->
                     <div class="progress" id="loader">
@@ -204,19 +214,8 @@
                     <div class="auth" style="margin-top: 20px;">
                     <button class="collapsible newAcct" style="border-width: 0px; border-radius: 7px;">Create Account</button>
                         <div class="content" id="newAccount">
-                            <div>
-                                <label class="authLabels" for="newUsername">Email:</label>
-                                <input class="authInput" type="text" id="newUsername" name="newUsername">
-                            </div>
-                            <div>
-                                <label class="authLabels" for="newPassword">New Password:</label>
-                                <input class="authInput" type="password" placeholder="7-64 characters starting with a letter" id="newPassword" name="NewPassword">
-                            </div>
-                            <div>
-                                <label class="authLabels" for="confirmPassword">Confirm Password:</label>
-                                <input class="authInput" type="password" id="confirmPassword" name="confirmPassword">
-                            </div>
-                            <a onclick="createNewAccount()" class="button alt submitBtn" title="Create Account"><i class="material-icons">add_circle</i></a>
+                            <h2 style="text-transform: none;">To create a new account, click on 'Sign in with email' and key in your existing email address. 
+                            You will then be prompted to create a new password.</h2>
                         </div>
                     </div>
                 </div>
