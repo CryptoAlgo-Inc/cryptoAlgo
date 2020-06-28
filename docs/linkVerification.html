@@ -3,11 +3,20 @@
         <title>Loading...</title>
 
         <link type="text/css" rel="stylesheet" href="assets/css/materialProgressBar.css" />
-        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+        <!-- Firebase Auth -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
 
         <script>
+        function getParameterByName(queryParam) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(queryParam);  
+		}
+
         document.addEventListener('DOMContentLoaded', function() {
-            // TODO: Implement getParameterByName()
+            // DONE: Implement getParameterByName()
 
             // Get the action to complete.
             var mode = getParameterByName('mode');
