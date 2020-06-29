@@ -149,6 +149,7 @@ function updateProfile() {
     }).then(function() {
         // Update successful.
         $('#usrName').fadeOut(function() {
+            document.title = newDisplayName + "'s Account | CryptoAlgo"; 
             document.getElementById("usrName").innerHTML = "Hello, " + newDisplayName;
             $('#usrName').fadeIn();
             usrNameChangeTrace.stop();
