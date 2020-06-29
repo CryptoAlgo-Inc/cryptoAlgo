@@ -126,6 +126,7 @@
                     <button style="background-color: #ff9800;" onclick="window.location.href = 'file.html';">
                     </button>
                 </div>
+
                 <div class="card card2" style="display: inline-block;">
                     <h2>Settings<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Change settings</small></h2>
                     <i class="fas fa-arrow-right"></i>
@@ -136,6 +137,19 @@
 <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
                     </ul>
                     <button style="background-color: #43a047;" onclick="window.location.href = 'settings.html';">
+                    </button>
+                </div>
+
+                <div class="card card2" style="display: inline-block;">
+                    <h2 id="accountText">Loading...</h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic" style="background-image: url('./images/settings.jpg')">></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <button style="background-color: #43a047;" onclick="window.location.href = 'auth.html';">
                     </button>
                 </div>
             </div>
@@ -246,6 +260,49 @@
                 $('#body').fadeIn("slow");
             }
             init();
+            </script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+        <!-- Firebase Auth -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+
+        <!-- Standard Performance Monitoring library -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-performance.js"></script>
+
+            <script>
+                // Your web app's Firebase configuration
+                var firebaseConfig = {
+                    apiKey: "AIzaSyDu3GBqQg6o9Mp7Ay6KkTKRnqogZWmhU6c",
+                    authDomain: "cryptoalgogui.firebaseapp.com",
+                    databaseURL: "https://cryptoalgogui.firebaseio.com",
+                    projectId: "cryptoalgogui",
+                    storageBucket: "cryptoalgogui.appspot.com",
+                    messagingSenderId: "104602369567",
+                    appId: "1:104602369567:web:bcfdad88debbb2b8cddf2a",
+                    measurementId: "G-YT1W6G83B3"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+
+                // Init Firebase Performance
+                var perf = firebase.performance();
+
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if(user) {
+                        // Signed in
+                        //if (user.isAnonymous) {
+                            // Check if its anonymous
+                        //}
+                        if (user.displayName) {
+                            document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Hello, ' + user.displayName + '</small>';
+                        }
+					}
+                    else {
+                        // Signed out
+                        document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Login to CryptoAlgo</small>';
+					}
+                });
             </script>
     </body>
 </html>

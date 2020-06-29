@@ -30,6 +30,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                             // you have one. Use User.getToken() instead.
 
         // This basically undos what the above if... block does if there's an Anonymous user.
+        document.getElementById('homeButton').style.display = 'inline-block';
         document.getElementById('outerSettingsBtn').style.display = 'inline-block';
         document.getElementById('usrEmail').style.display = 'block';
         document.getElementById('signOutButton').style.paddingRight = '5px';
@@ -38,7 +39,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log('Profile Photo: ' + user.photoURL);
         console.log('Is email verified? ' + user.emailVerified);
         console.log('User UID: ' + user.uid);
-        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+        user.getIdToken(/* forceRefresh */ true).then(function(idToken) {
             // Send token to your backend via HTTPS
             // ...
             console.log(idToken);
@@ -46,7 +47,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             pushWarning(error);
         });
         // Update page elements
-        document.getElementById("headText").innerHTML = "Welcome to CryptoAlgo";
+        document.getElementById("headText").innerHTML = "<br />Welcome to CryptoAlgo";
         if (user.displayName) { // Check if there's a display name
             document.getElementById("usrName").innerHTML = "Hello, " + user.displayName;
             document.title = user.displayName + "'s Account | CryptoAlgo";
@@ -75,7 +76,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         // The user is not signed in
         document.title = 'CryptoAlgo | Login'; // Change title
         $('#warningBox1').fadeOut(0);
-        document.getElementById("headText").innerHTML = "CryptoAlgo Login";
+        document.getElementById("headText").innerHTML = "<br />CryptoAlgo Login";
         $('#profileSpace').fadeOut(0);
         $('#loginArea').fadeIn();
         // The start method will wait until the DOM is loaded.

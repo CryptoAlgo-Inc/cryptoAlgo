@@ -98,14 +98,17 @@
                 // function.
                 // Terms of service url/callback.
                 tosUrl: function() {
-                    pushWarning(`<h1>CryptoAlgo License</h1>
+                    pushWarning(`<h1 style="font-size: 35px; font-weight: bold;">CryptoAlgo Terms of Service</h1>
         <h2>Version 1.5, 28 June 2020</h2>
-        <p>CryptoAlgo is licensed under the GPL V3 License, which allows you to redistribute the CryptoAlgo software in any way, but not modify it. You must give credit to the author of CryptoAlgo if you used any part of the source code in your own product/project. Any code that uses any part of the CryptoAlgo source code will be bound by this license. If 
+        <p>CryptoAlgo is licensed under the GPL V3 License, which allows you to redistribute the CryptoAlgo software in any way, but not modify it. 
+        You must give credit to the author of CryptoAlgo if you used any part of the source code in your own product/project. Any code that uses any part of the CryptoAlgo source code will be bound by this license. If 
         you distribute copies of such a program, whether gratis or for a fee, 
         you must pass on to the recipients the same freedoms that you received.
         You must make sure that they, too, receive or can get the source code.  
         And you must show them these terms so they know their rights. </p>
 
+        <p>CryptoAlgo is open sourced software - you may use the source code avalable at GitHub in your own software,
+        but must keep your program open sourced so that others can benefit from it like you did from CryptoAlgo's code.</p>
 
         <h3>I WOULD LIKE TO EMPHASIZE THAT SHOULD YOU USE ANY PART OF MY WEBSITE OR APP IN ANY FORM,
         YOU WOULD HAVE TO CREDIT THE AUTHOR OF THIS PROGRAM AND TO INCLUDE THE RELEVANT LICENSES IN YOUR MEDIA.</h3>
@@ -124,18 +127,38 @@
         To all those who have helped me along the way: Thank you so much!<br /></p>
         <h2> 
         Special thanks to Wang Zerui for producing the spark that started this project. You can check out his project at
-        bit.ly/CryptoAlgo</a></h2>`, false); // False to disable autoclose
+        bit.ly/CryptoAlgo</a></h2>
+        <h2>CryptoAlgo is open sourced; it's source code is avaliable at https://github.com/CryptoAlgo-Inc/cryptoAlgo at no charge.</h2>`, false); // False to disable autoclose
                 },
                 // Privacy policy url/callback.
                 privacyPolicyUrl: function() {
-                    pushWarning('CryptoAlgo Privacy Policy<br />CryptoAlgo collects anonymous infomation about performance and app usage. This infomation is random and cannot be traced to any user. We do not collect any personal infomation and take the utmost effort to ensure the infomation is stored securely.', false);
-                    // Do not close popup dialog
+                    pushWarning(`<h1 style="font-size: 35px; font-weight: bold;">CryptoAlgo Privacy Policy</h1>
+                    <h2>Version 1.0, 29 June 2020</h2>
+                    <p>CryptoAlgo collects anonymous infomation about performance and app usage. This infomation is random and cannot be traced to any user. 
+                    We do not collect any personal infomation and take the utmost effort to ensure any collected infomation is stored securely.</p>
+                    <ol><h2>Infomation collected:</h2>
+                    <li>Usage patterns and activity such as engagement and retention rates</li>
+                    <li>Performance data of CryptoAlgo (e.g. how fast each action takes to complete)</li>
+                    <li>Your profile picture, display name and email if provided for login purposes</li>
+                    <li>Other application-related data like settings and configuration files</li>
+                    </ol>
+                    <p>If you think your CryptoAlgo account or data might be compromised, please take suitable steps
+                    such as changing your password. If you would like assistance to secure your account, feel
+                    free to contact the CryptoAlgo Team at <a href="mailto:support@cryptoalgo.cf">support@cryptoalgo.cf</a></p>
+                    `, false); // Do not autoclose popup dialog
 				}
             };
         </script>
         <script src="assets/js/authHelper.js" defer></script>
     </head>
+
     <body ondragstart="return false;">
+        <!-- Header -->
+        <header id="header" class="alt">
+            <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
+            <a href="index.html"><i class="material-icons">home</i></a>
+        </header>
+
         <section id="one" class="wrapper style2 accountMgmt">
             <div style="text-align: center" id="contentArea">
                 <h2 id="headText"> </h2>
@@ -154,7 +177,8 @@
                     <!-- Action buttons -->
                     <ul class="actions" style="margin: 10px 0 10px 0">
                         <li id="signOutButton"><a onclick="signOutUser()" title="Sign Out" class="button alt"><i class="material-icons">power_settings_new</i></a></li>
-                        <li id="outerSettingsBtn"><a onclick="usrSettingsCloseOpen()" title="Profile Settings" class="button alt"><i class="material-icons" id="settingsBtn">settings</i></a></li>
+                        <li id="outerSettingsBtn" style="padding-right: 5px;"><a onclick="usrSettingsCloseOpen()" title="Profile Settings" class="button alt"><i class="material-icons" id="settingsBtn">settings</i></a></li>
+                        <li id="homeButton"><a href="index.html" title="Home" class="button alt"><i class="material-icons" id="settingsBtn">home</i></a></li>
                     </ul>
 
                     <!-- User Settings -->
