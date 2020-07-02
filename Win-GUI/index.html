@@ -49,6 +49,7 @@
                     <li><a href="file.html">Decryption/Encryption of files</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="info.html">Build Infomation</a></li>
+                    <li style="margin: auto; width: 152px;"><img class="usrLogo" onerror="this.src='images/pfpPlaceholder.png'" src="images/pfpPlaceholder.png" id="usrLogoArea"</img></li>
                 </ul>
             </nav>
 
@@ -116,7 +117,6 @@
                 </div>
                 <div class="card card2" style="display: inline-block;">
                     <h2>FileCrypto<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Encrypt and decrypt files</small></h2>
-                    <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
                     <div class="pic"></div>
                     <ul>
@@ -131,7 +131,7 @@
                     <h2>Settings<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Change settings</small></h2>
                     <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
-                    <div class="pic" style="background-image: url('./images/settings.jpg')">></div>
+                    <div class="pic" style="background-image: url('./images/settings.jpg')"></div>
                     <ul>
  <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
 <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
@@ -142,18 +142,23 @@
 
                 <div class="card card2" style="display: inline-block;">
                     <h2 id="accountText">Loading...</h2>
-                    <i class="fas fa-arrow-right"></i>
                     <p>CryptoAlgo</p>
-                    <div class="pic" style="background-image: url('./images/settings.jpg')">></div>
+                    <div class="pic" style="background-image: url('./images/userBg.jpg')"></div>
                     <ul>
  <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
 <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
                     </ul>
-                    <button style="background-color: #43a047;" onclick="window.location.href = 'auth.html';">
+                    <button style="background-color: #fbbc05;" onclick="window.location.href = 'auth.html';">
                     </button>
                 </div>
             </div>
         </div>
+        </section>
+
+        <section id="news" class="wrapper style3">
+            <div class="inner">
+                <iframe src="https://ptb.discordapp.com/widget?id=717245773854801951&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0"></iframe>
+            </div>
         </section>
 
         <!-- Two -->
@@ -295,12 +300,20 @@
                             // Check if its anonymous
                         //}
                         if (user.displayName) {
-                            document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Hello, ' + user.displayName + '</small>';
+                            document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none; white-space: nowrap;">Hello, ' + user.displayName.substring(0, 24) + '</small>';
                         }
+                        else if (user.email) {
+                            document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none; white-space: nowrap;">Hello, ' + user.email.substring(0, 24) + '</small>'; 
+						}
+                        else {
+                            document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Welcome to CryptoAlgo</small>';  
+						}
+                        document.getElementById("usrLogoArea").src = user.photoURL;
+                        console.log("Changed src");
 					}
                     else {
                         // Signed out
-                        document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Login to CryptoAlgo</small>';
+                        document.getElementById("accountText").innerHTML = 'Login<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none; white-space: nowrap;">CryptoAlgo Login</small>';
 					}
                 });
             </script>

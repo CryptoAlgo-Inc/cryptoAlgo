@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.usrLogo {
+    border-radius: 150px;
+    height: 150px;
+    width: 150px;
+}
+
 /* Remove reCaptcha badge */
 .grecaptcha-badge{
 	visibility: collapse !important;  

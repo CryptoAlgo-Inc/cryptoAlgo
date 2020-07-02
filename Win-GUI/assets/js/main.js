@@ -9,6 +9,11 @@ $(window).keydown(function(event) {
   }
 });
 
+
+$(window).on('beforeunload', function() {
+    console.log("Loading...");
+});
+
 (function($) {
 
     skel.breakpoints({
