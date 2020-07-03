@@ -36,8 +36,12 @@
                     <li><a href="file.html">Decryption/Encryption of files</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="info.html">Build Infomation</a></li>
-                    <li>Beta/Alpha Version:</li>
-                    <li>V1.8 Alpha 20</li>
+                    <li><a href="auth.html">CryptoAlgo Account</a></li>
+                    <hr style="margin-top: 0px; border-color: #555;">
+                    <li style="margin: auto; width: 152px;"><img class="usrLogo" onerror="this.src='images/pfpPlaceholder.png'" src="images/pfpPlaceholder.png" id="usrLogoArea"</img>
+                    <p id="usrDisplayName" style="color: white; text-align: center;">Loading...</p></li>
+                    <li id="signOutContainer"><a onclick="signOutUsr()" class="button alt">Sign Out</a></li>
+                    <li id="loginContainer"><a href="auth.html" class="button alt">Login</a></li>
                 </ul>
             </nav>
 
@@ -162,5 +166,15 @@ init();
                     grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'documentation'})
             });
             </script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+        <!-- Firebase Auth -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+
+        <!-- Standard Performance Monitoring library -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-performance.js"></script>
+
+        <script src="assets/js/authInfoSupport.js"></script>
     </body>
 </html>
