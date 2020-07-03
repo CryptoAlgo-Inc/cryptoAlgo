@@ -1,23 +1,100 @@
 @charset "UTF-8";
 
-/* This CSS is used in my GUI and website, so expect to see some unused classes. */
+.usrLogo {
+    border-radius: 150px;
+    height: 150px;
+    width: 150px;
+}
 
 /* Remove reCaptcha badge */
 .grecaptcha-badge{
 	visibility: collapse !important;  
 }
 
-#outputTxt {
-        word-break: break-all !important;
+.warning {
+        box-shadow: inset 0 0 0 2px #e81123 !important;
+}
+
+@font-face {
+  font-family: 'Material Icons Round';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Round.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons Round';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  margin-top: 10px;
+}
+
+.textOutputDiv {
+        max-width: 95%;
+        max-height: 45%;
+        border: solid 2px #0063b1;
+        border-radius: 7px;
+        overflow-y: auto;
+        word-break: break-word;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        padding: 10px;
+        font-family: Courier New;
+        color: white !important;
+}
+
+.protectedQR {
+        filter: blur(8px);
+        transition: filter 0.5s ease;
+}
+
+.protectedQR:hover {
+        filter: blur(0px);
+        cursor: none;
+}
+
+/* Custom track */
+.textOutputDiv::-webkit-scrollbar-track {
+    background: #212121;
+    border-radius: 8px !important;
+}
+
+.textOutput {
+        color: white !important;
+        margin-bottom: 0px !important;
 }
 
 selection {
 	transition-duration: 0.5s;
 }
 
+.selectbg {
+        background-image: url(../../images/selectbg.jpg);
+}
+
 @font-face {
         font-family: "GilroyLight";
         src: url("../fonts/Gilroy-Light.otf");
+}
+
+button {
+        font-family: "GilroyLight";
 }
 
 :-moz-placeholder { /* Firefox 18- */
@@ -33,7 +110,7 @@ selection {
 }
 
 /* Disable selection */
-a, p, h1, h2, h3, input, small, body, textrea {
+a, p, h1, h2, h3, input, small, body, textrea, img {
  -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;
@@ -44,6 +121,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 ::-webkit-scrollbar {
   width: 7px;
   background: #000;
+  border-radius: 8px;
 }
  
 /* Handle */
@@ -52,9 +130,10 @@ a, p, h1, h2, h3, input, small, body, textrea {
   border-radius: 8px;
 }
 
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #222;
+    background: #212121;
 }
 
 /* Handle on hover */
@@ -64,7 +143,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 
 /* Overlap region */
 ::-webkit-scrollbar-corner {
-    background: #111;
+    background: #000;
 }
 
 /* Reset */
@@ -1859,8 +1938,8 @@ a, p, h1, h2, h3, input, small, body, textrea {
 /* Box */
 
 	.box {
-		margin-bottom: 2rem;
 		background: #121212;
+                border-radius: 7px;
 	}
 
 		.box .content {
@@ -1906,8 +1985,8 @@ a, p, h1, h2, h3, input, small, body, textrea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		border-radius: 4px;
-		border: 0;
+		border-radius: 7px;
+                border-color: #0063B1;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 400;
@@ -2021,7 +2100,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 		button.alt,
 		.button.alt {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
+			box-shadow: inset 0 0 0 2px #0063B1a3;
 			color: #FFFFFF !important;
 		}
 
@@ -2054,8 +2133,9 @@ a, p, h1, h2, h3, input, small, body, textrea {
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #2B2B2B;
+			background-color: black;
 			color: #ffffff !important;
+                        border: 2px solid #0063B1;
 		}
 
 			input[type="submit"].special:hover,
@@ -2063,7 +2143,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #3D3D3D;
+				background-color: #272727;
 			}
 
 			input[type="submit"].special:active,
@@ -2071,13 +2151,13 @@ a, p, h1, h2, h3, input, small, body, textrea {
 			input[type="button"].special:active,
 			button.special:active,
 			.button.special:active {
-				background-color: #3D3D3D;
+				background-color: #272727;
 			}
 
 /* Form */
 
 	form {
-		margin: 0 0 2rem 0;
+		margin: 0;
 	}
 
 		form .field {
@@ -2177,7 +2257,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 	input[type="email"],
 	select {
 		height: 2.75rem;
-                width: 300px;
+                width: 90%;
                 -webkit-transition: width 0.4s ease-in-out;
                 transition: width 0.4s ease-in-out;
 	}
@@ -2289,7 +2369,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 		textarea:focus {
 			border-color: #5AA6ED;
 			box-shadow: 0 0 0 1px #5AA6ED;
-                        width: 100%;
+                        width: 91%;
 		}
 
 	.select-wrapper:before {
@@ -2790,7 +2870,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 				.wrapper.style1 button.alt,
 				.wrapper.style1 .button.alt {
 					background-color: transparent;
-					box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+					border: 2px solid #0063B1;
 					color: #ffffff !important;
 				}
 
@@ -2982,7 +3062,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 				.wrapper.style2 button.alt,
 				.wrapper.style2 .button.alt {
 					background-color: transparent;
-					box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15);
+					box-shadow: inset 0 0 0 2px #0063B1;
 					color: #ffffff !important;
 				}
 
@@ -3044,8 +3124,9 @@ a, p, h1, h2, h3, input, small, body, textrea {
 			.wrapper.style2 input[type="email"],
 			.wrapper.style2 select,
 			.wrapper.style2 textarea {
-				background: #454545;
-				border-color: rgba(255, 255, 255, 0.3);
+				background: #272727;
+				border-color: #0063B1;
+                                transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 			}
 
 				.wrapper.style2 input[type="text"]:focus,
@@ -3053,8 +3134,9 @@ a, p, h1, h2, h3, input, small, body, textrea {
 				.wrapper.style2 input[type="email"]:focus,
 				.wrapper.style2 select:focus,
 				.wrapper.style2 textarea:focus {
-					border-color: #525252;
-					box-shadow: 0 0 0 1px #525252;
+					border-color: #0063B1;
+					box-shadow: 0 0 0 2px #0063B1a2;
+                                        background: #212121;
 				}
 
 			.wrapper.style2 .select-wrapper:before {
@@ -3211,7 +3293,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 				.wrapper.style3 button.alt,
 				.wrapper.style3 .button.alt {
 					background-color: transparent;
-					box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+					box-shadow: inset 0 0 0 2px #0063b1;
 					color: #ffffff !important;
 				}
 
@@ -3244,7 +3326,7 @@ a, p, h1, h2, h3, input, small, body, textrea {
 				.wrapper.style3 input[type="button"].special,
 				.wrapper.style3 button.special,
 				.wrapper.style3 .button.special {
-					background-color: #2B2B2B;
+					background-color: black;
 					color: #ffffff !important;
 				}
 
@@ -4196,6 +4278,7 @@ video#bgvid {
 		-webkit-align-items: stretch;
 		-ms-align-items: stretch;
 		align-items: stretch;
+                border-radius: 7px;
 	}
 
 		.grid-style > * {
