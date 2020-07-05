@@ -18,8 +18,8 @@ function generateKeys(len) {
     })
     console.log('█                           Writing...                           █');
     try {
-        writeFileSync(os.homedir() + '\\Documents\\private.pem', privateKey);
-        writeFileSync(os.homedir() + '\\Documents\\public.pem', publicKey);
+        writeFileSync(os.homedir() + '/Documents/private.pem', privateKey);
+        writeFileSync(os.homedir() + '/Documents/public.pem', publicKey);
     } catch(e) {
         return 1;
     }

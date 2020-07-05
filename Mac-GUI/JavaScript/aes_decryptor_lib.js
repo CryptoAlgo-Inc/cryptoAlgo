@@ -17,8 +17,8 @@ function decrypt(text, key_in, iv_in) {
 module.exports = {
 auto: function(text) {
     try {
-        const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-        const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
+        const key_in = fs.readFileSync(os.homedir() + '/Documents/key.txt', 'utf8');
+        const iv_in = fs.readFileSync(os.homedir() + '/Documents/iv.txt', 'utf8');
         const key = Buffer.from(key_in, 'hex');
         const iv = Buffer.from(iv_in, 'hex');
     } catch(e) {
@@ -26,8 +26,8 @@ auto: function(text) {
         return true;
     }
     try {
-        const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-        const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
+        const key_in = fs.readFileSync(os.homedir() + '/Documents/key.txt', 'utf8');
+        const iv_in = fs.readFileSync(os.homedir() + '/Documents/iv.txt', 'utf8');
         const key = Buffer.from(key_in, 'hex');
         const iv = Buffer.from(iv_in, 'hex');
         return decrypt(text, key, iv).slice(8, -8);

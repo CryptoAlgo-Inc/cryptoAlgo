@@ -21,8 +21,8 @@ auto: function(fileName) {
         var key
         var iv;
         try {
-            key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-            iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
+            key_in = fs.readFileSync(os.homedir() + '/Documents/key.txt', 'utf8');
+            iv_in = fs.readFileSync(os.homedir() + '/Documents/iv.txt', 'utf8');
             key = Buffer.from(key_in, 'hex');
             iv = Buffer.from(iv_in, 'hex');
         } catch(e) {
@@ -32,8 +32,8 @@ auto: function(fileName) {
         // console.log('Key: ', key);
         // console.log('IV :', iv);
         try {
-            key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-            iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
+            key_in = fs.readFileSync(os.homedir() + '/Documents/key.txt', 'utf8');
+            iv_in = fs.readFileSync(os.homedir() + '/Documents/iv.txt', 'utf8');
             key = Buffer.from(key_in, 'hex');
             iv = Buffer.from(iv_in, 'hex');
             const file_in = fs.readFileSync(path.resolve(fileName), 'utf8');

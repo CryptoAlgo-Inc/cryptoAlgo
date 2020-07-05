@@ -16,15 +16,15 @@ function encrypt(text, key, iv) {
 module.exports = {
 auto: function(text) {
     try {
-        const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-        const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
+        const key_in = fs.readFileSync(os.homedir() + '/Documents/key.txt', 'utf8');
+        const iv_in = fs.readFileSync(os.homedir() + '/Documents/iv.txt', 'utf8');
     } catch(e) {
         console.log('Errors were encountered.');
         console.log('Exiting');
         return true;
     }
-    const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-    const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
+    const key_in = fs.readFileSync(os.homedir() + '/Documents/key.txt', 'utf8');
+    const iv_in = fs.readFileSync(os.homedir() + '/Documents/iv.txt', 'utf8');
     const key = Buffer.from(key_in, 'hex');
     const iv = Buffer.from(iv_in, 'hex');
     console.log('Key: ', key);

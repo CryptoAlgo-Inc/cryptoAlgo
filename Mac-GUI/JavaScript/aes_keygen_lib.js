@@ -13,8 +13,8 @@ auto: function() {
     console.log('Key: ', key);
     console.log('IV: ', iv);
     console.log('█                           Writing...                           █');
-    writeFileSync(os.homedir() + '\\Documents\\key.txt', key.toString('hex'));
-    writeFileSync(os.homedir() + '\\Documents\\iv.txt', iv.toString('hex'));
+    writeFileSync(os.homedir() + '/Documents/key.txt', key.toString('hex'));
+    writeFileSync(os.homedir() + '/Documents/iv.txt', iv.toString('hex'));
     console.log('█             Generation of AES keyfiles complete                █');
     console.log('█              Thank you for using this program!                 █');
     console.log('██████████████████████████████████████████████████████████████████');
