@@ -263,7 +263,7 @@ res.end();
 
 var { exec } = require('child_process');
 
-exec('"C:\\Program Files (x86)\\CryptoAlgo\\cryptoalgo.exe" --app=http://localhost:34235 --new-window --disable-extensions --disable-plugins', (error, stdout, stderr) => {
+exec('"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --app=http://localhost:34235 --new-window --disable-extensions --disable-plugins', (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
