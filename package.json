@@ -3,7 +3,7 @@
     "version": "v2.8.2",
     "main": "Win-GUI/main.js",
     "bin": "Win-GUI/main.js",
-    "author": "CryptoAlgo",
+    "author": "CryptoAlgo Inc.",
     "pkg": {
         "assets": [
             "./**/**",
@@ -29,7 +29,6 @@
         "encrypt",
         "decrypt"
     ],
-    "author": "CryptoAlgo Inc.",
     "license": "GPL-3.0-or-later",
     "bugs": {
         "url": "https://github.com/CryptoAlgo-Inc/cryptoAlgo/issues"

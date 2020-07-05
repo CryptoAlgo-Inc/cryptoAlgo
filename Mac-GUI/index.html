@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <meta name="theme-color" content="#313131"/>
+        <link rel="manifest" href="/manifest.json" />
+        <html lang="en">
+        <link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
+        <title>CryptoAlgo | Home</title>
+        <meta name="description" content="Data encryption with AES and RSA">
+        <meta name="keywords" content="cryptography, cryptoAlgo, AES, RSA, data encryption, safety">
+        <meta name="author" content="CryptoAlgro">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/cardSelect.css" />
+        <script src="assets/js/jquery.scrolly.min.js" defer></script>
+        <script src="assets/js/jquery.scrollex.min.js" defer></script>
+        <script src="assets/js/skel.min.js" defer></script>
+        <script src="assets/js/util.js" defer></script>
+        <script src="assets/js/main.js" defer></script>
+        <script src="assets/js/lazysizes.min.js" defer></script>
+        <!-- <script src="assets/js/alertBox.js" defer></script> -->
+        <style>
+        #body {
+                overflow-x: hidden;
+        }
+        </style>
+    </head>
+
+    <body id="body" ondragstart="return false;" ondrop="return false;">
+
+        <div class=
+
+        <!-- Header -->
+            <header id="header" class="alt">
+                <a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a>
+                <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
+            </header>
+
+        <!-- Nav -->
+            <nav id="menu">
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li>
+                    <li><a href="generic.html">Decryption/Encryption of text</a></li>
+                    <li><a href="headAlgo.html">Decryption/Encryption of header</a></li>
+                    <li><a href="file.html">Decryption/Encryption of files</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="info.html">Build Infomation</a></li>
+                    <li><a href="auth.html">CryptoAlgo Account</a></li>
+                    <hr style="margin-top: 0px; border-color: #555;">
+                    <li style="margin: auto; width: 152px;"><img class="usrLogo" onerror="this.src='images/pfpPlaceholder.png'" src="images/pfpPlaceholder.png" id="usrLogoArea"</img>
+                    <p id="usrDisplayName" style="color: white; text-align: center;">Loading...</p></li>
+                    <li id="signOutContainer"><a onclick="signOutUsr()" class="button alt">Sign Out</a></li>
+                    <li id="loginContainer"><a href="auth.html" class="button alt">Login</a></li>
+                </ul>
+            </nav>
+
+        <!-- Banner -->
+        <!--
+                        Note to self:
+            To use a video as the background, set data-video to the name of your video without
+            its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+            formats to work correctly. -->
+        
+            <section id="banner" data-video="images/banner">
+                <div class="inner">
+                    <h1>CryptoAlgo</h1>
+                    <p>Easily encrypt or decrypt<br />
+                    text or files</p>
+                    <a href="#one" class="button special scrolly">Start</a><br />
+                    <div class="inner">
+                        <p>      </p>
+                        <ul class="actions">
+                            <li><a href="contact.html" class="button alt">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section> 
+
+        <!-- One -->
+            <section id="one" class="wrapper style2 selectbg">
+                <h2 style="text-align: center;">What would you like to do?</h2>
+        <div class="outer">
+            <div class="container" style="display: inline-block;">
+                <div class="card" style="display: inline-block;">
+                    <h2>KeyGen<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Generate keyfiles</small></h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic"></div>
+                    <ul> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <button style="background-color: #b71c1c;" onclick="window.location.href = 'keygen.html';">
+                    </button>
+                </div>
+                <div class="card card2" style="display: inline-block;">
+                    <h2>TextCrypto<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Encrypt and decrypt text</small></h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic"></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <button onclick="window.location.href = 'generic.html';">
+                    </button>
+                </div>
+                <div class="card card2" style="display: inline-block;">
+                    <h2>HeadAlgo<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Enc and Dec AES keyfiles</small></h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic" style="background-image: url('./images/headalgo.webp')"></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <button style="background-color: #9c27b0;" onclick="window.location.href = 'headAlgo.html';">
+                    </button>
+                </div>
+                <div class="card card2" style="display: inline-block;">
+                    <h2>FileCrypto<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Encrypt and decrypt files</small></h2>
+                    <p>CryptoAlgo</p>
+                    <div class="pic"></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <button style="background-color: #ff9800;" onclick="window.location.href = 'file.html';">
+                    </button>
+                </div>
+
+                <div class="card card2" style="display: inline-block;">
+                    <h2>Settings<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Change settings</small></h2>
+                    <i class="fas fa-arrow-right"></i>
+                    <p>CryptoAlgo</p>
+                    <div class="pic" style="background-image: url('./images/settings.jpg')"></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <button style="background-color: #43a047;" onclick="window.location.href = 'settings.html';">
+                    </button>
+                </div>
+
+                <div class="card card2" style="display: inline-block;">
+                    <h2 id="accountText">Loading...</h2>
+                    <p>CryptoAlgo</p>
+                    <div class="pic" style="background-image: url('./images/userBg.jpg')"></div>
+                    <ul>
+ <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+<li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                    </ul>
+                    <button style="background-color: #fbbc05;" onclick="window.location.href = 'auth.html';">
+                    </button>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- <section id="news" class="wrapper style3">
+            <div class="inner">
+                <iframe src="https://e.widgetbot.io/channels/717245773854801951/728413259396284436" height="600" width="100%" style="border-radius: 7px;"></iframe>
+            </div>
+        </section> -->
+
+        <!-- Two -->
+            <section id="two" class="wrapper style3">
+            <video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+                <div class="inner">
+                    <h2 style="text-align:center"> <br />3 Simple Steps </h2>
+                    <div id="flexgrid">
+                        <div>
+                            <header>
+                                <h3>1. Key in text</h3>
+                            </header>
+                            <p>Simpily key in the text that you wish to encrypt, and copy the encrypted text.</p>
+                        </div>
+                        <div>
+                            <header>
+                                <h3>2. Encrypt the AES keyfiles</h3>
+                            </header>
+                            <p>Encrypt the AES keyfiles with the other party's RSA public key with the inbuilt, easy to use tools.</p>
+                        </div>
+                        <div>
+                            <header>
+                                <h3>3. Send the encrypted output</h3>
+                            </header>
+                            <p>Send the encrypted text produced in step 1 with the encrypted AES keyfiles to the other party.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Three -->
+            <section id="three" class="wrapper style2">
+                <div class="inner">
+                    <div class="grid-style">
+                        <div>
+                            <div class="box" style="border-radius: 7px;">
+                                <div class="image fit">
+                                    <img data-src="images/pic02.webp" class="lazyload" alt="" />
+                                </div>
+                                <div class="content">
+                                    <header class="align-center">
+                                        <h2>Easy-to-use user interface</h2>
+                                        <p>Requires minimal technical knowledge</p>
+                                    </header>
+                                    <p style="text-align:center">As easy as browsing the web!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="box" style="border-radius: 7px;">
+                                <div class="image fit">
+                                    <img data-src="images/pic03.webp" class="lazyload" alt="" />
+                                </div>
+                                <div class="content">
+                                    <header class="align-center">
+                                        <h2>Small output files</h2>
+                                        <p>On a metered internet connection? No problem!</p>
+                                    </header>
+                                    <p style="text-align:center">An efficient algorithm ensures small output sizes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Four -->
+            <section id="four" class="wrapper style3">
+                <div class="inner">
+
+                    <header class="align-center">
+                        <h2><br />Comments? Suggestions? Doubts?</h2>
+                        <p>Feel free to contact me at <a href="mailto:support@cryptoalgo.cf">support@cryptoalgo.cf</a></p>
+                        <div class="inner">
+                            <p>      </p>
+                            <ul class="actions">
+                                <li><a href="#one" class="button special scrolly" style="text-align:center">Start Now!</a></li>
+                            </ul>
+                        </div>
+                    </header>
+
+                </div>
+            </section>
+
+            <script>
+            function removeBW() {
+                console.log('Image was hovered')
+            }
+            </script>
+                <!-- Footer -->
+            <footer id="footer" class="wrapper">
+                <div class="inner">
+                    <div class="copyright">
+                        <p>This project is maintained by <a href="mailto:support@cryptoalgo.cf">@CryptoAlgo</a>.</p>
+                    </div>
+                </div>
+            </footer>
+        <!-- Links -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script>
+            function init() {
+                $('#body').fadeOut(0);
+                $('#body').fadeIn("slow");
+            }
+            init();
+            </script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+        <!-- Firebase Auth -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+
+        <!-- Standard Performance Monitoring library -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-performance.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDu3GBqQg6o9Mp7Ay6KkTKRnqogZWmhU6c",
+                authDomain: "cryptoalgogui.firebaseapp.com",
+                databaseURL: "https://cryptoalgogui.firebaseio.com",
+                projectId: "cryptoalgogui",
+                storageBucket: "cryptoalgogui.appspot.com",
+                messagingSenderId: "104602369567",
+                appId: "1:104602369567:web:bcfdad88debbb2b8cddf2a",
+                measurementId: "G-YT1W6G83B3"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            // Init Firebase Performance
+            var perf = firebase.performance();
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                if(user) {
+                    document.getElementById("loginContainer").style.display = 'none';
+                    document.getElementById("signOutContainer").style.display = 'display flex';
+                    // Signed in
+                    //if (user.isAnonymous) {
+                        // Check if its anonymous
+                    //}
+                    if (user.displayName) {
+                        document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none; white-space: nowrap;">Hello, ' + user.displayName.substring(0, 24) + '</small>';
+                        document.getElementById("usrDisplayName").innerHTML = user.displayName;
+                    }
+                    else if (user.email) {
+                        document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none; white-space: nowrap;">Hello, ' + user.email.substring(0, 24) + '</small>'; 
+                        document.getElementById("usrDisplayName").innerHTML = user.email;
+		            }
+                    else {
+                        document.getElementById("accountText").innerHTML = 'Account<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none;">Welcome to CryptoAlgo</small>';  
+			            document.getElementById("usrDisplayName").innerHTML = "Logged In";
+                    }
+                    document.getElementById("usrLogoArea").src = user.photoURL;
+                    console.log("Changed src");
+	            }
+                else {
+                    // Signed out
+                    document.getElementById("signOutContainer").style.display = 'none';
+                    document.getElementById("loginContainer").style.display = 'display flex';
+                    document.getElementById("accountText").innerHTML = 'Login<br /><small style="font-size: 20px; position: absolute; right: 5px; bottom: -20px; text-shadow: none; white-space: nowrap;">CryptoAlgo Login</small>';
+                    document.getElementById("usrDisplayName").innerHTML = "Logged Out";
+	            }
+            });
+        </script>
+    </body>
+</html>

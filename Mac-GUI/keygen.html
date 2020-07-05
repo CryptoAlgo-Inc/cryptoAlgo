@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="manifest" href="manifest.json" />
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <meta name="theme-color" content="#313131"/>
+        <html lang="en">
+        <link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
+        <title>CryptoAlgo | Key Generation</title>
+        <meta name="description" content="Data encryption with AES and RSA - Downloads">
+        <meta name="keywords" content="AES, RSA, Node.js, data encryption, encryption, data, safety, download now, free">
+        <meta name="author" content="CryptoAlgro">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+
+<script>
+    function removeTag() {
+        window.setTimeout(function() {
+            $('body').removeClass('is-loading');
+        }, 1);
+    }
+</script>
+
+    <body id="body" onload="removeTag()" ondragstart="return false;" ondrop="return false;">
+
+        <!-- Header -->
+            <header id="header" class="alt">
+                <div class="logo"><a href="index.html">Crypto<span>Algo</span></a></div>
+                <a href="#menu" class="toggle" alt="Open the menu"><span>Menu</span></a>
+            </header>
+
+        <!-- Nav -->
+            <nav id="menu">
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="keygen.html">Generation of AES/RSA keyfiles</a></li>
+                    <li><a href="generic.html">Decryption/Encryption of text</a></li>
+                    <li><a href="headAlgo.html">Decryption/Encryption of header</a></li>
+                    <li><a href="file.html">Decryption/Encryption of files</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="info.html">Build Infomation</a></li>
+                    <li><a href="auth.html">CryptoAlgo Account</a></li>
+                    <hr style="margin-top: 0px; border-color: #555;">
+                    <li style="margin: auto; width: 152px;"><img class="usrLogo" onerror="this.src='images/pfpPlaceholder.png'" src="images/pfpPlaceholder.png" id="usrLogoArea"</img>
+                    <p id="usrDisplayName" style="color: white; text-align: center;">Loading...</p></li>
+                    <li id="signOutContainer"><a onclick="signOutUsr()" class="button alt">Sign Out</a></li>
+                    <li id="loginContainer"><a href="auth.html" class="button alt">Login</a></li>
+                </ul>
+            </nav>
+
+        <!-- One -->
+            <section id="one" class="wrapper style3">
+                <div class="inner">
+                    <h2 style="text-align:center"><br /> Options </h2>
+                    <div id="flexgrid">
+                        <div>
+                            <div id="RSAGen">
+                                <header>
+                                    <h3>Generate RSA Keypair</h3>
+                                </header>
+                                <p>Generates public.pem and private.pem in your Documents directory.</p>
+                                <p>      </p>
+                                <ul class="actions">
+                                    <li><a href="keygen.html?mode=rsa" onclick="showWait()" class="button alt" style="text-align:center">Generate RSA Keypair</a></li>
+                                </ul>
+                            </div>
+                            <div id="spinner">
+                                <div class="loader"></div>
+                                <h2>Generating...</h2>
+                                <p>Please do not close or refresh this window<br />
+                                You will be automatically redirected when this process completes.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <header>
+                                <h3>Unsure?</h3>
+                            </header>
+                            <p>If you are unsure, generate both. You can delete any one of them later if not needed. RSA keypair generation takes some time before the files are completely generated.</p>
+                        </div>
+                        <div>
+                            <header>
+                                <h3>Generate AES Keyfiles</h3>
+                            </header>
+                            <p>Generates key.txt and iv.txt in your Documents directory.</p>
+                            <p>      </p>
+                            <ul class="actions">
+                                <li><a href="keygen.html?mode=aes" class="button alt" style="text-align:center">Generate AES keyfiles</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+        <!-- Two -->
+            <section id="two" class="wrapper style3">
+                <div class="inner">
+                    <header class="align-center">
+                        <h2>Need help? Found a bug?</h2>
+                        <div class="inner">
+                            <p>      </p>
+                            <ul class="actions">
+                                <li><a href="mailto:support@cryptoalgo.cf" class="button alt" style="text-align:center"><i class="material-icons">email</i></a></li>
+                                <li><a href="index.html" class="button alt" style="text-align:center"><i class="material-icons">home</i></a></li>
+                            </ul>
+                        </div>
+                    </header>
+
+                </div>
+            </section>
+
+                <!-- Footer -->
+            <footer id="footer" class="wrapper">
+                <div class="inner">
+                    <div class="copyright">
+                        <p>This project is maintained by <a href="mailto:support@cryptoalgo.cf">@CryptoAlgo</a>.</p>
+                    </div>
+                </div>
+            </footer>
+        
+        <style>
+        .loader {
+            border: 2px solid #dcdcdc; /* Light grey */
+            border-top: 2px solid #ca0000; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1.5s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        </style>
+
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script>
+            function init() {
+                $('#body').fadeOut(0);
+                $('#body').fadeIn("slow");
+                $('#spinner').fadeOut(0);
+            }
+            init();
+            function showWait() {
+                $('#RSAGen').fadeOut("slow", function() {
+                    $('#spinner').fadeIn("slow");
+                });
+            }
+            </script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/skel.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+        <!-- Firebase Auth -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+
+        <!-- Standard Performance Monitoring library -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-performance.js"></script>
+
+        <script src="assets/js/authInfoSupport.js"></script>
+
+    </body>
+</html>
