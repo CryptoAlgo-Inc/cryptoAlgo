@@ -1,8 +1,7 @@
 @echo off
 if not "%1"=="am_admin" (powershell start -verb runas '%0' am_admin & exit /b)
 
-REM Here's the main code
-    REM So I need to do the admin stuff here
+REM CryptoAlgo Updater V0.5.1
     REM So we bring the file back to the current dir
     cd %~dp0
     ECHO ###########################################################################
@@ -15,6 +14,8 @@ REM Here's the main code
     ECHO ###########################################################################
     ECHO #             Downloading the newest version of CryptoAlgo                #
     ECHO #     Please do not close this window until the download is complete      #
+    ECHO #   Version 0.5.1 Beta - Please report any bugs to support@cryptoalgo.cf  #
+    ECHO ###########################################################################
     curl -k -L "https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v0.0.0/CryptoAlgo-Win.exe" -O
     ECHO [INFO]: Download complete
     ECHO [INFO]: Stopping any instances of CryptoAlgo
