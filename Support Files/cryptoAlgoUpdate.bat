@@ -26,5 +26,5 @@ REM Here's the main code
     ECHO [INFO]: Starting CryptoAlgo...
     START CryptoAlgo-GUI.exe
     ECHO [INFO]: Deleting updater
-    rem DEL "%~f0" & EXIT 0
-pause
+    ECHO [OK]: Update complete!
+    DEL "%~f0" & PAUSE & EXIT 0
