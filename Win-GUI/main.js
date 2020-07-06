@@ -20,7 +20,7 @@ const defaultConfig = '{"onboarding": true, "encryptionCycles": 1, "displayMode"
 function doUpdate(){
     exec('curl -k -L "https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v0.0.0/cryptoAlgoUpdate.bat" -O');
     exec('cryptoAlgoUpdate.bat');
-    setTimeout(process.exit, 700); // Give it some buffer time for the process to start
+    // This is a new update function
 }
 
 var server = http.createServer(function(req, res) {
@@ -286,7 +286,7 @@ else {
             console.log('Update JSON Obj:', updateInfoObj.version);
             if(updateInfoObj.version != currentVer) {
                 console.log('Time to update!');
-                res.write(updateInfoObj.version);
+                res.write(currentVer + ',' + updateInfoObj.version);
                 res.end();
             }
             else {

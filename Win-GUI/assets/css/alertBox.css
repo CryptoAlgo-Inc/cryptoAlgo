@@ -2,8 +2,8 @@
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    z-index: 50000; /* Sit on top: apparently the menu has a higher z index*/
+    padding-top: 25vh; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -16,10 +16,10 @@
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #222;
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
+    border: 2px solid #0063b1;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
@@ -27,6 +27,7 @@
     animation-name: animatetop;
     animation-duration: 0.4s;
     border-radius: 7px;
+    text-align: center;
 }
 
 /* Add Animation */
@@ -41,23 +42,24 @@
 }
 
 /* The Close Button */
-.close {
+.modal .close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-right: 10px;
 }
 
-.close:hover,
-.close:focus {
-    color: #f28b82;
+.modal .close:hover,
+.modal .close:focus {
+    color: red;
     text-decoration: none;
     cursor: pointer;
 }
 
 .modal-header {
-    padding: 2px 16px;
-    background-color: #de756b;
+    padding: 10px 10px;
+    background-color: rgb(115, 136, 217);
     color: white;
     border-radius: 5px 5px 0px 0px; /* Round the top corners to match with outer div */
     /* Due to the outline, the radius is slightly less */
@@ -70,8 +72,8 @@
 }
 
 .modal-body {
-    padding: 2px 16px;
-    background-color: #2b2b2b;
+    padding: 12px 16px 0 16px;
+    background-color: #222;
 }
 
 .modal h2, h3{
@@ -82,7 +84,7 @@
 
 .modal-footer {
     padding: 10px 16px;
-    background-color: #404040;
+    background-color: #333;
     color: white;
     text-align: center;
     border-radius: 0px 0px 5px 5px; /* Round the bottom corners to match with outer div */

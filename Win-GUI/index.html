@@ -17,6 +17,7 @@
         <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="assets/css/cardSelect.css" />
+        <link rel="stylesheet" href="assets/css/alertBox.css" />
         <script src="assets/js/jquery.scrolly.min.js" defer></script>
         <script src="assets/js/jquery.scrollex.min.js" defer></script>
         <script src="assets/js/skel.min.js" defer></script>
@@ -33,7 +34,6 @@
 
     <body id="body" ondragstart="return false;" ondrop="return false;">
 
-        <div class=
 
         <!-- Header -->
             <header id="header" class="alt">
@@ -264,6 +264,26 @@
                     </div>
                 </div>
             </footer>
+
+                <!-- The Modal Message box-->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2 style="margin: 5px">CryptoAlgo Updater</h2>
+                </div>
+                <div class="modal-body">
+                    <h2>A software update is available!</h2>
+                    <h3 id="updateVer"></h3>
+                </div>
+                <div class="modal-footer">
+                    <a class="button alt" onclick="startUpdate()">Download and Install</a>
+                    <a class="button alt" onclick="closeModal()">Later</a>
+                </div>
+            </div>
+        </div>
+
         <!-- Links -->
             <script src="assets/js/jquery.min.js"></script>
             <script>
@@ -281,6 +301,58 @@
 
         <!-- Standard Performance Monitoring library -->
         <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-performance.js"></script>
+        <script src="assets/js/alertBox.js"></script>
+
+        <script>
+            const Http = new XMLHttpRequest();
+            Http.open("GET", 'updateVer.txt');
+            Http.send();
+            console.log("Sent the request");
+
+            // Return array of string values, or NULL if CSV string not well formed.
+            function CSVtoArray(text) {
+                var re_valid = /^\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*(?:,\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*)*$/;
+                var re_value = /(?!\s*$)\s*(?:'([^'\\]*(?:\\[\S\s][^'\\]*)*)'|"([^"\\]*(?:\\[\S\s][^"\\]*)*)"|([^,'"\s\\]*(?:\s+[^,'"\s\\]+)*))\s*(?:,|$)/g;
+                // Return NULL if input string is not well formed CSV string.
+                if (!re_valid.test(text)) return null;
+                var a = [];                     // Initialize array to receive values.
+                text.replace(re_value, // "Walk" the string using replace with callback.
+                    function(m0, m1, m2, m3) {
+                        // Remove backslash from \' in single quoted values.
+                        if      (m1 !== undefined) a.push(m1.replace(/\\'/g, "'"));
+                        // Remove backslash from \" in double quoted values.
+                        else if (m2 !== undefined) a.push(m2.replace(/\\"/g, '"'));
+                        else if (m3 !== undefined) a.push(m3);
+                        return ''; // Return empty string.
+                    });
+                // Handle special case of empty last value.
+                if (/,\s*$/.test(text)) a.push('');
+                return a;
+            };
+
+            Http.onreadystatechange = (e) => {
+                if ((Http.responseText.length >= 3)) {
+                    console.log(Http.responseText);
+                    const newAndOldVer = CSVtoArray(Http.responseText);
+                    document.getElementById("updateVer").innerHTML = 'Current version: ' + newAndOldVer[0] + '<br/>Latest version: ' + newAndOldVer[1];
+                    document.getElementById("myModal").style.display = 'block';
+				}
+            }
+            
+            function startUpdate() {
+                // Send update request
+                Http.open("GET", 'success.html?doUpdate=true');
+                Http.send();
+                $('#updateVer').fadeOut('fast', function() {
+                    document.getElementById("updateVer").innerHTML = 'Please click yes on the admin dialog that appears to start updating. You can close this window now.';
+                    $('#updateVer').fadeIn('fast');
+                });
+                $('.modal-footer').fadeOut();
+			}
+            function closeModal() {
+                $('#myModal').fadeOut('fast');
+			}
+        </script>
 
         <script>
             // Your web app's Firebase configuration
