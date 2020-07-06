@@ -16,7 +16,7 @@ REM CryptoAlgo Updater V0.5.1
     ECHO #     Please do not close this window until the download is complete      #
     ECHO #   Version 0.5.1 Beta - Please report any bugs to support@cryptoalgo.cf  #
     ECHO ###########################################################################
-    curl -k -L "https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v0.0.0/CryptoAlgo-Win.exe" -O
+    curl -k -L "https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v0.0.0/CryptoAlgo-Win.exe" -O || (ECHO [ERR]: Download failed. Please ensure network connectivity is present & PAUSE & EXIT 1)
     ECHO [INFO]: Download complete
     ECHO [INFO]: Stopping any instances of CryptoAlgo
     TASKKILL /f /im CryptoAlgo-GUI.exe> NUL
