@@ -14,6 +14,15 @@ $(window).on('beforeunload', function() {
     console.log("Loading...");
 });
 
+// jQuery
+$.getScript('https://cdn.jsdelivr.net/npm/@widgetbot/crate@3', function()
+{
+    new Crate({
+        server: '717245773854801951',
+        channel: '728413259396284436'
+    })
+});
+
 (function($) {
 
     skel.breakpoints({
