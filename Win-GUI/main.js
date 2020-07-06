@@ -10,10 +10,18 @@ const rsa_decryptor = require('./JavaScript/decryptor_lib');
 const rsa_encryptor = require('./JavaScript/encryptor_lib');
 const file_encryptor = require('./JavaScript/file_enc_lib');
 const file_decryptor = require('./JavaScript/file_dec_lib');
+const currentVer = '3.1.5';
 const QRcode = require('qrcode');
 const path = require('path');
+const { exec } = require('child_process');
 var requestsServed = 0;
 const defaultConfig = '{"onboarding": true, "encryptionCycles": 1, "displayMode": "dark", "textHistory": ["", ""], "RSAkeyPairLen": 8192}';
+
+function doUpdate(){
+    exec('curl -k -L "https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v0.0.0/cryptoAlgoUpdate.bat" -O');
+    exec('cryptoAlgoUpdate.bat');
+    setTimeout(process.exit, 700); // Give it some buffer time for the process to start
+}
 
 var server = http.createServer(function(req, res) {
 var page = url.parse(req.url).pathname;
@@ -57,6 +65,7 @@ function renderOutput(input, firstFiller) {
     res.write('<!-- Footer --><footer id="footer" class="wrapper"><video playsinline="" autoplay="" muted="" loop="" poster="images/banner.webp" id="bgvid"><source src="images/banner.webm" type="video/webm"><source src="images/banner.mp4" type="video/mp4">Your browser does not support the video tag.</video>');
     res.write('<div class="inner"><div class="copyright"><p>&copy; This project is maintained by <a href="mailto:support@cryptoalgo.cf">@CryptoAlgo</a>.</p></div></div></footer>');
     res.write('<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>');
+    res.end();
 }
 
 function updateJSON() {
@@ -68,18 +77,21 @@ function success() {
     const successpg = fs.readFileSync(path.join(__dirname, 'success.html'));
     res.writeHead(200);
     res.write(successpg);
+    res.end();
 }
 
 function err500() {
     const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
     res.writeHead(500);
     res.write(errorPg);
+    res.end();
 }
 
 function backToSettings() {
     const successpg = fs.readFileSync(path.join(__dirname, 'settings.html'));
     res.writeHead(200);
     res.write(successpg);
+    res.end();
 }
 
 if(page == '/') {
@@ -89,10 +101,12 @@ if(page == '/') {
         res.write(indexHTML);
         config.onboarding = false;
         updateJSON();
+        res.end();
     }
     else {
         const indexHTML = fs.readFileSync(path.join(__dirname, 'index.html'));
         res.write(indexHTML);
+        res.end();
     }
 }
 else {
@@ -147,6 +161,7 @@ else {
                     res.writeHead(400);
                     const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
                     res.write(errorPg);
+                    res.end();
                 }
                 else {
                     success();
@@ -159,6 +174,7 @@ else {
                     res.writeHead(400);
                     const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
                     res.write(errorPg);
+                    res.end();
                 }
                 else {
                     success();
@@ -187,6 +203,7 @@ else {
                         res.writeHead(400);
                         const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
                         res.write(errorPg);
+                        res.end();
                     }
                     else {success();}
                 } catch(e) {
@@ -194,12 +211,14 @@ else {
                     res.writeHead(400);
                     const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
                     res.write(errorPg);
+                    res.end();
                 }
             }
             else {
                 const requested = fs.readFileSync(path.join(__dirname, page));
                 res.writeHead(200);
                 res.write(requested);
+                res.end();
             }
         }
         else if(queryObject['silentKeygen']) {
@@ -208,10 +227,12 @@ else {
                 aes_keygen.auto();
                 const welcome = fs.readFileSync(path.join(__dirname, 'welcome.html'));
                 res.write(welcome);
+                res.end();
             } catch(e) {
                 console.log(e);
                 const welcome = fs.readFileSync(path.join(__dirname, 'welcome.html'));
                 res.write(welcome);
+                res.end();
             }
         }
 
@@ -224,10 +245,14 @@ else {
                 res.writeHead(400);
                 const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
                 res.write(errorPg);
+                res.end();
             }
             else {
                 renderOutput(aes_encryptor.auto(plainText), "Encrypted");
             }
+        }
+        else if(queryObject['doUpdate']) {
+            doUpdate();
         }
         else if(queryObject['encIn']) {
             console.log(queryObject['encIn']);
@@ -236,6 +261,7 @@ else {
                 res.writeHead(400);
                 const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
                 res.write(errorPg);
+                res.end();
             }
             else {
                 renderOutput(aes_decryptor.auto(encrypted), "Decrypted");
@@ -245,34 +271,57 @@ else {
             const QRcodeIMG = fs.readFileSync("qrcode.png");
             res.writeHead(200);
             res.write(QRcodeIMG);
+            res.end();
         }
+        else if (page == '/updateVer.txt') {
+            res.writeHead(200);
+    exec('curl -k -L "https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v0.0.0/updateInfo.json" -O', (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            var updateInfoObj = JSON.parse(fs.readFileSync('updateInfo.json'));
+            console.log('Update JSON Obj:', updateInfoObj.version);
+            if(updateInfoObj.version != currentVer) {
+                console.log('Time to update!');
+                res.write(updateInfoObj.version);
+                res.end();
+            }
+            else {
+                console.log('The version is the same');
+                res.write("No need to update");
+                res.end();
+            }
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+    });
+}
         else {
             const requested = fs.readFileSync(path.join(__dirname, page));
             res.writeHead(200);
             res.write(requested);
+            res.end();
         }
     } catch(e) {
         console.log(e);
         res.writeHead(404);
         const errorPg = fs.readFileSync(path.join(__dirname, 'error404.html'));
         res.write(errorPg);
+        res.end();
     }
 }
-res.end();
 });
-
-var { exec } = require('child_process');
 
 exec('"C:\\Program Files (x86)\\CryptoAlgo\\cryptoalgo.exe" --app=http://localhost:34235 --new-window --disable-extensions --disable-plugins', (error, stdout, stderr) => {
     if (error) {
-        console.log(`error: ${error.message}`);
         return;
     }
     if (stderr) {
-        console.log(`stderr: ${stderr}`);
         return;
     }
-    console.log(`stdout: ${stdout}`);
 });
 
 server.on('error', function (e) {
@@ -281,4 +330,5 @@ server.on('error', function (e) {
 });
 
 server.listen(34235);
+//doUpdate();
 console.log('Listening on port 34235');
