@@ -291,7 +291,7 @@ else {
             }
             else {
                 console.log('The version is the same');
-                res.write("No need to update");
+                res.write(" ");
                 res.end();
             }
             return;
