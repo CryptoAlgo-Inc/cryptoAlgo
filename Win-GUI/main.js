@@ -52,7 +52,7 @@ function renderOutput(input, firstFiller) {
         light: '#FFF'
       }
     });
-    res.writeHead(200);
+    res.statusCode = 200;
     res.write('<html><head><link rel="stylesheet" href="assets/css/main.css" /><title>CryptoAlgo | ' + firstFiller + ' Text Output</title></head>');
     res.write("<script>function removeTag() {window.setTimeout(function() {$('body').removeClass('subpage is-loading');}, 100);}var text = '" + input + "';");
     res.write("function copyText(){navigator.clipboard.writeText(text).then(function() { console.log('Async: Copying to clipboard was successful!');$(\"#copyButton\").fadeOut(function() {$(this).text(\"done\").fadeIn();});setTimeout(function(){ $(\"#copyButton\").fadeOut(function() {$(this).text(\"content_copy\").fadeIn();}) }, 2000);}, function(err) {console.error('Async: Could not copy text: ', err);});}</script>");
@@ -75,38 +75,33 @@ function updateJSON() {
 
 function success() {
     const successpg = fs.readFileSync(path.join(__dirname, 'success.html'));
-    res.writeHead(200);
-    res.write(successpg);
-    res.end();
+    res.statusCode = 200;
+    res.end(successpg);
 }
 
 function err500() {
     const errorPg = fs.readFileSync(path.join(__dirname, 'error500.html'));
     res.writeHead(500);
-    res.write(errorPg);
-    res.end();
+    res.end(errorPg);
 }
 
 function backToSettings() {
     const successpg = fs.readFileSync(path.join(__dirname, 'settings.html'));
-    res.writeHead(200);
-    res.write(successpg);
-    res.end();
+    res.statusCode = 200;
+    res.end(successpg);
 }
 
 if(page == '/') {
-    res.writeHead(200);
+    res.statusCode = 200;
     if(config.onboarding) {
         const indexHTML = fs.readFileSync(path.join(__dirname, 'onboarding.html'));
-        res.write(indexHTML);
+        res.end(indexHTML);
         config.onboarding = false;
         updateJSON();
-        res.end();
     }
     else {
         const indexHTML = fs.readFileSync(path.join(__dirname, 'index.html'));
-        res.write(indexHTML);
-        res.end();
+        res.end(indexHTML);
     }
 }
 else {
@@ -160,8 +155,7 @@ else {
                     console.log(err);
                     res.writeHead(400);
                     const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
-                    res.write(errorPg);
-                    res.end();
+                    res.end(errorPg);
                 }
                 else {
                     success();
@@ -173,8 +167,7 @@ else {
                     console.log(err);
                     res.writeHead(400);
                     const errorPg = fs.readFileSync(path.join(__dirname, 'error400header.html'));
-                    res.write(errorPg);
-                    res.end();
+                    res.end(errorPg);
                 }
                 else {
                     success();
@@ -192,8 +185,7 @@ else {
                     console.log(e);
                     res.writeHead(400);
                     const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
-                    res.write(errorPg);
-                    res.end();
+                    res.end(errorPg);
                 }
             }
             else if(queryObject['mode'] === 'rsa') {
@@ -202,23 +194,20 @@ else {
                         // An error was encountered.
                         res.writeHead(400);
                         const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
-                        res.write(errorPg);
-                        res.end();
+                        res.end(errorPg);
                     }
                     else {success();}
                 } catch(e) {
                     console.log(e);
                     res.writeHead(400);
                     const errorPg = fs.readFileSync(path.join(__dirname, 'error400.html'));
-                    res.write(errorPg);
-                    res.end();
+                    res.end(errorPg);
                 }
             }
             else {
                 const requested = fs.readFileSync(path.join(__dirname, page));
-                res.writeHead(200);
-                res.write(requested);
-                res.end();
+                res.statusCode = 200;
+                res.end(requested);
             }
         }
         else if(queryObject['silentKeygen']) {
@@ -226,13 +215,11 @@ else {
                 rsa_keygen.auto(config.RSAkeyPairLen);
                 aes_keygen.auto();
                 const welcome = fs.readFileSync(path.join(__dirname, 'welcome.html'));
-                res.write(welcome);
-                res.end();
+                res.end(welcome);
             } catch(e) {
                 console.log(e);
                 const welcome = fs.readFileSync(path.join(__dirname, 'welcome.html'));
-                res.write(welcome);
-                res.end();
+                res.end(welcome);
             }
         }
 
@@ -244,8 +231,7 @@ else {
                 console.log("Got here!");
                 res.writeHead(400);
                 const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
-                res.write(errorPg);
-                res.end();
+                res.end(errorPg);
             }
             else {
                 renderOutput(aes_encryptor.auto(plainText), "Encrypted");
@@ -260,8 +246,7 @@ else {
             if(aes_decryptor.auto(encrypted) == true) {
                 res.writeHead(400);
                 const errorPg = fs.readFileSync(path.join(__dirname, 'error500header.html'));
-                res.write(errorPg);
-                res.end();
+                res.end(errorPg);
             }
             else {
                 renderOutput(aes_decryptor.auto(encrypted), "Decrypted");
@@ -269,12 +254,11 @@ else {
         }
         else if(page == "/qrcode.png") {
             const QRcodeIMG = fs.readFileSync("qrcode.png");
-            res.writeHead(200);
-            res.write(QRcodeIMG);
-            res.end();
+            res.statusCode = 200;
+            res.end(QRcodeIMG);
         }
         else if (page == '/updateVer.txt') {
-            res.writeHead(200);
+            res.statusCode = 200;
     exec('curl -k -L "https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v0.0.0/updateInfo.json" -O', (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
@@ -286,31 +270,22 @@ else {
             console.log('Update JSON Obj:', updateInfoObj.version);
             if(updateInfoObj.version != currentVer) {
                 console.log('Time to update!');
-                res.write(currentVer + ',' + updateInfoObj.version);
-                res.end();
+                res.end(currentVer + ',' + updateInfoObj.version);
             }
             else {
                 console.log('The version is the same');
-                res.write(" ");
-                res.end();
+                res.end(" ");
             }
             return;
         }
         console.log(`stdout: ${stdout}`);
     });
 }
-        else {
-            const requested = fs.readFileSync(path.join(__dirname, page));
-            res.writeHead(200);
-            res.write(requested);
-            res.end();
-        }
     } catch(e) {
         console.log(e);
         res.writeHead(404);
         const errorPg = fs.readFileSync(path.join(__dirname, 'error404.html'));
-        res.write(errorPg);
-        res.end();
+        res.end(errorPg);
     }
 }
 });
