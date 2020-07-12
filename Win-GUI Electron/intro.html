@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <link rel="apple-touch-icon" href="images/apple-icon.png">
+        <meta name="theme-color" content="#313131"/>
+        <link rel="manifest" href="/manifest.json" />
+        <html lang="en">
+        <link rel="icon" href="favicon.ico?v=1.0" type="image/icon" />
+        <title>Onboarding</title>
+        <meta name="description" content="Data encryption with AES and RSA">
+        <meta name="keywords" content="cryptography, cryptoAlgo, AES, RSA, data encryption, safety">
+        <meta name="author" content="CryptoAlgro">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+
+    <body id="body" ondragstart="return false;" ondrop="return false;">
+
+        <script>
+            //Using setTimeout to execute a function after 4 seconds.
+            setTimeout(function () {
+                   //Redirect to page
+                   // window.location.href='intro.html';
+            }, 4000);
+        </script>
+        <script src="assets/js/jquery.min.js"></script>
+
+        <style>
+        .bar {
+            border: 1px solid #222;
+            height: 6px;
+            width: 220px;
+            border-radius: 25px;
+            position: absolute;
+            top: 60%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+    
+            margin: auto;
+        }
+        .in {
+            animation: fill 4s ease-out;
+            height: 100%;
+            border-radius: 25px;
+            background-color: white;
+        }
+
+        @keyframes fill {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        #bottom {
+            position: fixed;
+            bottom: 100;
+            width: 100%;
+		}
+        </style>
+            <section id="banner" data-video="images/banner">
+                <div class="inner">
+                    <div id="hello">
+                        <h1 id="changeText" style="font-size: 50px; font-weight: bold;"></h1>
+                        <small id="nextText" style="color: AAA;">Scroll down to start</small>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Footer -->
+            <footer id="one" class="wrapper style2">
+                <div class="inner" style="text-align: center;">
+                    <div class="copyright">
+                         <a onclick="start()" style="font-size: 25px; font-weight: bold;" class="button alt">Start ➜</a>
+                    </div>
+                </div>
+            </footer>
+
+        <style>
+            #changeText {
+                opacity: 1;
+                transition: opacity 1.5s;
+            }
+            .hide {
+                opacity: 0 !important;
+            }
+        </style>
+
+        <script>
+            var text = ["Hello", "Bonjour", "Zdravstvuyte", "Nǐn hǎo", "Salve", 
+            "Konnichiwa", "Halo", "Guten Tag", "שלום", "Olá", "Anyoung haseyo", "Asalaam alaikum", 
+            "Goddag", "Shikamoo", "Goedendag", "Yassas", "Hej, Tjena", "هتاف للترحيب"];
+            var counter = 0;
+            var elem = document.getElementById("changeText");
+            setInterval(change, 3500);
+
+            function change() {
+                elem.classList.add('hide');
+                setTimeout(function () {
+                    if(counter >= 1) {
+                        $('#nextText').fadeIn(750);
+                        $('#one').fadeIn(750);
+                    }
+                    elem.innerHTML = text[counter];
+                    elem.classList.remove('hide');
+
+                    counter++;
+                    if (counter >= text.length) {
+                        counter = 0;
+                    }
+                }, 1500);
+            }
+            function init() {
+                change();
+                $('#body').fadeOut(0);
+                $('#body').fadeIn();
+                $('#nextText').fadeOut(0);
+                $('#one').fadeOut(0);
+            }
+            init();
+            function start() {
+                $('#body').fadeOut(function() {
+                    window.location.href='instructions.html';
+                });
+			}
+        </script>
+    </body>
+</html>

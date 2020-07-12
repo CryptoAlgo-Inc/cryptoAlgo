@@ -38,6 +38,12 @@ h2 {
     margin-bottom: 4px;
     display: inline-block;
 }
+.light .container .card h2 {
+    color: white;
+}
+.light .container .card {
+    background-color: #eee;
+}
 .container .pic:before {
     content: "";
     z-index: 99;
@@ -110,6 +116,9 @@ h2 {
     -webkit-transition: all 0.2s ease !important;
     transition: all 0.2s ease !important;
     font-family: Courier New;
+}
+.light .container .card p, .light .container .card:hover p {
+    color: black;
 }
 .container .card li ul {
     font-color: #FFF;

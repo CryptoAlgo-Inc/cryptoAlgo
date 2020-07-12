@@ -1,5 +1,147 @@
 @charset "UTF-8";
 
+body {
+	height: 100vh;
+	animation: opacity 5s ease-in-out;
+}
+
+/* Light mode styling */
+.light .box {
+	background-color: white;
+}
+.light .wrapper.style2 {
+	background-color: #AAA;
+}
+.light .wrapper.style3 .button.special,
+.light .wrapper.style2 .button.special,
+.light #banner .button.special {
+	background-color: #DDD;
+	color: black !important;
+}
+.light .image.fit {
+	background-color: #333;
+	border-radius: 7px;
+}
+.light .wrapper.style3 .button.special:hover,
+.light .wrapper.style2 .button.special:hover,
+.light #banner .button.special:hover {
+	background-color: #AAA;
+}
+.light #menu{
+	background: white;
+	color: black;
+}
+.light #menu p {
+	color: black;
+}
+.light #usrDisplayName {
+	color: black !important;
+}
+.light nav a.button.alt {
+	color: black !important;
+}
+.light #menu .close:hover {
+	color: #5AA6ED;
+}
+.light #menu > ul.links > li > a:not(.button) {
+	color: black;
+	border-color: #555;
+}
+.light #menu .close {
+	color: black;
+}
+.light .wrapper.style2 h2, .light .wrapper.style2 h3, .light .wrapper.style2 h4, .light .wrapper.style2 h5, .light .wrapper.style2 h6,
+.light .wrapper.style3 h2, .light .wrapper.style3 h3, .light .wrapper.style3 h4, .light .wrapper.style3 h5, .light .wrapper.style3 h6 {
+	color: black;
+}
+.light .wrapper.style2 p {
+	color: #454545;
+}
+.light .wrapper.style3:before {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.light .wrapper.style3 p, .light .wrapper.style3 a, .light .wrapper.style3 a.button.alt {
+	color: black !important; /* Some other CSS seems to be overwriting this style */
+}
+.light #footer, .light #footer p, body.light {
+	background: #ddd;
+	background-color: #ddd;
+	color: black;
+}
+.light #footer a {
+	color: #0063b1;
+}
+.light #header {
+	background-color: rgba(200, 200, 200, 0.75);
+}
+.light #header > .logo a, .light #header > a[href="#menu"] {
+	color: black;
+}
+.light #header.alt > .logo a, .light #header.alt > a[href="#menu"] {
+	color: white;
+}
+
+.light .wrapper.style2.selectbg h2 {
+	color: white;
+}
+.light .wrapper.style2 .button.alt {
+	color: black !important;
+}
+/* End of light mode styling */
+
+/* Light/dark mode toggle */
+#lightDark {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  left: 20px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  padding: 0px 10px;
+  background-color: #333; /* Set a background color */
+  color: white !important; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  border-radius: 41px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  box-shadow: 2px 2px rgba(0, 0, 0, .5);
+}
+
+button span.textHint {
+  max-width: 0;
+  -webkit-transition: max-width 0.5s;
+  transition: max-width 0.5s;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  text-transform: none;
+}
+button:hover span.textHint {
+  max-width: 25rem;
+  padding: 0 0 0 5px;
+}
+.light button span.dark {
+    display: none; /* In light mode, hide the dark icon */
+}
+.light button span.bright {
+	display: inline-block;
+}
+button span.bright {
+    display: none;
+}
+.light #lightDark {
+	background-color: white;
+	color: black !important;
+}
+.light #lightDark:hover {
+    background-color: #DEDEDE;
+}
+#lightDark:hover {
+  background-color: #444; /* Add a dark-grey background on hover */
+}
+/* End of light/dark mode toggle */
+
 .usrLogo {
     border-radius: 150px;
     height: 150px;

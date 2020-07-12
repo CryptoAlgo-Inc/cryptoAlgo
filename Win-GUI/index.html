@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html> 
     <head>
         <link rel="apple-touch-icon" href="images/apple-icon.png">
         <meta name="theme-color" content="#313131"/>
@@ -304,7 +304,7 @@
             Http.send();
             console.log("Sent the request");
 
-            // Return array of string values, or NULL if CSV string not well formed.
+            // Return array of string values, or NULL if CSV string is not well formed.
             function CSVtoArray(text) {
                 var re_valid = /^\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*(?:,\s*(?:'[^'\\]*(?:\\[\S\s][^'\\]*)*'|"[^"\\]*(?:\\[\S\s][^"\\]*)*"|[^,'"\s\\]*(?:\s+[^,'"\s\\]+)*)\s*)*$/;
                 var re_value = /(?!\s*$)\s*(?:'([^'\\]*(?:\\[\S\s][^'\\]*)*)'|"([^"\\]*(?:\\[\S\s][^"\\]*)*)"|([^,'"\s\\]*(?:\s+[^,'"\s\\]+)*))\s*(?:,|$)/g;

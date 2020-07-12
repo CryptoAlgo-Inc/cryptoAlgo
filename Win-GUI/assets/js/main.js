@@ -1,3 +1,14 @@
+var btn = document.createElement("BUTTON");   // Create a <button> element
+btn.id = "lightDark";                         // Change ID
+btn.innerHTML = '<span class="material-icons bright">brightness_high</span><span class="material-icons dark">brightness_low</span><span class="textHint">Toggle Light/Dark Mode</span>';
+btn.title = "Light/dark mode toggle";
+btn.onclick = toggleLightDark;
+document.body.appendChild(btn);               // Append <button> to <body>
+
+function toggleLightDark() {
+    document.body.classList.toggle("light");
+}
+
 $(window).keydown(function(event) {
   if(event.ctrlKey && event.keyCode == 84) { 
     console.log("Hey! Ctrl+T event captured!");
