@@ -2,15 +2,15 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "CryptoAlgo"
-#define MyAppVersion "3.5.0"
+#define MyAppVersion "3.5.0a"
 #define MyAppPublisher "CryptoAlgo Inc."
 #define MyAppURL "https://www.cryptoalgo.cf"
-#define MyAppExeName "CryptoAlgo-GUI.exe"
+#define MyAppExeName "CryptoAlgo-Win.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{D67AB751-E117-4931-8B1A-F1D7A3E9C708}
+AppId={{944CF508-E4CE-4EEE-9A94-DCDF6F50A0C7}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -19,19 +19,21 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
+DisableDirPage=yes
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\Vincent Kwok\Documents\GitLab\CryptoAlgo\cryptoalgo\Win-GUI\documentation\license.txt
-InfoBeforeFile=C:\Users\Vincent Kwok\Documents\GitLab\CryptoAlgo\cryptoalgo\Win-GUI\documentation\info.txt
-InfoAfterFile=C:\Users\Vincent Kwok\Documents\GitLab\CryptoAlgo\cryptoalgo\Win-GUI\documentation\aftInstall.txt
-; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
+; The [Icons] "quicklaunchicon" entry uses {userappdata} but its [Tasks] entry has a proper IsAdminInstallMode Check.
+UsedUserAreasWarning=no
+LicenseFile=C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Installation files\license.txt
+InfoBeforeFile=C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Installation files\info.txt
+InfoAfterFile=C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Installation files\aftInstall.txt
+; Remove the following line to run in administrative install mode (install for all users.)
+PrivilegesRequired=lowest
 OutputDir=C:\Users\Vincent Kwok\Documents\Releases
 OutputBaseFilename=CryptoAlgo Installer
-SetupIconFile=C:\Users\Vincent Kwok\Documents\GitLab\CryptoAlgo\cryptoalgo\Win-GUI\favicon.ico
+SetupIconFile=C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Win-GUI\favicon.ico
 Compression=lzma2/ultra64
 SolidCompression=yes
 WizardStyle=modern
-UninstallDisplayIcon={app}\{#MyAppExeName}
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -61,21 +63,18 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 6.1; Check: not IsAdminInstallMode
 
 [Files]
-Source: "C:\Users\Vincent Kwok\Documents\Releases\CryptoAlgo-GUI.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vincent Kwok\Documents\Releases\CryptoAlgo-Win.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\Vincent Kwok\Documents\GitHub\cryptoAlgo\Chrome Engine\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
-[UninstallDelete]
-Type: files; Name: "{userdocs}\{#MyAppName}\config\main.json"
-
-[CustomMessages]
-NameAndVersion=%1 Version %2

@@ -315,7 +315,7 @@ else {
 }
 });
 
-exec('"C:\\Program Files (x86)\\CryptoAlgo\\cryptoalgo.exe" --app=http://localhost:34235 --new-window --disable-extensions --disable-plugins', (error, stdout, stderr) => {
+exec(`"%localappdata%/Programs/CryptoAlgo/cryptoalgo.exe" --app=http://localhost:34235 --new-window --disable-extensions --disable-plugins`, (error, stdout, stderr) => {
     if (error) {
         return;
     }

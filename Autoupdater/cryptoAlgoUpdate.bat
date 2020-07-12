@@ -1,6 +1,4 @@
 @echo off
-if not "%1"=="am_admin" (powershell start -verb runas '%0' am_admin & exit /b)
-
 REM CryptoAlgo Updater V0.5.1
     REM So we bring the file back to the current dir
     cd %~dp0
@@ -19,13 +17,11 @@ REM CryptoAlgo Updater V0.5.1
     curl -k -L "https://github.com/CryptoAlgo-Inc/cryptoAlgo/releases/download/v0.0.0/CryptoAlgo-Win.exe" -O || (ECHO [ERR]: Download failed. Please ensure network connectivity is present & PAUSE & EXIT 1)
     ECHO [INFO]: Download complete
     ECHO [INFO]: Stopping any instances of CryptoAlgo
-    TASKKILL /f /im CryptoAlgo-GUI.exe> NUL
+    TASKKILL /f /im CryptoAlgo-Win.exe> NUL
     ECHO [INFO]: Deleting previous CryptoAlgo version (your data will not be lost)
-    DEL /f CryptoAlgo-GUI.exe /q > NUL
-    ECHO [INFO]: Renaming downloaded file
-    REN CryptoAlgo-Win.exe CryptoAlgo-GUI.exe > NUL
+    DEL /f CryptoAlgo-Win.exe /q > NUL
     ECHO [INFO]: Starting CryptoAlgo...
-    START CryptoAlgo-GUI.exe
+    START CryptoAlgo-Win.exe
     ECHO [INFO]: Deleting updater
     ECHO [OK]: Update complete!
     DEL "%~f0" & PAUSE & EXIT 0
