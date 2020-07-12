@@ -12,6 +12,16 @@ body {
 .light .wrapper.style2 {
 	background-color: #AAA;
 }
+.light .wrapper.style3 input, .light .wrapper.style3 select, .light .wrapper.style3 textarea {
+    color: black;
+}
+.light .warningText {
+	color: red;
+}
+.light .wrapper.style3 input[type="text"]::placeholder, .light .wrapper.style3 input[type="password"]::placeholder, 
+.light .wrapper.style3 input[type="email"]::placeholder {
+	color: #222 !important;
+}
 .light .wrapper.style3 .button.special,
 .light .wrapper.style2 .button.special,
 .light #banner .button.special {
@@ -58,10 +68,11 @@ body {
 	color: #454545;
 }
 .light .wrapper.style3:before {
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.5);
 }
 .light .wrapper.style3 p, .light .wrapper.style3 a, .light .wrapper.style3 a.button.alt {
 	color: black !important; /* Some other CSS seems to be overwriting this style */
+	font-weight: bold;
 }
 .light #footer, .light #footer p, body.light {
 	background: #ddd;
@@ -199,6 +210,10 @@ button span.bright {
         padding: 10px;
         font-family: Courier New;
         color: white !important;
+}
+
+.warningText {
+	color: #f28b82;
 }
 
 .protectedQR {
@@ -2399,7 +2414,7 @@ a, p, h1, h2, h3, input, small, body, textrea, img {
 	input[type="email"],
 	select {
 		height: 2.75rem;
-                width: 90%;
+                width: 100%;
                 -webkit-transition: width 0.4s ease-in-out;
                 transition: width 0.4s ease-in-out;
 	}
@@ -2511,7 +2526,6 @@ a, p, h1, h2, h3, input, small, body, textrea, img {
 		textarea:focus {
 			border-color: #5AA6ED;
 			box-shadow: 0 0 0 1px #5AA6ED;
-                        width: 91%;
 		}
 
 	.select-wrapper:before {
@@ -3498,7 +3512,8 @@ a, p, h1, h2, h3, input, small, body, textrea, img {
 			.wrapper.style3 select,
 			.wrapper.style3 textarea {
 				background: rgba(255, 255, 255, 0.075);
-				border-color: rgba(255, 255, 255, 0.25);
+				border-color: #0063B1;
+				transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
 			}
 
 				.wrapper.style3 input[type="text"]:focus,
@@ -3506,8 +3521,8 @@ a, p, h1, h2, h3, input, small, body, textrea, img {
 				.wrapper.style3 input[type="email"]:focus,
 				.wrapper.style3 select:focus,
 				.wrapper.style3 textarea:focus {
-					border-color: #525252;
-					box-shadow: 0 0 0 1px #525252;
+					border-color: #0063B1;
+					box-shadow: 0 0 0 1px #0063B1;
 				}
 
 			.wrapper.style3 .select-wrapper:before {

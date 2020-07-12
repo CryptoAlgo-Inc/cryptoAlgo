@@ -219,9 +219,9 @@
 
                     <!-- Action buttons -->
                     <ul class="actions" style="margin: 10px 0 10px 0">
-                        <li id="signOutButton"><a onclick="signOutUser()" title="Sign Out" class="button alt"><i class="material-icons">power_settings_new</i></a></li>
-                        <li id="outerSettingsBtn" style="padding-right: 5px;"><a onclick="usrSettingsCloseOpen()" title="Profile Settings" class="button alt"><i class="material-icons" id="settingsBtn">settings</i></a></li>
-                        <li id="homeButton"><a href="index.html" title="Home" class="button alt"><i class="material-icons" id="settingsBtn">home</i></a></li>
+                        <li style="padding-right: 5px"><a onclick="window.history.back()" title="Go back" class="button alt"><i class="material-icons">arrow_back</i></a></li>
+                        <li id="homeButton" style="padding-right: 5px;"><a href="index.html" title="Home" class="button alt"><i class="material-icons">home</i></a></li>
+                        <li id="outerSettingsBtn"><a onclick="usrSettingsCloseOpen()" title="Profile Settings" class="button alt"><i class="material-icons" id="settingsBtn">settings</i></a></li>
                     </ul>
 
                     <!-- User Settings -->
@@ -295,6 +295,9 @@
                                 <li><a style="box-shadow: inset 0 0 0 2px red" onclick="deleteUser()" title="DELETE ACCOUNT" class="button alt">DELETE ACCOUNT</a></li>
                             </ul>
                         </div>
+                        <ul class="actions" style="margin: 8px">
+                            <li id="signOutButton"><a style="box-shadow: inset 0 0 0 2px red" onclick="signOutUser()" title="Sign Out" class="button alt">Sign Out</a></li>
+                        </ul>
                     </div>
                 </div>
 

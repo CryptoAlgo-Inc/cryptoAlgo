@@ -87,7 +87,7 @@
 }
 
 .bottomLast {
-    border-radius: 0 0 7px 7px;
+    border-bottom-width: 2px;
 }
 
 /* End of tabbed menu */
