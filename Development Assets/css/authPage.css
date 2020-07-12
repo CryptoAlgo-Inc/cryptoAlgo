@@ -1,0 +1,380 @@
+.auth {
+    border: 2px solid #555;
+    border-radius: 7px;
+    min-width: 300px;
+    width: 40%;
+    margin: auto;
+    background-color: #1b1b1b;
+}
+.firebaseUI {
+    margin-top: -53px;
+    padding-top: 45px;
+}
+.authInput {
+    margin: auto;
+}
+.submitBtn {
+    margin: 10px;
+}
+
+.authLabels {
+    color: white !important;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.warningMsgBox {
+    background-color: #0063b1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.msgBox {
+    color: black !important;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+/* Start of tabbed menu */
+
+.collapsible {
+    background-color: #212121 !important;
+    color: white;
+    cursor: pointer;
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 100%;
+    border-color: #555;
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    border-radius: 0px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: none !important;
+}
+
+.collapsible:hover:not(.active) {
+    background-color: #2b2b2b !important;
+}
+
+.active {
+    border-width: 2px 0 2px 0;
+    background-color: #444 !important;
+}
+
+.active.newAcct {
+    border-radius: 7px 7px 0 0 !important;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.bottomLast {
+    border-bottom-width: 2px;
+}
+
+/* End of tabbed menu */
+
+.accountMgmt {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(../../images/acctBgImg.jpg);
+    background-size: cover; /* or contain depending on what you want */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    transition: blur 2s ease;
+}
+
+/* I'm overwriting FireBaseUI's CSS code because I want it to match the rest of the page.*/
+.firebaseui-container {
+    background-color: #1b1b1b !important;
+    box-shadow: 0px 0px;
+    font-family: "GilroyLight";
+}
+
+.firebaseui-busy-indicator {
+    margin-top: 10px !important;
+}
+.bufferbar.bar.bar2 {
+    background-image: linear-gradient(#333, #333) !important;
+}
+.progressbar.bar.bar1 {
+    background-color: #0063b1 !important;
+}
+.auxbar.bar.bar3 {
+    background-image: linear-gradient(#0063b1, #0063b1) !important;
+}
+.firebaseui-info-bar {
+    border-radius: 7px;
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+    top: 5px !important;
+}
+
+.mdl-textfield--floating-label .mdl-textfield__label {
+    top: 31px !important;
+}
+
+.firebaseui-idp-text, .firebaseui-id-email {
+    font-family: "GilroyLight" !important;
+    font-weight: bold;
+}
+
+.firebaseui-id-email, .firebaseui-id-password, .firebaseui-id-name,
+.firebaseui-id-new-password {
+    border-width: 0 0 2px 0 !important;
+    border-color: #333 !important;
+    box-shadow: 0 0 0 0 black !important;
+    background-color: #2220 !important; /* Transparent = no background */
+    border-radius: 4px 4px 0 0 !important;
+    width: 100% !important;
+}
+
+.firebaseui-input-toggle-blur, .firebaseui-id-password-toggle {
+    filter: invert(1);
+    opacity: 1 !important;
+    margin-top: 7px;
+    margin-right: 5px;
+}
+
+.firebaseui-id-email:focus, .firebaseui-id-password:focus,
+.firebaseui-id-name:focus, .firebaseui-id-new-password:focus {
+    background-color: #2e2e2e !important;
+    border-width: 0px !important;
+}
+
+.firebaseui-label {
+    color: #aaa !important;
+}
+
+.firebaseui-text {
+    color: white !important;
+    font-family: "GilroyLight" !important;
+}
+
+.firebaseui-idp-google>.firebaseui-idp-text {
+    color: white !important;
+}
+
+.firebaseui-idp-google, .firebaseui-idp-phone, .firebaseui-idp-password, .firebaseui-button, 
+.firebaseui-idp-github, .firebaseui-idp-facebook, .firebaseui-idp-anonymous, .firebaseui-idp-generic, 
+.firebaseui-country-selector, .firebaseui-list-box-dialog, .firebaseui-idp-twitter {
+    border-radius: 7px;
+}
+
+.firebaseui-country-selector {
+    padding-left: 2px;
+}
+
+.firebaseui-dialog {
+    background-color: #333 !important;
+    color: white !important;
+    border-radius: 7px;
+}
+
+.firebaseui-idp-google {
+    background-color: #0d47a1 !important;
+}
+
+.firebaseui-idp-google:hover, .firebaseui-idp-phone:hover, .firebaseui-idp-password:hover, 
+.firebaseui-idp-github:hover, .firebaseui-idp-facebook:hover, .firebaseui-idp-anonymous:hover,
+.firebaseui-idp-twitter:hover, .firebaseui-idp-generic:hover{
+    filter: brightness(115%);
+}
+
+.firebaseui-card-content ul {
+    color: white !important;
+}
+
+/* For telephone country selection */
+.firebaseui-list-box-actions {
+    background-color: #333;
+}
+.firebaseui-list-box-dialog-button {
+    color: white !important;
+}
+.firebaseui-list-box-actions {
+    border-radius: 0px !important;
+    animation: all 1s ease;
+}
+.firebaseui-list-box-dialog {
+    padding-top: 0px;
+}
+.firebaseui-list-box-dialog::-webkit-scrollbar-track {
+    border-radius: 8px;
+}
+/* End of popup country selection */
+
+.firebaseui-id-resend-countdown {
+    color: #aaa;
+}
+
+.firebaseui-text strong {
+    color: white !important;
+}
+
+.firebaseui-info-bar-message {
+    /* Make sure text wraps around */
+    word-break: break-word;
+}
+
+#usrProfilePic {
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+/* Start of model box CSS */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #333;
+    margin: auto; /* 10% from the top and centered */
+    margin-top: 10vh;
+    padding: 20px;
+    border: 2px solid #0063b1;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 3px 3px 15px #000;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.model-content::-webkit-scrollbar-track {
+    border-radius: 8px !important;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    color: #aaa;
+    left: calc(90% - 20px);
+    top: calc(10vh - 20px);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeIcon {
+    font-size: 40px;
+    background-color: black;
+    border-radius: 40px;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Blur backdrop when model is open */
+.blurred {
+    animation: blur 0.5s ease;
+    filter: blur(3px);
+}
+
+.unBlur {
+    animation: removeBlur 0.5s ease;
+    filter: blur(0px);
+}
+
+/* Blur animation */
+@keyframes blur {
+    0% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+    }
+    100% {
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+    }
+}
+
+@keyframes removeBlur {
+    0% {
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+    }
+}
+
+.modelText {
+    text-transform: none;
+    margin: 0px;
+    font-weight: 900;
+}
+/* End of model box CSS */
+
+body.modal-open {
+    overflow: hidden;  /* Prevent body from scrolling when model is open */
+}
+
+body {
+    margin-left: calc(100vw - 100%); /* Prevent jumping */
+}
+
+/* Some Material progressbar styles. Look in materialProgressBar.css for more */
+.progressBarOuter {
+    width: calc(100% + 36px);
+    height: 4px;
+    margin-left: -18px;
+    margin-right: -18px;
+}
+
+.progressBar {
+    height: 100%;
+    width: 0px;
+    background-color: #0063b1;
+    border-radius: 4px;
+}
+
+.iconImg {
+    width: 90px;
+    height: 90px;
+    background-color: #1b1b1b;
+    border-radius: 100px;
+    border: 2px solid #555;
+}
