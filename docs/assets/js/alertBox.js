@@ -1,0 +1,1 @@
+var modal=document.getElementById("myModal"),span=document.getElementsByClassName("close")[0];span.onclick=function(){$("#myModal").fadeOut("fast")},window.onclick=function(a){a.target==modal&&$("#myModal").fadeOut("fast")};

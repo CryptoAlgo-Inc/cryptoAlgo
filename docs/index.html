@@ -17,6 +17,14 @@
         <meta name="apple-mobile-web-app-title" content="CryptoAlgo Official Page">
         <link rel="stylesheet" href="assets/css/main.css" />
         <script data-ad-client="pub-9898163262063453" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Scripts -->
+        <script type="text/javascript" src="assets/js/jquery.min.js" defer></script>
+        <script type="text/javascript" src="assets/js/jquery.scrolly.min.js" defer></script>
+        <script type="text/javascript" src="assets/js/jquery.scrollex.min.js" defer></script>
+        <script type="text/javascript" src="assets/js/skel.min.js" defer></script>
+        <script type="text/javascript" src="assets/js/util.js" defer></script>
+        <script type="text/javascript" src="assets/js/main.js" defer></script>
+        <script type="text/javascript" src="assets/js/lazysizes.min.js" defer></script>
     </head>
 
 <script>
@@ -42,6 +50,12 @@
                     <li><a href="generic.html">Documentation</a></li>
                     <li><a href="downloads.html">Downloads</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="auth.html">CryptoAlgo Account</a></li>
+                    <hr style="margin-top: 0px; border-color: #555;">
+                    <li style="margin: auto; width: 152px;"><img class="usrLogo" onerror="this.src='images/pfpPlaceholder.png'" src="images/pfpPlaceholder.png" id="usrLogoArea"</img>
+                    <p id="usrDisplayName" style="color: white; text-align: center;">Loading...</p></li>
+                    <li id="signOutContainer"><a onclick="signOutUsr()" class="button alt">Sign Out</a></li>
+                    <li id="loginContainer"><a href="auth.html" class="button alt">Login</a></li>
                 </ul>
             </nav>
 
@@ -57,7 +71,6 @@
                     <h1>CryptoAlgo</h1>
                     <p>A command-line based tool written in Node.js<br />
                     that allows you to encrypt and decrypt data with AES and RSA.</p>
-                    <p>The CryptoAlgo GUI has been released! Download it at the link below!</p>
                     <a href="#one" class="button special scrolly">Learn More</a><br />
                     <div class="inner">
                         <p>      </p>
@@ -165,7 +178,7 @@
 
                     <header class="align-center">
                         <h2>Comments? Suggestions? Doubts?</h2>
-                        <p>Feel free to contact me at <a href="mailto:cryptoalgro@gmail.com">cryptoalgro@gmail.com</a></p>
+                        <p>Feel free to contact me at <a href="mailto:support@cryptoalgo.cf">support@cryptoalgo.cf</a></p>
                         <div class="inner">
                                 <p>      </p>
                                     <ul class="actions">
@@ -185,38 +198,7 @@
                     </div>
                 </div>
             </footer>
-        
-        <!-- Scripts -->
-            <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-            <script type="text/javascript" src="assets/js/jquery.scrolly.min.js"></script>
-            <script type="text/javascript" src="assets/js/jquery.scrollex.min.js"></script>
-            <script type="text/javascript" src="assets/js/skel.min.js"></script>
-            <script type="text/javascript" src="assets/js/util.js"></script>
-            <script type="text/javascript" src="assets/js/main.js"></script>
-            <script type="text/javascript" src="assets/js/lazysizes.min.js"></script>
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-            <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
 
-            <!-- TODO: Add SDKs for Firebase products that you want to use
-                 https://firebase.google.com/docs/web/setup#available-libraries -->
-            <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
-
-            <script>
-                // Your web app's Firebase configuration
-                var firebaseConfig = {
-                    apiKey: "AIzaSyDu3GBqQg6o9Mp7Ay6KkTKRnqogZWmhU6c",
-                    authDomain: "cryptoalgogui.firebaseapp.com",
-                    databaseURL: "https://cryptoalgogui.firebaseio.com",
-                    projectId: "cryptoalgogui",
-                    storageBucket: "cryptoalgogui.appspot.com",
-                    messagingSenderId: "104602369567",
-                    appId: "1:104602369567:web:bcfdad88debbb2b8cddf2a",
-                    measurementId: "G-YT1W6G83B3"
-                };
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);
-                firebase.analytics();
-            </script>
                 <script>
                 if('serviceWorker' in navigator) {
                     navigator.serviceWorker
@@ -231,5 +213,15 @@
                         grecaptcha.execute('6LeCrO0UAAAAAGylboLmdEYaMWq4mPIGjdiB_050', {action: 'homepage'})
                 });
                 </script>
+                        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+
+        <!-- Firebase Auth -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+
+        <!-- Standard Performance Monitoring library -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-performance.js"></script>
+
+        <script src="assets/js/authInfoSupport.js"></script>
     </body>
 </html>
