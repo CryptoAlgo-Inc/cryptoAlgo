@@ -11,7 +11,7 @@ contextBridge.exposeInMainWorld('winCtl', {
         },
     min: () => { win.minimize(); },
     restore: () => { win.unmaximize(); },
-    filePicker: (any) => { // High rick function
+    filePicker: (any) => { // High risk function
         return dialog.showOpenDialog({ properties: ['openFile'] });
     }
 })

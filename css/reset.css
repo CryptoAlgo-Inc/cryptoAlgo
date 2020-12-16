@@ -19,6 +19,32 @@
     src: url('../fonts/SF-UI-Display-Black.otf') format('opentype');
 }
 
+.material-icons {
+    font-family: 'Material Icons', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/* And here are all the basic stuff */
 body {
     --background-color: rgb(35, 35, 35);
     --titlebar-bg-color: rgb(50, 50, 50);
@@ -127,11 +153,12 @@ button {
     border-width: 1px 0 1px 1px;
     background-color: transparent;
     color: var(--titlebar-text-color);
-    transition-delay: 500ms;
-    transition: background-color 200ms ease-out;
 }
-.titleBar .titleTabs button:active, .titleBar .titleTabs button.active {
+.titleBar .titleTabs button:active, .titleBar .titleTabs button.active:not(:active) {
     background-color: rgb(78, 78, 78) !important;
+}
+.titleBar .titleTabs button.active:active {
+    background-color: rgb(108, 108, 108) !important;
 }
 .titleBar .titleTabs:hover button {
     background-color: var(--titlebar-border-color);
@@ -161,8 +188,16 @@ main {
 }
 
 .mount {
-    display: flex;
-    min-height: calc(calc(100% - 20px) - var(--titlebar-height));
+    /*min-height: calc(calc(100% - 20px) - var(--titlebar-height));*/
+}
+
+.inner {
+    display: block;
+}
+
+hr {
+    background-color: var(--content-text-color);
+    opacity: .4;
 }
 
 
