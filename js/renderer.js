@@ -66,7 +66,7 @@ const renderTab = (tabRenderer, tabID, longName) => {
     // ------
     // Load activity script
     console.debug(`<renderTab> Loading activity ${tabID}`);
-    loadJS(`js/backend/${tabID}Activity.min.js`, function() {
+    loadJS(`js/backend/activities/${tabID}Activity.min.js`, function() {
         onStart().then(() => {
             console.debug(`<renderTab> Loaded activity ${tabID}`)
         }).catch(e => {

@@ -2,17 +2,31 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/js/backend/keygenActivity.min.js" />
-        <item url="file://$PROJECT_DIR$/js/backend/textActivity.min.js" />
-        <item url="file://$PROJECT_DIR$/js/logger.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/activities/textActivity.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/lib/aes_encryptor_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/lib/aes_keygen_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/lib/decryptor_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" />
         <item url="file://$PROJECT_DIR$/js/renderer.min.js" />
         <item url="file://$PROJECT_DIR$/preload.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/js/backend/keygenActivity.min.js" />
-      <root url="file://$PROJECT_DIR$/js/backend/textActivity.min.js" />
-      <root url="file://$PROJECT_DIR$/js/logger.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/activities/textActivity.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/lib/aes_encryptor_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/lib/aes_keygen_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/lib/decryptor_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" />
       <root url="file://$PROJECT_DIR$/js/renderer.min.js" />
       <root url="file://$PROJECT_DIR$/preload.min.js" />
     </CLASSES>
