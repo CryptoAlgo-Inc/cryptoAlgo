@@ -206,6 +206,7 @@ const RSA = () => html`
 
 // Render the template to the document
 render(page(), document.body); // Render content
+document.title = 'CryptoAlgo'
 
 // Then search for the last used tab
 const lastTab = get('lastTab');
