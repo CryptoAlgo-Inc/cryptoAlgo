@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Minor UI changes and security improvements">
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/aes_encryptor_lib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/aes_keygen_lib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/decryptor_lib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/decryptor_lib.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/file_enc_lib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/keyGen_lib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterDir="false" />
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Changed dir struct and added lib files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/keygenActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/keygenActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/textActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/textActivity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/textActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/textActivity.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/reset.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_keygen_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_keygen_lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/keyGen_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/keyGen_lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/renderer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preload.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +74,7 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.Start">
-    <configuration name="Start" type="js.build_tools.npm" temporary="true">
+    <configuration name="Start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -93,11 +88,6 @@
       <item itemvalue="Node.js.Electron-CryptoAlgo" />
       <item itemvalue="npm.Start" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.Start" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,7 +101,11 @@
       <workItem from="1606879607222" duration="242000" />
       <workItem from="1606881473858" duration="13525000" />
       <workItem from="1606968563771" duration="6515000" />
-      <workItem from="1608090743451" duration="16473000" />
+      <workItem from="1608090743451" duration="17169000" />
+      <workItem from="1608195866258" duration="6618000" />
+      <workItem from="1608262719075" duration="1225000" />
+      <workItem from="1608265910108" duration="132000" />
+      <workItem from="1608266065599" duration="6466000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607005939360</created>
@@ -134,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608128291875</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed dir struct and added lib files">
+      <created>1608128523258</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608128523258</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,12 +151,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Completed keygen layout and added activity changing code" />
     <MESSAGE value="Minor UI changes and security improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor UI changes and security improvements" />
+    <MESSAGE value="Changed dir struct and added lib files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed dir struct and added lib files" />
   </component>
 </project>

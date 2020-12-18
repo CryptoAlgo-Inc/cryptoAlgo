@@ -51,6 +51,7 @@ body {
     --mdc-typography-font-family: 'SF Pro';
     --header-text-color: #fff;
     --content-text-color: #cecece;
+    --darker-text-color: #bbb;
     --traffic-light-no-focus: rgb(91, 91, 91);
     --titlebar-text-color: rgb(235, 235, 235);
     --titlebar-height: 50px;
@@ -189,6 +190,10 @@ main {
 
 .mount {
     /*min-height: calc(calc(100% - 20px) - var(--titlebar-height));*/
+}
+
+.mdc-dialog__content label.mdc-text-field {
+    width: 100%;
 }
 
 .inner {

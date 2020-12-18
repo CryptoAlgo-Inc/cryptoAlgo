@@ -1,3 +1,31 @@
+/* CSS For all the colors */
+
 :root {
     --mdc-theme-primary: rgb(48, 115, 215);
+    --mdc-theme-surface: #333;
+    --mdc-checkbox-unchecked-color: var(--content-text-color);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+    color: var(--content-text-color);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: var(--header-text-color);
+}
+
+.mdc-dialog .mdc-dialog__title {
+    color: var(--header-text-color);
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled)+.mdc-text-field-helper-line .mdc-text-field-helper-text {
+    color: var(--darker-text-color);
+}
+
+.mdc-form-field > label {
+    color: var(--darker-text-color);
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+    border-color: var(--darker-text-color);
 }
