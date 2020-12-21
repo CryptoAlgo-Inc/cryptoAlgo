@@ -12,6 +12,7 @@
         <item url="file://$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" />
         <item url="file://$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" />
         <item url="file://$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/material-js.min.js" />
         <item url="file://$PROJECT_DIR$/js/renderer.min.js" />
         <item url="file://$PROJECT_DIR$/preload.min.js" />
       </sourceFilesUrls>
@@ -27,6 +28,7 @@
       <root url="file://$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" />
       <root url="file://$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" />
       <root url="file://$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/material-js.min.js" />
       <root url="file://$PROJECT_DIR$/js/renderer.min.js" />
       <root url="file://$PROJECT_DIR$/preload.min.js" />
     </CLASSES>

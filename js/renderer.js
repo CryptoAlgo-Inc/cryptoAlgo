@@ -50,7 +50,10 @@ const renderTab = (tabRenderer, tabID, longName) => {
     // ------
     if (typeof onStop === "function") { // Check if there was a previous activity
         console.debug(`<renderTab> Stopping activity ${prevTabID}`);
-        onStop();
+        try {onStop();}
+        catch (e) {
+            console.warn(`<renderTab> Activity onStop threw an exception:\n\n${e}`);
+        }
     }
     // ------
     // Update title UI and render fragment
@@ -70,7 +73,7 @@ const renderTab = (tabRenderer, tabID, longName) => {
         onStart().then(() => {
             console.debug(`<renderTab> Loaded activity ${tabID}`)
         }).catch(e => {
-            console.debug(`<renderTab> Activity onStart threw an exception:\n\n ${e}`)
+            console.warn(`<renderTab> Activity onStart threw an exception:\n\n ${e}`)
         })
     }).catch(e => {
         console.debug(`<renderTab> Failed to fetch and execute activity JS script for activity ${tabID} with error:\n\n${e}`)
@@ -133,17 +136,57 @@ const page = () => html`
 // AES/RSA key generation
 const keyGen = () => html`
     <!------>
+    <!-- Loading dialog for RSA generation -->
+    <div class="mdc-dialog" id="loading-dialog" data-mdc-auto-init="MDCDialog">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface"
+                 role="alertdialog"
+                 aria-modal="true"
+                 aria-labelledby="loader-dialog-title"
+                 aria-describedby="loader-content">
+                <!------>
+                <h2 class="mdc-dialog__title" id="loader-dialog-title">Please wait...</h2>
+                <!------>
+                <div class="mdc-dialog__content" id="loader-content">
+                    <p></p> <!-- Loading text, added by JS later -->
+                    <!------>
+                    <!-- MDC Linear Progress Bar -->
+                    <div role="progressbar" class="mdc-linear-progress" aria-label="Please wait..." 
+                         data-mdc-auto-init="MDCLinearProgress"
+                         tabindex="0"
+                         aria-valuemin="0" 
+                         aria-valuemax="1" 
+                         aria-valuenow="0">
+                        <div class="mdc-linear-progress__buffer">
+                            <div class="mdc-linear-progress__buffer-bar"></div>
+                            <div class="mdc-linear-progress__buffer-dots"></div>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                    </div>
+                    <!------>
+                </div>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+    <!------>
+    <!-- RSA keyfile generation dialog -->
     <div class="mdc-dialog" id="RSALen" data-mdc-auto-init="MDCDialog">
         <div class="mdc-dialog__container">
             <div class="mdc-dialog__surface"
                  role="alertdialog"
                  aria-modal="true"
-                 aria-labelledby="my-dialog-title"
-                 aria-describedby="my-dialog-content">
+                 aria-labelledby="rsa-dialog-title"
+                 aria-describedby="rsa-dialog-content">
                 <!------>
-                <h2 class="mdc-dialog__title" id="my-dialog-title">RSA Keypair Options</h2>
+                <h2 class="mdc-dialog__title" id="rsa-dialog-title">RSA Keypair Options</h2>
                 <!------>
-                <div class="mdc-dialog__content" id="my-dialog-content">
+                <div class="mdc-dialog__content" id="rsa-dialog-content">
                     <p>
                         If you are unsure about any options, use the default value.
                     </p>
@@ -154,13 +197,13 @@ const keyGen = () => html`
                             <span class="mdc-notched-outline__leading"></span>
                             <span class="mdc-notched-outline__notch">
                                 <span class="mdc-floating-label mdc-floating-label--float-above" id="lenLabel">
-                                    RSA Modulus Length
+                                    RSA Modulus Length (4096 - 10240)
                                 </span>
                             </span>
                             <span class="mdc-notched-outline__trailing"></span>
                         </span>
-                        <input type="number" class="mdc-text-field__input" aria-labelledby="lenLabel" value="4096"
-                        min="2048" max="10240">
+                        <input type="number" class="mdc-text-field__input" aria-labelledby="lenLabel" value="8192"
+                        min="4096" max="81920">
                     </label>
                     <div class="mdc-text-field-helper-line">
                         <div id="username-helper-text" class="mdc-text-field-helper-text" aria-hidden="true" >
@@ -268,14 +311,14 @@ const keyGen = () => html`
             <p class="mdc-typography--body1">
                 Only generate a AES keyfile
             </p>
-            <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
+            <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="genAES">
                 <div class="mdc-button__ripple"></div>
                 <span class="mdc-button__label">Generate AES keyfile</span>
             </button>
             <p class="mdc-typography--body1">
                 Only generate a RSA keypair
             </p>
-            <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
+            <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="genRSA">
                 <div class="mdc-button__ripple"></div>
                 <span class="mdc-button__label">Generate RSA keypair</span>
             </button>
@@ -289,25 +332,40 @@ const text = () => html`
         <h2>Text Encryption/Decryption</h2>
         <!------>
         <!--- Tab bar --->
-        <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar">
+        <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar" style="margin-left:-20px;width:100vw">
             <div class="mdc-tab-scroller">
                 <div class="mdc-tab-scroller__scroll-area">
                     <div class="mdc-tab-scroller__scroll-content">
-                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                        <!------>
+                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="tab_enc">
                             <span class="mdc-tab__content">
-                                <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
-                                <span class="mdc-tab__text-label">Favorites</span>
+                                <span class="mdc-tab__icon material-icons" aria-hidden="true">lock</span>
+                                <span class="mdc-tab__text-label">Encrypt</span>
                             </span>
                             <span class="mdc-tab-indicator mdc-tab-indicator--active">
                                 <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
                             </span>
                             <span class="mdc-tab__ripple"></span>
                         </button>
+                        <!------>
+                        <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="tab_dec">
+                            <span class="mdc-tab__content">
+                                <span class="mdc-tab__icon material-icons" aria-hidden="true">lock_open</span>
+                                <span class="mdc-tab__text-label">Decrypt</span>
+                            </span>
+                            <span class="mdc-tab-indicator">
+                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                            </span>
+                            <span class="mdc-tab__ripple"></span>
+                        </button>
+                        <!------>
                     </div>
                 </div>
             </div>
         </div>
         <!------>
+        <!-- Content switcher -->
+        
     </div>
 `;
 // File stub

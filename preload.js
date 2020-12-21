@@ -1,6 +1,7 @@
 const { contextBridge, remote } = require('electron'); // Bridge some functions
 const { dialog } = require('electron').remote;
 const keygenAES  = require('./js/backend/lib/aes_keygen_lib');
+const keygenRSA  = require('./js/backend/lib/keyGen_lib');
 
 // Expose close, max- and mini-mise functions
 const win = remote.getCurrentWindow();
@@ -32,9 +33,16 @@ contextBridge.exposeInMainWorld('fileOps', {
         })
     }
 });
-contextBridge.exposeInMainWorld('cryptoFunc', {
-    AESKeygen: (filename) => { // High risk function
+// AES operations
+contextBridge.exposeInMainWorld('aesCrypto', {
+    keygen: (filename) => { // Generate AES keyfiles
         return keygenAES.gen(filename);
+    }
+});
+// RSA operations
+contextBridge.exposeInMainWorld('rsaCrypto', {
+    keygen: (len, pwd, loc, cb) => { // Generate AES keyfiles
+        return keygenRSA.gen(len, pwd, loc, cb);
     }
 });
 

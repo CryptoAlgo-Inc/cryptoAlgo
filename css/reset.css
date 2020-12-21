@@ -205,6 +205,17 @@ hr {
     opacity: .4;
 }
 
+/* Customised progress bar */
+.mdc-linear-progress {
+    border-radius: 6px;
+    height: 6px;
+}
+.mdc-linear-progress__bar-inner {
+    border-top: 6px solid;
+    border-radius: 6px;
+    border-color: var(--mdc-theme-primary);
+}
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {

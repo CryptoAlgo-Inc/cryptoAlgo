@@ -4,6 +4,7 @@
     --mdc-theme-primary: rgb(48, 115, 215);
     --mdc-theme-surface: #333;
     --mdc-checkbox-unchecked-color: var(--content-text-color);
+    --progress-background: rgb(65, 65, 65);
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
@@ -28,4 +29,16 @@
 
 .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
     border-color: var(--darker-text-color);
+}
+
+button.mdc-tab:not(.mdc-tab--active) .mdc-tab__icon {
+    color: var(--darker-text-color);
+}
+
+button.mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
+    color: var(--darker-text-color);
+}
+
+.mdc-linear-progress__buffer-bar { /* Yes, the best idea you had, Google, was to hardcode the background to white */
+    background-color: var(--progress-background);
 }
