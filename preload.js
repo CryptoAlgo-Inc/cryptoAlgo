@@ -2,7 +2,7 @@ const { contextBridge, remote } = require('electron'); // Bridge some functions
 const { dialog } = require('electron').remote;
 const keygenAES  = require('./js/backend/lib/aes_keygen_lib.min');
 const keygenRSA  = require('./js/backend/lib/keyGen_lib.min');
-const encryptAES = require('./js/backend/lib/keyGen_lib.min');
+const encryptAES = require('./js/backend/lib/aes_encryptor_lib.min');
 
 // Expose close, max- and mini-mise functions
 const win = remote.getCurrentWindow();

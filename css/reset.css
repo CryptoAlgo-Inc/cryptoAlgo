@@ -233,12 +233,17 @@ main {
 }
 
 hr {
-    background-color: var(--content-text-color);
-    opacity: .4;
+    border-color: var(--outlined-button-color);
 }
 
 body {
     overflow-x: hidden;
+}
+
+/* Enabling antialiasing */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Customised progress bar */
@@ -277,6 +282,16 @@ body {
 }
 .mdc-switch--checked .mdc-switch__track {
     opacity: 1;
+}
+
+/* Output area */
+.output-area {
+    border: solid 2px var(--outlined-button-color);
+    border-radius: 7px;
+    user-select: text;
+    padding: 10px;
+    font-family: "Courier New", sans-serif;
+    word-wrap: break-word;
 }
 
 /* Custom scrollbar */

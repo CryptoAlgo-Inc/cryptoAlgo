@@ -91,7 +91,7 @@ async function onStart() {
 
         // Carry out the encryption
         window.aesCrypto.encrypt(plainText, encKeyfilePath).then((retVal) => {
-            console.log(retVal);
+            $('encrypted-output').textContent = retVal.cipher + retVal.iv;
         });
     }
 }
