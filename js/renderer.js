@@ -373,6 +373,7 @@ const text = () => html`
                 <hr>
                 <!------>
                 <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea" 
+                       id="text-to-enc"
                        data-mdc-auto-init="MDCTextField">
                     <span class="mdc-text-field__ripple"></span>
                     <span class="mdc-floating-label" id="my-label-id">Text to encrypt: </span>
@@ -384,11 +385,12 @@ const text = () => html`
                 </label>
                 <!------>
                 <!-- Open keyfile button -->
-                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="enc-open-keyfile">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">folder</i>
                     <span class="mdc-button__label">Select AES Keyfile</span>
                 </button>
+                <small id="enc-selected-key" style="margin-left:10px">No keyfile currently selected</small>
                 <p class="mdc-typography--body1">
                     You'll need this keyfile to decrypt your text. 
                     Don't have a keyfile? Go to the 'Key' tab to generate one easily.
@@ -400,7 +402,7 @@ const text = () => html`
                     Press the button below to begin encryption. The encrypted text will appear below shortly.
                 </p>
                 <!-- Actions -->
-                <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">
+                <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="startEnc">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">lock</i>
                     <span class="mdc-button__label">Encrypt text</span>

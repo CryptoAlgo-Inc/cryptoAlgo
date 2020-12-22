@@ -25,6 +25,10 @@ function showSnackbar(text, duration = 5000) {
 async function onStart() {
     console.log('<textCrypto> Started activity text');
 
+    // State vars
+    // Keep encryption and decryption keyfiles separate in case the user wants to use diff keyfiles
+    let encKeyfilePath = null;
+
     // Handle tab switching
     const tabs = q('.mdc-tab-bar').MDCTabBar;
     tabs.listen('MDCTabBar:activated', function(data) {
@@ -55,7 +59,41 @@ async function onStart() {
             default:
                 console.error(`<textCrypto:TabBar> Unknown tab selected!`);
         }
-    })
+    });
+
+    // Add onclick listeners
+    // Select keyfile button
+    $('enc-open-keyfile').onclick = () => {
+        window.fileOps.fileOpen("Select AES Keyfile",
+            "Select Keyfile", ['openFile'], [{name: 'AES Keyfiles', extensions: ['.aKey']}])
+            .then(promise => {
+                if (promise.canceled) return;
+
+                encKeyfilePath = promise.filePaths[0];
+                $('enc-selected-key').textContent =
+                    `Currently selected keyfile: '${encKeyfilePath.replace(/^.*\//gm, '')}'`;
+                console.log(`<textCrypto> Selected one keyfile: ${encKeyfilePath}`);
+            });
+    }
+
+    // Encrypt text button
+    $('startEnc').onclick = () => {
+        const plainText = $('text-to-enc').MDCTextField.value;
+        if (plainText.length === 0) {
+            showSnackbar('Text to encrypt is blank');
+            return;
+        }
+
+        if (encKeyfilePath == null) {
+            showSnackbar('No keyfile selected. Select one above or generate a new one.');
+            return;
+        }
+
+        // Carry out the encryption
+        window.aesCrypto.encrypt(plainText, encKeyfilePath).then((retVal) => {
+            console.log(retVal);
+        });
+    }
 }
 
 function onStop() {

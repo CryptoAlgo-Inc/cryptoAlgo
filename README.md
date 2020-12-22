@@ -16,6 +16,7 @@ Supports RSA and AES algorithms, both military-grade standards
 Run these commands:
 ```bash
 git clone https://github.com/CryptoAlgo-Inc/cryptoAlgo.git
+cd cryptoAlgo
 npm i .
 npm start
 ```
