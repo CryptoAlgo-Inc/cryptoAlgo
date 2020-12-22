@@ -256,8 +256,27 @@ body {
 .mdc-text-field--textarea {
     width: 100%;
     max-height: 100vh;
-    height: 110px;
     margin-bottom: 10px;
+}
+.mdc-text-field--textarea > .mdc-text-field__resizer {
+    height: 110px;
+}
+
+/* MDC switch customisations */
+.mdc-switch {
+    margin-left: 10px;
+    margin-right: 5px;
+    top: 5px;
+}
+.mdc-switch__track {
+    height: 22px;
+    border-radius: 20px;
+}
+.mdc-switch__thumb-underlay {
+    top: -13px;
+}
+.mdc-switch--checked .mdc-switch__track {
+    opacity: 1;
 }
 
 /* Custom scrollbar */

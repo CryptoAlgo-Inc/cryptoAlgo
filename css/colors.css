@@ -2,10 +2,13 @@
 
 :root {
     --mdc-theme-primary: rgb(48, 115, 215);
+    --mdc-theme-secondary: rgb(48, 114, 214);
     --mdc-theme-surface: #333;
     --mdc-checkbox-unchecked-color: var(--content-text-color);
     --progress-background: rgb(65, 65, 65);
     --outlined-button-color: rgba(255, 255, 255, 0.12);
+    --switch-thumb-color: rgb(200, 200, 200);
+    --switch-track-no-focus: rgb(50, 50, 50);
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
@@ -50,4 +53,23 @@ button.mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
 
 .mdc-button--outlined:not(:disabled) { /* And it turns out the outlined button's outline is also hardcoded */
     border-color: var(--outlined-button-color);
+}
+
+/* MDC Switch */
+.no-focus .mdc-switch.mdc-switch--checked .mdc-switch__track {
+    background-color: var(--switch-track-no-focus);
+}
+.mdc-switch:not(.mdc-switch--checked) .mdc-switch__track {
+    background-color: var(--switch-track-no-focus) !important;
+}
+.mdc-switch:not(.mdc-switch--checked) .mdc-switch__thumb {
+    border-color: var(--switch-thumb-color);
+}
+.mdc-switch__track {
+    border-color: var(--outlined-button-color);
+    opacity: 1;
+}
+
+.mdc-switch.mdc-switch--checked .mdc-switch__thumb {
+    border-color: var(--switch-thumb-color);
 }

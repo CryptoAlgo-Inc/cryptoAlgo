@@ -318,12 +318,13 @@ const keyGen = () => html`
             <p class="mdc-typography--body1">
                 Only generate a RSA keypair
             </p>
+            <!------>
+            <!-- Actions -->
             <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="genRSA">
                 <div class="mdc-button__ripple"></div>
                 <span class="mdc-button__label">Generate RSA keypair</span>
             </button>
         </div>
-
     </div>
 `;
 // Text enc/dec stub
@@ -398,15 +399,56 @@ const text = () => html`
                 <p class="mdc-typography--body1">
                     Press the button below to begin encryption. The encrypted text will appear below shortly.
                 </p>
+                <!-- Actions -->
                 <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">lock</i>
                     <span class="mdc-button__label">Encrypt text</span>
                 </button>
+                <div class="mdc-switch" data-mdc-auto-init="MDCSwitch">
+                    <div class="mdc-switch__track"></div>
+                    <div class="mdc-switch__thumb-underlay">
+                        <div class="mdc-switch__thumb"></div>
+                        <input type="checkbox" id="basic-switch" class="mdc-switch__native-control" role="switch" aria-checked="false">
+                    </div>
+                </div>
+                <label for="basic-switch">Encrypt-as-you-type (beta)</label>
             </div>
-            <!-- Tab 2 (Decrypt -->
+            <!-- Tab 2 (Decrypt) -->
             <div class="contentSwitcher__content contentSwitcher-outRight hidden" id="decryptContent">
                 <h2>Text Decryption</h2>
+                <small class="mdc-typography--body2">Decrypts text encrypted with CryptoAlgo.</small>
+                <hr>
+                <!------>
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField" 
+                       style="width:100%;margin-bottom:10px">
+                    <span class="mdc-text-field__ripple"></span>
+                    <span class="mdc-floating-label" id="encrypted-text-label">Encrypted text: </span>
+                    <input class="mdc-text-field__input" type="text" aria-labelledby="encrypted-text-label">
+                    <span class="mdc-line-ripple"></span>
+                </label>
+                <!------>
+                <!-- Open keyfile button -->
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">folder</i>
+                    <span class="mdc-button__label">Select AES Keyfile</span>
+                </button>
+                <p class="mdc-typography--body1">
+                    Select the same keyfile used to encrypt the text.
+                </p>
+                <!------>
+                <hr>
+                <!------>
+                <p class="mdc-typography--body1">
+                    Press the button below to begin decryption. The decrypted text will appear below shortly.
+                </p>
+                <!-- Actions -->
+                <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">lock_open</i>
+                    <span class="mdc-button__label">Decrypt text</span>
+                </button>
             </div>
         </div>
     </div>
