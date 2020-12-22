@@ -368,6 +368,9 @@ const text = () => html`
             <!-- Tab 1 (Encrypt) -->
             <div class="contentSwitcher__content" id="encryptContent">
                 <h2>Text Encryption</h2>
+                <small class="mdc-typography--body2">Encrypts (scrambles) any text provided below with AES.</small>
+                <hr>
+                <!------>
                 <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea" 
                        data-mdc-auto-init="MDCTextField">
                     <span class="mdc-text-field__ripple"></span>
@@ -378,6 +381,28 @@ const text = () => html`
                     </span>
                     <span class="mdc-line-ripple"></span>
                 </label>
+                <!------>
+                <!-- Open keyfile button -->
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">folder</i>
+                    <span class="mdc-button__label">Select AES Keyfile</span>
+                </button>
+                <p class="mdc-typography--body1">
+                    You'll need this keyfile to decrypt your text. 
+                    Don't have a keyfile? Go to the 'Key' tab to generate one easily.
+                </p>
+                <!------>
+                <hr>
+                <!------>
+                <p class="mdc-typography--body1">
+                    Press the button below to begin encryption. The encrypted text will appear below shortly.
+                </p>
+                <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">lock</i>
+                    <span class="mdc-button__label">Encrypt text</span>
+                </button>
             </div>
             <!-- Tab 2 (Decrypt -->
             <div class="contentSwitcher__content contentSwitcher-outRight hidden" id="decryptContent">

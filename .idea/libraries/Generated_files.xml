@@ -12,8 +12,31 @@
         <item url="file://$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" />
         <item url="file://$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" />
         <item url="file://$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" />
+        <item url="file://$PROJECT_DIR$/js/loader.min.js" />
         <item url="file://$PROJECT_DIR$/js/material-js.min.js" />
         <item url="file://$PROJECT_DIR$/js/renderer.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/async-append.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/async-replace.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/cache.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/class-map.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/guard.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/if-defined.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/live.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/repeat.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/style-map.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/template-content.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/unsafe-html.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/unsafe-svg.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/directives/until.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/lib/dom.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/lib/part.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/lib/parts.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/lib/render-options.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/lib/shady-render.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/lib/template-processor.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/lit-html.min.js" />
+        <item url="file://$PROJECT_DIR$/lit-html/polyfills/template_polyfill.min.js" />
+        <item url="file://$PROJECT_DIR$/main.min.js" />
         <item url="file://$PROJECT_DIR$/preload.min.js" />
       </sourceFilesUrls>
     </properties>
@@ -28,8 +51,31 @@
       <root url="file://$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" />
       <root url="file://$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" />
       <root url="file://$PROJECT_DIR$/js/backend/lib/keyGen_lib.min.js" />
+      <root url="file://$PROJECT_DIR$/js/loader.min.js" />
       <root url="file://$PROJECT_DIR$/js/material-js.min.js" />
       <root url="file://$PROJECT_DIR$/js/renderer.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/async-append.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/async-replace.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/cache.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/class-map.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/guard.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/if-defined.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/live.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/repeat.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/style-map.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/template-content.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/unsafe-html.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/unsafe-svg.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/directives/until.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/lib/dom.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/lib/part.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/lib/parts.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/lib/render-options.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/lib/shady-render.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/lib/template-processor.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/lit-html.min.js" />
+      <root url="file://$PROJECT_DIR$/lit-html/polyfills/template_polyfill.min.js" />
+      <root url="file://$PROJECT_DIR$/main.min.js" />
       <root url="file://$PROJECT_DIR$/preload.min.js" />
     </CLASSES>
     <JAVADOC />

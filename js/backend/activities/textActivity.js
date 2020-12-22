@@ -14,6 +14,14 @@ function hideAfterDelay(elem, delay) {
     }, delay)
 }
 
+// Helper function to show snackbar
+function showSnackbar(text, duration = 5000) {
+    const snackbar = q('.mdc-snackbar').MDCSnackbar;
+    snackbar.labelText = text;
+    snackbar.timeoutMs = duration;
+    snackbar.open();
+}
+
 async function onStart() {
     console.log('<textCrypto> Started activity text');
 
@@ -34,7 +42,7 @@ async function onStart() {
                 encryptContent.classList.remove('contentSwitcher-outLeft');
                 decryptContent.classList.add('contentSwitcher-outRight');
 
-                hideAfterDelay(decryptContent, 500); // To prevent resizing issues
+                hideAfterDelay(decryptContent, 250); // To prevent resizing issues
                 break;
             case 1:
                 console.debug(`<textCrypto:TabBar> Content: Decrypt`);
@@ -42,7 +50,7 @@ async function onStart() {
                 encryptContent.classList.add('contentSwitcher-outLeft');
                 decryptContent.classList.remove('contentSwitcher-outRight');
 
-                hideAfterDelay(encryptContent, 500);
+                hideAfterDelay(encryptContent, 250);
                 break;
             default:
                 console.error(`<textCrypto:TabBar> Unknown tab selected!`);

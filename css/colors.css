@@ -5,6 +5,7 @@
     --mdc-theme-surface: #333;
     --mdc-checkbox-unchecked-color: var(--content-text-color);
     --progress-background: rgb(65, 65, 65);
+    --outlined-button-color: rgba(255, 255, 255, 0.12);
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
@@ -45,4 +46,8 @@ button.mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled) { /* This is also hardcoded... */
     background-color: var(--mdc-theme-surface);
+}
+
+.mdc-button--outlined:not(:disabled) { /* And it turns out the outlined button's outline is also hardcoded */
+    border-color: var(--outlined-button-color);
 }

@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Completed keygen function">
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Added text content and content change animations">
+      <change afterPath="$PROJECT_DIR$/css/material-css.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/loader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/async-append.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/async-replace.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/cache.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/class-map.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/guard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/if-defined.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/live.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/repeat.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/style-map.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/template-content.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/unsafe-html.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/unsafe-svg.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/directives/until.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/dom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/part.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/parts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/render-options.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/shady-render.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/template-processor.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lit-html.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/polyfills/template_polyfill.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/reset.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/activities/textActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/textActivity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/activities/textActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/textActivity.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/decryptor_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/decryptor_lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/material-js.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/material-js.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/renderer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +61,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1l3ZDXgDyquf1CSGxfGfnR40G4E" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -67,7 +101,7 @@
       <recent name="$PROJECT_DIR$/css" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Start">
+  <component name="RunManager" selected="npm.build">
     <configuration name="Start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -78,10 +112,26 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Node.js.Electron-CryptoAlgo" />
       <item itemvalue="npm.Start" />
+      <item itemvalue="npm.build" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -103,7 +153,7 @@
       <workItem from="1608348034166" duration="351000" />
       <workItem from="1608362668173" duration="25000" />
       <workItem from="1608522170808" duration="11024000" />
-      <workItem from="1608608003072" duration="6176000" />
+      <workItem from="1608608003072" duration="9056000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607005939360</created>
@@ -147,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608563310043</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added text content and content change animations">
+      <created>1608623289737</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608623289737</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +230,8 @@
     <MESSAGE value="Changed dir struct and added lib files" />
     <MESSAGE value="Completed dialog content" />
     <MESSAGE value="Completed keygen function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed keygen function" />
+    <MESSAGE value="Added text content and content change animations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added text content and content change animations" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
