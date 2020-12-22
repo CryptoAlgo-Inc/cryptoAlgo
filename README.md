@@ -1,6 +1,4 @@
-> # Notice: This branch is no longer under active development. No bugs will be fixed and 
-no more security fixes will be provided. Please move to CryptoAlgo V2 (master branch) which
-is currently under development as a more stable and easier to use replacement.
+> # Notice: This branch is no longer under active development. No bugs will be fixed and no more security fixes will be provided. Please move to CryptoAlgo V2 (master branch) which is currently under development as a more stable and easier to use replacement.
 
 # CryptoAlgo
 
