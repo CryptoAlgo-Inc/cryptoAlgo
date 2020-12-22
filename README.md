@@ -1,4 +1,9 @@
+> # Notice: This branch is no longer under active development. No bugs will be fixed and 
+no more security fixes will be provided. Please move to CryptoAlgo V2 (master branch) which
+is currently under development as a more stable and easier to use replacement.
+
 # CryptoAlgo
+
 This program allows you to encrypt messages and keys using the RSA and AES algorithms. The RSA algorithm is used to encrypt the AES keys, which is then transmitted to the receiver.
 I think this is my shortest Readme to date, short and sweet!
 
