@@ -1,5 +1,0 @@
-Features added:
-1. CryptoAlgo Account
-2. Autoupdate
-
-This version of CryptoAlgo brings major changes, and bugfixes.

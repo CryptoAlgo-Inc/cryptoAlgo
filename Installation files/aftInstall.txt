@@ -1,3 +1,0 @@
-Thank you so much for installing CryptoAlgo! Please generate the AES and RSA keyfiles first.
-
-The generated keyfiles are stored in your Documents folder.
