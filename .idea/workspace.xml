@@ -4,13 +4,181 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Finished text encryption layout and added NodeJS tests">
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Added text decryption layout">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/dom.min.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/part.min.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/render-options.min.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/shady-render.min.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lit-html/lib/template-processor.min.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/reset.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/renderer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-append.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-append.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-append.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-append.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-append.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-replace.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-replace.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-replace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-replace.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/async-replace.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/cache.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/cache.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/cache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/cache.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/cache.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/class-map.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/class-map.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/class-map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/class-map.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/class-map.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/guard.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/guard.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/guard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/guard.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/guard.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/if-defined.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/if-defined.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/if-defined.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/if-defined.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/if-defined.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/live.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/live.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/live.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/live.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/live.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/repeat.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/repeat.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/repeat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/repeat.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/repeat.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/style-map.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/style-map.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/style-map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/style-map.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/style-map.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/template-content.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/template-content.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/template-content.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/template-content.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/template-content.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-html.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-html.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-html.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-html.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-svg.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-svg.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-svg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-svg.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/unsafe-svg.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/until.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/until.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/until.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/until.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/directives/until.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/lit-html.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/polyfills/template_polyfill.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/polyfills/template_polyfill.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/polyfills/template_polyfill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/polyfills/template_polyfill.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/polyfills/template_polyfill.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/async-append.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/async-replace.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/cache.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/class-map.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/guard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/if-defined.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/live.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/repeat.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/style-map.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/template-content.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/unsafe-html.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/unsafe-svg.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/directives/until.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/default-template-processor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/directive.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/dom.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/modify-template.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/part.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/parts.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/render-options.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/render.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/shady-render.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/template-factory.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/template-instance.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/template-processor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/template-result.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lib/template.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/lit-html.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/src/polyfills/template_polyfill.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/async-append.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/async-replace.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/cache.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/class-map.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/guard.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/if-defined.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/live.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/repeat.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/style-map.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/template-content.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/unsafe-html.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/unsafe-svg.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/directives/until.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/default-template-processor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/directive.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/dom.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/modify-template.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/part.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/parts.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/render-options.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/render.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/shady-render.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/template-factory.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/template-instance.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/template-processor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/template-result.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lib/template.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/lit-html.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/polyfills/template_polyfill.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/src/env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/async-append_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/async-replace_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/cache_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/class-map_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/guard_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/if-defined_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/live_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/repeat_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/style-map_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/template-content_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/unsafe-html_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/unsafe-svg_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/directives/until_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/incompatible-shady-render_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/modify-template_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/parts_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/render_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/shady-render-apply_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/shady-render-scoping-shim_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/shady-render_no-wc_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/shady-render_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/template-factory_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/template-result_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/template_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/test-async-iterable.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lib/trusted-types_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/lit-html_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/polyfills/template_polyfill_test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/test-utils/deferred.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/test-utils/security.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/test-utils/shadow-root.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/test/test-utils/strip-markers.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lit-html/ts3.4/tsconfig.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608630223901</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added text decryption layout">
+      <created>1608634454195</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608634454195</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +365,8 @@
     <MESSAGE value="Completed keygen function" />
     <MESSAGE value="Added text content and content change animations" />
     <MESSAGE value="Finished text encryption layout and added NodeJS tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished text encryption layout and added NodeJS tests" />
+    <MESSAGE value="Added text decryption layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added text decryption layout" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
