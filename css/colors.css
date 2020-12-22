@@ -73,3 +73,7 @@ button.mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
 .mdc-switch.mdc-switch--checked .mdc-switch__thumb {
     border-color: var(--switch-thumb-color);
 }
+
+.mdc-ripple-surface::before, .mdc-ripple-surface::after {
+    background-color: var(--darker-text-color);
+}

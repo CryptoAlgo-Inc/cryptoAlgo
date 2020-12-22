@@ -419,7 +419,10 @@ const text = () => html`
                 <hr>
                 <!-- Output -->
                 <h3>Encrypted Output:</h3>
-                <p class="output-area" id="encrypted-output"><i>No encrypted text yet.</i></p>
+                <small>Click text box to copy</small>
+                <p class="output-area mdc-ripple-surface" id="encrypted-output" data-mdc-auto-init="MDCRipple">
+                    <i>No encrypted text yet.</i>
+                </p>
             </div>
             <!-- Tab 2 (Decrypt) -->
             <div class="contentSwitcher__content contentSwitcher-outRight hidden" id="decryptContent">
@@ -460,7 +463,10 @@ const text = () => html`
                 <hr>
                 <!-- Output -->
                 <h3>Decrypted Output:</h3>
-                <p class="output-area"><i>No decrypted text yet.</i></p>
+                <small>Click text box to copy</small>
+                <p class="output-area mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
+                    <i>No decrypted text yet.</i>
+                </p>
             </div>
         </div>
     </div>

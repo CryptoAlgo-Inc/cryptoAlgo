@@ -240,7 +240,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Enabling antialiasing */
+/* Enable antialiasing */
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -288,10 +288,10 @@ body {
 .output-area {
     border: solid 2px var(--outlined-button-color);
     border-radius: 7px;
-    user-select: text;
     padding: 10px;
     font-family: "Courier New", sans-serif;
     word-wrap: break-word;
+    cursor: pointer;
 }
 
 /* Custom scrollbar */

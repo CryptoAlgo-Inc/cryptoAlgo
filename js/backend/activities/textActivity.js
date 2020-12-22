@@ -65,7 +65,7 @@ async function onStart() {
     // Select keyfile button
     $('enc-open-keyfile').onclick = () => {
         window.fileOps.fileOpen("Select AES Keyfile",
-            "Select Keyfile", ['openFile'], [{name: 'AES Keyfiles', extensions: ['.aKey']}])
+            "Select Keyfile", ['openFile'], [{name: 'AES Keyfiles', extensions: ['aKey']}])
             .then(promise => {
                 if (promise.canceled) return;
 
@@ -78,7 +78,7 @@ async function onStart() {
 
     // Encrypt text button
     $('startEnc').onclick = () => {
-        const plainText = $('text-to-enc').MDCTextField.value;
+        const plainText = $('text-to-enc').MDCTextField.value.trim();
         if (plainText.length === 0) {
             showSnackbar('Text to encrypt is blank');
             return;
@@ -94,6 +94,15 @@ async function onStart() {
             $('encrypted-output').textContent = retVal.cipher + retVal.iv;
         });
     }
+
+    // Text output click
+    document.querySelectorAll('.output-area').forEach((elem) => {
+        elem.onclick = (element) => {
+            console.debug('<textCrypto:outputArea@click> Copied text:', element.target.textContent.trim());
+            window.navigator.clipboard.writeText(element.target.textContent.trim());
+            showSnackbar('Copied text to clipboard');
+        }
+    })
 }
 
 function onStop() {
