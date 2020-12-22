@@ -42,3 +42,7 @@ button.mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
 .mdc-linear-progress__buffer-bar { /* Yes, the best idea you had, Google, was to hardcode the background to white */
     background-color: var(--progress-background);
 }
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) { /* This is also hardcoded... */
+    background-color: var(--mdc-theme-surface);
+}

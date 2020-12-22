@@ -127,10 +127,3 @@ function onStop() {
     $('genAll').onclick = null;
     console.log('<keygen> Exiting keygen activity');
 }
-
-/*
-window.fileOps.filePick("Location to save RSA keypair","RSA keypair base name:", [],
-    [{name: "RSA Keypair", extensions: ['.pem']}])
-    .then(result => {
-    });
- */

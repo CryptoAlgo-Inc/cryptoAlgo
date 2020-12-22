@@ -73,7 +73,7 @@ const renderTab = (tabRenderer, tabID, longName) => {
         onStart().then(() => {
             console.debug(`<renderTab> Loaded activity ${tabID}`)
         }).catch(e => {
-            console.warn(`<renderTab> Activity onStart threw an exception:\n\n ${e}`)
+            console.warn(`<renderTab> ${tabID} activity onStart threw an exception:\n\n ${e}`)
         })
     }).catch(e => {
         console.debug(`<renderTab> Failed to fetch and execute activity JS script for activity ${tabID} with error:\n\n${e}`)
@@ -329,10 +329,9 @@ const keyGen = () => html`
 // Text enc/dec stub
 const text = () => html`
     <div class="mount">
-        <h2>Text Encryption/Decryption</h2>
         <!------>
         <!--- Tab bar --->
-        <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar" style="margin-left:-20px;width:100vw">
+        <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar" style="margin-left:-20px;width:100vw;margin-top:-10px">
             <div class="mdc-tab-scroller">
                 <div class="mdc-tab-scroller__scroll-area">
                     <div class="mdc-tab-scroller__scroll-content">
@@ -365,7 +364,26 @@ const text = () => html`
         </div>
         <!------>
         <!-- Content switcher -->
-        
+        <div class="contentSwitcher contentSwitcher__tabs_2">
+            <!-- Tab 1 (Encrypt) -->
+            <div class="contentSwitcher__content" id="encryptContent">
+                <h2>Text Encryption</h2>
+                <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea" 
+                       data-mdc-auto-init="MDCTextField">
+                    <span class="mdc-text-field__ripple"></span>
+                    <span class="mdc-floating-label" id="my-label-id">Text to encrypt: </span>
+                    <span class="mdc-text-field__resizer">
+                        <textarea class="mdc-text-field__input" rows="8" cols="40" aria-label="Label"
+                                  aria-labelledby="my-label-id"></textarea>
+                    </span>
+                    <span class="mdc-line-ripple"></span>
+                </label>
+            </div>
+            <!-- Tab 2 (Decrypt -->
+            <div class="contentSwitcher__content contentSwitcher-outRight hidden" id="decryptContent">
+                <h2>Text Decryption</h2>
+            </div>
+        </div>
     </div>
 `;
 // File stub
