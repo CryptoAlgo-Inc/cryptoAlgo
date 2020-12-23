@@ -1,40 +1,27 @@
-// Nodejs encryption with CTR
+// Nodejs AES decryption with CTR
 const crypto = require('crypto');
-const algorithm = 'aes-256-cbc';
-
-const fs = require('fs');
-const path = require('path')
-const os = require('os');
-
-function decrypt(text, key_in, iv_in) {
-    let encryptedText = Buffer.from(text, 'hex');
-    let decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(key_in), iv_in);
-    let decrypted = decipher.update(encryptedText);
-    decrypted = Buffer.concat([decrypted, decipher.final()]);
-    return decrypted.toString();
-}
+const {readFile} = require('fs').promises;
 
 module.exports = {
-    auto: function(text) {
+    decrypt: async function(cipher, iv, keyLocation) {
+        const contents = await readFile(keyLocation, {encoding: 'utf8'});
+        const cipherText = Buffer.from(cipher, 'base64');
+        const ivBuff = Buffer.from(iv, 'base64');
+        const key = Buffer.from(contents, 'base64');
+        let decipher;
         try {
-            const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-            const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
-            const key = Buffer.from(key_in, 'hex');
-            const iv = Buffer.from(iv_in, 'hex');
-        } catch(e) {
-            console.log('Errors were encountered.');
-            return true;
+            decipher = crypto.createDecipheriv('aes-256-cbc', key, ivBuff)
+        } catch (e) {
+            return {
+                text: null,
+                err: e
+            }
         }
-        try {
-            const key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-            const iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
-            const key = Buffer.from(key_in, 'hex');
-            const iv = Buffer.from(iv_in, 'hex');
-            return decrypt(text, key, iv).slice(8, -8);
-        } catch(e) {
-            console.log(e);
-            console.log('Error while decrypting message. Ensure that the AES keyfiles are valid and the encrypted message is not corrupted.');
-            return true;
-        }
+        let plainText = decipher.update(cipherText);
+        plainText = Buffer.concat([plainText, decipher.final()]);
+        return {
+            text: plainText.toString(),
+            err: null
+        };
     }
 }

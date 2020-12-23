@@ -91,6 +91,10 @@ async function onStart() {
 
         // Carry out the encryption
         window.aesCrypto.encrypt(plainText, encKeyfilePath).then((retVal) => {
+            if (retVal.err != null) {
+                console.warn(`<aesCrypto:encrypt> Error encrypting text: \n\n${retVal.err}`);
+                showSnackbar('Failed to encrypt text. Check if keyfiles are valid.')
+            }
             $('encrypted-output').textContent = retVal.cipher + retVal.iv;
         });
     }
