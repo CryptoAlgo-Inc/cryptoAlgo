@@ -421,7 +421,7 @@ const text = () => html`
                 <h3>Encrypted Output:</h3>
                 <small>Click text box to copy</small>
                 <p class="output-area mdc-ripple-surface" id="encrypted-output" data-mdc-auto-init="MDCRipple">
-                    <i>No encrypted text yet.</i>
+                    <i>No encrypted text</i>
                 </p>
             </div>
             <!-- Tab 2 (Decrypt) -->
@@ -431,19 +431,23 @@ const text = () => html`
                 <hr>
                 <!------>
                 <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField" 
+                       id="cipher-text"
                        style="width:100%;margin-bottom:10px">
                     <span class="mdc-text-field__ripple"></span>
                     <span class="mdc-floating-label" id="encrypted-text-label">Encrypted text: </span>
-                    <input class="mdc-text-field__input" type="text" aria-labelledby="encrypted-text-label">
+                    <input class="mdc-text-field__input" type="text" 
+                           onclick="this.select()"
+                           aria-labelledby="encrypted-text-label">
                     <span class="mdc-line-ripple"></span>
                 </label>
                 <!------>
                 <!-- Open keyfile button -->
-                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="dec-open-keyfile">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">folder</i>
                     <span class="mdc-button__label">Select AES Keyfile</span>
                 </button>
+                <small id="dec-selected-key" style="margin-left:10px">No keyfile currently selected</small>
                 <p class="mdc-typography--body1">
                     Select the same keyfile used to encrypt the text.
                 </p>
@@ -454,7 +458,7 @@ const text = () => html`
                     Press the button below to begin decryption. The decrypted text will appear below shortly.
                 </p>
                 <!-- Actions -->
-                <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">
+                <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="startDec">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">lock_open</i>
                     <span class="mdc-button__label">Decrypt text</span>
@@ -464,9 +468,7 @@ const text = () => html`
                 <!-- Output -->
                 <h3>Decrypted Output:</h3>
                 <small>Click text box to copy</small>
-                <p class="output-area mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
-                    <i>No decrypted text yet.</i>
-                </p>
+                <pre class="output-area mdc-ripple-surface" data-mdc-auto-init="MDCRipple" id="decrypted-output"><i>No decrypted text</i></pre>
             </div>
         </div>
     </div>
@@ -475,6 +477,20 @@ const text = () => html`
 const file = () => html`
     <div class="mount">
         <h2>File Encryption/Decryption</h2>
+        <!------>
+        <hr>
+        <!------>
+        <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
+            <div class="mdc-button__ripple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+            <span class="mdc-button__label">Select input file</span>
+        </button>
+        <br>
+        <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
+            <div class="mdc-button__ripple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
+            <span class="mdc-button__label">Select input file</span>
+        </button>
     </div>
 `;
 // RSA stub

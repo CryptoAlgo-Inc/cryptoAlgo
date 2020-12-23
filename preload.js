@@ -3,6 +3,7 @@ const { dialog } = require('electron').remote;
 const keygenAES  = require('./js/backend/lib/aes_keygen_lib.min');
 const keygenRSA  = require('./js/backend/lib/keyGen_lib.min');
 const encryptAES = require('./js/backend/lib/aes_encryptor_lib.min');
+const decryptAES = require('./js/backend/lib/aes_decryptor_lib.min');
 
 // Expose close, max- and mini-mise functions
 const win = remote.getCurrentWindow();
@@ -43,6 +44,9 @@ contextBridge.exposeInMainWorld('aesCrypto', {
     },
     encrypt: (plainText, loc) => {
         return encryptAES.encrypt(plainText, loc);
+    },
+    decrypt: (cipher, iv, loc) => {
+        return decryptAES.decrypt(cipher, iv, loc);
     }
 });
 // RSA operations

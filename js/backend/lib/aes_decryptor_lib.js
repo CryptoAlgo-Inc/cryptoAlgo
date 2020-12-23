@@ -8,20 +8,19 @@ module.exports = {
         const cipherText = Buffer.from(cipher, 'base64');
         const ivBuff = Buffer.from(iv, 'base64');
         const key = Buffer.from(contents, 'base64');
-        let decipher;
         try {
-            decipher = crypto.createDecipheriv('aes-256-cbc', key, ivBuff)
+            const  decipher = crypto.createDecipheriv('aes-256-cbc', key, ivBuff)
+            let plainText = decipher.update(cipherText);
+            plainText = Buffer.concat([plainText, decipher.final()]);
+            return {
+                text: plainText.toString(),
+                err: null
+            };
         } catch (e) {
             return {
                 text: null,
                 err: e
             }
         }
-        let plainText = decipher.update(cipherText);
-        plainText = Buffer.concat([plainText, decipher.final()]);
-        return {
-            text: plainText.toString(),
-            err: null
-        };
     }
 }

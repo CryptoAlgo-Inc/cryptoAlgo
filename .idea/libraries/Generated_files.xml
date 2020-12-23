@@ -2,6 +2,7 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/js/backend/activities/fileActivity.min.js" />
         <item url="file://$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" />
         <item url="file://$PROJECT_DIR$/js/backend/activities/textActivity.min.js" />
         <item url="file://$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.min.js" />
@@ -15,32 +16,6 @@
         <item url="file://$PROJECT_DIR$/js/loader.min.js" />
         <item url="file://$PROJECT_DIR$/js/material-js.min.js" />
         <item url="file://$PROJECT_DIR$/js/renderer.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/async-append.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/async-append.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/async-replace.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/async-replace.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/cache.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/cache.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/class-map.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/class-map.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/guard.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/guard.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/if-defined.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/if-defined.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/live.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/live.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/repeat.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/repeat.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/style-map.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/style-map.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/template-content.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/template-content.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/unsafe-html.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/unsafe-html.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/unsafe-svg.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/unsafe-svg.min.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/until.min.js" />
-        <item url="file://$PROJECT_DIR$/lit-html/directives/until.min.min.js" />
         <item url="file://$PROJECT_DIR$/lit-html/lib/dom.min.js" />
         <item url="file://$PROJECT_DIR$/lit-html/lib/dom.min.min.js" />
         <item url="file://$PROJECT_DIR$/lit-html/lib/part.min.js" />
@@ -59,6 +34,7 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/js/backend/activities/fileActivity.min.js" />
       <root url="file://$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" />
       <root url="file://$PROJECT_DIR$/js/backend/activities/textActivity.min.js" />
       <root url="file://$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.min.js" />
@@ -72,32 +48,6 @@
       <root url="file://$PROJECT_DIR$/js/loader.min.js" />
       <root url="file://$PROJECT_DIR$/js/material-js.min.js" />
       <root url="file://$PROJECT_DIR$/js/renderer.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/async-append.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/async-append.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/async-replace.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/async-replace.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/cache.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/cache.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/class-map.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/class-map.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/guard.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/guard.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/if-defined.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/if-defined.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/live.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/live.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/repeat.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/repeat.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/style-map.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/style-map.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/template-content.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/template-content.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/unsafe-html.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/unsafe-html.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/unsafe-svg.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/unsafe-svg.min.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/until.min.js" />
-      <root url="file://$PROJECT_DIR$/lit-html/directives/until.min.min.js" />
       <root url="file://$PROJECT_DIR$/lit-html/lib/dom.min.js" />
       <root url="file://$PROJECT_DIR$/lit-html/lib/dom.min.min.js" />
       <root url="file://$PROJECT_DIR$/lit-html/lib/part.min.js" />

@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Added copy to clipboard and fixed some bugs">
-      <change afterPath="$PROJECT_DIR$/random.txt" afterDir="false" />
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Added AES text decryption backend">
+      <change afterPath="$PROJECT_DIR$/js/backend/activities/fileActivity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/reset.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/activities/textActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/textActivity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/activities/textActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/textActivity.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_encryptor_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_encryptor_lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_encryptor_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_encryptor_lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preload.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +28,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -110,7 +113,7 @@
       <workItem from="1608522170808" duration="11024000" />
       <workItem from="1608608003072" duration="9056000" />
       <workItem from="1608636591118" duration="6810000" />
-      <workItem from="1608692178453" duration="3031000" />
+      <workItem from="1608692178453" duration="7096000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607005939360</created>
@@ -203,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608653010817</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added AES text decryption backend">
+      <created>1608696598493</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608696598493</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +247,8 @@
     <MESSAGE value="Added some backend code to AES text encryption and added missing unversioned files" />
     <MESSAGE value="Completed AES text encryption" />
     <MESSAGE value="Added copy to clipboard and fixed some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added copy to clipboard and fixed some bugs" />
+    <MESSAGE value="Added AES text decryption backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AES text decryption backend" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
