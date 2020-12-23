@@ -90,21 +90,19 @@ async function onStart() {
             });
     };
 
-    // Encrypt text button
-    $('startEnc').onclick = () => {
-        const plainText = $('text-to-enc').MDCTextField.value.trim();
-        if (plainText.length === 0) {
-            showSnackbar('Text to encrypt is blank');
+    const encHandler = (text, silent = false) => {
+        if (text.length === 0) {
+            if (!silent) showSnackbar('Text to encrypt is blank');
             return;
         }
 
         if (encKeyfilePath == null) {
-            showSnackbar('No keyfile selected. Select one above or generate a new one.');
+            if (!silent) showSnackbar('No keyfile selected. Select one above or generate a new one.');
             return;
         }
 
         // Carry out the encryption
-        window.aesCrypto.encrypt(plainText, encKeyfilePath).then((retVal) => {
+        window.aesCrypto.encrypt(text, encKeyfilePath).then((retVal) => {
             const encryptOutput = $('encrypted-output');
             if (retVal.err != null) {
                 console.warn(`<aesCrypto:encrypt> Error encrypting text: \n\n${retVal.err}`);
@@ -114,6 +112,13 @@ async function onStart() {
             }
             encryptOutput.textContent = retVal.cipher + retVal.iv;
         });
+    }
+
+    // Encrypt text button
+    const encBtn = $('startEnc');
+    encBtn.onclick = () => {
+        const plainText = $('text-to-enc').MDCTextField.value.trim();
+        encHandler(plainText);
     };
 
     // Decrypt text function
@@ -149,7 +154,30 @@ async function onStart() {
             window.navigator.clipboard.writeText(element.target.textContent.trim());
             showSnackbar('Copied text to clipboard');
         }
-    })
+    });
+
+    // Checkbox event listener
+    const instCheckbox = $('inst-enc');
+    let prevText = ''; // Prevent repetition of input like when space is pressed
+    instCheckbox.onchange = () => {
+        if (instCheckbox.checked) {
+            // Disable encrypt button
+            encBtn.disabled = true;
+            const textField = $('text-to-enc').MDCTextField;
+            encHandler(textField.value.trim(), true);
+
+            q('#text-to-enc textarea').oninput = () => {
+                const newText = $('text-to-enc').MDCTextField.value.trim();
+                if (newText === prevText) return;
+                encHandler(textField.value.trim(), true);
+                prevText = newText;
+            }
+        }
+        else {
+            encBtn.disabled = false;
+            q('#text-to-enc textarea').oninput = null;
+        }
+    }
 }
 
 function onStop() {

@@ -411,7 +411,7 @@ const text = () => html`
                     <div class="mdc-switch__track"></div>
                     <div class="mdc-switch__thumb-underlay">
                         <div class="mdc-switch__thumb"></div>
-                        <input type="checkbox" id="basic-switch" class="mdc-switch__native-control" role="switch" aria-checked="false">
+                        <input type="checkbox" id="inst-enc" class="mdc-switch__native-control" role="switch" aria-checked="false">
                     </div>
                 </div>
                 <label for="basic-switch">Encrypt-as-you-type (beta)</label>

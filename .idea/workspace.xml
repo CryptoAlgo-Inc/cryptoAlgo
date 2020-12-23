@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Added AES text decryption backend">
-      <change afterPath="$PROJECT_DIR$/js/backend/activities/fileActivity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterDir="false" />
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Completed AES text encryption/decryption">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/colors.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/activities/textActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/textActivity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/activities/textActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/textActivity.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_decryptor_lib.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/renderer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preload.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +107,7 @@
       <workItem from="1608522170808" duration="11024000" />
       <workItem from="1608608003072" duration="9056000" />
       <workItem from="1608636591118" duration="6810000" />
-      <workItem from="1608692178453" duration="7096000" />
+      <workItem from="1608692178453" duration="8988000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607005939360</created>
@@ -213,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608696598493</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Completed AES text encryption/decryption">
+      <created>1608703230489</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1608703230489</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +249,8 @@
     <MESSAGE value="Completed AES text encryption" />
     <MESSAGE value="Added copy to clipboard and fixed some bugs" />
     <MESSAGE value="Added AES text decryption backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AES text decryption backend" />
+    <MESSAGE value="Completed AES text encryption/decryption" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed AES text encryption/decryption" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

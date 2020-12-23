@@ -9,6 +9,8 @@
     --outlined-button-color: rgba(255, 255, 255, 0.12);
     --switch-thumb-color: rgb(200, 200, 200);
     --switch-track-no-focus: rgb(50, 50, 50);
+    --button-disabled-bg: rgb(65, 65, 65);
+    --button-disabled-color: rgb(110, 110, 110);
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
@@ -76,4 +78,17 @@ button.mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label {
 
 .mdc-ripple-surface::before, .mdc-ripple-surface::after {
     background-color: var(--darker-text-color);
+}
+
+.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic, .mdc-drawer .mdc-list-item--activated {
+    color: var(--mdc-theme-primary, #6200ee);
+}
+
+.mdc-drawer .mdc-list-item__graphic, .mdc-drawer .mdc-list-item {
+    color: var(--content-text-color);
+}
+
+.mdc-button--raised:disabled, .mdc-button--unelevated:disabled {
+    background-color: var(--button-disabled-bg);
+    color: var(--button-disabled-color);
 }
