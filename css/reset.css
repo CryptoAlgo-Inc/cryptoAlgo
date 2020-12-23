@@ -303,7 +303,72 @@ body {
     cursor: pointer;
 }
 
-/* Custom scrollbar */
+/* ====== FileCrypto ======*/
+.file-grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    " inFile  selKey"
+    "outFile outFile";
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.file-grid-container > div {
+    border: 2px solid var(--outlined-button-color);
+    border-radius: 7px;
+    padding: 10px
+}
+.file-grid-container > div > button {
+    width: 100%;
+}
+.file-grid-container > div > h3 {
+    margin-top: 5px;
+    text-align: center;
+}
+.file-grid-container > div > small {
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+.input-file {
+    grid-area: inFile;
+}
+.file-alg {
+    grid-area: selKey;
+}
+.output-file {
+    grid-area: outFile;
+}
+
+.mdc-fab.bottomRight {
+    position: fixed;
+    right: 25px;
+    bottom: 10px;
+    z-index: 10;
+}
+
+.actions-holder {
+    margin: 10px 5px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.actions-holder > button {
+    margin: 5px
+}
+
+.step-circles {
+    background-color: var(--mdc-theme-secondary);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px;
+}
+
+/* ====== Custom scrollbar ======= */
 ::-webkit-scrollbar {
     background-color: #fff;
     width: 14px

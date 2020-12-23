@@ -1,56 +1,31 @@
-// Nodejs encryption with CTR
+// NodeJS AES file decryption
+
 const crypto = require('crypto');
-const algorithm = 'aes-256-cbc';
-
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
-
-function decrypt(text, key_in, iv_in) {
-    let encryptedText = Buffer.from(text, 'hex');
-    let decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(key_in), iv_in);
-    let decrypted = decipher.update(encryptedText);
-    decrypted = Buffer.concat([decrypted, decipher.final()]);
-    return decrypted.toString();
-}
+const { readFile }  = require('fs').promises;
+const { writeFile } = require('fs');
 
 module.exports = {
-auto: function(fileName) {
-        var key_in;
-        var iv_in;
-        var key
-        var iv;
+    decrypt: async function(fileIn, fileOut, keyFile) {
+        const cipherFile = await readFile(fileIn, {encoding: 'utf8'});
+        const cipher = cipherFile.toString().slice(0, -24);
+        const keyfile = await readFile(keyFile, {encoding: 'utf8'});
+        const key = Buffer.from(keyfile, 'base64');
+        const iv = cipherFile.toString().slice(-24);
+        const ivBuff = Buffer.from(iv, 'base64');
+
         try {
-            key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-            iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
-            key = Buffer.from(key_in, 'hex');
-            iv = Buffer.from(iv_in, 'hex');
-        } catch(e) {
-            console.log('Could not find or open the AES keyfiles. Please ensure that they are generated and not write protected.');
-            return true;
+            const decipher = crypto.createDecipheriv('aes-256-cbc', key, ivBuff)
+            let decFile = decipher.update(Buffer.from(cipher, 'base64'));
+            decFile = Buffer.concat([decFile, decipher.final()]);
+            // Write output file
+            writeFile(fileOut, decFile, function(err)
+            {
+                if (err) console.error(err);
+                return !!err;
+            });
+            return 0;
+        } catch (e) {
+            return e;
         }
-        // console.log('Key: ', key);
-        // console.log('IV :', iv);
-        try {
-            key_in = fs.readFileSync(os.homedir() + '\\Documents\\key.txt', 'utf8');
-            iv_in = fs.readFileSync(os.homedir() + '\\Documents\\iv.txt', 'utf8');
-            key = Buffer.from(key_in, 'hex');
-            iv = Buffer.from(iv_in, 'hex');
-            const file_in = fs.readFileSync(path.resolve(fileName), 'utf8');
-            const file_dec = decrypt(file_in, key, iv);
-            fs.writeFileSync(path.resolve(fileName).slice(0, -11), file_dec);
-            console.log('█                        Decrypting...                           █');
-            console.log('█             Thank you for using the decryptor!                 █');
-            console.log('█         This windows will auto-close in 3.0 seconds.           █');
-            console.log('██████████████████████████████████████████████████████████████████\x1b[0m');
-        } catch(e) {
-            console.log(e);
-            console.log('\x1b[31m');
-            console.log('Error while decrypting message. Ensure that the AES keyfiles are valid and the file is not corrupt.\x1b[32m');
-            console.log('\x1b[0m');
-            return true;
-        }
-        return false;
-        console.log('█             Thank you for using the decryptor!                 █');
     }
 }

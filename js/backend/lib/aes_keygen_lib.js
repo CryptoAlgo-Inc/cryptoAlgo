@@ -9,6 +9,6 @@ module.exports = {
         writeFile(location, crypto.randomBytes(32).toString('base64'), function(err) {
             if (err) console.error(err);
             return !!err;
-        })
+        });
     }
 };

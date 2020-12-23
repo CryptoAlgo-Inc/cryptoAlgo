@@ -44,6 +44,7 @@ const clrActive = () => {
         element.classList.remove('active');
     });
 }
+
 // Render a tab into content area
 const renderTab = (tabRenderer, tabID, longName) => {
     if (tabID === prevTabID) return // Don't continue if the tab is the same as the previous
@@ -475,22 +476,69 @@ const text = () => html`
 `;
 // File stub
 const file = () => html`
+    <button class="mdc-fab bottomRight" aria-label="File locations" data-mdc-auto-init="MDCRipple"> 
+        <div class="mdc-fab__ripple"></div>
+        <span class="mdc-fab__icon material-icons">folder</span>
+    </button>
     <div class="mount">
         <h2>File Encryption/Decryption</h2>
+        <small class="mdc-typography--body2">
+            Encrypt or decrypt your files with AES. 
+            Please do not open encrypted files in any other application as this might corrupt them
+            and prevent successful decryption.
+        </small>
         <!------>
         <hr>
         <!------>
-        <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
-            <div class="mdc-button__ripple"></div>
-            <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
-            <span class="mdc-button__label">Select input file</span>
-        </button>
-        <br>
-        <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple">
-            <div class="mdc-button__ripple"></div>
-            <i class="material-icons mdc-button__icon" aria-hidden="true">bookmark</i>
-            <span class="mdc-button__label">Select input file</span>
-        </button>
+        <div class="file-grid-container">
+            <div class="input-file">
+                <h3><span class="step-circles">1</span> Input File</h3>
+                <small class="mdc-typography--body2">
+                    Encryption: Select file to be encrypted<br>
+                    Decryption: Select encrypted file to decrypt
+                </small>
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="selInput">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">input</i>
+                    <span class="mdc-button__label">Choose input file</span>
+                </button>
+            </div>
+            <div class="file-alg">
+                <h3><span class="step-circles">2</span> AES Keyfile</h3>
+                <small class="mdc-typography--body2">
+                    Encryption: Select a keyfile to be used to encrypt the file<br>
+                    Decryption: Select the keyfile that was used to encrypt the file
+                </small>
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="selKeyfile">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">vpn_key</i>
+                    <span class="mdc-button__label">Select keyfile</span>
+                </button>
+            </div>
+            <div class="output-file">
+                <h3><span class="step-circles">3</span> Output File</h3>
+                <small class="mdc-typography--body2">
+                    Select a location to save the encrypted/decrypted files
+                </small>
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="selOut">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">save</i>
+                    <span class="mdc-button__label">Choose output file location</span>
+                </button>
+            </div>
+        </div>
+        <div class="actions-holder">
+            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="encButton">
+                <div class="mdc-button__ripple"></div>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">lock</i>
+                <span class="mdc-button__label">Encrypt</span>
+            </button>
+            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="decButton">
+                <div class="mdc-button__ripple"></div>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">lock_open</i>
+                <span class="mdc-button__label">Decrypt</span>
+            </button>
+        </div>
     </div>
 `;
 // RSA stub
