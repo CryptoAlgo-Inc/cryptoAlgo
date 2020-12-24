@@ -46,17 +46,9 @@
 
 /* And here are all the basic stuff */
 body {
-    --background-color: rgb(35, 35, 35);
-    --titlebar-bg-color: rgb(50, 50, 50);
     --mdc-typography-font-family: 'SF Pro';
-    --header-text-color: #fff;
-    --content-text-color: #cecece;
-    --darker-text-color: #bbb;
-    --traffic-light-no-focus: rgb(91, 91, 91);
-    --titlebar-text-color: rgb(235, 235, 235);
     --titlebar-height: 50px;
     --main-radius: 6px;
-    --titlebar-border-color: rgb(65, 65, 65);
     margin: 0;
     background-color: var(--background-color);
     color: var(--header-text-color, #fff);
@@ -186,6 +178,10 @@ button {
 
 main {
     padding: 0 10px;
+    transition: opacity 200ms ease-in-out;
+}
+main.faded {
+    opacity: 0;
 }
 
 .mount {
