@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Add description in package.json">
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Modify main.js to add Squrrel quit to prevent relaunches during installation and update on Windows">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/reset.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -120,7 +128,7 @@
       <workItem from="1608608003072" duration="9056000" />
       <workItem from="1608636591118" duration="6810000" />
       <workItem from="1608692178453" duration="22195000" />
-      <workItem from="1608780069647" duration="8470000" />
+      <workItem from="1608780069647" duration="11616000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607005939360</created>
@@ -283,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608800489759</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Modify main.js to add Squrrel quit to prevent relaunches during installation and update on Windows">
+      <created>1608801435809</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1608801435809</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +352,8 @@
     <MESSAGE value="Set app icon for Windows (macOS icon is only set after packaging)" />
     <MESSAGE value="Add fading animation on content change" />
     <MESSAGE value="Add description in package.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add description in package.json" />
+    <MESSAGE value="Modify main.js to add Squrrel quit to prevent relaunches during installation and update on Windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify main.js to add Squrrel quit to prevent relaunches during installation and update on Windows" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

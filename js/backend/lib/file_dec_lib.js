@@ -18,7 +18,7 @@ module.exports = {
             let decFile = decipher.update(Buffer.from(cipher, 'base64'));
             decFile = Buffer.concat([decFile, decipher.final()]);
             // Write output file
-            writeFile(fileOut, decFile, function(err)
+            writeFile(fileOut, decFile, (err) =>
             {
                 if (err) console.error(err);
                 return !!err;
