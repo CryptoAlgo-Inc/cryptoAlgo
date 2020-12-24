@@ -29,13 +29,14 @@ contextBridge.exposeInMainWorld('fileOps', {
             buttonLabel: label
         });
     },
-    filePick: (customTitle, label, ops, filter) => {
+    filePick: (customTitle, label, ops, filter, defName='Untitled') => {
         return dialog.showSaveDialog(win, {
             title: customTitle,
             message: customTitle,
             nameFieldLabel: label,
             properties: ops,
-            filters: filter
+            filters: filter,
+            defaultPath: defName
         })
     }
 });

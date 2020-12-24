@@ -127,6 +127,19 @@ const page = () => html`
             </div>
         </div>
     </div>
+    <div class="mdc-snackbar" data-mdc-auto-init="MDCSnackbar" id="actionSnackbar">
+        <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
+            <div class="mdc-snackbar__label" aria-atomic="false">
+                No content
+            </div>
+            <div class="mdc-snackbar__actions" aria-atomic="true">
+                <button type="button" class="mdc-button mdc-snackbar__action">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Retry</span>
+                </button>
+            </div>
+        </div>
+    </div>
     <!------>
     <div class="content">
         <main id="main">
@@ -476,16 +489,31 @@ const text = () => html`
 `;
 // File stub
 const file = () => html`
-    <button class="mdc-fab bottomRight" aria-label="File locations" data-mdc-auto-init="MDCRipple"> 
-        <div class="mdc-fab__ripple"></div>
-        <span class="mdc-fab__icon material-icons">folder</span>
-    </button>
+    <!-- MDC Tooltip(s) -->
+    <div id="in-file-path" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+        <div class="mdc-tooltip__surface">
+            No input file selected
+        </div>
+    </div>
+    <div id="keyfile-path" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+        <div class="mdc-tooltip__surface">
+            No keyfile selected
+        </div>
+    </div>
+    <div id="out-file-path" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+        <div class="mdc-tooltip__surface">
+            No output file selected
+        </div>
+    </div>
+    <!------>
     <div class="mount">
         <h2>File Encryption/Decryption</h2>
         <small class="mdc-typography--body2">
             Encrypt or decrypt your files with AES. 
             Please do not open encrypted files in any other application as this might corrupt them
             and prevent successful decryption.
+            <br>
+            Hover over a file selection button to see the currently selected path
         </small>
         <!------>
         <hr>
@@ -497,7 +525,8 @@ const file = () => html`
                     Encryption: Select file to be encrypted<br>
                     Decryption: Select encrypted file to decrypt
                 </small>
-                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="selInput">
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" 
+                        aria-describedby="in-file-path" id="selInput">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">input</i>
                     <span class="mdc-button__label">Choose input file</span>
@@ -509,7 +538,8 @@ const file = () => html`
                     Encryption: Select a keyfile to be used to encrypt the file<br>
                     Decryption: Select the keyfile that was used to encrypt the file
                 </small>
-                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="selKeyfile">
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple"
+                        aria-describedby="keyfile-path" id="selKeyfile">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">vpn_key</i>
                     <span class="mdc-button__label">Select keyfile</span>
@@ -520,7 +550,8 @@ const file = () => html`
                 <small class="mdc-typography--body2">
                     Select a location to save the encrypted/decrypted files
                 </small>
-                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="selOut">
+                <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple"
+                        aria-describedby="out-file-path" id="selOut">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">save</i>
                     <span class="mdc-button__label">Choose output file location</span>
@@ -528,12 +559,12 @@ const file = () => html`
             </div>
         </div>
         <div class="actions-holder">
-            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="encButton">
+            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="encButton" disabled>
                 <div class="mdc-button__ripple"></div>
                 <i class="material-icons mdc-button__icon" aria-hidden="true">lock</i>
                 <span class="mdc-button__label">Encrypt</span>
             </button>
-            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="decButton">
+            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="decButton" disabled>
                 <div class="mdc-button__ripple"></div>
                 <i class="material-icons mdc-button__icon" aria-hidden="true">lock_open</i>
                 <span class="mdc-button__label">Decrypt</span>
@@ -570,3 +601,19 @@ switch (lastTab) {
     default:
         keyGenInflate();
 }
+
+/*
+    <!-- MDC Tooltip(s) -->
+    <div id="file-path-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+        <div class="mdc-tooltip__surface">
+            Show selected file paths
+        </div>
+    </div>
+    <!-- MDC Fab -->
+    <button class="mdc-fab bottomRight" aria-label="File locations" data-mdc-auto-init="MDCRipple"
+            aria-describedby="file-path-tooltip">
+        <div class="mdc-fab__ripple"></div>
+        <span class="mdc-fab__icon material-icons">folder</span>
+    </button>
+    <!------>
+ */

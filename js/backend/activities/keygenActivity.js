@@ -36,7 +36,7 @@ function showSnackbar(text, duration = 5000) {
 // Generate AES keypair
 function genAES(callback = function(_){}) { // Specify no callback
     window.fileOps.filePick("Location to save AES keyfile",
-        "AES Keyfile Name:", [], [{name: 'AES Keyfiles', extensions: ['aKey']}])
+        "AES Keyfile Name:", [], [{name: 'AES Keyfiles', extensions: ['aKey']}], 'AES Keyfile')
         .then(promise => {
             if (promise.canceled) { // Cancel button was pressed
                 showSnackbar('File picker canceled, AES keyfiles not generated. Please try again.');
@@ -65,8 +65,8 @@ function genRSA(callback = function(_){}) {
                 return;
             }
 
-            window.fileOps.filePick("Location to save RSA keypair","RSA keypair base name:", [],
-                [{name: "RSA Keypair", extensions: ['pem']}])
+            window.fileOps.filePick("Location to save RSA keypair","RSA keypair base name: ", [],
+                [{name: "RSA Keypair", extensions: ['pem']}], 'RSA Keypair')
                 .then(promise => {
                     if (promise.canceled) { // Cancel button was pressed
                         showSnackbar('File picker canceled, RSA keypair not generated. Please try again.');

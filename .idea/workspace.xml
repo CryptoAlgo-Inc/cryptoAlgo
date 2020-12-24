@@ -4,29 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Added encrypt-as-you-type feature">
-      <change afterPath="$PROJECT_DIR$/cryptoalgo.icns" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Fixed some small bugs, touched up fileCrypto layout and added backend function for encrypting and decrypting files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/colors.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/colors.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/reset.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/reset.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/backend/activities/fileActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/fileActivity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/aes_keygen_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/aes_keygen_lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/file_dec_lib.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/file_enc_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/file_enc_lib.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/file_enc_lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/fileActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/fileActivity.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/renderer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preload.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.min.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +74,7 @@
       <recent name="$PROJECT_DIR$/css" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Make">
+  <component name="RunManager" selected="npm.Start">
     <configuration name="Make" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -137,7 +123,8 @@
       <workItem from="1608522170808" duration="11024000" />
       <workItem from="1608608003072" duration="9056000" />
       <workItem from="1608636591118" duration="6810000" />
-      <workItem from="1608692178453" duration="21916000" />
+      <workItem from="1608692178453" duration="22195000" />
+      <workItem from="1608780069647" duration="4969000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607005939360</created>
@@ -251,7 +238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608705978677</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixed some small bugs, touched up fileCrypto layout and added backend function for encrypting and decrypting files">
+      <created>1608739558744</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608739558744</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fixed some small bugs, touched up fileCrypto layout and added backend function for encrypting and decrypting files">
+      <created>1608739678268</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608739678268</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +289,8 @@
     <MESSAGE value="Added AES text decryption backend" />
     <MESSAGE value="Completed AES text encryption/decryption" />
     <MESSAGE value="Added encrypt-as-you-type feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added encrypt-as-you-type feature" />
+    <MESSAGE value="Fixed some small bugs, touched up fileCrypto layout and added backend function for encrypting and decrypting files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some small bugs, touched up fileCrypto layout and added backend function for encrypting and decrypting files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
