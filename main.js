@@ -15,11 +15,12 @@ function createWindow () {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
-        minWidth: 350,
+        minWidth: 450,
         minHeight: 500,
         backgroundColor: '#000',
         frame: false,
         show: false,
+        icon: __dirname + '/cryptoalgo.png',
         maximizable: true,
         webPreferences: {
             spellcheck: true,
