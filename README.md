@@ -60,13 +60,7 @@ vulnerability, please open an issue or email me.
 
 ## Contact
 
-<table>
-    <tr>
-        <th>General Inquires, Issues etc.</th>
-        <th>Important Matters</th>
-    </tr>
-    <tr>
-        <td><a href="mailto:support@cryptoalgo.cf">support@cryptoalgo.cf</a></td>
-        <td><a href="mailto:support@cryptoalgo.cf">support@cryptoalgo.cf</a></td>
-    </tr>
-</table>
+|              Type             |        Contact        |
+|-------------------------------|-----------------------|
+| General Inquires, Issues etc. | support@cryptoalgo.cf |
+|       Important Matters       |  admin@cryptoalgo.cf  |
