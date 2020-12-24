@@ -21,17 +21,17 @@ const close = function() {
     window.winCtl.close();
 };
 
-const keyGenInflate = function() {
-    renderTab(keyGen, $keyGenID, 'Keyfile generation');
+const keyGenInflate = function(anim = true) {
+    renderTab(keyGen, $keyGenID, 'Keyfile generation', anim);
 };
-const textInflate = function() {
-    renderTab(text, $textID, 'Text cryptography');
+const textInflate = function(anim = true) {
+    renderTab(text, $textID, 'Text cryptography', anim);
 };
-const fileInflate = function() {
-    renderTab(file, $fileID, 'File cryptography');
+const fileInflate = function(anim = true) {
+    renderTab(file, $fileID, 'File cryptography', anim);
 };
-const RSAInflate = function() {
-    renderTab(RSA, $RSA_ID, 'RSA cryptography');
+const RSAInflate = function(anim) {
+    renderTab(RSA, $RSA_ID, 'RSA cryptography', anim);
 };
 
 // Utility functions
@@ -46,7 +46,7 @@ const clrActive = () => {
 }
 
 // Render a tab into content area
-const renderTab = (tabRenderer, tabID, longName) => {
+const renderTab = (tabRenderer, tabID, longName, anim = true) => {
     if (tabID === prevTabID) return // Don't continue if the tab is the same as the previous
     // ------
     if (typeof onStop === "function") { // Check if there was a previous activity
@@ -57,31 +57,42 @@ const renderTab = (tabRenderer, tabID, longName) => {
         }
     }
     // ------
-    // Update title UI and render fragment
-    q('.titleBar .windowTitle small').textContent = longName;
-    render(tabRenderer(), $('main'));
-    // ------
-    // Init material components
-    window.mdc.autoInit();
-    // ------
-    // Store latest tab and update tab UI
-    store('lastTab', tabID);
-    clrActive();
-    // ------
-    // Load activity script
-    console.debug(`<renderTab> Loading activity ${tabID}`);
-    loadJS(`js/backend/activities/${tabID}Activity.min.js`, function() {
-        onStart().then(() => {
-            console.debug(`<renderTab> Loaded activity ${tabID}`)
+    // Update title UI and render fragment (with animation)
+    const main = $('main');
+    if (anim) main.classList.add('faded'); // Fading animation
+    // Check if animation was requested
+    let delay;
+    if (anim) delay = 200;
+    else delay = 0;
+    setTimeout(() => { // Only render new tab when old contents have completely faded
+        render(tabRenderer(), main);
+        if (anim) main.classList.remove('faded');
+        setTimeout(() => { // Only change title after content is fully visible
+            q('.titleBar .windowTitle small').textContent = longName;
+        }, delay)
+        // ------
+        // Init material components
+        window.mdc.autoInit();
+        // ------
+        // Store latest tab and update tab UI
+        store('lastTab', tabID);
+        clrActive();
+        // ------
+        // Load activity script
+        console.debug(`<renderTab> Loading activity ${tabID}`);
+        loadJS(`js/backend/activities/${tabID}Activity.min.js`, function() {
+            onStart().then(() => {
+                console.debug(`<renderTab> Loaded activity ${tabID}`)
+            }).catch(e => {
+                console.warn(`<renderTab> ${tabID} activity onStart threw an exception:\n\n ${e}`)
+            })
         }).catch(e => {
-            console.warn(`<renderTab> ${tabID} activity onStart threw an exception:\n\n ${e}`)
-        })
-    }).catch(e => {
-        console.debug(`<renderTab> Failed to fetch and execute activity JS script for activity ${tabID} with error:\n\n${e}`)
-    });
-    // ------
-    prevTabID = tabID
-    $(tabID).classList.add('active');
+            console.debug(`<renderTab> Failed to fetch and execute activity JS script for activity ${tabID} with error:\n\n${e}`)
+        });
+        // ------
+        prevTabID = tabID
+        $(tabID).classList.add('active');
+    }, delay)
 }
 // Programmatically load JS into DOM
 const loadJS = async (src, callback = function() { console.debug(`Loaded script '${src}`) }) => {
@@ -587,19 +598,19 @@ document.title = 'CryptoAlgo'
 const lastTab = get('lastTab');
 switch (lastTab) {
     case $textID:
-        textInflate();
+        textInflate(false);
         break;
     case $fileID:
-        fileInflate();
+        fileInflate(false);
         break;
     case $RSA_ID:
-        RSAInflate();
+        RSAInflate(false);
         break;
     case $keyGenID:
-        keyGenInflate();
+        keyGenInflate(false);
         break;
     default:
-        keyGenInflate();
+        keyGenInflate(false);
 }
 
 /*
