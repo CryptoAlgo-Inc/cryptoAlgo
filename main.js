@@ -1,6 +1,5 @@
 // Electron main proc
 const contextMenu = require('electron-context-menu');
-const path = require('path');
 
 const { app, BrowserWindow } = require('electron');
 
@@ -18,7 +17,7 @@ function createWindow () {
         width: 800,
         height: 600,
         minWidth: 450,
-        minHeight: 500,
+        minHeight: 200,
         backgroundColor: '#000',
         frame: false,
         show: false,
@@ -28,7 +27,7 @@ function createWindow () {
             spellcheck: true,
             enableRemoteModule: true,
             contextIsolation: true,
-            preload: path.join(app.getAppPath(), 'preload.js')
+            preload: __dirname + '/preload.js'
         },
     });
     win.setMenuBarVisibility(false); // Remove menu bar
