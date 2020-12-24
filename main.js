@@ -2,7 +2,9 @@
 const contextMenu = require('electron-context-menu');
 const path = require('path');
 
-const { app, BrowserWindow, session } = require('electron');
+const { app, BrowserWindow } = require('electron');
+
+if (require('electron-squirrel-startup')) return app.quit(); // Quit if installing in Squirrel
 
 contextMenu({
     showInspectElement: false

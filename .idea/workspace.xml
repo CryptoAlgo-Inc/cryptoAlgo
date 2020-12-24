@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Add fading animation on content change">
-      <change afterPath="$PROJECT_DIR$/js/backend/activities/RSAActivity.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/backend/activities/RSAActivity.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterDir="false" />
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Add description in package.json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +100,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="" />
+      <changelist id="" name="Add description in package.json" comment="" />
       <created>1606827615958</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -123,7 +120,7 @@
       <workItem from="1608608003072" duration="9056000" />
       <workItem from="1608636591118" duration="6810000" />
       <workItem from="1608692178453" duration="22195000" />
-      <workItem from="1608780069647" duration="7839000" />
+      <workItem from="1608780069647" duration="8470000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607005939360</created>
@@ -272,7 +269,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608798152001</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add description in package.json">
+      <created>1608800384160</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1608800384160</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add description in package.json">
+      <created>1608800489759</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1608800489759</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +294,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="development" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -313,7 +336,8 @@
     <MESSAGE value="Completed fileCrypto functions" />
     <MESSAGE value="Set app icon for Windows (macOS icon is only set after packaging)" />
     <MESSAGE value="Add fading animation on content change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add fading animation on content change" />
+    <MESSAGE value="Add description in package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add description in package.json" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

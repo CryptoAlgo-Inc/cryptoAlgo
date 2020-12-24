@@ -8,6 +8,10 @@
   "name": "cryptoalgo",
   "description": "One click encryption of messages and files, without all the hassle. Supports RSA and AES algorithms, both military-grade standards",
   "productName": "CryptoAlgo",
+  "author": {
+    "name": "CryptoAlgo Inc.",
+    "email": "support@cryptoalgo.cf"
+  },
   "scripts": {
     "test": "echo \"Tests will be added later\" && exit 0",
     "start": "electron-forge start",
