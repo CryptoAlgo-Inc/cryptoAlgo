@@ -28,7 +28,8 @@ function createWindow () {
             spellcheck: true,
             enableRemoteModule: true,
             contextIsolation: true,
-            preload: __dirname + '/preload.js'
+            preload: __dirname + '/preload.js',
+            devTools: false
         },
     });
     win.setMenuBarVisibility(false); // Remove menu bar
@@ -136,10 +137,6 @@ const template = [
     {
         label: 'View',
         submenu: [
-            { role: 'reload' },
-            { role: 'forceReload' },
-            { role: 'toggleDevTools' },
-            { type: 'separator' },
             { role: 'resetZoom' },
             { role: 'zoomIn' },
             { role: 'zoomOut' },
@@ -176,5 +173,5 @@ const template = [
     }
 ]
 
-const menu = Menu.buildFromTemplate(template)
-Menu.setApplicationMenu(menu)
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
