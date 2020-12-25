@@ -92,6 +92,8 @@ function genRSA(callback = function(_){}) {
                                 return;
                             }
                             console.log('<keygen> Done generating one RSA keypair');
+
+                            showSnackbar('Saved RSA keypair at ' + promise.filePath);
                             callback(promise.filePath)
                         });
                 });

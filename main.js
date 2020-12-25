@@ -1,7 +1,7 @@
 // Electron main proc
 const contextMenu = require('electron-context-menu');
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu, shell } = require('electron');
 
 if (require('electron-squirrel-startup')) return app.quit(); // Quit if installing in Squirrel
 
@@ -9,6 +9,7 @@ contextMenu({
     showInspectElement: false
 });
 
+const isMac = process.platform === 'darwin'; // True if running on macOS
 app.allowRendererProcessReuse = true;
 
 function createWindow () {
@@ -27,7 +28,8 @@ function createWindow () {
             spellcheck: true,
             enableRemoteModule: true,
             contextIsolation: true,
-            preload: __dirname + '/preload.js'
+            preload: __dirname + '/preload.js',
+            devTools: false
         },
     });
     win.setMenuBarVisibility(false); // Remove menu bar
@@ -37,7 +39,7 @@ function createWindow () {
         callback({
             requestHeaders: {
                 ...details.requestHeaders,
-                Referer: 'https:/ /www.youtube-nocookie.com',
+                Referer: 'https://www.youtube-nocookie.com',
             }
         });
     });
@@ -65,7 +67,7 @@ app.whenReady().then(createWindow);
 
 // Manage macOS window behaviour
 app.on('window-all-closed', function () {
-    if (process.platform !== 'darwin') {
+    if (!isMac) {
         app.quit();
     }
 });
@@ -77,3 +79,99 @@ app.on('activate', function () {
         createWindow();
     }
 });
+
+// Override system menu bar
+const template = [
+    // { role: 'appMenu' }
+    ...(isMac ? [{
+        label: app.name,
+        submenu: [
+            { role: 'about' },
+            { type: 'separator' },
+            { role: 'services' },
+            { type: 'separator' },
+            { role: 'hide' },
+            { role: 'hideothers' },
+            { role: 'unhide' },
+            { type: 'separator' },
+            { role: 'quit' }
+        ]
+    }] : []),
+    // { role: 'fileMenu' }
+    {
+        label: 'File',
+        submenu: [
+            isMac ? { role: 'close' } : { role: 'quit' }
+        ]
+    },
+    // { role: 'editMenu' }
+    {
+        label: 'Edit',
+        submenu: [
+            { role: 'undo' },
+            { role: 'redo' },
+            { type: 'separator' },
+            { role: 'cut' },
+            { role: 'copy' },
+            { role: 'paste' },
+            ...(isMac ? [
+                { role: 'pasteAndMatchStyle' },
+                { role: 'delete' },
+                { role: 'selectAll' },
+                { type: 'separator' },
+                {
+                    label: 'Speech',
+                    submenu: [
+                        { role: 'startSpeaking' },
+                        { role: 'stopSpeaking' }
+                    ]
+                }
+            ] : [
+                { role: 'delete' },
+                { type: 'separator' },
+                { role: 'selectAll' }
+            ])
+        ]
+    },
+    // { role: 'viewMenu' }
+    {
+        label: 'View',
+        submenu: [
+            { role: 'resetZoom' },
+            { role: 'zoomIn' },
+            { role: 'zoomOut' },
+            { type: 'separator' },
+            { role: 'togglefullscreen' }
+        ]
+    },
+    // { role: 'windowMenu' }
+    {
+        label: 'Window',
+        submenu: [
+            { role: 'minimize' },
+            { role: 'zoom' },
+            ...(isMac ? [
+                { type: 'separator' },
+                { role: 'front' },
+                { type: 'separator' },
+                { role: 'window' }
+            ] : [
+                { role: 'close' }
+            ])
+        ]
+    },
+    {
+        role: 'help',
+        submenu: [
+            {
+                label: 'Learn More',
+                click: async () => {
+                    await shell.openExternal('https://calgo.cf');
+                }
+            }
+        ]
+    }
+]
+
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
