@@ -6,6 +6,7 @@ const encryptAES = require('./js/backend/lib/aes_encryptor_lib.min');
 const decryptAES = require('./js/backend/lib/aes_decryptor_lib.min');
 const fEncAES    = require('./js/backend/lib/file_enc_lib.min');
 const fDecAES    = require('./js/backend/lib/file_dec_lib.min');
+const RSAEncDec  = require('./js/backend/lib/encryptor_lib.min');
 
 // Expose close, max- and mini-mise functions
 const win = remote.getCurrentWindow();
@@ -64,6 +65,18 @@ contextBridge.exposeInMainWorld('fileCrypto', {
 contextBridge.exposeInMainWorld('rsaCrypto', {
     keygen: (len, pwd, loc, cb) => { // Generate AES keyfiles
         return keygenRSA.gen(len, pwd, loc, cb);
+    },
+    encrypt: (pub, aes, out) => {
+        return RSAEncDec.encrypt(pub, aes, out);
+    },
+    decrypt: (pub, pwd, aes, out) => {
+        return RSAEncDec.decrypt(pub, pwd, aes, out);
+    }
+});
+// System info
+contextBridge.exposeInMainWorld('proInfo', {
+    platform: () => { // Get platform
+        return process.platform;
     }
 });
 

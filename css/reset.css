@@ -114,6 +114,12 @@ button {
 .titleBar .buttonHolder button.maximise:active {
     background-color: rgb(111, 246, 110);
 }
+body.macBtn-hover .macBtn {
+    display: block;
+}
+.macBtn {
+    display: none;
+}
 .titleBar .buttonHolder {
     margin-left: 20px;
 }
