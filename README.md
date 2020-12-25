@@ -18,10 +18,10 @@
 | AES Text Decrypt | Stable |
 | AES Keyfile Gen  | Stable |
 | AES File Encrypt | Stable |
-| AES File Decrypt |  Beta  |
+| AES File Decrypt | Stable |
 | RSA Keypair Gen  |  Beta  |
-|  RSA Encryption  |  :x:   |
-|  RSA Decryption  |  :x:   |
+|  RSA Encryption  |  Beta  |
+|  RSA Decryption  |  Beta  |
 
 ## Note
 
@@ -38,7 +38,7 @@ Supports RSA and AES algorithms, both military-grade standards
 
 ```bash
 git clone https://github.com/CryptoAlgo-Inc/cryptoAlgo.git
-cd cryptoalgo
+cd cryptoAlgo
 npm i .
 npm start
 ```
