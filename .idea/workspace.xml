@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Completely disabled DevTools">
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Fix issue with building on Linux (.deb)">
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -338,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608877440260</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Fix issue with building on Linux (.deb)">
+      <created>1608878343310</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1608878343310</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +377,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changed dir struct and added lib files" />
     <MESSAGE value="Completed dialog content" />
     <MESSAGE value="Completed keygen function" />
     <MESSAGE value="Added text content and content change animations" />
@@ -395,7 +401,8 @@
     <MESSAGE value="Completed RSA activity, completed project." />
     <MESSAGE value="Stripped all console.* statements" />
     <MESSAGE value="Completely disabled DevTools" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completely disabled DevTools" />
+    <MESSAGE value="Fix issue with building on Linux (.deb)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix issue with building on Linux (.deb)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
