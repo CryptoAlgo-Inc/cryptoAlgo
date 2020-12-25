@@ -8,7 +8,7 @@
 
 ## Project Status
 
-### Current version: `v0.1.0-beta`
+### Current version: `v0.5.0-beta`
 
 ### Function status:
 
