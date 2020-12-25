@@ -4,7 +4,7 @@
     "electron-squirrel-startup": "^1.0.0"
   },
   "main": "main.js",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "name": "cryptoalgo",
   "description": "One click encryption of messages and files, without all the hassle. Supports RSA and AES algorithms, both military-grade standards",
   "productName": "CryptoAlgo",
