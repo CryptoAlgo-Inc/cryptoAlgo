@@ -703,19 +703,3 @@ document.querySelectorAll('.buttonHolder button').forEach((elem) => {
         document.body.classList.remove('macBtn-hover');
     }, false);
 });
-
-/*
-    <!-- MDC Tooltip(s) -->
-    <div id="file-path-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
-        <div class="mdc-tooltip__surface">
-            Show selected file paths
-        </div>
-    </div>
-    <!-- MDC Fab -->
-    <button class="mdc-fab bottomRight" aria-label="File locations" data-mdc-auto-init="MDCRipple"
-            aria-describedby="file-path-tooltip">
-        <div class="mdc-fab__ripple"></div>
-        <span class="mdc-fab__icon material-icons">folder</span>
-    </button>
-    <!------>
- */
