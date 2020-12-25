@@ -25,6 +25,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
+        "name": "cryptoalgo",
         "icon": "cryptoalgo.icns",
         "ignore": "\\/js\\/.*(?!min)[\\w-]{3}\\.js$",
         "asar": true
