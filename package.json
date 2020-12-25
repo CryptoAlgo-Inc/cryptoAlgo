@@ -6,6 +6,10 @@
   "main": "main.js",
   "version": "0.5.0",
   "license": "GPL-3.0",
+  "author": {
+    "name": "CryptoAlgo Inc",
+    "email": "support@cryptoalgo.cf"
+  },
   "name": "cryptoalgo",
   "description": "One click encryption of messages and files, without all the hassle. Supports RSA and AES algorithms, both military-grade standards",
   "productName": "CryptoAlgo",
@@ -35,7 +39,8 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": ""
+            "name": "cryptoalgo",
+            "authors": "CryptoAlgo Inc."
           }
         },
         {
