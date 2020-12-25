@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Fix issue with electron forge on Linux">
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Completed RSA activity, completed project." />
+    <list id="b1ef7d1c-6021-4177-ab17-c5424ffedfee" name="Completed RSA activity, completed project." comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/RSAActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/RSAActivity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/RSAActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/RSAActivity.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/activities/keygenActivity.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/backend/lib/encryptor_lib.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/renderer.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/preload.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +35,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="NamedScopeManager">
     <scope name="JavaScript" pattern="file[CryptoAlgo-App]:js//*&amp;&amp;!file:*.min.js" />
@@ -52,7 +70,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -99,7 +117,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="" />
-      <changelist id="" name="Add description in package.json" comment="" />
+      <changelist id="b1ef7d1c-6021-4177-ab17-c5424ffedfee" name="Completed RSA activity, completed project." comment="" />
       <created>1606827615958</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -119,7 +137,8 @@
       <workItem from="1608608003072" duration="9056000" />
       <workItem from="1608636591118" duration="6810000" />
       <workItem from="1608692178453" duration="22195000" />
-      <workItem from="1608780069647" duration="12097000" />
+      <workItem from="1608780069647" duration="15544000" />
+      <workItem from="1608866547588" duration="5048000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607005939360</created>
@@ -296,7 +315,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608812687952</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Add license and squirrel name in package.json">
+      <created>1608813774575</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1608813774575</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Completed RSA activity, completed project.">
+      <created>1608876502232</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1608876502232</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +361,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Completed keygen layout and added activity changing code" />
     <MESSAGE value="Minor UI changes and security improvements" />
     <MESSAGE value="Changed dir struct and added lib files" />
@@ -352,7 +384,9 @@
     <MESSAGE value="Add description in package.json" />
     <MESSAGE value="Modify main.js to add Squrrel quit to prevent relaunches during installation and update on Windows" />
     <MESSAGE value="Fix issue with electron forge on Linux" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix issue with electron forge on Linux" />
+    <MESSAGE value="Add license and squirrel name in package.json" />
+    <MESSAGE value="Completed RSA activity, completed project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed RSA activity, completed project." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

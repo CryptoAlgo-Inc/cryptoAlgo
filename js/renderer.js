@@ -34,6 +34,9 @@ const RSAInflate = function(anim) {
     renderTab(RSA, $RSA_ID, 'RSA cryptography', anim);
 };
 
+// Add platform to body classList
+document.body.classList.add(window.proInfo.platform());
+
 // Utility functions
 const $ = (id) => document.getElementById(id);
 const q = (selector) => document.querySelector(selector);
@@ -602,6 +605,67 @@ const file = () => html`
 const RSA = () => html`
     <div class="mount">
         <h2>Encrypt/Decrypt AES Keyfiles With RSA</h2>
+        <small class="mdc-typography--body2">
+            Sharing a file/text through untrusted parties and want the receiver to read your message without sending your AES keyfile?<br>
+            Encrypt your AES keyfile with the receiver's public key and send the encrypted keyfile along with your message/file.<br>
+            The receiver can then use his/her private key to decrypt the AES keyfile and use the decrypted keyfile to decrypt the message/file!
+        </small>
+        <div>
+            <button class="mdc-button" data-mdc-auto-init="MDCRipple" style="margin:4px">
+                <div class="mdc-button__ripple"></div>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">help</i>
+                <span class="mdc-button__label">Learn more</span>
+            </button>
+        </div>
+        <!------>
+        <hr>
+        <!------>
+        <h3>Start by selecting the RSA private key (decryption) or the public key (encryption)</h3>
+        <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" style="margin:10px 0;width:100%"
+                id="selKeyfile">
+            <div class="mdc-button__ripple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">vpn_key</i>
+            <span class="mdc-button__label">Choose public/private keyfile</span>
+        </button>
+        <small id="selected-keyfile">No selected keyfile</small>
+        <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField" id="priPWD"
+               style="margin:10px 0;width:100%">
+            <span class="mdc-text-field__ripple"></span>
+            <span class="mdc-floating-label" id="my-label-id">Private Key Password</span>
+            <input class="mdc-text-field__input" type="password" aria-labelledby="my-label-id">
+            <span class="mdc-line-ripple"></span>
+        </label>
+        <small class="mdc-typography--body2">
+            Leave the password field blank if encrypting or if private key has no password.
+        </small>
+        <!------>
+        <h3>Then pick the encrypted/decrypted AES keyfile to encrypt/decrypt</h3>
+        <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="selAESKeyfile">
+            <div class="mdc-button__ripple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">folder</i>
+            <span class="mdc-button__label">Choose AES keyfile</span>
+        </button>
+        <small style="margin-left:10px" id="AESLoc">No AES keyfile selected</small>
+        <h3>Next, pick the output location to save the encrypted/decrypted AES keyfile</h3>
+        <button class="mdc-button mdc-button--outlined" data-mdc-auto-init="MDCRipple" id="selOutLoc">
+            <div class="mdc-button__ripple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">folder</i>
+            <span class="mdc-button__label">Choose output location</span>
+        </button>
+        <small style="margin-left:10px" id="outLoc">No output location selected</small>
+        <!------>
+        <div class="actions-holder">
+            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="encButton" disabled>
+                <div class="mdc-button__ripple"></div>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">lock</i>
+                <span class="mdc-button__label">Encrypt</span>
+            </button>
+            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple" id="decButton" disabled>
+                <div class="mdc-button__ripple"></div>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">lock_open</i>
+                <span class="mdc-button__label">Decrypt</span>
+            </button>
+        </div>
     </div>
 `;
 
