@@ -31,7 +31,7 @@
     "forge": {
       "packagerConfig": {
         "name": "cryptoalgo",
-        "icon": "cryptoalgo.icns",
+        "icon": "cryptoalgo",
         "ignore": "\\/js\\/.*(?!min)[\\w-]{3}\\.js$",
         "asar": true
       },
@@ -39,7 +39,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "cryptoalgo",
+            "name": "CryptoAlgo",
             "authors": "CryptoAlgo Inc."
           }
         },

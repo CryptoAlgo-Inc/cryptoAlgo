@@ -8,14 +8,21 @@ const fEncAES    = require('./js/backend/lib/file_enc_lib.min');
 const fDecAES    = require('./js/backend/lib/file_dec_lib.min');
 const RSAEncDec  = require('./js/backend/lib/encryptor_lib.min');
 
+const isMac = process.platform === 'darwin';
+
 // Expose close, max- and mini-mise functions
 const win = remote.getCurrentWindow();
 contextBridge.exposeInMainWorld('winCtl', {
     close: () => { win.close(); },
     max: () =>
         {
-            if (win.isFullScreen()) win.setFullScreen(false);
-            else win.setFullScreen(true);
+            if (isMac) {
+                if (win.isFullScreen()) win.setFullScreen(false);
+                else win.setFullScreen(true);
+            }
+            else {
+                win.isMaximized() ? win.unmaximize() : win.maximize();
+            }
         },
     min: () => { win.minimize(); },
     restore: () => { win.unmaximize(); }
