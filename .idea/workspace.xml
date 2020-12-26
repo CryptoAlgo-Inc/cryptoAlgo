@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="Added license">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="5225ef8d-9039-4e0c-87a7-6194cd9e726d" name="Default Changelist" comment="In the process of fixing making for Windows" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -353,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608878500879</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="In the process of fixing making for Windows">
+      <created>1608908090882</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1608908090882</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +389,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Completed keygen function" />
     <MESSAGE value="Added text content and content change animations" />
     <MESSAGE value="Finished text encryption layout and added NodeJS tests" />
     <MESSAGE value="Added text decryption layout" />
@@ -410,7 +413,8 @@
     <MESSAGE value="Completely disabled DevTools" />
     <MESSAGE value="Fix issue with building on Linux (.deb)" />
     <MESSAGE value="Added license" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added license" />
+    <MESSAGE value="In the process of fixing making for Windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="In the process of fixing making for Windows" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
