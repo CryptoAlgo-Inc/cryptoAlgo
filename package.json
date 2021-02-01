@@ -39,7 +39,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "cryptoalgo",
+            "name": "Cryptoalgo",
             "authors": "CryptoAlgo Inc."
           }
         },
